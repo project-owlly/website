@@ -1,0 +1,12 @@
+main {
+  background: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
+
+  img.owlly-footer {
+    width: 300px;
+    position: relative;
+    bottom: -16px;
+    right: 10%;
+    z-index: 1;
+    display: inline-block;
+  }
+}

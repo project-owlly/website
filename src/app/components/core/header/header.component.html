@@ -1,0 +1,9 @@
+<nav class="bg-white dark:bg-black">
+  <div class="container mx-auto max-w-screen-lg px-6 py-2 text-left">
+    <a href="/" aria-label="Owlly" class="no-underline">
+      <ng-container *ngIf="theme$ | async as theme">
+        <img [src]="'./assets/logo/owlly-' + theme + '.png'" loading="lazy" aria-label="hidden" />
+      </ng-container>
+    </a>
+  </div>
+</nav>
