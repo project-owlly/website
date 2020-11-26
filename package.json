@@ -7,10 +7,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --hmr",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +27,9 @@
     "@angular/service-worker": "~11.0.0",
     "@capacitor/core": "^2.4.2",
     "@owlly/signature": "0.0.6",
+    "@scullyio/init": "^1.0.1",
+    "@scullyio/ng-lib": "^1.0.0",
+    "@scullyio/scully": "^1.0.0",
     "firebase": "^8.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
