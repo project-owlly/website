@@ -4,9 +4,20 @@ module.exports = (isProd) => ({
     enabled: isProd,
     content: ['**/*.html', '**/*.ts'],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class' or false
   theme: {
     extend: {},
+    colors: {
+      primary: 'var(--color-primary)',
+      secondary: 'var(--color-secondary)',
+      tertiary: 'var(--color-tertiary)',
+      success: 'var(--color-success)',
+      warning: 'var(--color-warning)',
+      danger: 'var(--color-danger)',
+      dark: 'var(--color-dark)',
+      medium: 'var(--color-medium)',
+      light: 'var(--color-light)',
+    },
   },
   variants: {
     extend: {},

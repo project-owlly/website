@@ -1,0 +1,33 @@
+ion-grid {
+  padding-bottom: 200px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h1 {
+  color: #ffffff;
+}
+h3 {
+  color: #ffffff;
+}
+
+.btn-owlly-newsletter {
+  --border-radius: 5px;
+}
+
+#socialMedia {
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  #lpButton {
+    text-align: center;
+  }
+  #socialMedia {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
