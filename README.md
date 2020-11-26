@@ -1,27 +1,35 @@
-# Website
+# project owlly - enabling digital democracy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-## Development server
+**owlly** ermöglicht das sichere und einfache elektronische Unterschreiben, Validieren und Zählen von Volksbegehren für Kampagnen-Plattformen und bietet ein ganzheitliches E-Collecting für die Schweiz.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**owlly** enables the secure and easy electronic signing, validation and counting of popular initiatives and referendums for campaign platforms and offers a holistic e-collecting approach for Switzerland.
 
-## Code scaffolding
+### Site
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This is the **owlly** website.
 
-## Build
+### Cloud
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Here we have the **magic** of owlly.
 
-## Running unit tests
+### E-Collecting Button
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This buttons is used by campaigners to enable e-collecting
 
-## Running end-to-end tests
+### Signature Button
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+We support **eID+** for authentication and signature.
 
-## Further help
+### PDF Form
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The pdf form is your way to support a public initiative.
+
+## For campaigners
+
+Looking for a e-collecting solution? look at our docs and see how to implemente e-collecting for your campaign. [Storybook](https://docs.owlly.ch)
+
+## Open Source
+
+**owlly** is open source! check out the repos
