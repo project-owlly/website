@@ -1,14 +1,5 @@
 {
   "projects": {
     "default": "project-owlly"
-  },
-  "targets": {
-    "project-owlly": {
-      "hosting": {
-        "project-owlly": [
-          "dist/app/browser"
-        ]
-      }
-    }
   }
 }
