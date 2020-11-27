@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<main class="bg-gray-50 text-black antialiased">
+  <div class="container mx-auto max-w-screen-lg px-6 pt-10">
+    <ng-container *ngIf="owlly$ | async as owlly">
+      <h1 class="text-2xl">{{ owlly.data.title }}</h1>
+
+      <app-signature [owllyId]="owlly.id" class="pb-20"></app-signature>
+    </ng-container>
+  </div>
+</main>
+
+<app-footer></app-footer>

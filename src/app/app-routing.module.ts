@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'impressum',
     loadChildren: () => import('./pages/impressum/impressum.module').then((m) => m.ImpressumPageModule),
   },
+  {
+    path: 'start',
+    loadChildren: () => import('./pages/wizard/start/start.module').then((m) => m.StartPageModule),
+  },
 ];
 
 @NgModule({
