@@ -20,6 +20,20 @@ module.exports = (isProd) => ({
         medium: 'var(--color-medium)',
         light: 'var(--color-light)',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: 'var(--color-tertiary)',
+              'text-decoration': 'none',
+              '&:hover': {
+                color: 'var(--color-tertiary)',
+                'text-decoration': 'underline',
+              },
+            },
+          },
+        },
+      },
     },
   },
   variants: {
