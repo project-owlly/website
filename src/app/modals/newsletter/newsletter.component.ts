@@ -6,8 +6,8 @@ import {ModalModule} from '../../components/modal/modal.module';
 
 @Component({
   selector: 'app-newsletter',
-  templateUrl: './newsletter.page.html',
-  styleUrls: ['./newsletter.page.scss'],
+  templateUrl: './newsletter.component.html',
+  styleUrls: ['./newsletter.component.scss'],
 })
 export class NewsletterComponent {
   newsletterForm: FormGroup;
