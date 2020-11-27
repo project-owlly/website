@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<main class="bg-gray-50 text-black">
+  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
+    <h1>Vielen Dank!</h1>
+
+    <p class="py-10">Du erhälst von uns eine Bestätigung per E-Mail wenn wir deinen Unterschriftbogen erhlaten haben.</p>
+
+    <ng-container *ngIf="owlly$ | async as owlly">
+      <h2>{{ owlly.data.title }}</h2>
+    </ng-container>
+  </div>
+</main>
+
+<app-footer></app-footer>
