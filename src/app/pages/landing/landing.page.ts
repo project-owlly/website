@@ -2,6 +2,9 @@ import {Component} from '@angular/core';
 import {ModalService} from '../../services/modal.service';
 
 import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsletter/newsletter.component';
+import {FeedbackComponent as FeedbackComponentType} from '../../modals/feedback/feedback.component';
+
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-landing',
@@ -9,7 +12,9 @@ import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsl
   styleUrls: ['./landing.page.scss'],
 })
 export class LandingPageComponent {
-  constructor(private modalService: ModalService<NewsletterComponentType>) {}
+  faEnvelope = faEnvelope;
+
+  constructor(private modalService: ModalService<NewsletterComponentType | FeedbackComponentType>) {}
 
   async showNewsletter(): Promise<void> {
     const {NewsletterComponent} = await import('../../modals/newsletter/newsletter.component');
@@ -18,13 +23,8 @@ export class LandingPageComponent {
   }
 
   async showFeedback(): Promise<void> {
-    // const {FeedbackPage} = await import('../../modals/feedback/feedback.page');
-    //
-    // const modal = await this.modalCtrl.create({
-    //   component: FeedbackPage,
-    //   swipeToClose: true,
-    //   presentingElement: this.routerOutlet.nativeEl,
-    // });
-    // await modal.present();
+    const {FeedbackComponent} = await import('../../modals/feedback/feedback.component');
+
+    await this.modalService.open(FeedbackComponent);
   }
 }

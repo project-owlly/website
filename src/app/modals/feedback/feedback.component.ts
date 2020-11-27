@@ -12,27 +12,26 @@ import {ModalComponent} from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-newsletter',
-  templateUrl: './newsletter.component.html',
-  styleUrls: ['./newsletter.component.scss'],
+  templateUrl: './feedback.component.html',
+  styleUrls: ['./feedback.component.scss'],
 })
-export class NewsletterComponent {
-  @ViewChild('modalComponent') modal: ModalComponent<NewsletterComponent> | undefined;
+export class FeedbackComponent {
+  @ViewChild('modalComponent') modal: ModalComponent<FeedbackComponent> | undefined;
 
-  newsletterForm: FormGroup;
+  feedbackForm: FormGroup;
 
   constructor(public fb: FormBuilder, private newsletterService: NewsletterService) {
-    this.newsletterForm = this.fb.group({
+    this.feedbackForm = this.fb.group({
       vorname: ['', [Validators.required]],
       nachname: ['', [Validators.required]],
       email: ['', [Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])]],
-      funnel: [''],
-      testuser: [true],
+      feedback: [''],
     });
   }
 
   async createRecord(): Promise<void> {
     try {
-      await this.newsletterService.createNewsletterRecord(this.newsletterForm.value);
+      await this.newsletterService.createFeedbackRecord(this.feedbackForm.value);
 
       // TODO toast
 
@@ -50,6 +49,6 @@ export class NewsletterComponent {
 
 @NgModule({
   imports: [CommonModule, FormsModule, ReactiveFormsModule, ModalModule, ComponentsModule],
-  declarations: [NewsletterComponent],
+  declarations: [FeedbackComponent],
 })
-export class NewsletterComponentModule {}
+export class FeedbackComponentModule {}
