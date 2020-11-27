@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<main class="bg-gray-50 text-black">
+  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
+    <h1>Fast am Ziel!</h1>
+
+    <p>Reiche deine signierten Unterschriftbogen ein!</p>
+
+    <ng-container *ngIf="pdf$ | async as pdf">
+      <ng-container *ngIf="pdf.url !== undefined">
+        <app-button [disable]="!pdf || pdf.url === undefined" (click)="openEID()" class="py-10">Weiter</app-button>
+      </ng-container>
+    </ng-container>
+  </div>
+</main>
+
+<app-footer></app-footer>

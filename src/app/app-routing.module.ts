@@ -25,6 +25,10 @@ const routes: Routes = [
     path: 'pdf',
     loadChildren: () => import('./pages/wizard/pdf/pdf.module').then((m) => m.PdfPageModule),
   },
+  {
+    path: 'sign',
+    loadChildren: () => import('./pages/wizard/sign/sign.module').then((m) => m.SignPageModule),
+  },
 ];
 
 @NgModule({
