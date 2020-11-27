@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<main class="bg-gray-50 text-black">
+  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
+    <ng-container *ngIf="useData$ | async as userData; else loadingUser">
+      <h1>Hi {{ userData?.given_name }}</h1>
+    </ng-container>
+
+    <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
+      <p *ngIf="pdf.url === undefined">Pdf unavailable.</p>
+
+      <ng-container *ngIf="pdf.url !== undefined">
+        <p>Pdf is ready.</p>
+
+        <app-button (click)="navigate()">Weiter</app-button>
+      </ng-container>
+    </ng-container>
+  </div>
+</main>
+
+<app-footer></app-footer>
+
+<ng-template #loadingUser>
+  <div>Loading user...</div>
+</ng-template>
+
+<ng-template #loadingPdf>
+  <div>Loading pdf...</div>
+</ng-template>

@@ -1,6 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
+import {EidGuard} from './guards/eid.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +15,15 @@ const routes: Routes = [
   {
     path: 'start',
     loadChildren: () => import('./pages/wizard/start/start.module').then((m) => m.StartPageModule),
+  },
+  {
+    path: 'return',
+    canActivate: [EidGuard],
+    children: [],
+  },
+  {
+    path: 'pdf',
+    loadChildren: () => import('./pages/wizard/pdf/pdf.module').then((m) => m.PdfPageModule),
   },
 ];
 
