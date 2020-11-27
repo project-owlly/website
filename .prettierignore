@@ -1,2 +1,2 @@
-./scully/**/*
-./src/assets/scully-routes.json
+**/scully/**/*
+**/src/assets/scully-routes.json
