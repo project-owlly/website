@@ -25,5 +25,5 @@ module.exports = (isProd) => ({
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 });
