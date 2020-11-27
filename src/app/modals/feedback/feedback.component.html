@@ -62,6 +62,6 @@
       Schliessen
     </button>
 
-    <app-button type="submit" [small]="true" [uppercase]="false">Absenden</app-button>
+    <app-button type="submit" [small]="true" [uppercase]="false" [disable]="feedbackForm.invalid">Absenden</app-button>
   </div>
 </ng-template>
