@@ -1,7 +1,7 @@
 <app-modal #modalComponent>
   <form [formGroup]="newsletterForm" (ngSubmit)="createRecord()">
     <!-- Vorname -->
-    <label for="firstname" class="block mt-2 text-xs font-semibold text-gray-600">Vorname</label>
+    <label for="firstname" class="block mt-2 text-xs font-semibold text-gray-600">Vorname <span class="text-red-600">*</span></label>
     <input
       id="firstname"
       type="text"
@@ -13,7 +13,7 @@
     />
 
     <!-- Nachname -->
-    <label for="lastname" class="block mt-2 text-xs font-semibold text-gray-600">Nachname</label>
+    <label for="lastname" class="block mt-2 text-xs font-semibold text-gray-600">Nachname <span class="text-red-600">*</span></label>
     <input
       id="lastname"
       type="text"
@@ -25,7 +25,7 @@
     />
 
     <!-- Email -->
-    <label for="email" class="block mt-2 text-xs font-semibold text-gray-600">E-Mail</label>
+    <label for="email" class="block mt-2 text-xs font-semibold text-gray-600">E-Mail <span class="text-red-600">*</span></label>
     <input
       id="email"
       type="email"
@@ -50,15 +50,15 @@
 
     <!-- Testuser -->
     <div class="flex justify-between mt-2">
-      <label for="test-user" class="block text-xs font-semibold text-gray-600 w-1/2">Ich möchte Testperson sein*</label>
+      <label for="test-user" class="block text-xs font-semibold text-gray-600 w-1/2">Ich möchte Testperson sein **</label>
       <input id="test-user" type="checkbox" class="form-checkbox h-5 w-5 text-tertiary" checked formControlName="testuser" />
     </div>
 
     <ng-container *ngTemplateOutlet="toolbar"></ng-container>
 
     <span class="block mt-4 text-xs text-gray-600"
-      >* Wir sind interessiert an deiner Meinung! Als Testperson erhältst du Einblick in unsere aktuellen und meist noch unveröffentlichten Entwicklungsschritte
-      und prägst damit E-Collecting in der Schweiz mit.</span
+      >** Wir sind interessiert an deiner Meinung! Als Testperson erhältst du Einblick in unsere aktuellen und meist noch unveröffentlichten
+      Entwicklungsschritte und prägst damit E-Collecting in der Schweiz mit.</span
     >
   </form>
 </app-modal>
