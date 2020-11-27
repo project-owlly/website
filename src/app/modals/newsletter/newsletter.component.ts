@@ -41,6 +41,7 @@ export class NewsletterComponent {
       await this.toastService.open(ToastComponent, {
         msg: 'E-Mail-Adresse erfolgreich erfasst.',
         status: 'success',
+        position: 'bottom',
       });
 
       await this.close();
@@ -48,6 +49,7 @@ export class NewsletterComponent {
       await this.toastService.open(ToastComponent, {
         msg: 'Fehler: ' + err.text,
         status: 'error',
+        position: 'bottom',
       });
 
       console.error(err);

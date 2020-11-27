@@ -40,6 +40,7 @@ export class FeedbackComponent {
       await this.toastService.open(ToastComponent, {
         msg: 'Dein Feedback wurde erfolgreich erfasst.',
         status: 'success',
+        position: 'bottom',
       });
 
       await this.close();
@@ -47,6 +48,7 @@ export class FeedbackComponent {
       await this.toastService.open(ToastComponent, {
         msg: 'Fehler: ' + err.text,
         status: 'error',
+        position: 'bottom',
       });
 
       console.error(err);

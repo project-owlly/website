@@ -5,6 +5,7 @@ import {ToastComponent} from '../components/toast/toast.component';
 export interface ToastOptions {
   msg: string;
   status: 'success' | 'error';
+  position: 'top' | 'bottom';
 }
 
 @Injectable({
