@@ -1,5 +1,8 @@
-import {Component} from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {Component, NgModule} from '@angular/core';
+import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+
+import {ModalModule} from '../../components/modal/modal.module';
 
 @Component({
   selector: 'app-newsletter',
@@ -19,3 +22,9 @@ export class NewsletterComponent {
     });
   }
 }
+
+@NgModule({
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, ModalModule],
+  declarations: [NewsletterComponent],
+})
+export class NewsletterPageModule {}
