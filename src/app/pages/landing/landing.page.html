@@ -26,7 +26,11 @@
   </div>
 </main>
 
-<button type="button" class="fixed bottom-0 right-0 rounded-full bg-secondary hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg">
+<button
+  type="button"
+  class="fixed bottom-0 right-0 rounded-full bg-secondary hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
+  (click)="showFeedback()"
+>
   <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>
 </button>
 
