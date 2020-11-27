@@ -3,12 +3,16 @@ import {ModalService} from '../../services/modal.service';
 
 import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsletter/newsletter.component';
 
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.page.html',
   styleUrls: ['./landing.page.scss'],
 })
 export class LandingPageComponent {
+  faEnvelope = faEnvelope;
+
   constructor(private modalService: ModalService<NewsletterComponentType>) {}
 
   async showNewsletter(): Promise<void> {

@@ -10,6 +10,7 @@ module.exports = (isProd) => ({
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
+        'secondary-dark': 'var(--color-secondary-dark)',
         tertiary: 'var(--color-tertiary)',
         'tertiary-dark': 'var(--color-tertiary-dark)',
         success: 'var(--color-success)',
