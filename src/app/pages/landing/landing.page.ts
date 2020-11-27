@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {ModalService} from '../../services/modal.service';
+
+import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsletter/newsletter.page';
 
 @Component({
   selector: 'app-landing',
@@ -6,6 +9,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./landing.page.scss'],
 })
 export class LandingPageComponent {
+  constructor(private modalService: ModalService<NewsletterComponentType>) {}
+
   async showNewsletter(): Promise<void> {
     // const {NewsletterPage} = await import('../../modals/newsletter/newsletter.page');
     //
@@ -15,6 +20,10 @@ export class LandingPageComponent {
     //   presentingElement: this.routerOutlet.nativeEl,
     // });
     // await modal.present();
+
+    const {NewsletterComponent} = await import('../../modals/newsletter/newsletter.page');
+
+    await this.modalService.open(NewsletterComponent);
   }
 
   async showFeedback(): Promise<void> {
