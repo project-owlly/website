@@ -1,0 +1,13 @@
+<div class="flex justify-center fixed bottom-0 right-2/4 transform translate-x-2/4 -translate-y-1 z-20">
+  <div
+    class="w-full px-6 py-3 shadow-2xl flex flex-col items-center border-t sm:w-auto sm:m-4 rounded-lg sm:flex-row sm:border"
+    [class.bg-danger]="options?.status === 'error'"
+    [class.border-danger]="options?.status === 'error'"
+    [class.text-white]="options?.status === 'error'"
+    [class.bg-primary]="options?.status === 'success'"
+    [class.border-primary]="options?.status === 'success'"
+    [class.text-black]="options?.status === 'success'"
+  >
+    {{ options?.msg }}
+  </div>
+</div>

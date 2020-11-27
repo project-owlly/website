@@ -10,6 +10,8 @@ import {NewsletterService} from '../../services/newsletter.service';
 
 import {ModalComponent} from '../../components/modal/modal.component';
 
+import {ToastService} from '../../services/toast.service';
+
 @Component({
   selector: 'app-newsletter',
   templateUrl: './feedback.component.html',
@@ -20,7 +22,7 @@ export class FeedbackComponent {
 
   feedbackForm: FormGroup;
 
-  constructor(public fb: FormBuilder, private newsletterService: NewsletterService) {
+  constructor(public fb: FormBuilder, private newsletterService: NewsletterService, private toastService: ToastService) {
     this.feedbackForm = this.fb.group({
       vorname: ['', [Validators.required]],
       nachname: ['', [Validators.required]],
@@ -30,14 +32,23 @@ export class FeedbackComponent {
   }
 
   async createRecord(): Promise<void> {
+    const {ToastComponent} = await import('../../components/toast/toast.component');
+
     try {
       await this.newsletterService.createFeedbackRecord(this.feedbackForm.value);
 
-      // TODO toast
+      await this.toastService.open(ToastComponent, {
+        msg: 'Dein Feedback wurde erfolgreich erfasst.',
+        status: 'success',
+      });
 
       await this.close();
     } catch (err) {
-      // TODO toast
+      await this.toastService.open(ToastComponent, {
+        msg: 'Fehler: ' + err.text,
+        status: 'error',
+      });
+
       console.error(err);
     }
   }
