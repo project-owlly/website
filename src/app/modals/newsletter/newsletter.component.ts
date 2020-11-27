@@ -1,12 +1,14 @@
-import {Component, NgModule} from '@angular/core';
+import {Component, NgModule, ViewChild} from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 import {ModalModule} from '../../components/modal/modal.module';
 
-import {NewsletterService} from '../../services/newsletter.service';
-import {ModalService} from '../../services/modal.service';
 import {ComponentsModule} from '../../components/core/components.module';
+
+import {NewsletterService} from '../../services/newsletter.service';
+
+import {ModalComponent} from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-newsletter',
@@ -14,9 +16,11 @@ import {ComponentsModule} from '../../components/core/components.module';
   styleUrls: ['./newsletter.component.scss'],
 })
 export class NewsletterComponent {
+  @ViewChild('modalComponent') modal: ModalComponent<NewsletterComponent> | undefined;
+
   newsletterForm: FormGroup;
 
-  constructor(public fb: FormBuilder, private newsletterService: NewsletterService, private modalService: ModalService<NewsletterComponent>) {
+  constructor(public fb: FormBuilder, private newsletterService: NewsletterService) {
     this.newsletterForm = this.fb.group({
       vorname: ['', [Validators.required]],
       nachname: ['', [Validators.required]],
@@ -32,11 +36,15 @@ export class NewsletterComponent {
 
       // TODO toast
 
-      await this.modalService.close();
+      await this.close();
     } catch (err) {
       // TODO toast
       console.error(err);
     }
+  }
+
+  async close(): Promise<void> {
+    await this.modal?.close();
   }
 }
 
