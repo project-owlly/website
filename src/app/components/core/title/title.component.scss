@@ -1,5 +1,9 @@
 .underline {
-    height: 12px;
+    height: 10px;
     width: 300px;
     background: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
+
+    @media (max-width: 768px) {
+        width: 70px;
+    }
   }
