@@ -33,6 +33,7 @@ const routes: Routes = [
     path: 'finish',
     loadChildren: () => import('./pages/wizard/finish/finish.module').then((m) => m.FinishPageModule),
   },
+  {path: '**', loadChildren: () => import('./pages/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule)},
 ];
 
 @NgModule({
