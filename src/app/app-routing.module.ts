@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'finish',
     loadChildren: () => import('./pages/wizard/finish/finish.module').then((m) => m.FinishPageModule),
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
+  },
 ];
 
 @NgModule({
