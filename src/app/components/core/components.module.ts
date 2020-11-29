@@ -5,11 +5,12 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ButtonComponent} from './button/button.component';
 import {SignatureComponent} from './signature/signature.component';
-import {TitleComponent} from './title/title.component';
+import { TextblockComponent } from './textblock/textblock.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TitleComponent],
-  exports: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TitleComponent],
+  declarations: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent],
+  exports: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent],
   imports: [CommonModule],
 })
 export class ComponentsModule {}

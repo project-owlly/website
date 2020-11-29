@@ -1,8 +1,28 @@
 <app-header></app-header>
 
-<app-title [title]="testtitle"></app-title>
+<app-textblock type="owlly" title="Textblock" text="lorem ipsum" [showButton]="true" buttonText="mehr" subtitle="Gugus gewesen, gugus geblieben"></app-textblock>
 
-<app-title title="testtitle"></app-title>
+<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 gap-4">
+   
+    <app-card 
+        class="flex-1" 
+        type="admin" 
+        title="E-collecting erklärt" 
+        [showButton]="true" 
+        text="Das elektronische Sammeln von Unterschriften für politische Volksbegehren wie Initiativen oder Referenden bietet Vorteile für alle!" 
+        buttonText="mehr">
+    </app-card>
+    <app-card class="flex-1" type="campaigner" title="E-collecting erklärt"></app-card>
+    <app-card 
+        class="flex-1" 
+        type="admin" 
+        title="E-collecting erklärt" 
+        [showButton]="true" 
+        text="Das elektronische Sammeln von Unterschriften für politische Volksbegehren wie Initiativen oder Referenden bietet Vorteile für alle!" 
+        buttonText="mehr">
+    </app-card>
+</div>
+
 
 <div style="height: 500px"></div>
 <app-footer></app-footer>
