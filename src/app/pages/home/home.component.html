@@ -1,8 +1,30 @@
 <app-header></app-header>
 
+<!-- Owlly Hero -->
+<div class="shadow-lg bg-gray-100 mb-8">
+    <div class="flex gap-6 grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 pt-4">
+        
+        <img  class="flex-grow" src="../../../assets/header.png" alt="">
+        
+        <div class="hero-card rounded flex-grow-0">
+            <div class="p-8">
+                    <h1 class="text-4xl font-bold text-white">Jetzt Kampagne starten</h1>
+                    <p class="text-xl text-white pt-4">Unterschriften sammeln
+                       <br> im 21. Jahrhundert - effizient und sicher!</p>
+            </div>
+            <div class="p-8 flex justify-center items-center md:items-start md:justify-start">
+                <app-button>Kampagne starten</app-button>
+            </div>
+        </div>
+    </div>
+    <div class="p-6 mx-auto max-w-screen-xl">
+        <h1 class="text-2xl sm:text-6xl font-bold">Enabling digital societies.</h1>
+    </div>
+</div>
+
 <app-textblock type="owlly" title="Textblock" text="lorem ipsum" [showButton]="true" buttonText="mehr" subtitle="Gugus gewesen, gugus geblieben"></app-textblock>
 
-<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 gap-4">
+<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 gap-6">
    
     <app-card 
         class="flex-1" 
@@ -12,7 +34,12 @@
         text="Das elektronische Sammeln von Unterschriften für politische Volksbegehren wie Initiativen oder Referenden bietet Vorteile für alle!" 
         buttonText="mehr">
     </app-card>
-    <app-card class="flex-1" type="campaigner" title="E-collecting erklärt"></app-card>
+    <app-card 
+        class="flex-1" 
+        type="campaigner" 
+        title="E-collecting erklärt"
+        text="lorem Ipsum">
+    </app-card>
     <app-card 
         class="flex-1" 
         type="admin" 
