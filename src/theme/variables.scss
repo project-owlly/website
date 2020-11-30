@@ -1,4 +1,6 @@
 :root {
+  --owlly-linear-gradient: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
+
   --color-primary: #81bc4f;
   --color-primary-rgb: 129, 188, 79;
   --color-primary-contrast: #000000;
@@ -64,3 +66,4 @@
   --color-light-shade: #d7d8da;
   --color-light-tint: #f5f6f9;
 }
+
