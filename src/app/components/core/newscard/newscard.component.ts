@@ -13,4 +13,9 @@ export class NewscardComponent {
   @Input() showButton?: boolean = false;
   @Input() buttonText?: string = '';
   @Input() imgName?: string = '';
+
+  trimString(string: any, length: number) {
+    return string.length > length ? string.substring(0, length) + '...' : string;
+  }
+
 }

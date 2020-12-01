@@ -10,10 +10,11 @@ import { CardComponent } from './card/card.component';
 import { PageheroComponent } from './pagehero/pagehero.component';
 import { NewscardComponent } from './newscard/newscard.component';
 import { SwissmapComponent } from './swissmap/swissmap.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent],
-  exports: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent],
+  declarations: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent, NewsComponent],
+  exports: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent, NewsComponent],
   imports: [CommonModule],
 })
 export class ComponentsModule {}

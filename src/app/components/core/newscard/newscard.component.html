@@ -1,9 +1,9 @@
-<div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600 rounded h-full transition" style="min-height: 300px;">
-        <div class="w-full h-20">
-            <img src="../../../../assets/newsheader/{{imgName}}" alt="">
+<div class="relative min-w-full md:w-96 w-screen rounded shadow-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600 rounded h-full transition" style="min-height: 300px;">
+        <div class="w-full h-32 overflow-hidden">
+            <img class="rounded-t" src="../../../../assets/newsheader/{{imgName}}" alt="">
         </div>
-        <div class="px-4">
-            <p class="text-xl">{{text}}</p>
+        <div class="p-4">
+            <p class="text-md font-light">{{trimString(text,200)}}</p>
         </div>
         <div class="h-14"></div>
         <div *ngIf="showButton" class="absolute bottom-0 right-0 p-4"> 
