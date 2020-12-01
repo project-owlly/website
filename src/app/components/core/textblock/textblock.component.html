@@ -1,0 +1,11 @@
+<div class="container mx-auto max-w-screen-xl px-6 py-2 text-left mt-12">
+    <h1 class="text-4xl md:text-6xl font-bold">{{title}}</h1>
+    <div class="underline {{type}} mt-2"></div>
+    <div class="py-4">
+        <p class="text-xl">{{text}}</p>
+    </div>
+    <div class="py-2">
+        <h2 class="text-xl font-bold">{{subtitle}}</h2>
+    </div>
+    <app-button *ngIf="showButton" type="submit" [small]="true">{{buttonText}}</app-button>
+    </div>

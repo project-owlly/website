@@ -1,0 +1,21 @@
+.underline {
+    height: 8px;
+    width: 300px;
+    
+    @media (max-width: 768px) {
+        width: 70px;
+    }
+  }
+
+.owlly {
+    background: var(--owlly-linear-gradient);
+}
+.admin {
+    background: var(--color-secondary);
+}
+.campaigner {
+    background: var(--color-primary);
+}
+.citizen {
+    background: var(--color-tertiary);
+}
