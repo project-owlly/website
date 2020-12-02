@@ -13,6 +13,7 @@
     "e2e": "ng e2e",
     "scully": "scully",
     "scully:serve": "scully serve",
+    "scully:scan": "npm run scully -- --scanRoutes",
     "build:ci": "npm run build && npm run scully"
   },
   "private": true,
