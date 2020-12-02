@@ -1,6 +1,11 @@
 <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600 rounded h-full transition" style="min-height: 300px;">
     <div class="underline {{type}} rounded-t"></div>
-    <div class="p-4">
+    <div *ngIf="imgName" class="h-20"></div>
+    <div>
+        <img class="absolute right-20 bottom-60" src="../../../../assets/{{imgName}}" alt="">
+    </div>
+
+    <div class="p-4 col-span-2">
         <h1 class="text-2xl md:text-4xl font-bold">{{title}}</h1>
     </div>
     <div class="px-4">

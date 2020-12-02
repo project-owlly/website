@@ -13,5 +13,6 @@ export class CardComponent {
   @Input() showButton?: boolean = false;
   @Input() buttonText?: string = '';
   @Input() text?: string = '';
+  @Input() imgName?: string = '';
 
 }

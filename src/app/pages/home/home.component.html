@@ -86,7 +86,8 @@
 
 
 <app-textblock type="owlly" title="E-Collecting fördern - wie vorgehen?" ></app-textblock>
-<div class="flex grid grid-cols-1 md:grid-cols-3 mx-auto max-w-screen-xl px-6 py-4 gap-6">
+<div class="h-32 hidden lg:block"></div>
+<div class="flex grid grid-cols-1 lg:grid-cols-3 mx-auto max-w-screen-xl px-6 py-4 gap-6">
    
     <app-card 
         class="flex-1" 
@@ -95,6 +96,7 @@
         [showButton]="true" 
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." 
         buttonText="mehr"
+        imgName="admin_icon.svg"
         >
     </app-card>
     <app-card 
@@ -104,6 +106,7 @@
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
         buttonText= "mehr"
         [showButton]="true" 
+        imgName="campaigner_icon.svg"
     >
     </app-card>
     <app-card 
@@ -112,7 +115,8 @@
         title="Bürger/in"
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
         buttonText= "mehr"
-        [showButton]="true" 
+        [showButton]="true"
+        imgName="citizen_icon.svg" 
     >
     </app-card>
 </div>
