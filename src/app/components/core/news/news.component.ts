@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, Input} from '@angular/core';
+import {AfterViewInit, Component, Input, ViewChild, ElementRef} from '@angular/core';
 import { NewscardComponent } from "../newscard/newscard.component";
+
 
 @Component({
   selector: 'app-news',
@@ -8,5 +9,14 @@ import { NewscardComponent } from "../newscard/newscard.component";
 })
 export class NewsComponent {
 
+  @ViewChild("horizontalScroll") horizontalScroll!: ElementRef;
+  
+  scrollRight() {
+    this.horizontalScroll.nativeElement.scrollLeft += 384;
+  }
+  scrollLeft() {
+    this.horizontalScroll.nativeElement.scrollLeft -= 384;
+  }
 
 }
+
