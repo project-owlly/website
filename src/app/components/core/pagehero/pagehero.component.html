@@ -3,12 +3,15 @@
      <img *ngIf="imgName" class="object-center z-0 heroimage" src="../../../../assets/heros/{{imgName}}" width="100%" > 
 </div>
 
-<div class="background relative z-10 -top-1 ">
+<div class="{{type}} dark:bg-gray-800 relative z-10 -top-1 shadow-lg">
 <div class="container mx-auto max-w-screen-xl px-6 py-8 text-left z-1">
-    <h1 class="text-4xl md:text-6xl font-bold text-white">{{title}}</h1>
+    <div>
+        <h1 class="text-4xl md:text-6xl font-light title">{{titleLight}} <br *ngIf="breakTitle && titleLight" > <span class="text-4xl md:text-6xl font-bold title">{{titleHeavy}}</span></h1> 
+    </div>
     <div class="underline mt-2"></div>
+    <div *ngIf="subtitle" class="text-xl w-1/2">{{subtitle}}</div>
 </div>
 </div>
-<div class="relative z-10 -top-1 bg-white dark:bg-black">
+<div class="relative z-8 -top-1 bg-white dark:bg-black">
     <ng-content></ng-content>
 </div>

@@ -1,5 +1,13 @@
 :root {
   --owlly-linear-gradient: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
+  --owlly-inverse-linear-gradient: linear-gradient(155deg, var(--color-primary), var(--color-secondary));
+  .owlly-linear-gradient {
+    background: var(--owlly-linear-gradient);
+  }
+  .owlly-inverse-linear-gradient {
+    background: var(--owlly-inverse-linear-gradient);
+  }
+
 
   --color-primary: #81bc4f;
   --color-primary-rgb: 129, 188, 79;
@@ -65,5 +73,6 @@
   --color-light-contrast-rgb: 0, 0, 0;
   --color-light-shade: #d7d8da;
   --color-light-tint: #f5f6f9;
+
 }
 

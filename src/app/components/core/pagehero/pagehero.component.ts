@@ -7,7 +7,10 @@ import {AfterViewInit, Component, Input} from '@angular/core';
 })
 export class PageheroComponent {
 
-  @Input() title?: string = '';
+  @Input() titleLight?: string = '';
+  @Input() titleHeavy?: string ='';
+  @Input() breakTitle?: boolean = true;
   @Input() imgName?: string = '';
-
+  @Input() subtitle?: string = '';
+  @Input() type?: 'owlly' | 'plain';
 }
