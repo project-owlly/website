@@ -2,14 +2,18 @@
 <div class="sticky top-0 z-1 heroimage" >
      <img *ngIf="imgName" class="object-center z-0 heroimage" src="../../../../assets/heros/{{imgName}}" width="100%" > 
 </div>
-
 <div class="{{type}} dark:bg-gray-800 relative z-10 -top-1 shadow-lg">
+    <div class="underline-img z-10 relative"></div>
 <div class="container mx-auto max-w-screen-xl px-6 py-8 text-left z-1">
     <div>
-        <h1 class="text-4xl md:text-6xl font-light title">{{titleLight}} <br *ngIf="breakTitle && titleLight" > <span class="text-4xl md:text-6xl font-bold title">{{titleHeavy}}</span></h1> 
+        <ng-content select="h1"></ng-content>
+        <h1 class="text-4xl md:text-6xl font-bold title">{{title}}</h1> 
     </div>
     <div class="underline mt-2"></div>
-    <div *ngIf="subtitle" class="text-xl w-1/2">{{subtitle}}</div>
+    <div *ngIf="subtitle" class="text-xl lg:w-1/2">{{subtitle}}</div>
+    <div class="lg:w-1/2">
+        <ng-content select="h2"></ng-content>
+    </div>
 </div>
 </div>
 <div class="relative z-8 -top-1 bg-white dark:bg-black">

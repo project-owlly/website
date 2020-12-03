@@ -5,6 +5,9 @@
         width: 70px;
     }
   }
+  .underline-img {
+    height: 8px;
+  }
 
 .heroimage {
     //height: 500px;
@@ -32,4 +35,35 @@
     .underline {
         background: var(--owlly-linear-gradient);
     }
+    .underline-img {
+        background: var(--owlly-linear-gradient);
+    }
+}
+.admin {
+    background: rgb(243, 244, 246);
+    .underline {
+        background: var(--color-secondary);
+    }
+    .underline-img {
+        background: var(--color-secondary);
+    }
+}
+.campaigner {
+    background: rgb(243, 244, 246);
+    .underline {
+        background: var(--color-primary);
+    }
+    .underline-img {
+        background: var(--color-primary);
+    }
+}
+.citizen {
+    background: rgb(243, 244, 246);
+    .underline {
+        background: var(--color-tertiary);
+    }
+    .underline-img {
+        background: var(--color-tertiary);
+    }
+    
 }
