@@ -1,11 +1,14 @@
 
-<div class=" z-0 heroimage" style=" background-image: url('../../../../assets/heros/{{imgName}}') ">
-    <!-- <img *ngIf="imgName" class="object-center z-0" src="../../../../assets/heros/{{imgName}}" width="100%" > -->
+<div class="sticky top-0 z-1 heroimage" >
+     <img *ngIf="imgName" class="object-center z-0 heroimage" src="../../../../assets/heros/{{imgName}}" width="100%" > 
 </div>
 
-<div class="background z-2 ">
+<div class="background relative z-10 -top-1 ">
 <div class="container mx-auto max-w-screen-xl px-6 py-8 text-left z-1">
     <h1 class="text-4xl md:text-6xl font-bold text-white">{{title}}</h1>
     <div class="underline mt-2"></div>
 </div>
+</div>
+<div class="relative z-10 -top-1 bg-white dark:bg-black">
+    <ng-content></ng-content>
 </div>

@@ -12,13 +12,13 @@
   }
 
 .heroimage {
-    height: 500px;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
+    //height: 500px;
+    //background-attachment: fixed;
+    //background-position: top;
+    //background-repeat: no-repeat;
     background-size: cover;
    
-    @media (max-width: 768px) {
+   /* @media (max-width: 768px) {
         height: 300px;
-    }
+    }*/
 }
