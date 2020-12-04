@@ -1,0 +1,5 @@
+<ng-container *ngIf="owlly$ | async as owlly">
+  <h1>{{ owlly.data.title }}</h1>
+
+  <p>{{ owlly.data.text }}</p>
+</ng-container>

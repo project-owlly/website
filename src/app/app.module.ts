@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -25,7 +26,11 @@ import {ScullyLibModule} from '@scullyio/ng-lib';
     AngularFireFunctionsModule,
     AngularFirestoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-    ScullyLibModule,
+    ScullyLibModule.forRoot({
+      useTransferState: true,
+      alwaysMonitor: true,
+    }),
+    HttpClientModule,
   ],
   providers: [{provide: REGION, useValue: 'europe-west6'}],
   bootstrap: [AppComponent],
