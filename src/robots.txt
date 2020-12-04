@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://owlly.ch/sitemap.xml
+Host: https://owlly.ch
