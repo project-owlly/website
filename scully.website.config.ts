@@ -3,5 +3,12 @@ export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'website',
   outDir: './dist/static',
-  routes: {},
+  routes: {
+    '/o/:id': {
+      type: 'contentFolder',
+      id: {
+        folder: './owlly',
+      },
+    },
+  },
 };
