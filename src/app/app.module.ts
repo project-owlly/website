@@ -26,7 +26,10 @@ import {ScullyLibModule} from '@scullyio/ng-lib';
     AngularFireFunctionsModule,
     AngularFirestoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-    ScullyLibModule,
+    ScullyLibModule.forRoot({
+      useTransferState: true,
+      alwaysMonitor: true,
+    }),
     HttpClientModule,
   ],
   providers: [{provide: REGION, useValue: 'europe-west6'}],
