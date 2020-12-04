@@ -1,6 +1,9 @@
 
 <div class="sticky top-0 z-1 heroimage" >
      <img *ngIf="imgName" class="object-center z-0 heroimage" src="../../../../assets/heros/{{imgName}}" width="100%" > 
+     <div class="absolute top-2 z-10 w-full">
+        <app-diamond *ngIf="diamonds" type="{{type}}"></app-diamond>
+    </div>
 </div>
 <div class="{{type}} dark:bg-gray-800 relative z-10 -top-1 shadow-lg">
     <div class="underline-img z-10 relative"></div>

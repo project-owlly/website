@@ -1,4 +1,4 @@
-<nav class="bg-white dark:bg-black">
+<nav class="bg-white dark:bg-black relative z-20">
   <div class="container flex items-center justify-between mx-auto max-w-screen-xl px-6 py-2 text-left">
     <a href="/" aria-label="Owlly" class="no-underline">
       <ng-container *ngIf="theme$ | async as theme">
@@ -7,7 +7,7 @@
     </a>
     <div class="space-x-6 hidden md:block">
       <a class="text-lg hover:text-yellow-400 transition" href="/home">Kampagne starten</a>
-      <a class="text-lg hover:text-yellow-400 transition" href="/ourmission">Unsere Mission</a>
+      <a class="text-lg hover:text-yellow-400 transition" href="/ourmission">Unser Angebot</a>
       <a class="text-lg hover:text-yellow-400 transition" href="/ourmission">Über uns</a>
     </div>
   </div>

@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Input} from '@angular/core';
-
+import { DiamondComponent } from "../diamond/diamond.component";
 @Component({
   selector: 'app-pagehero',
   templateUrl: './pagehero.component.html',
@@ -11,5 +11,5 @@ export class PageheroComponent {
   @Input() imgName?: string = '';
   @Input() subtitle?: string = '';
   @Input() type?: 'owlly' | 'plain' | 'admin' | 'campaigner' | 'citizen';
-
+  @Input() diamonds?: boolean = false;
 }
