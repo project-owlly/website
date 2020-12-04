@@ -1,11 +1,12 @@
-
+<app-header></app-header>
 
 <app-pagehero
 title="{{initiativData.title}}"
 imgName="veloinitiative.png"
-></app-pagehero>
+type="owlly"
+>
 
-<div class="bg-gray-100 shadow-lg">
+<div class="bg-gray-100 dark:bg-black shadow-lg">
 <div class="container mx-auto max-w-screen-xl px-6 py-2">
     <h1 class="text-2xl font-bold">Ziele der Initiative</h1>
     <div class="table w-full">
@@ -31,7 +32,7 @@ Jetzt unterschreiben
 </div>
 
 <app-textblock
-title="{{initiativData.title}}"
+title="Zur Sache"
 text="{{initiativData.text}}"
 type="owlly"
 ></app-textblock>
@@ -47,3 +48,7 @@ title="Urheber"
 text="{{initiativData.organisation}}"
 type="owlly"
 ></app-textblock>
+
+<app-footer></app-footer>
+
+</app-pagehero>

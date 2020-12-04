@@ -1,24 +1,69 @@
-.background {
-    background: var(--owlly-linear-gradient);
-    
-}
 .underline {
     height: 8px;
     width: 300px;
-    background: white;
     @media (max-width: 768px) {
         width: 70px;
     }
   }
+  .underline-img {
+    height: 8px;
+  }
 
 .heroimage {
-    height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    //height: 500px;
+    //background-attachment: fixed;
+    //background-position: top;
+    //background-repeat: no-repeat;
     background-size: cover;
    
-    @media (max-width: 768px) {
+   /* @media (max-width: 768px) {
         height: 300px;
+    }*/
+}
+
+.owlly {
+    background: var(--owlly-linear-gradient);
+    .underline {
+        background: white;
     }
+    .title {
+        color: white;
+    }
+}
+.plain {
+    background: rgb(243, 244, 246);
+    .underline {
+        background: var(--owlly-linear-gradient);
+    }
+    .underline-img {
+        background: var(--owlly-linear-gradient);
+    }
+}
+.admin {
+    background: rgb(243, 244, 246);
+    .underline {
+        background: var(--color-secondary);
+    }
+    .underline-img {
+        background: var(--color-secondary);
+    }
+}
+.campaigner {
+    background: rgb(243, 244, 246);
+    .underline {
+        background: var(--color-primary);
+    }
+    .underline-img {
+        background: var(--color-primary);
+    }
+}
+.citizen {
+    background: rgb(243, 244, 246);
+    .underline {
+        background: var(--color-tertiary);
+    }
+    .underline-img {
+        background: var(--color-tertiary);
+    }
+    
 }

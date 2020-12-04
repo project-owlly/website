@@ -1,6 +1,3 @@
-.hero-card {
-    background: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
-}
 
 
 .slider {
@@ -23,6 +20,6 @@ img {
   max-width: 200%;
 }
 
-path:hover{
-  fill: #fff;
+.hovering {
+  animation: owlly-hover 10s ease-in-out infinite;
 }

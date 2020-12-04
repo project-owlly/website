@@ -1,0 +1,36 @@
+.plain-blue {
+    fill: rgba(40,165,210,0.6);
+    animation: owlly-hover-1 14s ease-in-out infinite;
+}
+.plain-yellow {
+    fill: rgba(250,200,0,0.5);
+    animation: owlly-hover 8s ease-in-out infinite;
+}
+svg {
+    mix-blend-mode: darken;
+}
+.admin-blue {
+    fill: rgba(40,165,210,0.6);
+    animation: owlly-hover-1 14s ease-in-out infinite;
+}
+.admin-yellow {
+    fill: rgba(40,165,210,0.6);
+    animation: owlly-hover 8s ease-in-out infinite;
+}
+.campaigner-blue {
+    fill: rgba(150,200,85,0.5);
+    animation: owlly-hover-1 14s ease-in-out infinite;
+}
+.campaigner-yellow {
+    fill: rgba(150,200,85,0.5);
+    animation: owlly-hover 8s ease-in-out infinite;
+}
+
+.citizen-blue {
+    fill: rgba(250,200,0,0.5);
+    animation: owlly-hover-1 14s ease-in-out infinite;
+}
+.citizen-yellow {
+    fill: rgba(250,200,0,0.5);
+    animation: owlly-hover 8s ease-in-out infinite;
+}

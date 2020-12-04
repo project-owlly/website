@@ -41,6 +41,11 @@ const routes: Routes = [
     path: 'infosite',
     loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
   },
+  {
+    path: 'ourmission',
+    loadChildren: () => import('./pages/ourmission/ourmission.module').then((m) => m.OurmissionPageModule),
+  },
+
   {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
 ];
 
