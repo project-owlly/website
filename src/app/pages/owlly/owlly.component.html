@@ -1,7 +1,5 @@
-<h3>ScullyIo content</h3>
-<hr />
+<ng-container *ngIf="owlly$ | async as owlly">
+  <h1>{{ owlly.data.title }}</h1>
 
-<!-- This is where Scully will inject the static HTML -->
-<scully-content></scully-content>
-<hr />
-<h4>End of content</h4>
+  <p>{{ owlly.data.text }}</p>
+</ng-container>

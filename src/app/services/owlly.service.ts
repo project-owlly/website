@@ -3,7 +3,7 @@ import {AngularFireFunctions} from '@angular/fire/functions';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 
 import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {filter, map} from 'rxjs/operators';
 
 import {Owlly, OwllyData} from '../types/owlly';
 
@@ -46,6 +46,32 @@ export class OwllyService {
               data,
             } as Owlly)
           : undefined;
+      })
+    );
+  }
+
+  owllyBySlug(slug: string): Observable<Owlly> {
+    const collection: AngularFirestoreCollection<OwllyData> = this.firestore.collection<OwllyData>('owlly', (ref) => ref.where('slug', '==', slug).limit(1));
+
+    return this.snapshotCollection(collection).pipe(
+      filter((owlly: Owlly[]) => owlly?.length > 0),
+      map((owlly: Owlly[]) => owlly[0])
+    );
+  }
+
+  private snapshotCollection(collectionShare: AngularFirestoreCollection<OwllyData>): Observable<Owlly[]> {
+    return collectionShare.snapshotChanges().pipe(
+      map((actions) => {
+        return actions.map((a) => {
+          const data: OwllyData = a.payload.doc.data() as OwllyData;
+          const id = a.payload.doc.id;
+          const ref = a.payload.doc.ref;
+          return {
+            id,
+            ref,
+            data,
+          };
+        });
       })
     );
   }

@@ -14,10 +14,12 @@ export const config: ScullyConfig = {
   projectName: 'website',
   outDir: './dist/static',
   routes: {
-    '/o/:id': {
-      type: 'contentFolder',
-      id: {
-        folder: './owlly',
+    '/o/:slug': {
+      type: 'json',
+      slug: {
+        url: 'https://europe-west6-project-owlly.cloudfunctions.net/owlly/',
+        // resultsHandler: (response) => response.data,
+        property: 'data.slug',
       },
     },
   },

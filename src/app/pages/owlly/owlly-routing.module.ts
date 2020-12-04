@@ -5,7 +5,7 @@ import {OwllyComponent} from './owlly.component';
 
 const routes: Routes = [
   {
-    path: ':id',
+    path: ':slug',
     component: OwllyComponent,
   },
   {
