@@ -45,6 +45,19 @@ const routes: Routes = [
     path: 'ourmission',
     loadChildren: () => import('./pages/ourmission/ourmission.module').then((m) => m.OurmissionPageModule),
   },
+  {
+    path: 'support/administration',
+    loadChildren: () => import('./pages/administration/administration.module').then((m) => m.AdministrationPageModule),
+  },
+  {
+    path: 'support/campaigner',
+    loadChildren: () => import('./pages/campaigner/campaigner.module').then((m) => m.CampaignerPageModule),
+  },
+  {
+    path: 'support/citizen',
+    loadChildren: () => import('./pages/citizen/citizen.module').then((m) => m.CitizenPageModule),
+  },
+
 
   {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
 ];
