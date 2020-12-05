@@ -57,6 +57,10 @@ const routes: Routes = [
     path: 'support/citizen',
     loadChildren: () => import('./pages/citizen/citizen.module').then((m) => m.CitizenPageModule),
   },
+  {
+    path: 'explained',
+    loadChildren: () => import('./pages/explained/explained.module').then((m) => m.ExplainedPageModule),
+  },
 
 
   {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
