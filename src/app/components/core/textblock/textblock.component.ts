@@ -7,7 +7,7 @@ import { ButtonComponent } from "../button/button.component";
   styleUrls: ['./textblock.component.scss']
 })
 export class TextblockComponent {
-  @Input() type?: 'owlly' | 'admin' | 'campaigner' | 'citizen';
+  @Input() type?: 'owlly' | 'admin' | 'campaigner' | 'citizen' | 'plain';
   @Input() title?: string = '';
   @Input() text?: string = '';
   @Input() showButton?: boolean = false;
