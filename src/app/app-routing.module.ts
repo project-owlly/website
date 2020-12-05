@@ -61,6 +61,14 @@ const routes: Routes = [
     path: 'explained',
     loadChildren: () => import('./pages/explained/explained.module').then((m) => m.ExplainedPageModule),
   },
+  {
+    path: 'news',
+    loadChildren: () => import('./pages/news/news.module').then((m) => m.NewsPageModule),
+  },
+  {
+    path: 'progress',
+    loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
+  },
 
 
   {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
