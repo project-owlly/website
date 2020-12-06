@@ -11,6 +11,7 @@ type="plain"
 <!-- Subtitle -->
 <h2 class="text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</h2>    
 
+<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 ">
 <app-textblock
 title="Enabling digital democracy"
 type="owlly"
@@ -23,9 +24,6 @@ Wir fördern das rechtskräftige elektronische Unterschriftensammeln für politi
 title="E-Collecting Prototyp"
 type="owlly"
 text="Das Kernstück von owlly ist die Entwicklung eines voll funktionsfähigen und sicheren E-Collecting Prototypen. Die Invitierenden eines Volksbegehrens (z.B. von Initiativen und Referenden) können eine E-Collecting Kampagne starten, welche die Bürgerinnen und Bürger dann elektronisch und rechtskräftig unterschreiben können. Dazu muss die Identität der/des Unterzeichnenden bestätigt werden durch eine staatlich verifizierte elektronische Identität (eID). Die eID ist daher Voraussetzung zur Anwendung von E-Collecting."
-subtitle="Wie sieht E-Collecting aus? Schau dir den Ablauf an einem “Dummy” an!"
-[showButton]="true"
-buttonText ="Prototyp anschauen"
 ></app-textblock>
 
 <app-textblock
@@ -35,15 +33,21 @@ text="E-Collecting ist keine Frage der technologischen Machbarkeit - Es ist umse
 
 Wir fördern E-Collecting mit einer zentralen Plattform für alles rund um E-Collecting in der Schweiz. Wir bieten Information zum Thema, laden zur Mitwirkung ein und stellen unser Know-How zur Verfügung.
 "
-subtitle="Auch du kannst E-Collecting fördern und zur Revolution der Demokratie
-beitragen - Erfahre wie!"
-[showButton]="true"
-buttonText="mehr"
 ></app-textblock>
 
+<app-card
+type="owlly"
+title="Der E-Collecting Dummy"
+[showButton]="true"
+buttonText="mehr"
+text="Wie sieht E-Collecting aus? Schau dir den Ablauf an einem Dummy an!"
+class="h-20 p-6"
+>
+</app-card>
 
+</div> 
 
-
+<div style="height:300px" class="block md:hidden"></div>
 
 <app-footer></app-footer>
 

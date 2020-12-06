@@ -1,0 +1,43 @@
+<app-header></app-header>
+<app-pagehero
+type="plain"
+[diamonds]="true"
+imgName="solutionshero.jpg"
+>
+
+<h1 class="text-4xl md:text-6xl font-light title">Unser <span class="text-4xl md:text-6xl font-bold title">Angebot</span>   </h1>
+<!-- Subtitle -->
+<h2 class="text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</h2>    
+
+<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 ">
+<div>
+<app-textblock
+title="Owlly E-Collecting Solutions"
+text="Labore cupidatat laborum velit duis exercitation enim. Proident amet ex incididunt qui id irure eiusmod qui id ex ullamco. Excepteur nulla exercitation ex consequat occaecat mollit quis anim nisi. Exercitation eu adipisicing nostrud sit officia laboris labore cupidatat culpa. Laboris dolore ut laboris proident ad et proident elit consequat occaecat eu fugiat. Ipsum aliqua eu pariatur ut sunt laborum anim proident nisi adipisicing minim aliquip cupidatat occaecat. Esse magna incididunt occaecat minim commodo cupidatat labore id quis laborum irure."
+type="owlly"
+>
+</app-textblock>
+
+<app-textblock
+title="Beratung"
+text="Exercitation non veniam reprehenderit ullamco. Aliquip eiusmod non do incididunt. Duis amet deserunt irure eu laborum Lorem ipsum minim eu. Minim do dolor proident exercitation fugiat cillum esse elit ullamco amet officia. Qui qui consequat aliqua qui nulla qui incididunt labore occaecat amet Lorem quis eu. Officia et elit officia cupidatat enim irure ea quis aliqua ipsum quis. Est sint excepteur est do qui in minim minim anim magna anim nisi exercitation est."
+type="owlly"
+>
+</app-textblock>
+</div>
+
+<div class="h-1/3 p-12">
+    <app-card
+    title="Kontakt aufnehmen"
+    text="Deserunt aliquip dolor amet aute esse sunt ex quis id nulla irure aute mollit est."
+    [showButton]="true"
+    buttonText="Kontaktieren"
+    type="owlly"
+    >
+    </app-card>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+</app-pagehero>

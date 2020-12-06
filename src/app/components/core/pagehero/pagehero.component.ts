@@ -12,4 +12,5 @@ export class PageheroComponent {
   @Input() subtitle?: string = '';
   @Input() type?: 'owlly' | 'plain' | 'admin' | 'campaigner' | 'citizen';
   @Input() diamonds?: boolean = false;
+  @Input() iconName?: string ='';
 }

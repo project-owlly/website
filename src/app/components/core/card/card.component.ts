@@ -14,5 +14,6 @@ export class CardComponent {
   @Input() buttonText?: string = '';
   @Input() text?: string = '';
   @Input() imgName?: string = '';
+  @Input() link?: string = '';
 
 }

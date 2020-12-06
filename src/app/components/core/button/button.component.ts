@@ -13,4 +13,5 @@ export class ButtonComponent {
   @Input() uppercase = true;
 
   @Input() disable = false;
+
 }

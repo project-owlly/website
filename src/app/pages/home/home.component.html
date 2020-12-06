@@ -1,30 +1,30 @@
 <app-header></app-header>
 
-<!-- Owlly Hero -->
-<div class="shadow-xl owlly-inverse-linear-gradient mb-8">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-auto max-w-screen-2xl px-6 pt-4">
-        <div class="col-span-1 lg:col-span-2">
-                <img   src="../../../assets/headerV2.svg" alt="" width="100%" >
-        </div>
-        
-        <div class="bg-gray-100 dark:bg-gray-800 rounded col-span-1 md:flex md:flex-col self-center relative xl:-left-28 mb-6 h-auto">
-            <div class="p-8">
-                    <h1 class="text-4xl font-bold">Jetzt Kampagne starten!</h1>
-                    <p class="text-2xl font-light pt-4">Unterschriften sammeln
-                       <br> im 21. Jahrhundert. Effizient. Sicher.</p>
-            </div>
-            <div class="p-8 justify-center items-center md:text-left text-center md:items-start md:justify-start md:mt-auto">
-                <app-button>Kampagne starten</app-button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="p-6 mx-auto max-w-screen-xl">
-    <h1 class="text-2xl sm:text-6xl font-light">Willkommen im 21. Jahrhundert</h1>
-    <h1 class="text-2xl sm:text-6xl font-bold">Owlly. Enabling digital societies.</h1>
-</div>
+<!-- New Owlly Hero -->
 
-<!-- <app-pagehero title="Testtitel" imgName="Papierflieger_Stock_Screenshot_small 1.png"></app-pagehero> -->
+<div class="sticky top-0 z-1 overflow-hidden" >
+    <img class="object-center z-0" src="../../../../assets/heros/homehero.jpg" width="100%" > 
+    <div class="absolute top-2 z-10 w-full">
+       <app-diamond type="plain"></app-diamond>
+   </div>
+</div>
+<div class="dark:bg-gray-800 bg-gray-100 relative z-10 -top-1 shadow-lg">
+   
+<div class="grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-8 text-left z-1">
+    <div>
+   <div class="text-4xl md:text-6xl font-bold">Willkommen</div>
+   <div class="text-4xl md:text-6xl font-light">im 21. Jahrhundert</div>
+   <div class="font-light text-xl">Labore sit mollit irure exercitation ullamco amet culpa esse commodo enim.</div>
+   <div class="pt-8 md:pb-0 pb-4 md:relative md:bottom-0 justify-center items-center md:text-left text-center md:items-start md:justify-start md:mt-auto">
+    <a href="/"> <app-button>Kampagne starten</app-button></a>
+</div>
+</div>
+<div>
+    <img src="../../../assets/headerV3.svg" alt="" width="100%">
+</div>
+</div>
+</div>
+<div class="relative z-8 -top-1 bg-white dark:bg-black">
 
 <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 gap-6">
    
@@ -34,7 +34,9 @@
         title="E-Collecting erklärt" 
         [showButton]="true" 
         text="Das elektronische Sammeln von Unterschriften für politische Volksbegehren wie Initiativen oder Referenden bietet Vorteile für alle!" 
-        buttonText="mehr">
+        buttonText="mehr"
+        link="/explained"
+        >
     </app-card>
     <app-card 
         class="flex-1" 
@@ -43,6 +45,7 @@
         text="Wir bieten Lösungen und überwinden Grenzen! Für ein erfolgreiches und ganzheitliches E-Collecting braucht es alle Stakeholder."
         buttonText= "mehr"
         [showButton]="true" 
+        link="/ourmission"
     >
     </app-card>
 </div>
@@ -96,6 +99,7 @@
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." 
         buttonText="mehr"
         imgName="admin_icon.svg"
+        link="/support/administration"
         >
     </app-card>
     <app-card 
@@ -106,6 +110,7 @@
         buttonText= "mehr"
         [showButton]="true" 
         imgName="campaigner_icon.svg"
+        link="/support/campaigner"
     >
     </app-card>
     <app-card 
@@ -116,6 +121,7 @@
         buttonText= "mehr"
         [showButton]="true"
         imgName="citizen_icon.svg" 
+        link="/support/citizen"
     >
     </app-card>
 </div>
@@ -136,3 +142,6 @@
   </div> -->
 
 <app-footer></app-footer>
+
+
+</div>
