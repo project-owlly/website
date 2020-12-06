@@ -1,10 +1,9 @@
-<div class="fixed bg-white top-0 left-0 z-40 transition-all" style="height:100%; width:100%; transform:translateX(100%)" id="mobileNav">
-    <a class="text-lg text-right block hover:text-yellow-400 transition" href="javascript:void(0)" (click)="closeMobileNav()">schliessen</a>
-    <div class="relative text-center block flex flex-col mt-20 p-12">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+<div class="fixed bg-white dark:bg-black top-0 left-0 z-40 transition-all" style="height:100%; width:100%; transform:translateX(100%)" id="mobileNav">
+    <a class="text-lg text-right block hover:text-yellow-400 p-6 transition" href="javascript:void(0)" (click)="closeMobileNav()"><fa-icon [icon]="faTimesCircle"></fa-icon></a>
+    <div class="relative block flex flex-col mt-20 p-12">
+        <a class="text-2xl hover:text-yellow-400 transition p-6" href="/home">Kampagne starten</a>
+        <a class="text-2xl hover:text-yellow-400 transition p-6" href="/solutions">Unser Angebot</a>
+        <a class="text-2xl hover:text-yellow-400 transition p-6" href="/ourmission">Über uns</a>
       </div>
 </div>
 
@@ -21,7 +20,7 @@
       <a class="text-lg hover:text-yellow-400 transition" href="/ourmission">Über uns</a>
     </div>
     <div class="md:hidden">
-        <a class="text-lg hover:text-yellow-400 transition" href="javascript:void(0)" (click)="openMobileNav()">Menü</a>
+        <a class="text-lg hover:text-yellow-400 transition" href="javascript:void(0)" (click)="openMobileNav()"><fa-icon [icon]="faBars"></fa-icon></a>
     </div>
   </div>
 
