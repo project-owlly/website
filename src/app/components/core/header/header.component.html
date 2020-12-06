@@ -1,3 +1,13 @@
+<div class="fixed bg-white top-0 left-0 z-40 transition-all" style="height:100%; width:100%; transform:translateX(100%)" id="mobileNav">
+    <a class="text-lg text-right block hover:text-yellow-400 transition" href="javascript:void(0)" (click)="closeMobileNav()">schliessen</a>
+    <div class="relative text-center block flex flex-col mt-20 p-12">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+</div>
+
 <nav class="bg-white dark:bg-black relative z-20">
   <div class="container flex items-center justify-between mx-auto max-w-screen-xl px-6 py-2 text-left">
     <a href="/" aria-label="Owlly" class="no-underline">
@@ -9,6 +19,9 @@
       <a class="text-lg hover:text-yellow-400 transition" href="/home">Kampagne starten</a>
       <a class="text-lg hover:text-yellow-400 transition" href="/solutions">Unser Angebot</a>
       <a class="text-lg hover:text-yellow-400 transition" href="/ourmission">Über uns</a>
+    </div>
+    <div class="md:hidden">
+        <a class="text-lg hover:text-yellow-400 transition" href="javascript:void(0)" (click)="openMobileNav()">Menü</a>
     </div>
   </div>
 
