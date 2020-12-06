@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, Input, ViewChild, ElementRef} from '@angular/core';
 import { NewscardComponent } from "../newscard/newscard.component";
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { timeout } from 'q';
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -8,11 +9,8 @@ import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class NewsComponent {
 
-  arrowRight = faAngleRight;
-  arrowLeft = faAngleLeft;
-
   @ViewChild("horizontalScroll") horizontalScroll!: ElementRef;
-  
+
   scrollRight() {
     this.horizontalScroll.nativeElement.scrollLeft += 400;
   }
