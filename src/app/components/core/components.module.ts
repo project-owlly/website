@@ -12,6 +12,7 @@ import { NewscardComponent } from './newscard/newscard.component';
 import { SwissmapComponent } from './swissmap/swissmap.component';
 import { NewsComponent } from './news/news.component';
 import { DiamondComponent } from './diamond/diamond.component';
+
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({

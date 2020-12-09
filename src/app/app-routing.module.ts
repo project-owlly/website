@@ -77,6 +77,10 @@ const routes: Routes = [
     path: 'solutions',
     loadChildren: () => import('./pages/solutions/solutions.module').then((m) => m.SolutionsPageModule),
   },
+  {
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
+  },
 
 
   {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},

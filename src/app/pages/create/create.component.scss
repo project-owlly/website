@@ -1,0 +1,15 @@
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+.scroll {
+    -ms-overflow-style: none;  /* IE and Edge */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.horizontalDiv {
+    height: 90vh;
+    width: 100%;
+    scroll-snap-type: mandatory;
+    overflow: hidden;
+}
