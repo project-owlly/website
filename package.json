@@ -29,6 +29,7 @@
     "@angular/router": "~11.0.1",
     "@angular/service-worker": "~11.0.0",
     "@capacitor/core": "^2.4.2",
+    "@deckdeckgo/qrcode": "^2.0.1",
     "@fortawesome/angular-fontawesome": "^0.8.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
