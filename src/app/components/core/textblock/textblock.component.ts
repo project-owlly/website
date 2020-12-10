@@ -13,4 +13,5 @@ export class TextblockComponent {
   @Input() showButton?: boolean = false;
   @Input() buttonText?: string = '';
   @Input() subtitle?: string = '';
+  @Input() link?: string = '';
 }

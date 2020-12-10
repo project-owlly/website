@@ -85,6 +85,10 @@ const routes: Routes = [
     path: 'aboutus',
     loadChildren: () => import('./pages/aboutus/aboutus.module').then((m) => m.AboutusPageModule),
   },
+  {
+    path: 'policy',
+    loadChildren: () => import('./pages/policy/policy.module').then((m) => m.PolicyPageModule),
+  },
 
 
   {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
