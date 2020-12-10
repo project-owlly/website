@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -15,7 +15,6 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 
 import {ScullyLibModule} from '@scullyio/ng-lib';
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,5 +34,6 @@ import {ScullyLibModule} from '@scullyio/ng-lib';
   ],
   providers: [{provide: REGION, useValue: 'europe-west6'}],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
