@@ -1,0 +1,17 @@
+.underline {
+    height: 8px;
+    width: 100%;
+  }
+
+.owlly {
+    background: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
+}
+.admin {
+    background: var(--color-secondary);
+}
+.campaigner {
+    background: var(--color-primary);
+}
+.citizen {
+    background: var(--color-tertiary);
+}

@@ -8,7 +8,12 @@
 
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">
-        <app-button [disable]="!pdf || pdf.url === undefined" (click)="openEID()" class="py-10">Weiter</app-button>
+        Scanne diesen QR Code mit deiner SChaffhauser eID+, um das Dokument zu importieren.
+        <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
+
+        <app-button [disable]="!pdf || pdf.url === undefined" (click)="openEID()" class="py-10">importieren</app-button>
+
+        <app-button (click)="navigate()" class="py-10">Weiter</app-button>
       </ng-container>
     </ng-container>
   </div>

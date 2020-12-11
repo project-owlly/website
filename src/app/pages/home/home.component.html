@@ -1,0 +1,147 @@
+<app-header></app-header>
+
+<!-- New Owlly Hero -->
+
+<div class="sticky top-0 z-1 overflow-hidden" >
+    <img class="object-center z-0" src="../../../../assets/heros/homehero.jpg" width="100%" > 
+    <div class="absolute top-2 z-10 w-full">
+       <app-diamond type="plain"></app-diamond>
+   </div>
+</div>
+<div class="dark:bg-gray-800 bg-gray-100 relative z-10 -top-1 shadow-lg">
+   
+<div class="grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-8 text-left z-1">
+    <div>
+   <div class="text-4xl md:text-6xl font-bold">Willkommen</div>
+   <div class="text-4xl md:text-6xl font-light">im 21. Jahrhundert</div>
+   <div class="font-light text-xl">Labore sit mollit irure exercitation ullamco amet culpa esse commodo enim.</div>
+   <div class="pt-8 md:pb-0 pb-4 md:relative md:bottom-0 justify-center items-center md:text-left text-center md:items-start md:justify-start md:mt-auto">
+    <a href="/"> <app-button>Kampagne starten</app-button></a>
+</div>
+</div>
+<div>
+    <img src="../../../assets/headerV3.svg" alt="" width="100%">
+</div>
+</div>
+</div>
+<div class="relative z-8 -top-1 bg-white dark:bg-black">
+
+<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 gap-6">
+   
+    <app-card 
+        class="flex-1" 
+        type="owlly" 
+        title="E-Collecting erklärt" 
+        [showButton]="true" 
+        text="Das elektronische Sammeln von Unterschriften für politische Volksbegehren wie Initiativen oder Referenden bietet Vorteile für alle!" 
+        buttonText="mehr"
+        link="/explained"
+        >
+    </app-card>
+    <app-card 
+        class="flex-1" 
+        type="owlly" 
+        title="Unsere Mission"
+        text="Wir bieten Lösungen und überwinden Grenzen! Für ein erfolgreiches und ganzheitliches E-Collecting braucht es alle Stakeholder."
+        buttonText= "mehr"
+        [showButton]="true" 
+        link="/ourmission"
+    >
+    </app-card>
+</div>
+
+<app-textblock type="owlly" title="Fortschritt in der Schweiz" ></app-textblock>
+
+<div class="container mx-auto max-w-screen-xl px-6 py-2 text-center grid grid-cols-1 md:grid-cols-3 gap-6">
+    <app-swissmap class="col-span-1 md:col-span-2"></app-swissmap>
+    <div class="col-span-1">
+        <div class="table w-full">
+            <div class="table-row-group">
+                <div class="table-row ">
+                    <div class="table-cell align-middle ">
+                        <svg width="20" height="20">
+                            <rect width="20" height="20" style="fill:#99C756;" />
+                        </svg>
+                    </div>
+                    <div class="table-cell text-left">E-Collecting vollständig ermöglicht</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell align-middle ">
+                        <svg width="20" height="20">
+                            <rect width="20" height="20" style="fill:#27A4D4;" />
+                        </svg>
+                    </div>
+                    <div class="table-cell text-left">Politische Prozesse im Gange</div>
+                </div>
+                <div class="table-row">
+                        <div class="table-cell align-middle ">
+                            <svg width="20" height="20">
+                                <rect width="20" height="20" style="fill:#D9D8D8;" />
+                            </svg>
+                        </div>
+                        <div class="table-cell text-left">Noch keine E-Collecting Bestrebungen</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+<app-textblock type="owlly" title="E-Collecting fördern - wie vorgehen?" ></app-textblock>
+<div class="h-32 hidden lg:block"></div>
+<div class="flex grid grid-cols-1 lg:grid-cols-3 mx-auto max-w-screen-xl px-6 py-4 gap-6">
+   
+    <app-card 
+        class="flex-1" 
+        type="admin" 
+        title="Verwaltung" 
+        [showButton]="true" 
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." 
+        buttonText="mehr"
+        imgName="admin_icon.svg"
+        link="/support/administration"
+        >
+    </app-card>
+    <app-card 
+        class="flex-1" 
+        type="campaigner" 
+        title="Campaigner/Partei"
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+        buttonText= "mehr"
+        [showButton]="true" 
+        imgName="campaigner_icon.svg"
+        link="/support/campaigner"
+    >
+    </app-card>
+    <app-card 
+        class="flex-1" 
+        type="citizen" 
+        title="Bürger/in"
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+        buttonText= "mehr"
+        [showButton]="true"
+        imgName="citizen_icon.svg" 
+        link="/support/citizen"
+    >
+    </app-card>
+</div>
+
+
+
+<app-news></app-news>
+
+
+<div style="height: 100px"></div>
+
+<!-- <div class="slider">
+    <div class="slide bg-blue-500" id="slide-1">1</div>
+    <div class="slide bg-red-500" id="slide-2">2</div>
+    <div class="slide bg-green-500" id="slide-3">3</div>
+    <div class="slide bg-yellow-500" id="slide-4">4</div>
+    <div class="slide bg-blue-500" id="slide-5">5</div>
+  </div> -->
+
+<app-footer></app-footer>
+
+
+</div>

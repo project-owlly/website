@@ -7,6 +7,7 @@ export interface OwllyData {
   goals: string[];
 
   link: string;
+  slug: string;
 
   type: 'initiative';
 

@@ -1,4 +1,36 @@
 :root {
+  --owlly-linear-gradient: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
+  --owlly-inverse-linear-gradient: linear-gradient(155deg, var(--color-primary), var(--color-secondary));
+  .owlly-linear-gradient {
+    background: var(--owlly-linear-gradient);
+  }
+  .owlly-inverse-linear-gradient {
+    background: var(--owlly-inverse-linear-gradient);
+  }
+
+  @keyframes owlly-hover {
+    0%, 100% {
+      transform: translateY(-0%);
+      //animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(5%);
+      //animationTimingFunction: cubic-bezier(0.8, 0, 0.2, 1);
+    }
+  }
+  @keyframes owlly-hover-1 {
+    0% {transform: translateY(-0%) }
+    10%, 100% {
+      transform: translateY(-0%);
+      //animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(7%);
+      //animationTimingFunction: cubic-bezier(0.8, 0, 0.2, 1);
+    }
+  }
+
+
   --color-primary: #81bc4f;
   --color-primary-rgb: 129, 188, 79;
   --color-primary-contrast: #000000;
@@ -63,4 +95,6 @@
   --color-light-contrast-rgb: 0, 0, 0;
   --color-light-shade: #d7d8da;
   --color-light-tint: #f5f6f9;
+
 }
+

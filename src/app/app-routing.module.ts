@@ -34,30 +34,67 @@ const routes: Routes = [
     loadChildren: () => import('./pages/wizard/finish/finish.module').then((m) => m.FinishPageModule),
   },
   {
-    path: 'admin',
-    loadChildren: () => import('./pages/admin/dashboard/dashboard.module').then((m) => m.DashboardModule),
-    //canActivate
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginModule),
-  },
-  {
-    path: 'logout',
-    loadChildren: () => import('./pages/logout/logout.module').then((m) => m.LogoutModule),
-  },
-  {
-    path: 'signup',
-    loadChildren: () => import('./pages/signup/signup.module').then((m) => m.SignupModule),
-  },
-  {
-    path: 'forgot',
-    loadChildren: () => import('./pages/forgot/forgot.module').then((m) => m.ForgotModule),
-  },
+
   {
     path: '**',
     loadChildren: () => import('./pages/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule),
   },
+
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
+  },
+  {
+    path: 'infosite',
+    loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
+  },
+  {
+    path: 'ourmission',
+    loadChildren: () => import('./pages/ourmission/ourmission.module').then((m) => m.OurmissionPageModule),
+  },
+  {
+    path: 'support',
+    loadChildren: () => import('./pages/support/support.module').then((m) => m.SupportPageModule),
+  },
+  {
+    path: 'support/administration',
+    loadChildren: () => import('./pages/administration/administration.module').then((m) => m.AdministrationPageModule),
+  },
+  {
+    path: 'support/campaigner',
+    loadChildren: () => import('./pages/campaigner/campaigner.module').then((m) => m.CampaignerPageModule),
+  },
+  {
+    path: 'support/citizen',
+    loadChildren: () => import('./pages/citizen/citizen.module').then((m) => m.CitizenPageModule),
+  },
+  {
+    path: 'explained',
+    loadChildren: () => import('./pages/explained/explained.module').then((m) => m.ExplainedPageModule),
+  },
+  {
+    path: 'news',
+    loadChildren: () => import('./pages/news/news.module').then((m) => m.NewsPageModule),
+  },
+  {
+    path: 'progress',
+    loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
+  },
+  {
+    path: 'solutions',
+    loadChildren: () => import('./pages/solutions/solutions.module').then((m) => m.SolutionsPageModule),
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
+  },
+  {
+    path: 'aboutus',
+    loadChildren: () => import('./pages/aboutus/aboutus.module').then((m) => m.AboutusPageModule),
+  },
+
+
+  {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
+
 ];
 
 @NgModule({
