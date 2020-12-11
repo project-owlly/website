@@ -7,8 +7,7 @@ import {Pdf} from '../../../types/pdf';
 import {PdfService} from '../../../services/pdf.service';
 
 import {Capacitor, Plugins} from '@capacitor/core';
-import {first} from 'rxjs/operators';
-
+import {filter, first} from 'rxjs/operators';
 const {Browser} = Plugins;
 
 @Component({
@@ -18,18 +17,19 @@ const {Browser} = Plugins;
 })
 export class SignComponent {
   pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
-  isNative: boolean | undefined = false;
 
-  url = '';
-
-  constructor(private pdfService: PdfService) {
-    this.isNative = Capacitor.isNative;
-    this.pdf$.subscribe((pdf: any) => {
-      this.url = pdf.pdf;
-    });
-  }
+  constructor(private pdfService: PdfService) {}
 
   async openEID() {
-    await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(this.url)});
+    this.pdf$
+      .pipe(
+        filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
+        first()
+      )
+      .subscribe(async (pdf: Pdf | undefined) => {
+        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)});
+
+        //TODO Navigate to next page
+      });
   }
 }
