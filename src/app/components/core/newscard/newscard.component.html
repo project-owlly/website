@@ -3,11 +3,11 @@
             <img class="rounded-t" src="../../../../assets/newsheader/{{imgName}}" alt="" width="100%">
         </div>
         <div class="p-4">
-            <p class="text-md font-light">{{trimString(text,200)}}</p>
+            <p class="text-md font-light dark:text-white">{{trimString(text,200)}}</p>
         </div>
         <div class="h-14"></div>
         <div *ngIf="showButton" class="absolute bottom-0 right-0 p-4"> 
             <app-button type="submit" [small]="true">{{buttonText}}</app-button>
         </div>
-        <div class="absolute bottom-0 left-0 p-4 text-md font-light">{{date}}</div>
+        <div class="absolute bottom-0 left-0 p-4 text-md font-light dark:text-white">{{date}}</div>
     </div>
