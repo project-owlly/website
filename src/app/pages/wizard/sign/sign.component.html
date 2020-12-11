@@ -1,10 +1,14 @@
 <app-header></app-header>
 
-<main class="bg-gray-50 text-black">
-  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
-    <h1>Fast am Ziel!</h1>
+<main>
 
-    <p>Reiche deine signierten Unterschriftbogen ein!</p>
+  <app-textblock
+  title="Fast am Ziel!"
+  text="Reiche deinen signierten Unterschriftenbogen ein"
+  type="owlly"
+  ></app-textblock>
+
+  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
 
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">

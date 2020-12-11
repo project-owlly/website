@@ -1,0 +1,6 @@
+li {
+    list-style-type: square;
+}
+li::marker {
+    padding-left: 1rem;
+}
