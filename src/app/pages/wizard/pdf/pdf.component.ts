@@ -49,19 +49,19 @@ export class PdfComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.openPdf();
+    //this.openPdf();--> Display pdf in modal instead of open link?
 
     this.loadPdf();
   }
 
-  private openPdf(): void {
+  /*private openPdf(): void {
     this.pdf$
       .pipe(
         filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => await Browser.open({url: pdf?.url as string}));
-  }
+  }*/
 
   private loadPdf(): void {
     combineLatest([
