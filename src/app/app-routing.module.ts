@@ -34,6 +34,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/wizard/finish/finish.module').then((m) => m.FinishPageModule),
   },
   {
+
+  {
+    path: '**',
+    loadChildren: () => import('./pages/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule),
+  },
+
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
@@ -88,6 +94,7 @@ const routes: Routes = [
 
 
   {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
+
 ];
 
 @NgModule({
