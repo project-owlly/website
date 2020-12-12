@@ -8,18 +8,39 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./pages/landing/landing.module').then((m) => m.LandingPageModule),
   },
+
   {
-    path: 'impressum',
-    loadChildren: () => import('./pages/impressum/impressum.module').then((m) => m.ImpressumPageModule),
+    path: 'admin',
+    redirectTo: '/admin/dashboard',
+    pathMatch: 'full',
+  },
+
+  //MICROPAGES
+  {
+    path: 'o',
+    loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule),
   },
   {
-    path: 'start',
-    loadChildren: () => import('./pages/wizard/start/start.module').then((m) => m.StartPageModule),
+    //TODO: delete this..
+    path: 'infosite',
+    loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
   },
+
+  //needs to be moved..
+  {
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
+  },
+
+  // WIZARD START
   {
     path: 'return',
     canActivate: [EidGuard],
     children: [],
+  },
+  {
+    path: 'start',
+    loadChildren: () => import('./pages/wizard/start/start.module').then((m) => m.StartPageModule),
   },
   {
     path: 'pdf',
@@ -33,20 +54,19 @@ const routes: Routes = [
     path: 'finish',
     loadChildren: () => import('./pages/wizard/finish/finish.module').then((m) => m.FinishPageModule),
   },
-  {
+  // WIZARD RETURN
 
   {
-    path: '**',
-    loadChildren: () => import('./pages/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule),
+    path: 'impressum',
+    loadChildren: () => import('./pages/impressum/impressum.module').then((m) => m.ImpressumPageModule),
   },
 
+  {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
-  {
-    path: 'infosite',
-    loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
-  },
+
+  //GENERAL PAGES
   {
     path: 'ourmission',
     loadChildren: () => import('./pages/ourmission/ourmission.module').then((m) => m.OurmissionPageModule),
@@ -84,10 +104,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/solutions/solutions.module').then((m) => m.SolutionsPageModule),
   },
   {
-    path: 'create',
-    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
-  },
-  {
     path: 'aboutus',
     loadChildren: () => import('./pages/aboutus/aboutus.module').then((m) => m.AboutusPageModule),
   },
@@ -96,9 +112,28 @@ const routes: Routes = [
     loadChildren: () => import('./pages/policy/policy.module').then((m) => m.PolicyPageModule),
   },
 
+  // AUTH PAGES
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/admin/login/login.module').then((m) => m.LoginModule),
+    //canActivate:
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./pages/admin/logout/logout.module').then((m) => m.LogoutModule),
+    //canActivate:
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/admin/signup/signup.module').then((m) => m.SignupModule),
+    //canActivate:
+  },
 
-  {path: 'o', loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule)},
-
+  //Fallback
+  {
+    path: '**',
+    loadChildren: () => import('./pages/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule),
+  },
 ];
 
 @NgModule({
