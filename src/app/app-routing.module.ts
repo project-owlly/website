@@ -100,6 +100,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
   },
   {
+    path: 'progress/cantons',
+    loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
+  },
+  {
     path: 'solutions',
     loadChildren: () => import('./pages/solutions/solutions.module').then((m) => m.SolutionsPageModule),
   },
