@@ -14,10 +14,11 @@ import { NewsComponent } from './news/news.component';
 import { DiamondComponent } from './diamond/diamond.component';
 
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { StorynavComponent } from './storynav/storynav.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent, NewsComponent, DiamondComponent],
-  exports: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent, NewsComponent, DiamondComponent],
+  declarations: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent, NewsComponent, DiamondComponent, StorynavComponent],
+  exports: [HeaderComponent, FooterComponent, ButtonComponent, SignatureComponent, TextblockComponent, CardComponent, PageheroComponent, NewscardComponent, SwissmapComponent, NewsComponent, DiamondComponent, StorynavComponent],
   imports: [FontAwesomeModule, CommonModule],
 })
 export class ComponentsModule {}

@@ -9,5 +9,6 @@ import {ComponentsModule} from 'src/app/components/core/components.module';
 @NgModule({
   declarations: [LoginComponent],
   imports: [CommonModule, LoginRoutingModule, ComponentsModule],
+
 })
 export class LoginModule {}

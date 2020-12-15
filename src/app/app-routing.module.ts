@@ -19,7 +19,21 @@ const routes: Routes = [
   {
     path: 'o',
     loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule),
+
   },
+  {
+    //TODO: delete this..
+    path: 'infosite',
+    loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
+  },
+
+  //needs to be moved..
+  {
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
+  },
+
+  // WIZARD START
   {
     //TODO: delete this..
     path: 'infosite',
@@ -98,6 +112,10 @@ const routes: Routes = [
   {
     path: 'progress',
     loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
+  },
+  {
+    path: 'progress/cantons/:canton',
+    loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
   },
   {
     path: 'solutions',

@@ -1,18 +1,17 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {DashboardComponent} from './dashboard.component';
+import {ProgressCantonsComponent} from './progress-cantons.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
+    component: ProgressCantonsComponent,
   },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class ProgressCantonsPageRoutingModule {}

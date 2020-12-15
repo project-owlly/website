@@ -1,0 +1,28 @@
+.accordion {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.5s;
+}
+
+/*.active {
+    font-weight: bold;
+}*/
+
+.accordion:after {
+    content: '\002B';
+    font-weight: bold;
+    float: right;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
