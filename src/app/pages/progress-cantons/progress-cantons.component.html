@@ -24,20 +24,22 @@ type="plain"
 <div class="mx-auto max-w-screen-xl px-6 py-2">
 <h2 class="font-bold text-2xl">Ist dein Kanton bereit?</h2>
 <div>
-    <select name="canton" id="cantonSelect" [(ngModel)]="cantonSelect" class="text-2xl mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner">
+    <select name="canton" id="cantonSelect" [(ngModel)]="cantonSelect" class="text-2xl p-2 mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner">
         <option value="sh">Schaffhausen</option>
         <option value="zh">Zürich</option>
     </select>
 </div>
 
-<div class="pt-6">
+<div class="pt-6" style="min-height: 300px;">
 <div *ngIf="cantonSelect=='sh'">
     <p>Yo Schaffhausen hat bald E-Collecting</p>
-    </div>
-    <div *ngIf="cantonSelect=='zh'">
-            <p>Züri hoffentlich auch bald</p>
-            </div>
 </div>
+<div *ngIf="cantonSelect=='zh'">
+    <p>Züri hoffentlich auch bald</p>
+</div>
+</div>
+
+
 </div>
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-progress-cantons',
@@ -7,17 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressCantonsComponent implements OnInit {
 
-  cantonSelect: string = '';
+  cantonSelect: string | null = '';
 
-  constructor() { }
+  constructor(private _Activatedroute:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this._Activatedroute.paramMap.subscribe(params => { 
+      this.cantonSelect = params.get('canton'); 
+  });
   }
 
-  data = [
-    {canton: 'sh', text:"das ist Schaffhausen"},
-    {canton: 'zh', text:"das ist Zürich"},
-  ]
+  data = {sh: {text: "hallo", title: "gugus"},
+          zh: {text: "hallo", title: "gugus"}
+
+          }
 
 
 }

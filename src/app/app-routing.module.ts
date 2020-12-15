@@ -100,7 +100,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
   },
   {
-    path: 'progress/cantons',
+    path: 'progress/cantons/:canton',
     loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
   },
   {
