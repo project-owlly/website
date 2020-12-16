@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {QuestionComponent as QuestionComponentType} from '../../modals/question/question.component';
+import {ModalService} from '../../services/modal.service';
 
 @Component({
   selector: 'app-explained',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExplainedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: ModalService<QuestionComponentType | QuestionComponentType>) { }
+
+  async showQuestion(): Promise<void> {
+    const {QuestionComponent} = await import('../../modals/question/question.component');
+
+    await this.modalService.open(QuestionComponent);
+  }
+
 
   ngOnInit(): void {
     var acc = document.getElementsByClassName("accordion");
