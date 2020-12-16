@@ -17,8 +17,16 @@ export class AuthService {
     return this.afAuth.authState.pipe(first()).toPromise();
   }
 
-  login(token: string): Promise<firebase.default.auth.UserCredential> {
+  loginWithToken(token: string): Promise<firebase.default.auth.UserCredential> {
     return this.afAuth.signInWithCustomToken(token);
+  }
+
+  login(email: string, password: string): Promise<firebase.default.auth.UserCredential> {
+    return this.afAuth.signInWithEmailAndPassword(email, password);
+  }
+
+  signup(email: string, password: string): Promise<firebase.default.auth.UserCredential> {
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
   }
 
   logout(): Promise<void> {
