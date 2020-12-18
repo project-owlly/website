@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Set Memory
-        run: export NODE_OPTIONS="--max-old-space-size=8192"  
+        run: node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod  
       - name: Install Dependencies
         run: npm ci
       - name: Build
