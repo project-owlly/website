@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - name: Set Memory
+        run: export NODE_OPTIONS="--max-old-space-size=8192"  
       - name: Install Dependencies
         run: npm ci
       - name: Build
