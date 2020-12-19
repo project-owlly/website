@@ -7,7 +7,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --hmr",
-    "build": "ng build --prod",
+    "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -58,6 +58,7 @@
     "@types/node": "^12.11.1",
     "autoprefixer": "^10.1.0",
     "codelyzer": "^6.0.0",
+    "cross-env": "^7.0.3",
     "fast-xml-parser": "^3.17.5",
     "husky": "^4.3.0",
     "jasmine-core": "~3.6.0",
