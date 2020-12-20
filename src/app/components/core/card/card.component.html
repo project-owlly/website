@@ -3,7 +3,7 @@
     <div *ngIf="imgName" class="h-20 hidden lg:block"></div>
     <div>
         <ng-content></ng-content>
-        <img class="hidden lg:block absolute z-20 right-20 bottom-64" src="../../../../assets/{{imgName}}" alt="">
+        <img class="hidden lg:block absolute z-20 right-20 bottom-64" src="../../../../assets/{{imgName}}" alt="{{imgName}}">
         
     </div>
 
