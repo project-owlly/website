@@ -16,10 +16,8 @@ import {environment} from '../environments/environment';
 
 import {ScullyLibModule} from '@scullyio/ng-lib';
 
-import {AdminComponent} from './pages/admin/admin/admin.component';
-
 @NgModule({
-  declarations: [AppComponent, AdminComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,29 +1,28 @@
-
-<div class="sticky top-0 z-0 heroimage overflow-hidden" >
-     <img *ngIf="imgName" class="object-center z-0 heroimage" src="../../../../assets/heros/{{imgName}}" alt="{{imgName}}" width="100%" > 
-     <div class="absolute top-2 z-10 w-full">
-        <app-diamond *ngIf="diamonds" type="{{type}}"></app-diamond>
-    </div>
+<div class="sticky top-0 z-0 heroimage overflow-hidden">
+  <img *ngIf="imgName" class="object-center z-0 heroimage" src="../../../../assets/heros/{{ imgName }}" alt="{{ imgName }}" width="100%" />
+  <div class="absolute top-2 z-10 w-full">
+    <app-diamond *ngIf="diamonds" type="{{ type }}"></app-diamond>
+  </div>
 </div>
-<div class="{{type}} dark:bg-gray-800 bg-gray-100 relative z-30 -top-1 shadow-lg">
-    <div class="underline-img z-10 relative"></div>
-<div class="flex grid grid-cols-1 md:grid-cols-7 mx-auto max-w-screen-xl px-6 py-8 text-left z-1">
+<div class="{{ type }} dark:bg-gray-800 bg-gray-100 relative z-30 -top-1 shadow-lg">
+  <div class="underline-img z-10 relative"></div>
+  <div class="flex grid grid-cols-1 md:grid-cols-7 mx-auto max-w-screen-xl px-6 py-8 text-left z-1">
     <div class="md:col-span-6">
-    <div>
+      <div>
         <ng-content select="h1" class="dark:text-white"></ng-content>
-        <h1 class="text-4xl md:text-6xl font-bold title dark:text-white">{{title}}</h1> 
-    </div>
-    <!-- <div class="underline mt-2"></div> -->
-    <div *ngIf="subtitle" class="text-xl lg:w-1/2 dark:text-white">{{subtitle}}</div>
-    <div class="lg:w-1/2">
+        <h1 class="text-4xl md:text-6xl font-bold title dark:text-white">{{ title }}</h1>
+      </div>
+      <!-- <div class="underline mt-2"></div> -->
+      <div *ngIf="subtitle" class="text-xl lg:w-1/2 dark:text-white">{{ subtitle }}</div>
+      <div class="lg:w-1/2">
         <ng-content select="h2" class="dark:text-white"></ng-content>
-    </div>
+      </div>
     </div>
     <div *ngIf="iconName" class="col-span-1 hidden md:block">
-        <img src="{{iconName}}" alt="">
+      <img src="{{ iconName }}" alt="" />
     </div>
-</div>
+  </div>
 </div>
 <div class="relative z-20 -top-1 bg-white dark:bg-black">
-    <ng-content></ng-content>
+  <ng-content></ng-content>
 </div>

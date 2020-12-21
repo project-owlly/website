@@ -1,178 +1,187 @@
 <app-header></app-header>
 
-<app-pagehero
-type="plain"
-imgName="explainedhero.jpg"
-[diamonds]="true"
->
-<h1 class="text-4xl md:text-6xl font-light dark:text-white">E-Collecting <span class="text-4xl md:text-6xl font-bold">erklärt</span></h1>
-<h2 class="text-xl dark:text-white">Eine Einführung ins Thema: Erklärungen, Vorteile, Kritik, FAQ, Community & weiterführende Informationen.</h2>
+<app-pagehero type="plain" imgName="explainedhero.jpg" [diamonds]="true">
+  <h1 class="text-4xl md:text-6xl font-light dark:text-white">E-Collecting <span class="text-4xl md:text-6xl font-bold">erklärt</span></h1>
+  <h2 class="text-xl dark:text-white">Eine Einführung ins Thema: Erklärungen, Vorteile, Kritik, FAQ, Community & weiterführende Informationen.</h2>
 
-<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 ">
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
+    <app-textblock title="Was ist E-Collecting?" type="owlly">
+      <p class="text-xl font-light dark:text-white">
+        E-Collecting beschreibt das elektronische und rechtsgültige (!) unterschreiben von Volksbegehren wie Initiativen und Referenden.
+        <br />
+        <br />
+        Was heute noch Stift, Papier, Drucker, Couvert und Briefmarke benötigt könnte digital auch viel effizienter und zeitgemässer abgewickelt werden.
+        E-Collecting unterscheidet sich zu existierenden Plattformen für Online-Petitionen in ihrer Rechtsgültigkeit und erhält dadurch echte demokratische
+        Legitimation und einen direkten Einfluss auf die politischen Prozesse.
+      </p>
+    </app-textblock>
 
+    <app-textblock type="owlly" title="Ist das umsetzbar?">
+      <p class="text-xl font-light dark:text-white">
+        Ja. Das sichere Sammeln von Unterschriften ist heute alles andere als eine Utopie. Forschung und Praxis zeigen, dass E-Collecting technisch umsetzbar
+        ist.
+        <br />
+        <br />
+        Die Identifizierung der/des Unterschreibenden geschieht mittels staatlich verifizierter elektronischer Identität (e-ID). Hinter E-Collecting steckt
+        allerdings mehr als nur eine Technologie. Es muss auch als sozio-politisches Unterfangen verstanden werden, denn hinter der Einführung von E-Collecting
+        stecken auch gesellschaftliche und politische Hürden.
+      </p>
+    </app-textblock>
 
-<app-textblock
-title="Was ist E-Collecting?"
-type="owlly"
->
-<p class="text-xl font-light dark:text-white">
-E-Collecting beschreibt das elektronische und rechtsgültige (!) unterschreiben von Volksbegehren wie Initiativen und Referenden.
-<br> <br>
-Was heute noch Stift, Papier, Drucker, Couvert und Briefmarke benötigt könnte digital auch viel effizienter und zeitgemässer abgewickelt werden. E-Collecting unterscheidet sich zu existierenden Plattformen für Online-Petitionen in ihrer Rechtsgültigkeit und erhält dadurch echte demokratische Legitimation und einen direkten Einfluss auf die politischen Prozesse.
-</p>
-</app-textblock>
+    <app-textblock type="owlly" title="Ein Gewinn für alle">
+      <p class="text-xl font-light dark:text-white">
+        Von E-Collecting profitieren alle und die Vorteile sind vielseitig. Es ermöglicht mehr politische Partizipation, vereinfacht den Zugang zur Mitwirkung
+        und macht diverse Prozesse effizienter für alle Beteiligten. Davon profitieren die Verwaltung, die Campaigner und insbesondere auch die Bürgerinnen und
+        Bürger gleichermassen.
+        <br />
+        <br />
+        Wie so oft bei Digitalisierungsprozessen wird die Qualität erhöht und gleichzeitig sogar der Aufwand verringert. Dieses Potential liegt heute noch
+        weitgehend brach.
+      </p>
+    </app-textblock>
 
-<app-textblock
-type="owlly"
-title="Ist das umsetzbar?"
->
-	<p class="text-xl font-light dark:text-white">
-		Ja. Das sichere Sammeln von Unterschriften ist heute alles andere als eine Utopie. Forschung und Praxis zeigen, dass E-Collecting technisch umsetzbar ist.
-<br> <br>
-Die Identifizierung der/des Unterschreibenden geschieht mittels staatlich verifizierter elektronischer Identität (e-ID). Hinter E-Collecting steckt allerdings mehr als nur eine Technologie. Es muss auch als sozio-politisches Unterfangen verstanden werden, denn hinter der Einführung von E-Collecting stecken auch gesellschaftliche und politische Hürden.
-	</p>
-</app-textblock>
+    <div class="h-1/2 p-6 pt-12">
+      <app-card
+        title="Viele Vorteile"
+        text="Von E-Collecting profitieren Verwaltung, Campaigner, Bürgerinnen und Bürger. Erfahre mehr über die spezifischen Vorteile."
+        [showButton]="true"
+        buttonText="mehr"
+        type="owlly"
+        link="/support"
+      >
+      </app-card>
+    </div>
+  </div>
 
-<app-textblock
-type="owlly"
-title="Ein Gewinn für alle"
->
-	<p class="text-xl font-light dark:text-white">
-		Von E-Collecting profitieren alle und die Vorteile sind vielseitig. Es ermöglicht mehr politische Partizipation, vereinfacht den Zugang zur Mitwirkung und macht diverse Prozesse effizienter für alle Beteiligten. Davon profitieren die Verwaltung, die Campaigner und insbesondere auch die Bürgerinnen und Bürger gleichermassen.
-<br> <br>
-		Wie so oft bei Digitalisierungsprozessen wird die Qualität erhöht und gleichzeitig sogar der Aufwand verringert. Dieses Potential liegt heute noch weitgehend brach. 
-	</p>
-</app-textblock>
+  <div class="pt-12 pb-12">
+    <img src="../../../assets/heros/homehero2.jpg" alt="" />
+  </div>
 
-<div class="h-1/2 p-6 pt-12">
-    <app-card
-    title="Viele Vorteile"
-    text="Von E-Collecting profitieren Verwaltung, Campaigner, Bürgerinnen und Bürger. Erfahre mehr über die spezifischen Vorteile."
-    [showButton]="true"
-    buttonText="mehr"
-    type="owlly"
-    link="/support"
-    >
-    </app-card>
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
+    <app-textblock type="owlly" title="FAQ">
+      <button class="accordion py-4 font-light text-xl">Warum gibt es noch kein E-Collecting in der Schweiz?</button>
+      <div class="panel">
+        <p class="font-light text-xl">
+          Rein formell lässt sich das relativ einfach beantworten: Weil die gesetzliche Grundlage dazu fehlt. Schon mehrfach wurde das Anliegen auf Bundesebene
+          aber auch teilweise in den Kantonen behandelt. In einigen Kantone sind unterdessen Bemühungen im Gange. E-Collecting ist für einen Grossteil der
+          Bevölkerung zudem noch ein Fremdwort wodurch der Rückhalt in der Gesellschaft und der Politik noch nicht stark entwickelt ist.
+        </p>
+        <div class="py-6">
+          <a href="/progress"> <app-button [small]="true">mehr</app-button> </a>
+        </div>
+      </div>
+
+      <button class="accordion py-4 font-light text-xl">Ist E-Collecting irgendwo auf der Welt schon im Einsatz?</button>
+      <div class="panel">
+        <p class="font-light text-xl">
+          Ja. In verschiedenen Ländern steht E-Collecting bereits im Einsatz. Ein prominentes Beispiel ist die Europäische Bürgerinitiative (EBI) der
+          Europäischen Union welche das elektronische Unterschriftensammeln seit 2011 erlaubt. Weitere Beispiele sind die Finnland, Lettland und Estland, in
+          denen E-Collecting bereits möglich ist. Seit Mai 2020 zeigen auch die US Bundesstaaten Massachusetts und Ohio E-Collecting Bestrebungen.
+        </p>
+      </div>
+
+      <button class="accordion py-4 font-light text-xl">Ist E-Collecting sicher?</button>
+      <div class="panel">
+        <p class="font-light text-xl">
+          Grundsätzlich ja. Genauso wie beim bestehenden politischen System in Unterschriften-, Wahl- und Abstimmungssachen oder anderen digitalen Prozessen wie
+          E-Banking bestehen auch bei E-Collecting Restrisiken. Grössere Sicherheitslücken sind jedoch nicht zu erwarten oder sie dürften frühzeitig erkannt
+          werden. Die eindeutige Identifizierung der willensbekundenden Person wird durch eine elektronische Identität e-ID sichergestellt. Diese muss der oder
+          die Bürgerin bei einer staatlichen Stelle (Einwohnerkontrolle) vorab staatlich verifizieren und aktivieren lassen. Die e-ID ist mit einem PIN,
+          Passwort oder mit biometrischen Daten gesichert.
+        </p>
+      </div>
+
+      <button class="accordion py-4 font-light text-xl">Gibt es Kritik an E-Collecting?</button>
+      <div class="panel">
+        <p class="font-light text-xl">
+          Ja. Zwei Gegenargumente tauchen wiederholt auf. Einerseits betrifft das die Sicherheit. Die Bevölkerung hat Zweifel an der Sicherheit eines
+          elektronischen Prozesses. Es gibt allerdings kein inhaltliches Argument, warum E-Collecting unsicherer sein sollte als andere, längst alltäglichen
+          digitale Prozesse wie E-Banking. Auch E-Collecting Systeme können sich Möglichkeiten der sicheren Authentifizierung bedienen, die heute bereits
+          existieren (e-ID). Andererseits betreffend den tieferen Hürden zum Unterschreiben eines Volksbegehrens. Es wird argumentiert, dass es dadurch viel
+          leichter sei, Initiativen und Referenden zustande zu bringen und das politische System damit überfordert wäre. Durch E-Collecting werden die Hürden
+          tatsächlich gesenkt und es ist wahrscheinlich, dass die Anzahl der gesammelten Unterschriften zunimmt. Die direkte Demokratie in der Schweiz lebt
+          allerdings davon, dass die Bevölkerung ein möglichst breites Mitspracherecht hat. Dieses Argument gegen E-Collecting berührt insofern die Grundidee
+          einer Demokratie in der das Volk möglichst gut repräsentiert ist. Falls es tatsächlich dazu kommen sollte, dass das politische System an seine Grenzen
+          stösst, müssen natürlich Massnahmen getroffen werden. Dies könnte z.B. die Diskussion über die Anzahl benötigter Unterschriften umfassen. Aufgrund der
+          angewachsenen Bevölkerung seit der Festlegung der Werte wäre eine solche Diskussion ohnehin naheliegend.
+        </p>
+      </div>
+    </app-textblock>
+
+    <div class="pt-12 p-6">
+      <app-card
+        type="owlly"
+        title="Eigene Frage stellen"
+        text="Hast du auch eine Frage zum E-Collecting-Konzept oder zu E-Collecting in der Schweiz? Stelle uns deine Frage hier. "
+        [showButton]="true"
+        buttonText="mehr"
+        (click)="showQuestion()"
+      ></app-card>
     </div>
 
-</div>
-
-<div class="pt-12 pb-12">
-	<img src="../../../assets/heros/homehero2.jpg" alt="">
-</div>
-
-<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 ">
-
-<app-textblock
-type="owlly"
-title="FAQ"
->
-
-<button class="accordion py-4 font-light text-xl">Warum gibt es noch kein E-Collecting in der Schweiz?</button>
-<div class="panel">
-  <p class="font-light text-xl">Rein formell lässt sich das relativ einfach beantworten: Weil die gesetzliche Grundlage dazu fehlt. Schon mehrfach wurde das Anliegen auf Bundesebene aber auch teilweise in den Kantonen behandelt. In einigen Kantone sind unterdessen Bemühungen im Gange. E-Collecting ist für einen Grossteil der Bevölkerung zudem noch ein Fremdwort wodurch der Rückhalt in der Gesellschaft und der Politik noch nicht stark entwickelt ist.</p>
-<div class="py-6"><a href="/progress"> <app-button [small]="true">mehr</app-button> </a></div>
-</div>
-
-<button class="accordion py-4 font-light text-xl">Ist E-Collecting irgendwo auf der Welt schon im Einsatz?</button>
-<div class="panel">
-  <p class="font-light text-xl">Ja. In verschiedenen Ländern steht E-Collecting bereits im Einsatz. Ein prominentes Beispiel ist die Europäische Bürgerinitiative (EBI) der Europäischen Union welche das elektronische Unterschriftensammeln seit 2011 erlaubt. Weitere Beispiele sind die Finnland, Lettland und Estland, in denen E-Collecting bereits möglich ist. Seit Mai 2020 zeigen auch die US Bundesstaaten Massachusetts und Ohio E-Collecting Bestrebungen.</p>
-</div>
-
-<button class="accordion py-4 font-light text-xl">Ist E-Collecting sicher?</button>
-<div class="panel">
-  <p class="font-light text-xl">Grundsätzlich ja. Genauso wie beim bestehenden politischen System in Unterschriften-, Wahl- und Abstimmungssachen oder anderen digitalen Prozessen wie E-Banking bestehen auch bei E-Collecting Restrisiken. Grössere Sicherheitslücken sind jedoch nicht zu erwarten oder sie dürften frühzeitig erkannt werden. Die eindeutige Identifizierung der willensbekundenden Person wird durch eine elektronische Identität e-ID sichergestellt. Diese muss der oder die Bürgerin bei einer staatlichen Stelle (Einwohnerkontrolle) vorab staatlich verifizieren und aktivieren lassen. Die e-ID ist mit einem PIN, Passwort oder mit biometrischen Daten gesichert.</p>
-</div>
-
-<button class="accordion py-4 font-light text-xl">Gibt es Kritik an E-Collecting?</button>
-<div class="panel">
-  <p class="font-light text-xl">Ja. Zwei Gegenargumente tauchen wiederholt auf. Einerseits betrifft das die Sicherheit. Die Bevölkerung hat Zweifel an der Sicherheit eines elektronischen Prozesses. Es gibt allerdings kein inhaltliches Argument, warum E-Collecting unsicherer sein sollte als andere, längst alltäglichen digitale Prozesse wie E-Banking. Auch E-Collecting Systeme können sich Möglichkeiten der sicheren Authentifizierung bedienen, die heute bereits existieren (e-ID).
-	Andererseits betreffend den tieferen Hürden zum Unterschreiben eines Volksbegehrens. Es wird argumentiert, dass es dadurch viel leichter sei, Initiativen und Referenden zustande zu bringen und das politische System damit überfordert wäre. Durch E-Collecting werden die Hürden tatsächlich gesenkt und es ist wahrscheinlich, dass die Anzahl der gesammelten Unterschriften zunimmt. Die direkte Demokratie in der Schweiz lebt allerdings davon, dass die Bevölkerung ein möglichst breites Mitspracherecht hat. Dieses Argument gegen E-Collecting berührt insofern die Grundidee einer Demokratie in der das Volk möglichst gut repräsentiert ist. Falls es tatsächlich dazu kommen sollte, dass das politische System an seine Grenzen stösst, müssen natürlich Massnahmen getroffen werden. Dies könnte z.B. die Diskussion über die Anzahl benötigter Unterschriften umfassen. Aufgrund der angewachsenen Bevölkerung seit der Festlegung der Werte wäre eine solche Diskussion ohnehin naheliegend.</p>
-</div>
-
-</app-textblock>
-
-<div class="pt-12 p-6">
-<app-card
-type="owlly"
-title="Eigene Frage stellen"
-text="Hast du auch eine Frage zum E-Collecting-Konzept oder zu E-Collecting in der Schweiz? Stelle uns deine Frage hier. "
-[showButton]="true"
-buttonText="mehr"
-(click)="showQuestion()"
-></app-card>
-</div>
-
-<app-textblock
-type="owlly"
-title="Community"
-text="E-Collecting ist kein neues Anliegen. Rund um das Anliegen
+    <app-textblock
+      type="owlly"
+      title="Community"
+      text="E-Collecting ist kein neues Anliegen. Rund um das Anliegen
 hat sich über die Jahre eine Gemeinschaft geformt, welche
 sich gemeinsam auf verschiedensten Ebenen dafür einsetzt."
->	
-</app-textblock>
+    >
+    </app-textblock>
 
-<div class="pt-12 p-6">
-<app-card
-type="owlly"
-title="Selbst aktiv werden"
-text="Auch du kannst E-Collecting fördern und zur digitalen Demokratie beitragen. Erfahre wie!"
-[showButton]="true"
-buttonText="mehr"
-link="/support"
-></app-card>
-</div>
+    <div class="pt-12 p-6">
+      <app-card
+        type="owlly"
+        title="Selbst aktiv werden"
+        text="Auch du kannst E-Collecting fördern und zur digitalen Demokratie beitragen. Erfahre wie!"
+        [showButton]="true"
+        buttonText="mehr"
+        link="/support"
+      ></app-card>
+    </div>
+  </div>
 
-</div>
+  <div class="flex grid grid-cols-1 md:grid-cols-3 mx-auto max-w-screen-xl gap-x-20 pt-12">
+    <div class="text-center dark:text-white">
+      <img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto" />
+      <p class="text-3xl font-bold pt-6">Fabian Bolli</p>
+      <p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
+    </div>
+    <div class="text-center dark:text-white">
+      <img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto" />
+      <p class="text-3xl font-bold pt-6">Fabian Bolli</p>
+      <p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
+    </div>
+    <div class="text-center dark:text-white">
+      <img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto" />
+      <p class="text-3xl font-bold pt-6">Fabian Bolli</p>
+      <p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
+    </div>
+  </div>
 
-<div class="flex grid grid-cols-1 md:grid-cols-3 mx-auto max-w-screen-xl gap-x-20 pt-12">
-
-	<div class="text-center dark:text-white">
-		<img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto">
-		<p class="text-3xl font-bold pt-6">Fabian Bolli</p>
-		<p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
-	</div>
-	<div class="text-center dark:text-white">
-		<img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto">
-		<p class="text-3xl font-bold pt-6">Fabian Bolli</p>
-		<p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
-	</div>
-	<div class="text-center dark:text-white">
-		<img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto">
-		<p class="text-3xl font-bold pt-6">Fabian Bolli</p>
-		<p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
-	</div>
-
-</div>
-
-<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 pt-12">
-	<app-textblock
-	type="owlly"
-	title="Weiterführende Informationen"
-	text="Rund um E-Collecting gibt es natürlich noch viel mehr wissenswertes. Finde in den anderen Rubriken auf unserer Webseite mehr Infos zu unserer Mission und den Fortschritt in der Schweiz oder tauche noch tiefer in die Materie ein.
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 pt-12">
+    <app-textblock
+      type="owlly"
+      title="Weiterführende Informationen"
+      text="Rund um E-Collecting gibt es natürlich noch viel mehr wissenswertes. Finde in den anderen Rubriken auf unserer Webseite mehr Infos zu unserer Mission und den Fortschritt in der Schweiz oder tauche noch tiefer in die Materie ein.
 
 	Über unseren Newsletter bleibst du immer up-to-date bzgl. der aktuellen E-Collecting-Entwicklungen (Anmeldung hier/ganz unten auf der Webseite)."
-	></app-textblock>
+    ></app-textblock>
 
-<div class="pt-12 p-6">
-<app-card
-title="Quellen, Dokumente,
+    <div class="pt-12 p-6">
+      <app-card
+        title="Quellen, Dokumente,
 Links"
-text="Quellen, Dokumente,
+        text="Quellen, Dokumente,
 Links"
-type="owlly"
-[showButton]="true"
-buttonText="mehr"
-></app-card>
-</div>
+        type="owlly"
+        [showButton]="true"
+        buttonText="mehr"
+      ></app-card>
+    </div>
+  </div>
 
-</div>
-
-
-
-<div class="text-right items-end pt-6">
-        <app-storynav></app-storynav>
-        </div>
-<app-footer></app-footer>
+  <div class="text-right items-end pt-6">
+    <app-storynav></app-storynav>
+  </div>
+  <app-footer></app-footer>
 </app-pagehero>

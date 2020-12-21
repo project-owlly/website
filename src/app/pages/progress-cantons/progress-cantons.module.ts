@@ -7,7 +7,7 @@ import {ProgressCantonsPageRoutingModule} from './progress-cantons-routing.modul
 import {ComponentsModule} from 'src/app/components/core/components.module';
 
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [CommonModule, ProgressCantonsPageRoutingModule, ComponentsModule, FontAwesomeModule, FormsModule],

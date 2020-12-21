@@ -1,15 +1,9 @@
 <app-header></app-header>
 
 <main>
-
-  <app-textblock
-  title="Fast am Ziel!"
-  text="Reiche deinen signierten Unterschriftenbogen ein"
-  type="owlly"
-  ></app-textblock>
+  <app-textblock title="Fast am Ziel!" text="Reiche deinen signierten Unterschriftenbogen ein" type="owlly"></app-textblock>
 
   <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
-
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">
         Scanne diesen QR Code mit deiner SChaffhauser eID+, um das Dokument zu importieren.

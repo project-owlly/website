@@ -7,7 +7,7 @@ import {first} from 'rxjs/operators';
 import {Owlly} from '../../../types/owlly';
 
 import {OwllyRoutingService} from '../../../services/owlly-routing.service';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import {faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-start',
@@ -15,8 +15,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./start.component.scss'],
 })
 export class StartComponent {
-
-  faInfoCircle=faInfoCircle;
+  faInfoCircle = faInfoCircle;
 
   readonly owlly$: Observable<Owlly | undefined> = this.owllyRoutingService.owlly(this.activatedRoute.paramMap).pipe(first());
 

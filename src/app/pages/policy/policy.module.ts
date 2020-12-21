@@ -8,7 +8,6 @@ import {ComponentsModule} from 'src/app/components/core/components.module';
 
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
-
 @NgModule({
   imports: [CommonModule, PolicyPageRoutingModule, ComponentsModule, FontAwesomeModule],
   declarations: [PolicyComponent],

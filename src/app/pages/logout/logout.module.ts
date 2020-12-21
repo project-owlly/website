@@ -9,6 +9,5 @@ import {ComponentsModule} from 'src/app/components/core/components.module';
 @NgModule({
   declarations: [LogoutComponent],
   imports: [CommonModule, LogoutRoutingModule, ComponentsModule],
-
 })
 export class LogoutModule {}
