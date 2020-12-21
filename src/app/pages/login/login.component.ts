@@ -29,26 +29,17 @@ export class LoginComponent implements OnInit {
         status: 'error',
         position: 'bottom',
       });
-      //console.log('Form is not valid yet, current value:', authForm.value);
     } else {
       console.log('Username: ' + authForm.value.username);
 
       this.auth.login(authForm.value.username, authForm.value.password).then(
-        async (ok) => {
-          const {ToastComponent} = await import('../../components/toast/toast.component');
-
+        (ok) => {
           this.router.navigateByUrl('/admin');
-
-          await this.toastService.open(ToastComponent, {
-            msg: 'ok',
-            status: 'success',
-            position: 'bottom',
-          });
         },
         async (err) => {
           const {ToastComponent} = await import('../../components/toast/toast.component');
           await this.toastService.open(ToastComponent, {
-            msg: JSON.parse(err.message).error.message,
+            msg: err.message,
             status: 'error',
             position: 'bottom',
           });
