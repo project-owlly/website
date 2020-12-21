@@ -1,17 +1,18 @@
 .underline {
-    height: 8px;
-    width: 300px;
-    background: white;
-    @media (max-width: 768px) {
-        width: 70px;
-    }
+  height: 8px;
+  width: 300px;
+  background: white;
+  @media (max-width: 768px) {
+    width: 70px;
   }
+}
 
 .scroll::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .scroll {
-    -ms-overflow-style: none;  /* IE and Edge */
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overflow-x: -moz-hidden-unscrollable;
 }

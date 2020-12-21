@@ -1,54 +1,59 @@
-<div class=" relative shadow-xl pb-20" style="background: var(--owlly-linear-gradient)">
+<div class="relative shadow-xl pb-20" style="background: var(--owlly-linear-gradient)">
+  <div class="container mx-auto max-w-screen-xl px-6 py-2 text-left mt-12">
+    <a href="/news"> <h1 class="text-4xl md:text-6xl text-white font-bold">News</h1></a>
+    <div class="underline mt-2"></div>
+  </div>
+  <div class="hidden md:flex absolute w-full top-1/2 bottom-1/2 z-10 justify-between p-4">
+    <button
+      (click)="scrollLeft()"
+      type="button"
+      name="scroll-Left"
+      class="border-none outline-none rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+    >
+      <fa-icon [icon]="faAngleLeft"></fa-icon>
+    </button>
+    <button
+      (click)="scrollRight()"
+      type="button"
+      name="scroll-Right"
+      class="border-none outline-none rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+    >
+      <fa-icon [icon]="faAngleRight"></fa-icon>
+    </button>
+  </div>
 
-    
-    <div class="container mx-auto max-w-screen-xl px-6 py-2 text-left mt-12">
-        <a href="/news"> <h1 class="text-4xl md:text-6xl text-white font-bold">News</h1></a>
-        <div class="underline mt-2"></div>
-    </div>
-    <div class="hidden md:flex absolute w-full top-1/2 bottom-1/2 z-10 justify-between p-4">
-        <!-- fix icons in buttons -->
-        <button (click)="scrollLeft()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"> <fa-icon [icon]="faAngleLeft"></fa-icon> </button>
-            <button (click)="scrollRight()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"> <fa-icon [icon]="faAngleRight"></fa-icon></button>
+  <div #horizontalScroll class="flex flex-row gap-6 px-6 py-12 overflow-auto scroll">
+    <app-newscard
+      imgName="News_SH 3.png"
+      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
+      [showButton]="true"
+      buttonText="mehr"
+    ></app-newscard>
+    <app-newscard
+      imgName="News_SH 3.png"
+      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
+      [showButton]="true"
+      buttonText="mehr"
+    ></app-newscard>
+    <app-newscard
+      imgName="News_SH 3.png"
+      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
+      [showButton]="true"
+      buttonText="mehr"
+    ></app-newscard>
 
-    </div>
+    <app-newscard
+      imgName="News_SH 3.png"
+      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
+      [showButton]="true"
+      buttonText="mehr"
+    ></app-newscard>
 
-    <div #horizontalScroll class="flex flex-row gap-6 px-6 py-12 overflow-auto scroll">
-        
-        <app-newscard
-        imgName="News_SH 3.png"
-        text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-        [showButton]="true"
-        buttonText="mehr"
-        ></app-newscard>
-        <app-newscard
-        imgName="News_SH 3.png"
-        text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-        [showButton]="true"
-        buttonText="mehr"
-        ></app-newscard>
-        <app-newscard
-        imgName="News_SH 3.png"
-        text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-        [showButton]="true"
-        buttonText="mehr"
-        ></app-newscard>
-        
-        <app-newscard
-        imgName="News_SH 3.png"
-        text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-        [showButton]="true"
-        buttonText="mehr"
-        ></app-newscard>
-
-        <app-newscard
-        imgName="News_SH 3.png"
-        text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-        [showButton]="true"
-        buttonText="mehr"
-        ></app-newscard>
-    
-    </div>
-
-
-
+    <app-newscard
+      imgName="News_SH 3.png"
+      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
+      [showButton]="true"
+      buttonText="mehr"
+    ></app-newscard>
+  </div>
 </div>

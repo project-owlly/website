@@ -11,7 +11,6 @@ import {OwllyRoutingService} from '../../../services/owlly-routing.service';
 @Component({
   selector: 'app-finish',
   templateUrl: './finish.component.html',
-  styleUrls: ['./finish.component.scss'],
 })
 export class FinishComponent {
   readonly owlly$: Observable<Owlly | undefined> = this.owllyRoutingService.owlly(this.activatedRoute.paramMap).pipe(first());

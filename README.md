@@ -1,6 +1,6 @@
 # project owlly - enabling digital democracy
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) ![Build + Prerender + Deploy](https://github.com/project-owlly/website/workflows/Build%20+%20Prerender%20+%20Deploy/badge.svg?branch=master)
 
 **owlly** ermöglicht das sichere und einfache elektronische Unterschreiben, Validieren und Zählen von Volksbegehren für Kampagnen-Plattformen und bietet ein ganzheitliches E-Collecting für die Schweiz.
 

@@ -1,15 +1,30 @@
 <app-header></app-header>
 
-<main class="bg-gray-50 text-black">
-  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
-    <h1>Vielen Dank!</h1>
+<main>
+  <div class="container mx-auto max-w-screen-xl pt-10">
+    <app-textblock title="Vielen Dank!" text="Du erhälst von uns eine Bestätigung per E-Mail wenn wir deinen Unterschriftenbogen erhalten haben." type="owlly">
+      <h1 class="font-light text-xl">
+        Du hast für folgendes Begehren unterschrieben:
+        <span class="font-bold text-4xl md:text-6xl text-center">
+          <ng-container *ngIf="owlly$ | async as owlly">
+            <h2 class="pt-6">{{ owlly.data.title }}</h2>
+          </ng-container>
+        </span>
+      </h1>
+    </app-textblock>
+    <p class="font-light text-xl px-6">Initiative jetzt teilen:</p>
+    <!-- TODO: insert real links, real icons and make icons yellow -->
+    <div class="flex mt-10 sm:mb-0 mb-10 px-6">
+      <a href="https://www.instagram.com/projectowlly/" class="mr-2 w-8"><img src="./assets/socialmedia/instagram.svg" alt="instagram" /></a>
 
-    <p class="py-10">Du erhälst von uns eine Bestätigung per E-Mail wenn wir deinen Unterschriftbogen erhlaten haben.</p>
+      <a href="https://twitter.com/projectowlly" class="mr-2 w-8"><img src="./assets/socialmedia/twitter.svg" alt="twitter" /></a>
 
-    <ng-container *ngIf="owlly$ | async as owlly">
-      <h2>{{ owlly.data.title }}</h2>
-    </ng-container>
+      <a href="https://www.facebook.com/projectowlly" class="mr-2 w-8"><img src="./assets/socialmedia/facebook.svg" alt="facebook" /></a>
+
+      <a href="https://github.com/project-owlly" class="mr-2 w-8"><img src="./assets/socialmedia/github.svg" alt="github" /></a>
+    </div>
+    <p class="font-light text-lg px-6 text-center">(Du kannst dieses Fenster nun schliessen)</p>
   </div>
 </main>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

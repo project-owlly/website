@@ -1,54 +1,51 @@
 <app-header></app-header>
 
-<app-pagehero
-imgName="ourmissionHeader.png"
-type="plain"
-[diamonds]="false"
->
+<app-pagehero imgName="ourmissionHeader.png" type="plain" [diamonds]="false">
+  <!-- Title -->
+  <h1 class="text-4xl md:text-6xl font-light title dark:text-white">Unsere <span class="text-4xl md:text-6xl font-bold title">Mission</span></h1>
+  <!-- Subtitle -->
+  <h2 class="text-xl dark:text-white">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+  </h2>
 
-<!-- Title -->
-<h1 class="text-4xl md:text-6xl font-light title">Unsere <span class="text-4xl md:text-6xl font-bold title">Mission</span>   </h1>
-<!-- Subtitle -->
-<h2 class="text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</h2>    
-
-<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 ">
-<app-textblock
-title="Enabling digital democracy"
-type="owlly"
-text="Wir ermöglichen digitale Demokratie durch integrale E-Collecting Lösungen.
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
+    <app-textblock
+      title="Enabling digital democracy"
+      type="owlly"
+      text="Wir ermöglichen digitale Demokratie durch integrale E-Collecting Lösungen.
 Wir fördern das rechtskräftige elektronische Unterschriftensammeln für politische Volksbegehren ganzheitlich um die Potentiale für Alle zu entfalten. Unsere technologischen Lösungen entwickeln wir in Kooperation mit der Bevölkerung und wir setzen uns gemeinsam mit allen Stakeholdern für günstige E-Collecting Rahmenbedingungen in der ganzen Schweiz ein."
->
-</app-textblock>
+    >
+    </app-textblock>
 
-<app-textblock
-title="E-Collecting Prototyp"
-type="owlly"
-text="Das Kernstück von owlly ist die Entwicklung eines voll funktionsfähigen und sicheren E-Collecting Prototypen. Die Invitierenden eines Volksbegehrens (z.B. von Initiativen und Referenden) können eine E-Collecting Kampagne starten, welche die Bürgerinnen und Bürger dann elektronisch und rechtskräftig unterschreiben können. Dazu muss die Identität der/des Unterzeichnenden bestätigt werden durch eine staatlich verifizierte elektronische Identität (eID). Die eID ist daher Voraussetzung zur Anwendung von E-Collecting."
-></app-textblock>
+    <app-textblock
+      title="E-Collecting Prototyp"
+      type="owlly"
+      text="Das Kernstück von owlly ist die Entwicklung eines voll funktionsfähigen und sicheren E-Collecting Prototypen. Die Invitierenden eines Volksbegehrens (z.B. von Initiativen und Referenden) können eine E-Collecting Kampagne starten, welche die Bürgerinnen und Bürger dann elektronisch und rechtskräftig unterschreiben können. Dazu muss die Identität der/des Unterzeichnenden bestätigt werden durch eine staatlich verifizierte elektronische Identität (eID). Die eID ist daher Voraussetzung zur Anwendung von E-Collecting."
+    ></app-textblock>
 
-<app-textblock
-type="owlly"
-title="Ganzheitliches E-Collecting"
-text="E-Collecting ist keine Frage der technologischen Machbarkeit - Es ist umsetzbar. Das zeigen diverse theoretische Studien aber auch Praxisbeispiele im Ausland. Limitierende Faktoren und Gründe, warum E-Collecting in der Schweiz noch nicht umgesetzt wurde, sind woanders zu suchen. Vielmehr ist E-Collecting noch zu abstrakt und ungreifbar für die breite Öffentlichkeit und diverse Organisationen. Ohne politischen Willen und Rückhalt in der Bevölkerung ist E-Collecting allerdings nicht umsetzbar.
+    <app-textblock
+      type="owlly"
+      title="Ganzheitliches E-Collecting"
+      text="E-Collecting ist keine Frage der technologischen Machbarkeit - Es ist umsetzbar. Das zeigen diverse theoretische Studien aber auch Praxisbeispiele im Ausland. Limitierende Faktoren und Gründe, warum E-Collecting in der Schweiz noch nicht umgesetzt wurde, sind woanders zu suchen. Vielmehr ist E-Collecting noch zu abstrakt und ungreifbar für die breite Öffentlichkeit und diverse Organisationen. Ohne politischen Willen und Rückhalt in der Bevölkerung ist E-Collecting allerdings nicht umsetzbar.
 
 Wir fördern E-Collecting mit einer zentralen Plattform für alles rund um E-Collecting in der Schweiz. Wir bieten Information zum Thema, laden zur Mitwirkung ein und stellen unser Know-How zur Verfügung.
 "
-></app-textblock>
+    ></app-textblock>
 
-<app-card
-type="owlly"
-title="Der E-Collecting Dummy"
-[showButton]="true"
-buttonText="mehr"
-text="Wie sieht E-Collecting aus? Schau dir den Ablauf an einem Dummy an!"
-class="h-20 p-6"
->
-</app-card>
+    <app-card
+      type="owlly"
+      title="Der E-Collecting Dummy"
+      [showButton]="true"
+      buttonText="mehr"
+      text="Wie sieht E-Collecting aus? Schau dir den Ablauf an einem Dummy an!"
+      class="h-20 p-6"
+    >
+    </app-card>
+  </div>
+  <div class="text-right items-end pt-6">
+    <app-storynav></app-storynav>
+  </div>
+  <div style="height: 300px" class="block md:hidden"></div>
 
-</div> 
-
-<div style="height:300px" class="block md:hidden"></div>
-
-<app-footer></app-footer>
-
+  <app-footer></app-footer>
 </app-pagehero>

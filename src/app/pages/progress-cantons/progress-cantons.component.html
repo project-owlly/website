@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<app-pagehero imgName="adobe/progress.jpeg" type="plain" [diamonds]="true">
+  <h1 class="text-4xl md:text-6xl font-light dark:text-white">Fortschritt in der Schweiz:<span class="text-4xl md:text-6xl font-bold"> Kantone</span></h1>
+  <!-- Subtitle -->
+  <h2 class="text-xl dark:text-white">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+  </h2>
+
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl py-2">
+    <app-textblock
+      type="owlly"
+      title="Was bisher geschah"
+      text="Enim magna nisi anim incididunt veniam consectetur occaecat pariatur do officia fugiat. Quis magna culpa sunt duis est eiusmod. Ullamco ex est officia in sit ex officia pariatur nulla dolor in dolor quis. Dolor culpa sit voluptate id do consectetur duis magna anim nisi. Enim elit velit eu consequat ea incididunt laboris id in aliquip elit sit ut commodo. Laboris velit non amet minim cillum sint incididunt deserunt aute ex do amet laborum. Nisi aute tempor culpa enim nulla deserunt dolore velit dolor id sunt sunt veniam dolor."
+    ></app-textblock>
+    <app-textblock
+      type="owlly"
+      title="Ausblick"
+      text="Enim magna nisi anim incididunt veniam consectetur occaecat pariatur do officia fugiat. Quis magna culpa sunt duis est eiusmod. Ullamco ex est officia in sit ex officia pariatur nulla dolor in dolor quis. Dolor culpa sit voluptate id do consectetur duis magna anim nisi. Enim elit velit eu consequat ea incididunt laboris id in aliquip elit sit ut commodo. Laboris velit non amet minim cillum sint incididunt deserunt aute ex do amet laborum. Nisi aute tempor culpa enim nulla deserunt dolore velit dolor id sunt sunt veniam dolor."
+    ></app-textblock>
+  </div>
+  <div class="mx-auto max-w-screen-xl px-6 py-2">
+    <h2 class="font-bold text-2xl">Ist dein Kanton bereit?</h2>
+    <div>
+      <select
+        name="canton"
+        id="cantonSelect"
+        [(ngModel)]="cantonSelect"
+        class="text-2xl p-2 mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+      >
+        <option value="sh">Schaffhausen</option>
+        <option value="zh">Zürich</option>
+      </select>
+    </div>
+
+    <div class="pt-6" style="min-height: 300px">
+      <div *ngIf="cantonSelect == 'sh'">
+        <p>Yo Schaffhausen hat bald E-Collecting</p>
+      </div>
+      <div *ngIf="cantonSelect == 'zh'">
+        <p>Züri hoffentlich auch bald</p>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</app-pagehero>

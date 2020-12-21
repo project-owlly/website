@@ -27,6 +27,19 @@ const routes: Routes = [
 
   // WIZARD START
   {
+    //TODO: delete this..
+    path: 'infosite',
+    loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
+  },
+
+  //needs to be moved..
+  {
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
+  },
+
+  // WIZARD START
+  {
     path: 'return',
     canActivate: [EidGuard],
     children: [],
@@ -93,12 +106,20 @@ const routes: Routes = [
     loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
   },
   {
+    path: 'progress/cantons/:canton',
+    loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
+  },
+  {
     path: 'solutions',
     loadChildren: () => import('./pages/solutions/solutions.module').then((m) => m.SolutionsPageModule),
   },
   {
     path: 'aboutus',
     loadChildren: () => import('./pages/aboutus/aboutus.module').then((m) => m.AboutusPageModule),
+  },
+  {
+    path: 'policy',
+    loadChildren: () => import('./pages/policy/policy.module').then((m) => m.PolicyPageModule),
   },
 
   // AUTH PAGES

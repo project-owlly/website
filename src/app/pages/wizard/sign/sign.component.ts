@@ -13,7 +13,6 @@ const {Browser} = Plugins;
 @Component({
   selector: 'app-sign',
   templateUrl: './sign.component.html',
-  styleUrls: ['./sign.component.scss'],
 })
 export class SignComponent {
   readonly owllyId$: Observable<string | undefined> = this.route.queryParams.pipe(

@@ -1,51 +1,62 @@
 <app-header></app-header>
 
 <div class="flex absolute w-full bottom-2 md:top-1/2 md:bottom-1/2 z-40 justify-between p-4">
-    <!-- fix icons in buttons -->
-    <button (click)="scrollLeft()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"> <fa-icon [icon]="faAngleLeft"></fa-icon> </button>
-        <button (click)="scrollRight()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"> <fa-icon [icon]="faAngleRight"></fa-icon></button>
-
+  <!-- fix icons in buttons -->
+  <button (click)="scrollLeft()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faAngleLeft"></fa-icon></button>
+  <button (click)="scrollRight()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center">
+    <fa-icon [icon]="faAngleRight"></fa-icon>
+  </button>
 </div>
 
 <div #horizontalScroll id="horizontalDiv" class="horizontalDiv flex overflow-auto text-center scroll">
-
-    <div class=" h-full w-full flex-none p-6">
-        <h1 class="text-4xl md:text-6xl font-bold">Der Start deiner digitalen Kampagne</h1>
-        <h2 class="text-2xl font-light">Um dein Vorhaben digital zu erfassen brauchen wir folgende Informationen von dir:</h2>
-        <app-textblock type="owlly"></app-textblock>
-        <div class="-mt-12">
-        <ul>
-            <li class="text-2xl font-light">Art des Begehrens</li>
-            <li class="text-2xl font-light">Titel</li>
-            <li class="text-2xl font-light">Vollständiger Text des Begehrens</li>
-            <li class="text-2xl font-light">4 Ziele des Begehrens</li>
-            <li class="text-2xl font-light">Deine Email</li>
-            <li class="text-2xl font-light">Informationen über das Komitee</li>
-        </ul>
-        <p class="text-2xl font-bold pt-6">Klicke auf den Pfeil nach rechts um fortzufahren</p>
-        </div>
+  <!-- Adjust for dark mode in firefox? is it really worth it though? -->
+  <div class="h-full w-full flex-none p-6">
+    <h1 class="text-4xl md:text-6xl font-bold">Der Start deiner digitalen Kampagne</h1>
+    <h2 class="text-2xl font-light">Um dein Vorhaben digital zu erfassen brauchen wir folgende Informationen von dir:</h2>
+    <app-textblock type="owlly"></app-textblock>
+    <div class="-mt-12">
+      <ul>
+        <li class="text-2xl font-light">Art des Begehrens</li>
+        <li class="text-2xl font-light">Titel</li>
+        <li class="text-2xl font-light">Vollständiger Text des Begehrens</li>
+        <li class="text-2xl font-light">4 Ziele des Begehrens</li>
+        <li class="text-2xl font-light">Deine Email</li>
+        <li class="text-2xl font-light">Informationen über das Komitee</li>
+      </ul>
+      <p class="text-2xl font-bold pt-6">Klicke auf den Pfeil nach rechts um fortzufahren</p>
     </div>
+  </div>
 
-    <div class=" h-full w-full flex-none text-center pt-40 px-6 justify-center" >
-        <h1 class="text-4xl md:text-6xl font-bold pb-6">Wo findet dein Vorhaben statt?</h1>
-    <select name="ebene" formControlName="ruleValue" id="level" class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner">
-        <option value="national" class="text-2xl font-light">National</option>
-        <option value="SH" class="text-2xl font-light">Schaffhausen</option>
+  <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wo findet dein Vorhaben statt?</h1>
+    <select
+      name="ebene"
+      formControlName="ruleValue"
+      id="level"
+      class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+    >
+      <option value="national" class="text-2xl font-light">National</option>
+      <option value="SH" class="text-2xl font-light">Schaffhausen</option>
     </select>
-    </div>
+  </div>
 
-    <div class=" h-full w-full flex-none text-center pt-40 px-6 justify-center" >
-            <h1 class="text-4xl md:text-6xl font-bold pb-6">Worum handelt es sich bei deinem Begehren?</h1>
-        <select name="begehren" formControlName="type" id="begehren" class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner">
-            <option value="initiative" class="text-2xl font-light">Initiative</option>
-            <option value="referendum" class="text-2xl font-light">Referendum</option>
-            <option value="volksmotion" class="text-2xl font-light">Volksmotion</option>
-        </select>
-        </div>
+  <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Worum handelt es sich bei deinem Begehren?</h1>
+    <select
+      name="begehren"
+      formControlName="type"
+      id="begehren"
+      class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+    >
+      <option value="initiative" class="text-2xl font-light">Initiative</option>
+      <option value="referendum" class="text-2xl font-light">Referendum</option>
+      <option value="volksmotion" class="text-2xl font-light">Volksmotion</option>
+    </select>
+  </div>
 
-    <div class=" h-full w-full flex-none text-center pt-40 px-6 justify-center">
-            <h1 class="text-4xl md:text-6xl font-bold pb-6">Wie lautet der Titel des Begehrens?</h1>
-        <input
+  <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wie lautet der Titel des Begehrens?</h1>
+    <input
       id="title"
       type="text"
       name="title"
@@ -54,23 +65,30 @@
       required
       placeholder="Mein Begehren"
     />
-    </div>
+  </div>
 
-    <div class=" h-full w-full flex-none text-center pt-40 px-6">
-            <h1 class="text-4xl md:text-6xl font-bold pb-6">Schreibe hier den vollständigen Wortlaut deines Begehrens:</h1>
-        <textarea class="text-2xl font-light md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner" 
-        name="text" id="text" formControlname="text" cols="30" formControlName="title" rows="10" placeholder="Mein Text..."></textarea>
-    </div>
+  <div class="h-full w-full flex-none text-center pt-40 px-6">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Schreibe hier den vollständigen Wortlaut deines Begehrens:</h1>
+    <textarea
+      class="text-2xl font-light md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+      name="text"
+      id="text"
+      formControlname="text"
+      cols="30"
+      formControlName="title"
+      rows="10"
+      placeholder="Mein Text..."
+    ></textarea>
+  </div>
 
-    <div class=" h-full w-full flex-none text-center pt-40 px-6 justify-center">
-            <h1 class="text-4xl md:text-6xl font-bold pb-6">Nenne bis zu 4 Ziele deines Begehrens:</h1>
-        <input
+  <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Nenne bis zu 4 Ziele deines Begehrens:</h1>
+    <input
       id="goals"
       type="text"
       name="goals"
       formControlName="goals1"
       class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
-      
     />
     <input
       id="goals"
@@ -78,7 +96,6 @@
       name="goals"
       formControlName="goals2"
       class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
-      
     />
     <input
       id="goals"
@@ -86,7 +103,6 @@
       name="goals"
       formControlName="goals3"
       class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
-      
     />
     <input
       id="goals"
@@ -94,14 +110,13 @@
       name="goals"
       formControlName="goals4"
       class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
-      
     />
-    </div>
+  </div>
 
-    <!-- If Bundesinitiative -->
-    <div class=" h-full w-full flex-none text-center pt-40 px-6 justify-center">
-            <h1 class="text-4xl md:text-6xl font-bold pb-6">Wann wurde deine Initiative veröffentlicht?</h1>
-        <input
+  <!-- If Bundesinitiative -->
+  <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wann wurde deine Initiative veröffentlicht?</h1>
+    <input
       id="date"
       type="date"
       name="date"
@@ -110,12 +125,12 @@
       required
       value="2020-02-03"
     />
-    </div>
+  </div>
 
-    <!-- If Bundesreferendum -->
-    <div class=" h-full w-full flex-none text-center pt-40 px-6 justify-center">
-            <h1 class="text-4xl md:text-6xl font-bold pb-6">Wann ist die Schlussabstimmung in der Bundesversammlung?</h1>
-        <input
+  <!-- If Bundesreferendum -->
+  <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wann ist die Schlussabstimmung in der Bundesversammlung?</h1>
+    <input
       id="date"
       type="date"
       name="date"
@@ -124,21 +139,28 @@
       required
       value="2020-02-03"
     />
-    </div>
+  </div>
 
-    <div class=" h-full w-full flex-none text-center pt-40 px-6">
-            <h1 class="text-4xl md:text-6xl font-bold pb-6">Zum Schluss brauchen wir noch Name und Adresse des Urhebers der Initiative (Initiativkomitee)</h1>
-        <textarea class="text-2xl font-light md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner" 
-        name="text" id="text" formControlname="author" cols="30" formControlName="title" rows="10" placeholder="Meine Adresse..."></textarea>
-    </div>
+  <div class="h-full w-full flex-none text-center pt-40 px-6">
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Zum Schluss brauchen wir noch Name und Adresse des Urhebers der Initiative (Initiativkomitee)</h1>
+    <textarea
+      class="text-2xl font-light md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+      name="text"
+      id="text"
+      formControlname="author"
+      cols="30"
+      formControlName="title"
+      rows="10"
+      placeholder="Meine Adresse..."
+    ></textarea>
+  </div>
 
-    <div class=" h-full w-full flex-none p-6">
-            <h1 class="text-4xl md:text-6xl font-bold">Nur noch einschicken...</h1>
-            <h2 class="text-2xl font-light">Wenn du an diesem Punkt angelangt bist, musst du nur noch den Knopf unten drücken um dein Begehren einzusenden 😊</h2>
-            <app-textblock type="owlly"></app-textblock>
-            <div class="-mt-12">
-            <app-button (click)="sendInitiative()">Begehren senden</app-button>
-            </div>
-        </div>
+  <div class="h-full w-full flex-none p-6">
+    <h1 class="text-4xl md:text-6xl font-bold">Nur noch einschicken...</h1>
+    <h2 class="text-2xl font-light">Wenn du an diesem Punkt angelangt bist, musst du nur noch den Knopf unten drücken um dein Begehren einzusenden 😊</h2>
+    <app-textblock type="owlly"></app-textblock>
+    <div class="-mt-12">
+      <app-button (click)="sendInitiative()">Begehren senden</app-button>
+    </div>
+  </div>
 </div>
-
