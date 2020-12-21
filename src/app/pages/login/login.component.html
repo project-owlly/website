@@ -1,18 +1,12 @@
 <app-header></app-header>
 
-<app-pagehero type="citizen" imgName="adobe/burger.jpeg" [diamonds]="true" iconName="../../../../assets/citizen_icon.svg">
-  <h1 class="text-4xl md:text-6xl font-light dark:text-white">E-Collecting fördern</h1>
-  <h1 class="text-4xl md:text-6xl font-bold dark:text-white">Bürger/in</h1>
-  <h2 class="text-xl dark:text-white">
-    Die Verwaltung spielt eine Schlüsselrolle in der erfolgreichen Einführung von E-Collecting. Owlly bietet perönliche Unterstützung.
-  </h2>
+<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
+  <app-textblock title="Login" type="owlly" subtitle="Login to the owlly world"></app-textblock>
 
-  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
-    <app-textblock title="Login" type="owlly" subtitle="Login to the owlly world"></app-textblock>
-
+  <form [formGroup]="authForm">
     <input
       id="username"
-      type="text"
+      type="email"
       name="username"
       formControlName="username"
       class="text-2xl dark:font-dark font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
@@ -30,7 +24,7 @@
       placeholder="Passwort"
     />
 
-    <app-button>Login</app-button>
-  </div>
-  <app-footer></app-footer>
-</app-pagehero>
+    <app-button (click)="login(authForm)">Login</app-button>
+  </form>
+</div>
+<app-footer></app-footer>
