@@ -8,13 +8,6 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./pages/landing/landing.module').then((m) => m.LandingPageModule),
   },
-
-  {
-    path: 'admin',
-    redirectTo: '/admin/dashboard',
-    pathMatch: 'full',
-  },
-
   //MICROPAGES
   {
     path: 'o',
@@ -111,18 +104,66 @@ const routes: Routes = [
   // AUTH PAGES
   {
     path: 'login',
-    loadChildren: () => import('./pages/admin/login/login.module').then((m) => m.LoginModule),
+    loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginModule),
     //canActivate:
   },
   {
     path: 'logout',
-    loadChildren: () => import('./pages/admin/logout/logout.module').then((m) => m.LogoutModule),
+    loadChildren: () => import('./pages/logout/logout.module').then((m) => m.LogoutModule),
     //canActivate:
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/admin/signup/signup.module').then((m) => m.SignupModule),
+    loadChildren: () => import('./pages/signup/signup.module').then((m) => m.SignupModule),
     //canActivate:
+  },
+
+  {
+    path: 'admin',
+    redirectTo: '/admin/dashboard',
+    pathMatch: 'full',
+  },
+
+  {
+    path: 'admin',
+    //loadChildren: () => import('./pages/signup/signup.module').then((m) => m.SignupModule),
+    //canActivate:
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./pages/admin/dashboard/dashboard.module').then((m) => m.DashboardModule),
+        //canActivate:
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./pages/admin/profile/profile.module').then((m) => m.ProfileModule),
+        //canActivate:
+      },
+
+      // MUNICIPALITIES PAGES
+      {
+        path: 'certify-request',
+        loadChildren: () => import('./pages/admin/certify-request/certify-request.module').then((m) => m.CertifyRequestModule),
+        //canActivate:
+      },
+      {
+        path: 'certify/:id',
+        loadChildren: () => import('./pages/admin/certify-detail/certify-detail.module').then((m) => m.CertifyDetailModule),
+        //canActivate:
+      },
+
+      // CAMPAINGER PAGES
+      {
+        path: 'campaign',
+        loadChildren: () => import('./pages/admin/campaigns/campaigns.module').then((m) => m.CampaignsModule),
+        //canActivate:
+      },
+      {
+        path: 'campaign/:id',
+        loadChildren: () => import('./pages/admin/campaign-details/campaign-details.module').then((m) => m.CampaignDetailsModule),
+        //canActivate:
+      },
+    ],
   },
 
   //Fallback
