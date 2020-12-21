@@ -1,5 +1,28 @@
 <app-header></app-header>
 
-<app-textblock title="Signup" type="owlly" subtitle="Create your owlly account"></app-textblock>
+<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
+  <app-textblock title="Signup" type="owlly" subtitle="Signup"></app-textblock>
 
+  <input
+    id="username"
+    type="text"
+    name="username"
+    formControlName="username"
+    class="text-2xl dark:font-dark font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+    required
+    placeholder="E-Mail"
+  />
+
+  <input
+    id="password"
+    type="password"
+    name="password"
+    formControlName="password"
+    class="text-2xl dark:font-dark font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+    required
+    placeholder="Passwort"
+  />
+
+  <app-button (click)="signup()">Signup</app-button>
+</div>
 <app-footer></app-footer>

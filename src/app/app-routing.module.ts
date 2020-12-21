@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {AuthGuard} from './guards/auth.guard';
 
 import {EidGuard} from './guards/eid.guard';
 
@@ -126,17 +127,14 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginModule),
-    //canActivate:
   },
   {
     path: 'logout',
     loadChildren: () => import('./pages/logout/logout.module').then((m) => m.LogoutModule),
-    //canActivate:
   },
   {
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then((m) => m.SignupModule),
-    //canActivate:
   },
 
   {
@@ -147,42 +145,41 @@ const routes: Routes = [
 
   {
     path: 'admin',
-    //loadChildren: () => import('./pages/signup/signup.module').then((m) => m.SignupModule),
-    //canActivate:
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'dashboard',
         loadChildren: () => import('./pages/admin/dashboard/dashboard.module').then((m) => m.DashboardModule),
-        //canActivate:
+        canActivate: [AuthGuard],
       },
       {
         path: 'profile',
         loadChildren: () => import('./pages/admin/profile/profile.module').then((m) => m.ProfileModule),
-        //canActivate:
+        canActivate: [AuthGuard],
       },
 
       // MUNICIPALITIES PAGES
       {
         path: 'certify-request',
         loadChildren: () => import('./pages/admin/certify-request/certify-request.module').then((m) => m.CertifyRequestModule),
-        //canActivate:
+        canActivate: [AuthGuard],
       },
       {
         path: 'certify/:id',
         loadChildren: () => import('./pages/admin/certify-detail/certify-detail.module').then((m) => m.CertifyDetailModule),
-        //canActivate:
+        canActivate: [AuthGuard],
       },
 
       // CAMPAINGER PAGES
       {
         path: 'campaign',
         loadChildren: () => import('./pages/admin/campaigns/campaigns.module').then((m) => m.CampaignsModule),
-        //canActivate:
+        canActivate: [AuthGuard],
       },
       {
         path: 'campaign/:id',
         loadChildren: () => import('./pages/admin/campaign-details/campaign-details.module').then((m) => m.CampaignDetailsModule),
-        //canActivate:
+        canActivate: [AuthGuard],
       },
     ],
   },
