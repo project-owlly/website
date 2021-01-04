@@ -1,5 +1,40 @@
 <ng-container *ngIf="owlly$ | async as owlly">
-  <h1>{{ owlly.data.title }}</h1>
+  <app-header></app-header>
 
-  <p>{{ owlly.data.text }}</p>
+  <app-pagehero title="{{ owlly.data.title }}" imgName="veloin.jpg" type="owlly">
+    <div class="bg-gray-100 dark:bg-black shadow-lg">
+      <div class="container mx-auto max-w-screen-xl px-6 py-2">
+        <h1 class="text-2xl font-bold dark:text-white">Ziele der Initiative</h1>
+        <div class="table w-full">
+          <div class="table-row-group">
+            <div class="table-row gap-6" *ngFor="let entry of owlly.data.goals">
+              <div class="table-cell align-middle">
+                <svg width="10" height="10">
+                  <rect width="10" height="10" rx="2" ry="2" style="fill: var(--color-secondary)" />
+                </svg>
+              </div>
+              <div class="table-cell text-left text-lg dark:text-white">{{ entry }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container mx-auto max-w-screen-xl px-6 py-2 text-left mt-12">
+      <app-button type="button"> Jetzt unterschreiben </app-button>
+    </div>
+  
+    <app-textblock title="Zur Sache" text="{{ owlly.data.text }}" type="owlly"></app-textblock>
+  
+    <app-textblock
+      title="Hinweis Strafbar"
+      text="Nulla pariatur anim officia sit qui sunt eiusmod eiusmod enim ea duis pariatur. Ullamco commodo exercitation aute consectetur deserunt aliquip ex excepteur ad exercitation et. Deserunt ipsum labore culpa eiusmod deserunt."
+      type="owlly"
+    ></app-textblock>
+  
+    <app-textblock title="Urheber" text="{{ owlly.data.author }}" type="owlly"></app-textblock>
+  
+    <app-footer></app-footer>
+  </app-pagehero>
+  
 </ng-container>
