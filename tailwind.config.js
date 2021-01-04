@@ -7,6 +7,9 @@ module.exports = (isProd) => ({
   darkMode: 'media', // or 'media' or 'class' or false
   theme: {
     extend: {
+      height: {
+        pagehero: '600px',
+      },
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
