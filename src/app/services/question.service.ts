@@ -8,7 +8,6 @@ import {AngularFirestore} from '@angular/fire/firestore';
   providedIn: 'root',
 })
 export class QuestionService {
-  collectionName = 'question';
 
   constructor(public firestore: AngularFirestore) {}
 
