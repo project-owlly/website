@@ -2,7 +2,7 @@
   <div class="underline {{ type }} rounded-t"></div>
   <div *ngIf="imgName" class="h-20 hidden lg:block"></div>
   <div class="relative">
-    <img class="hidden lg:block absolute z-20 right-20 bottom-0" src="../../../../assets/{{ imgName }}" alt="{{ imgName }}" />
+    <img class="hidden lg:block absolute right-20 bottom-0" src="../../../../assets/{{ imgName }}" alt="{{ imgName }}" />
     <ng-content></ng-content>
   </div>
 
