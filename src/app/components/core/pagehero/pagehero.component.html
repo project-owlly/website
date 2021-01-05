@@ -10,7 +10,7 @@
     <app-diamond *ngIf="diamonds" type="{{ type }}"></app-diamond>
   </div>
 </div>
-<div class="{{ type }} dark:bg-gray-800 bg-gray-100 relative -top-1 shadow-lg">
+<div class="{{ type }} dark:bg-gray-800 bg-gray-100 relative -top-1 shadow-lg z-10">
   <div class="underline-img relative"></div>
   <div class="flex grid grid-cols-1 md:grid-cols-7 mx-auto max-w-screen-xl px-6 py-8 text-left">
     <div class="md:col-span-6">
@@ -29,6 +29,6 @@
     </div>
   </div>
 </div>
-<div class="relative -top-1 bg-white dark:bg-black">
+<div class="relative -top-1 bg-white dark:bg-black z-10">
   <ng-content></ng-content>
 </div>
