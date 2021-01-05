@@ -7,6 +7,8 @@ import {environment} from './environments/environment';
 // A. We import our loader
 import {applyPolyfills, defineCustomElements} from '@deckdeckgo/qrcode/dist/loader';
 
+import {defineCustomElements as defineCustomElementsSocialShare} from 'web-social-share/dist/loader';
+
 if (environment.production) {
   enableProdMode();
 }
@@ -19,3 +21,4 @@ platformBrowserDynamic()
 applyPolyfills().then(() => {
   defineCustomElements(window);
 });
+defineCustomElementsSocialShare(window);
