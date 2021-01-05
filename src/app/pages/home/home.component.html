@@ -3,7 +3,13 @@
 <!-- New Owlly Hero -->
 
 <div class="sticky top-0 overflow-hidden h-pagehero" style="z-index: -100">
-  <img class="object-center z-0" src="../../../../assets/heros/header-1920.webp" alt="Herobild" width="100%" />
+  <picture>
+    <source type="image/webp" srcset="../../../../assets/heros/header-1920.webp" />
+    <source type="image/jpeg" srcset="../../../../assets/heros/header-1920.jpg" />
+    <img class="object-center z-0" src="../../../../assets/heros/header-1920.webp" alt="Herobild" width="100%" />
+    <!--<img class="object-center z-0" src="../../../../assets/heros/header-1920.webp" alt="Herobild" width="100%" />-->
+  </picture>
+
   <div class="absolute top-2 z-10 w-full">
     <app-diamond type="plain"></app-diamond>
   </div>
