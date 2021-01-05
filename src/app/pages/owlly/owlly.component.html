@@ -27,6 +27,8 @@
       <a href="/start/{{ owlly.id }}">
         <app-button type="button"> Jetzt unterschreiben </app-button>
       </a>
+
+      <app-button type="button" (click)="share()"> teilen </app-button>
     </div>
 
     <app-textblock title="Zur Sache" text="{{ owlly.data.text }}" type="owlly"></app-textblock>
@@ -41,4 +43,12 @@
 
     <app-footer></app-footer>
   </app-pagehero>
+  <web-social-share [show]="showSocialShare" [share]="shareSocialShareOptions" (closed)="showSocialShare = false">
+    <fa-icon [icon]="faTwitter" slot="twitter" style="color: #00aced; display: block"></fa-icon>
+    <fa-icon [icon]="faFacebook" slot="facebook" style="color: #00aced; display: block"></fa-icon>
+    <fa-icon [icon]="faWhatsapp" slot="facebook" slot="whatsapp" style="color: #25d366; display: block"></fa-icon>
+    <fa-icon [icon]="faLinkedin" slot="linkedin" style="color: #0077b5; display: block"></fa-icon>
+    <fa-icon [icon]="faEnvelope" slot="email" ariaLabel="Email" style="color: #ff8ea3; display: block"></fa-icon>
+    <fa-icon [icon]="faCopy" slot="copy" ariaLabel="Copy" style="color: #ff8ea3; display: block"></fa-icon>
+  </web-social-share>
 </ng-container>

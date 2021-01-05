@@ -9,12 +9,13 @@
         Du hast für folgendes Begehren unterschrieben:
         <span class="font-bold text-4xl md:text-6xl text-center dark:text-white">
           <ng-container *ngIf="owlly$ | async as owlly">
-            <h2 class="pt-6 ">{{ owlly.data.title }}</h2>
+            <h2 class="pt-6">{{ owlly.data.title }}</h2>
           </ng-container>
         </span>
       </h1>
     </app-textblock>
     <p class="font-light text-xl px-6">Initiative jetzt teilen:</p>
+    <app-button type="button" (click)="share()"> teilen </app-button>
     <!-- TODO: insert real links, real icons and make icons yellow -->
     <div class="flex mt-10 sm:mb-0 mb-10 px-6">
       <a href="https://www.instagram.com/projectowlly/" class="mr-2 w-8"><img src="./assets/socialmedia/instagram.svg" alt="instagram" /></a>
@@ -29,4 +30,12 @@
   </div>
 </main>
 
+<web-social-share [show]="showSocialShare" [share]="shareSocialShareOptions" (closed)="showSocialShare = false">
+  <fa-icon [icon]="faTwitter" slot="twitter" style="color: #00aced; display: block"></fa-icon>
+  <fa-icon [icon]="faFacebook" slot="facebook" style="color: #00aced; display: block"></fa-icon>
+  <fa-icon [icon]="faWhatsapp" slot="facebook" slot="whatsapp" style="color: #25d366; display: block"></fa-icon>
+  <fa-icon [icon]="faLinkedin" slot="linkedin" style="color: #0077b5; display: block"></fa-icon>
+  <fa-icon [icon]="faEnvelope" slot="email" ariaLabel="Email" style="color: #ff8ea3; display: block"></fa-icon>
+  <fa-icon [icon]="faCopy" slot="copy" ariaLabel="Copy" style="color: #ff8ea3; display: block"></fa-icon>
+</web-social-share>
 <app-footer></app-footer>

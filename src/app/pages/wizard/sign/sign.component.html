@@ -5,14 +5,15 @@
 <main class="dark:bg-black">
   <app-textblock title="Fast am Ziel!" text="Reiche deinen signierten Unterschriftenbogen ein." type="owlly"></app-textblock>
 
-  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
+  <div class="container mx-auto max-w-screen-xl px-6 pt-10 prose">
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">
-        <p class="dark:text-white text-xl">Scanne diesen QR Code mit deiner SChaffhauser eID+, um das Dokument zu importieren.</p>
+        <p class="dark:text-white text-xl">Scanne diesen QR Code mit deiner Schaffhauser eID+, um das Dokument zu importieren.</p>
+        <div class="text-center items-center mx-auto">
         <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
-
-        <div class="flex">
-            <div class="text-center flex-auto flex-row">
+        </div>
+        <div class="flex flex-row">
+            <div class="text-center flex-auto">
                 <app-button [disable]="!pdf || pdf.url === undefined" (click)="openEID()" class="py-10">importieren</app-button>
             </div>
             <div class="text-center flex-auto">
