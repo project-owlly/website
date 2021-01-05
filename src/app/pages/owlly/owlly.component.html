@@ -1,5 +1,7 @@
 <ng-container *ngIf="owlly$ | async as owlly">
-  <app-header></app-header>
+  <app-header
+  [hideNav]="true"
+  ></app-header>
 
   <app-pagehero title="{{ owlly.data.title }}" imgName="header-1920" type="owlly">
     <div class="bg-gray-100 dark:bg-black shadow-lg">
