@@ -11,7 +11,7 @@
         <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
         </div>
         <div class="flex flex-row">
-            <div class="text-center flex-auto flex-row">
+            <div class="text-center flex-auto">
                 <app-button [disable]="!pdf || pdf.url === undefined" (click)="openEID()" class="py-10">importieren</app-button>
             </div>
             <div class="text-center flex-auto">
