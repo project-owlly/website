@@ -1,7 +1,7 @@
 <ng-container *ngIf="owlly$ | async as owlly">
   <app-header></app-header>
 
-  <app-pagehero title="{{ owlly.data.title }}" imgName="veloin.jpg" type="owlly">
+  <app-pagehero title="{{ owlly.data.title }}" imgName="../../../../assets/heros/header-1920.webp" type="owlly">
     <div class="bg-gray-100 dark:bg-black shadow-lg">
       <div class="container mx-auto max-w-screen-xl px-6 py-2">
         <h1 class="text-2xl font-bold dark:text-white">Ziele der Initiative</h1>
@@ -19,25 +19,24 @@
         </div>
       </div>
     </div>
-  
+
     <div class="container mx-auto max-w-screen-xl px-6 py-2 text-left mt-12">
-          <!-- TODO: replace static link with owllyID-->
-      <a href="/start/{{owlly.id}}">
-      <app-button type="button"> Jetzt unterschreiben </app-button>
+      <!-- TODO: replace static link with owllyID-->
+      <a href="/start/{{ owlly.id }}">
+        <app-button type="button"> Jetzt unterschreiben </app-button>
       </a>
     </div>
-  
+
     <app-textblock title="Zur Sache" text="{{ owlly.data.text }}" type="owlly"></app-textblock>
-  
+
     <app-textblock
       title="Hinweis Strafbar"
       text="Wer bei einer Unterschriftensammlung besticht oder sich bestechen lässt oder wer das Ergebnis einer Unterschriftensammlung fälscht, macht sich strafbar nach Art. 281 beziehungsweise nach Art. 282 des Strafgesetzbuches."
       type="owlly"
     ></app-textblock>
-  
+
     <app-textblock title="Urheber" text="{{ owlly.data.author }}" type="owlly"></app-textblock>
-  
+
     <app-footer></app-footer>
   </app-pagehero>
-  
 </ng-container>
