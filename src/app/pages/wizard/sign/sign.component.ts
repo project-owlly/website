@@ -34,15 +34,17 @@ export class SignComponent {
   }
 
   async openEID() {
-    alert('click openEID');
-
     this.pdf$
       .pipe(
         filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)});
+        alert('click openEID ' + 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+
+        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
+          alert(err.message);
+        });
 
         //TODO Navigate to next page
         setTimeout(() => {
