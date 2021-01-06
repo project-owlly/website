@@ -59,7 +59,7 @@ export class SignComponent {
       });
     });
 
-    this.owllyId$
+    /*    this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
         first()
@@ -68,6 +68,6 @@ export class SignComponent {
         await this.router.navigate(['/finish', owllyId]).catch((err) => {
           console.log(err.message);
         });
-      });
+      });*/
   }
 }
