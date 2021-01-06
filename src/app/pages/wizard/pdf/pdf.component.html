@@ -7,16 +7,17 @@
     </ng-container>
 
     <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
-      <p *ngIf="pdf.url === undefined" class="font-light text-2xl">Die PDF Generierung hat nicht geklappt 🤔</p>
+      <p *ngIf="pdf.url === undefined" class="font-light text-2xl">Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔</p>
+      <ng-container *ngIf="userData$ | async as userData">
+        <ng-container *ngIf="pdf.url !== undefined">
+          <app-textblock
+            title="Hallo {{ userData?.given_name }}"
+            text="Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!"
+            type="owlly"
+          ></app-textblock>
 
-      <ng-container *ngIf="pdf.url !== undefined && userData$ | async as userData">
-        <app-textblock
-          title="Hallo {{ userData?.given_name }}"
-          text="Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!"
-          type="owlly"
-        ></app-textblock>
-
-        <app-button (click)="navigate()" class="py-10">Weiter</app-button>
+          <app-button (click)="navigate()" class="py-10">Weiter</app-button>
+        </ng-container>
       </ng-container>
     </ng-container>
   </div>
@@ -25,9 +26,9 @@
 <app-footer></app-footer>
 
 <ng-template #loadingUser>
-  <app-textblock title="Wir sind gleich soweit" type="owlly" subtitle="Deine Daten werden gerade übertragen."></app-textblock>
+  <app-textblock title="Wir sind gleich soweit" type="owlly" subtitle="Deine Daten werden gerade übertragen."> </app-textblock>
 </ng-template>
 
 <ng-template #loadingPdf>
-  <app-textblock title="Einen Moment noch" type="owlly" subtitle="Wir generieren dein persönliches Dokument."></app-textblock>
+  <app-textblock title="Einen Moment noch" type="owlly" subtitle="Wir generieren dein persönliches Dokument."> </app-textblock>
 </ng-template>
