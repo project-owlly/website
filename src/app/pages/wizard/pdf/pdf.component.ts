@@ -16,7 +16,7 @@ import {AuthService} from 'src/app/services/auth.service';
   templateUrl: './pdf.component.html',
 })
 export class PdfComponent implements OnInit {
-  readonly useData$: Observable<EidUserData | undefined> = this.route.queryParams.pipe(
+  readonly userData$: Observable<EidUserData | undefined> = this.route.queryParams.pipe(
     first(),
     filter((params: Params) => params.code !== null),
     map((params: Params) => params.code),
@@ -66,7 +66,7 @@ export class PdfComponent implements OnInit {
         filter((params: Params) => params.owllyId !== null),
         map((params: Params) => params.owllyId)
       ) as Observable<string>,
-      this.useData$.pipe(filter((userData: EidUserData | undefined) => userData !== undefined)) as Observable<EidUserData>,
+      this.userData$.pipe(filter((userData: EidUserData | undefined) => userData !== undefined)) as Observable<EidUserData>,
     ])
       .pipe(
         first(),

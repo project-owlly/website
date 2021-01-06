@@ -2,7 +2,7 @@
 
 <main>
   <div class="container mx-auto max-w-screen-lg px-6 pt-10">
-    <ng-container *ngIf="useData$ | async as userData; else loadingUser">
+    <ng-container *ngIf="userData$ | async as userData; else loadingUser">
       <app-textblock title="Hallo {{ userData?.given_name }}" text="" type="owlly"></app-textblock>
     </ng-container>
 
