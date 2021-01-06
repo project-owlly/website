@@ -33,6 +33,8 @@ export class SignComponent {
   }
 
   async openEID() {
+    alert('click openEID');
+
     this.pdf$
       .pipe(
         filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
@@ -48,6 +50,7 @@ export class SignComponent {
       });
   }
   navigate(): void {
+    alert('click navigate finish');
     this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
