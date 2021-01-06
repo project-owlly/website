@@ -57,6 +57,7 @@ export class SignComponent {
         first()
       )
       .subscribe(async (owllyId: string | undefined) => {
+        alert('click navigate finish with owlly id ' + owllyId);
         await this.router.navigate(['/finish', owllyId]);
       });
   }
