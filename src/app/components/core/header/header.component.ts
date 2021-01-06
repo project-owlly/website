@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 import {Observable, of} from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -11,6 +11,8 @@ import { faAlignRight, faBars,faTimesCircle, faPlayCircle, faCubes, faUsers } fr
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+
+  @Input() hideNav?: boolean = false;
 
   faAlignRight=faAlignRight;
   faBars=faBars;
