@@ -12,7 +12,7 @@
             <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
           </div>
         </ng-container>
-        <ng-container *ngIf="deviceInfo?.operatingSystem == 'ios'">
+        <ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">
           <p class="dark:text-white text-xl">Du kannst das Dokument direkt in deine eID+ importieren.</p>
           <div class="text-center flex-auto">
             <app-button (click)="openEID()" class="py-10">importieren </app-button>
