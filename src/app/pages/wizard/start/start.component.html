@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <main class="dark:bg-black">
-  <div class="dark:bg-black">
+  <div class="container mx-auto max-w-screen-lg pt-10">
     <ng-container *ngIf="owlly$ | async as owlly">
       <app-textblock type="owlly">
         <h1 class="text-6xl dark:text-white md:text-8xl font-bold text-center">{{ owlly.data.title }}</h1>

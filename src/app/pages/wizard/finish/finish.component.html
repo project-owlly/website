@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <main class="dark:bg-black">
-  <div class="container mx-auto max-w-screen-xl pt-10">
+  <div class="container mx-auto max-w-screen-lg pt-10">
     <app-textblock title="Vielen Dank!" text="Du erhälst von uns eine Bestätigung per E-Mail wenn wir deinen Unterschriftenbogen erhalten haben." type="owlly">
       <h1 class="font-light text-xl dark:text-white">
         Du hast für folgendes Begehren unterschrieben:
@@ -14,13 +14,9 @@
     </app-textblock>
     <p class="font-light text-xl px-6">Initiative jetzt teilen:</p>
     <div class="mx-auto max-w-screen-xl container pt-6 px-6 justify-center md:justify-start flex">
-      <button
-      (click)="share()"
-      type="button"
-      class="border-none outline-none rounded-full bg-yellow-400 h-14 w-14 flex items-center justify-center"
-    >
-      <img src="../../../assets/socialmedia/share.svg" alt="share" width="20px">
-    </button>
+      <button (click)="share()" type="button" class="border-none outline-none rounded-full bg-yellow-400 h-14 w-14 flex items-center justify-center shadow-xl">
+        <img src="../../../assets/socialmedia/share.svg" alt="share" width="20px" />
+      </button>
     </div>
     <!-- TODO: insert real links, real icons and make icons yellow -->
     <div class="flex mt-10 sm:mb-0 mb-10 px-6">

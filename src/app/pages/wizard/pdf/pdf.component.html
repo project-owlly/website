@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <main class="dark:bg-black">
-  <div class="container mx-auto max-w-screen-lg px-6 pt-10">
+  <div class="container mx-auto max-w-screen-lg pt-10">
     <ng-container *ngIf="userData$ | async as userData; else loadingUser">
       <app-textblock title="Hallo {{ userData?.given_name }}" text="" type="owlly"></app-textblock>
     </ng-container>
