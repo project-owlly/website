@@ -51,6 +51,12 @@ export class SignComponent {
   }
   navigate(): void {
     alert('click navigate finish');
+
+    this.owllyId$.subscribe(async (owllyId) => {
+      console.log(owllyId);
+      await this.router.navigate(['/finish', owllyId]);
+    });
+
     this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
