@@ -7,8 +7,8 @@ import {catchError, filter, first, map, shareReplay, switchMap} from 'rxjs/opera
 import {EidUserData} from '../../../types/eid';
 import {Pdf} from '../../../types/pdf';
 
-import {Plugins} from '@capacitor/core';
-const {Browser} = Plugins;
+import {DeviceInfo, Plugins} from '@capacitor/core';
+const {Browser, Device} = Plugins;
 
 import {OidcService} from 'src/app/services/oidc.service';
 import {PdfService} from 'src/app/services/pdf.service';
@@ -37,6 +37,8 @@ export class PdfComponent implements OnInit {
     shareReplay({bufferSize: 1, refCount: true})
   );
 
+  public deviceInfo: DeviceInfo | undefined;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -51,6 +53,10 @@ export class PdfComponent implements OnInit {
     //this.openPdf();--> Display pdf in modal instead of open link?
 
     this.loadPdf();
+
+    Device.getInfo().then((deviceInfo) => {
+      this.deviceInfo = deviceInfo;
+    });
   }
 
   /*private openPdf(): void {
@@ -92,7 +98,9 @@ export class PdfComponent implements OnInit {
         first()
       )
       .subscribe(async (owllyId: string | undefined) => {
-        await this.router.navigate(['/sign', owllyId]);
+        await this.router.navigate(['/sign', owllyId]).catch((err) => {
+          console.log(err.message);
+        });
       });
   }
 
