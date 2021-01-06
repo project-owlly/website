@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ModalService} from '../../services/modal.service';
 import {QuestionComponent as QuestionComponentType} from '../../modals/question/question.component';
 
@@ -9,6 +9,9 @@ import {QuestionComponent as QuestionComponentType} from '../../modals/question/
 })
 export class ExplainedComponent {
   constructor(private modalService: ModalService<QuestionComponentType>) {
+    
+  }
+  ngOnInit(): void {
     var acc = document.getElementsByClassName('accordion');
     var i;
 
@@ -24,7 +27,6 @@ export class ExplainedComponent {
       });
     }
   }
-
   async showQuestion(): Promise<void> {
     /*const {FeedbackComponent} = await import('../../modals/feedback/feedback.component');
 
