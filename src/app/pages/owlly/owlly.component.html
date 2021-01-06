@@ -20,13 +20,19 @@
       </div>
     </div>
 
-    <div class="container mx-auto max-w-screen-xl px-6 py-2 text-left mt-12">
+    <div class="container mx-auto max-w-screen-xl px-6 py-2 text-left mt-12 flex flex-row gap-4 align-middle">
       <!-- TODO: replace static link with owllyID-->
       <a href="/start/{{ owlly.id }}">
         <app-button type="button"> Jetzt unterschreiben </app-button>
       </a>
 
-      <app-button type="button" (click)="share()"> teilen </app-button>
+      <button
+      (click)="share()"
+      type="button"
+      class="border-none outline-none rounded-full bg-yellow-400 h-14 w-14 flex items-center justify-center"
+    >
+      <img src="../../../assets/socialmedia/share.svg" alt="share" width="20px">
+    </button>
     </div>
 
     <app-textblock title="Zur Sache" text="{{ owlly.data.text }}" type="owlly"></app-textblock>
