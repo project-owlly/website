@@ -9,7 +9,7 @@
     <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
       <p *ngIf="pdf.url === undefined" class="font-light text-2xl">Die PDF Generierung hat nicht geklappt 🤔</p>
 
-      <ng-container *ngIf="pdf.url !== undefined">
+      <ng-container *ngIf="pdf.url !== undefined && userData$ | async as userData">
         <app-textblock
           title="Hallo {{ userData?.given_name }}"
           text="Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!"
