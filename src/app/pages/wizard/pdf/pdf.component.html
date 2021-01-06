@@ -7,13 +7,15 @@
     </ng-container>
 
     <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
-      <p *ngIf="pdf.url === undefined" class="font-light text-2xl">Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔</p>
+      <p *ngIf="pdf.url === undefined" class="font-light text-2xl px-6">Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔</p>
       <ng-container *ngIf="userData$ | async as userData" class="px-6">
         <ng-container *ngIf="pdf.url !== undefined">
-          <div class="font-light text-2xl dark:text-white">
+          <div class="font-light text-2xl dark:text-white px-6">
             Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!
           </div>
+          <div class="px-6">
           <app-button (click)="navigate()" class="py-10">Weiter</app-button>
+        </div>
         </ng-container>
       </ng-container>
     </ng-container>
