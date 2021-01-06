@@ -1,0 +1,13 @@
+li {
+  list-style-type: square;
+}
+li::marker {
+  padding-left: 1rem;
+}
+
+main {
+  min-height: calc(100vh - 87.4833px);
+  @media (max-width: 768px) {
+      min-height: calc(100vh - 75.55px);
+  }
+}

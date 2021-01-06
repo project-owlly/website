@@ -2,11 +2,14 @@ module.exports = (isProd) => ({
   prefix: '',
   purge: {
     enabled: isProd,
-    content: ['**/*.html', '**/*.ts'],
+    content: ['**/*.html', '**/*.ts', '**/*.scss'],
   },
   darkMode: 'media', // or 'media' or 'class' or false
   theme: {
     extend: {
+      height: {
+        pagehero: '600px',
+      },
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',

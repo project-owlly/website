@@ -1,11 +1,66 @@
 <app-header></app-header>
 
-<main class="bg-gray-50 text-black">
-  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
+<main class="dark:bg-black">
+  <div class="dark:bg-black">
     <ng-container *ngIf="owlly$ | async as owlly">
-      <h1 class="text-2xl">{{ owlly.data.title }}</h1>
+      <app-textblock type="owlly">
+        <h1 class="text-6xl dark:text-white md:text-8xl font-bold text-center">{{ owlly.data.title }}</h1>
+        <h2 class="font-light text-2xl">Mit owlly einfach digital einen persönlichen Unterschriftenbogen erstellen und sicher einreichen.</h2>
+      </app-textblock>
+      <div class="mx-auto max-w-screen-xl px-6">
+        <a target="_blank" href="https://owlly.ch/o/{{ owlly.data.slug }}" class="flex font-light"
+          ><p>Mehr zum Begehren &nbsp;</p>
+          <fa-icon [icon]="faInfoCircle"></fa-icon>
+        </a>
+      </div>
+      <div class="mx-auto max-w-screen-xl px-6 pt-6 text-center md:text-left">
+        <p class="font-bold text-2xl dark:text-white">Das sind die nächsten Schritte:</p>
+        <div class="table table-auto">
+          <div class="table-row-group">
+            <div class="table-row">
+              <div class="table-cell align-middle px-2">
+                <svg width="5" height="5">
+                  <rect width="5" height="5" style="fill: #99c756" />
+                </svg>
+              </div>
+              <div class="table-cell text-left dark:text-white text-xl">Bogen mit der eID+ erstellen</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell align-middle px-2">
+                <svg width="5" height="5">
+                  <rect width="5" height="5" style="fill: #27a4d4" />
+                </svg>
+              </div>
+              <div class="table-cell text-left dark:text-white text-xl">Bogen mit eID+ signieren</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell align-middle px-2">
+                <svg width="5" height="5">
+                  <rect width="5" height="5" style="fill: #fdc600" />
+                </svg>
+              </div>
+              <div class="table-cell text-left dark:text-white text-xl">Bogen digital an owlly übermitteln</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-signature [owllyId]="owlly.id" class="py-10 text-center"></app-signature>
+      <div class="bg-gray-100 dark:bg-gray-800 md:dark:bg-black md:bg-white relative bottom-0">
+        <div class="mx-auto max-w-screen-xl grid flex grid-cols-1 md:grid-cols-2">
+          <app-textblock type="owlly">
+            <h1 class="font-bold text-2xl dark:text-white">Kein Papier, kein Ausdrucken!</h1>
+            <h2 class="font-light text-xl dark:text-white">Mit owlly kannst du ein Volksbegehren rechtskräftig und sicher unterschrieben.</h2>
+          </app-textblock>
 
-      <app-signature [owllyId]="owlly.id" class="py-10"></app-signature>
+          <app-textblock type="owlly">
+            <h1 class="font-bold text-2xl dark:text-white">Wirkunsvoll und sicher unterschreiben mit owlly</h1>
+            <h2 class="font-light text-xl dark:text-white">
+              Zur Identifizierung deiner Identität nutzen wir eine elektronsiche Identität, welche staatlich verifiziert und verwaltet wird. Wir verwenden deine
+              Daten (Name, Vorname, Geburtsdatum, Adresse) nur zur Generierung deines persönlichen Unterschriftbogens.
+            </h2>
+          </app-textblock>
+        </div>
+      </div>
     </ng-container>
   </div>
 </main>

@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {ModalService} from '../../services/modal.service';
+import {QuestionComponent as QuestionComponentType} from '../../modals/question/question.component';
 
 @Component({
   selector: 'app-explained',
   templateUrl: './explained.component.html',
-  styleUrls: ['./explained.component.scss']
+  styleUrls: ['./explained.component.scss'],
 })
-export class ExplainedComponent implements OnInit {
+export class ExplainedComponent {
+  constructor(private modalService: ModalService<QuestionComponentType>) {
+    var acc = document.getElementsByClassName('accordion');
+    var i;
 
-  constructor() { }
-
-  ngOnInit(): void {
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener('click', function (this: any) {
+        this.classList.toggle('active');
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    }
   }
 
+  async showQuestion(): Promise<void> {
+    /*const {FeedbackComponent} = await import('../../modals/feedback/feedback.component');
+
+    await this.modalService.open(FeedbackComponent);
+    */
+    const {QuestionComponent} = await import('../../modals/question/question.component');
+    await this.modalService.open(QuestionComponent);
+  }
 }

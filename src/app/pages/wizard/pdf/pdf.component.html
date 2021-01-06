@@ -1,16 +1,19 @@
 <app-header></app-header>
 
-<main class="bg-gray-50 text-black">
-  <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
+<main>
+  <div class="container mx-auto max-w-screen-lg px-6 pt-10">
     <ng-container *ngIf="useData$ | async as userData; else loadingUser">
-      <h1>Hallo {{ userData?.given_name }}</h1>
+
+      <h1 class="font-bold text-4xl md:text-6xl">{{ userData?.given_name }}</h1>
+
     </ng-container>
 
     <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
-      <p *ngIf="pdf.url === undefined">Pdf unavailable.</p>
+      <p *ngIf="pdf.url === undefined" class="font-light text-2xl">Die PDF Generierung hat nicht geklappt 🤔</p>
 
       <ng-container *ngIf="pdf.url !== undefined">
-        <p>Pdf is ready.</p>
+        <app-textblock type="owlly"></app-textblock>
+        <p class="font-light text-2xl">Wir haben von Dir alle erforderlichen Informationen erhalten und deine Unterschriftenbogen erstellt!</p>
 
         <app-button (click)="navigate()" class="py-10">Weiter</app-button>
       </ng-container>
@@ -21,9 +24,9 @@
 <app-footer></app-footer>
 
 <ng-template #loadingUser>
-  <div>Loading user...</div>
+  <div>Lade User...</div>
 </ng-template>
 
 <ng-template #loadingPdf>
-  <div>Loading pdf...</div>
+  <div>Generiere dein persönliches PDF...</div>
 </ng-template>

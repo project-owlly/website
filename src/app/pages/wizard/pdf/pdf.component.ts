@@ -17,7 +17,6 @@ import {AuthService} from 'src/app/services/auth.service';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
-  styleUrls: ['./pdf.component.scss'],
 })
 export class PdfComponent implements OnInit {
   readonly useData$: Observable<EidUserData | undefined> = this.route.queryParams.pipe(

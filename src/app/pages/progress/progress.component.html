@@ -1,92 +1,72 @@
 <app-header></app-header>
 
-<app-pagehero
-imgName="progresshero.jpg"
-type="plain"
-[diamonds]="true"
->
-<h1 class="text-4xl md:text-6xl font-bold">Fortschritt <span class="text-4xl md:text-6xl font-light">in der Schweiz</span></h1>
-<!-- Subtitle -->
-<h2 class="text-xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</h2>    
+<app-pagehero imgName="bundeshaus-2-1920" type="plain" [diamonds]="true">
+  <h1 class="text-4xl md:text-6xl font-bold dark:text-white">Fortschritt <span class="text-4xl md:text-6xl font-light">in der Schweiz</span></h1>
+  <!-- Subtitle -->
+  <h2 class="text-xl dark:text-white">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+  </h2>
 
-<div class="container mx-auto max-w-screen-xl px-6 py-2 pt-12 text-center grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="container mx-auto max-w-screen-xl px-6 py-2 pt-12 text-center grid grid-cols-1 md:grid-cols-3 gap-6">
     <app-swissmap class="col-span-1 md:col-span-2"></app-swissmap>
     <div class="col-span-1">
-        <div class="table w-full">
-            <div class="table-row-group">
-                <div class="table-row ">
-                    <div class="table-cell align-middle ">
-                        <svg width="20" height="20">
-                            <rect width="20" height="20" style="fill:#99C756;" />
-                        </svg>
-                    </div>
-                    <div class="table-cell text-left">E-Collecting vollständig ermöglicht</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell align-middle ">
-                        <svg width="20" height="20">
-                            <rect width="20" height="20" style="fill:#27A4D4;" />
-                        </svg>
-                    </div>
-                    <div class="table-cell text-left">Politische Prozesse im Gange</div>
-                </div>
-                <div class="table-row">
-                        <div class="table-cell align-middle ">
-                            <svg width="20" height="20">
-                                <rect width="20" height="20" style="fill:#D9D8D8;" />
-                            </svg>
-                        </div>
-                        <div class="table-cell text-left">Noch keine E-Collecting Bestrebungen</div>
-                    </div>
+      <div class="table w-full">
+        <div class="table-row-group">
+          <div class="table-row">
+            <div class="table-cell align-middle">
+              <svg width="20" height="20">
+                <rect width="20" height="20" style="fill: #99c756" />
+              </svg>
             </div>
+            <div class="table-cell text-left dark:text-white">E-Collecting vollständig ermöglicht</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell align-middle">
+              <svg width="20" height="20">
+                <rect width="20" height="20" style="fill: #27a4d4" />
+              </svg>
+            </div>
+            <div class="table-cell text-left dark:text-white">Politische Prozesse im Gange</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell align-middle">
+              <svg width="20" height="20">
+                <rect width="20" height="20" style="fill: #d9d8d8" />
+              </svg>
+            </div>
+            <div class="table-cell text-left dark:text-white">Noch keine E-Collecting Bestrebungen</div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
+  </div>
 
-<app-textblock
-title="Der aktuelle Stand"
-type="owlly"
-text="Velit sint aute qui aliqua pariatur mollit culpa eu. In laboris labore ad adipisicing adipisicing et ad et. Consequat qui proident adipisicing est aliqua in. Sint consequat id incididunt commodo fugiat dolor irure ut incididunt nisi elit amet."
-subtitle="Noch kein E-Collecting bei dir? Werde selbst aktiv!"
-[showButton]="true"
-buttonText="Erfahre wie"
->
-
-<div class="flex grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
-    <app-card
-    title="Bund"
-    text="Allgemeines Stand National"
-    [showButton]="true"
-    buttonText="mehr"
+  <app-textblock
+    title="Der aktuelle Stand"
     type="owlly"
-    ></app-card>
-    <app-card
-    title="Kanton"
-    text="Allgemeines Kantone"
+    text="Velit sint aute qui aliqua pariatur mollit culpa eu. In laboris labore ad adipisicing adipisicing et ad et. Consequat qui proident adipisicing est aliqua in. Sint consequat id incididunt commodo fugiat dolor irure ut incididunt nisi elit amet."
+    subtitle="Noch kein E-Collecting bei dir? Werde selbst aktiv!"
     [showButton]="true"
-    buttonText="mehr"
-    type="owlly"
-    ></app-card>
-    <app-card
-    title="Gemeinden"
-    text="Allgemeines Gemeinden"
-    [showButton]="true"
-    buttonText="mehr"
-    type="owlly"
-    ></app-card>
-    <app-card
-    title="Öffentlichkeit"
-    text="Wie populär ist E-Collecting in der Bevölkerung?
+    buttonText="Erfahre wie"
+  >
+    <div class="flex grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
+      <app-card title="Bund" text="Allgemeines Stand National" [showButton]="true" buttonText="mehr" type="owlly"></app-card>
+      <app-card title="Kanton" text="Allgemeines Kantone" [showButton]="true" buttonText="mehr" type="owlly"></app-card>
+      <app-card title="Gemeinden" text="Allgemeines Gemeinden" [showButton]="true" buttonText="mehr" type="owlly"></app-card>
+      <app-card
+        title="Öffentlichkeit"
+        text="Wie populär ist E-Collecting in der Bevölkerung?
     Wie berichten die Medien? 
     Welche Organiastionen kümmern sich darum?"
-    [showButton]="true"
-    buttonText="mehr"
-    type="owlly"
-    ></app-card>
-</div>
+        [showButton]="true"
+        buttonText="mehr"
+        type="owlly"
+      ></app-card>
+    </div>
+    <div class="text-right items-end pt-6">
+      <app-storynav></app-storynav>
+    </div>
+  </app-textblock>
 
-</app-textblock>
-
-<app-footer></app-footer>
-
+  <app-footer></app-footer>
 </app-pagehero>

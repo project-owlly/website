@@ -1,0 +1,51 @@
+<div class="md:fixed bottom-2 right-2 relative">
+  <div class="table">
+    <div class="table-row-group">
+      <div class="table-row">
+        <div class="table-cell text-right opacity-100 md:opacity-0" id="explainedText"><p>E-Collecting kurz erklärt &nbsp;</p></div>
+        <div class="table-cell p-2">
+          <a href="/explained" (mouseenter)="explainedEnter()" (mouseleave)="explainedLeave()">
+            <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faQuestionCircle"></fa-icon></button>
+          </a>
+        </div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell text-right opacity-100 md:opacity-0" id="missionText"><p>Unsere Mission &nbsp;</p></div>
+        <div class="table-cell p-2">
+          <a href="/ourmission" (mouseenter)="missionEnter()" (mouseleave)="missionLeave()">
+            <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faEye"></fa-icon></button>
+          </a>
+        </div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell text-right opacity-100 md:opacity-0" id="progressText"><p>Fortschritt in der Schweiz &nbsp;</p></div>
+        <div class="table-cell p-2">
+          <a href="/progress" (mouseenter)="progressEnter()" (mouseleave)="progressLeave()">
+            <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faTasks"></fa-icon></button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="flex flex-col justify-items-end gap-6">
+        <div class="flex flex-row items-center justify-items-end">
+            <p>E-Collecting kurz erklärt &nbsp;</p>
+            <a href="">
+            <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"> <fa-icon [icon]="faQuestionCircle"></fa-icon> </button>
+            </a>
+        </div>
+        <div class="flex flex-row items-center justify-items-end">
+            <p>Unsere Mission &nbsp;</p>
+            <a href="">
+            <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"> <fa-icon [icon]="faEye"></fa-icon> </button>
+            </a>
+        </div>
+        <div class="flex flex-row items-center justify-items-end">
+            <p>Fortschritt in der <br>Schweiz &nbsp;</p>
+            <a href="">
+            <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"> <fa-icon [icon]="faTasks"></fa-icon> </button>
+            </a>
+        </div>
+    </div> -->
+</div>

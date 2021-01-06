@@ -8,8 +8,6 @@ import {AngularFirestore} from '@angular/fire/firestore';
   providedIn: 'root',
 })
 export class NewsletterService {
-  collectionName = 'newsletter';
-
   constructor(public firestore: AngularFirestore) {}
 
   createNewsletterRecord(record: any): Promise<void> {
