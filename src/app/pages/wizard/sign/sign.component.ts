@@ -51,6 +51,12 @@ export class SignComponent {
       });
   }
   navigate(): void {
+    this.route.queryParams.pipe(first()).subscribe(async (owllyId) => {
+      await this.router.navigate(['/finish', owllyId]).catch((err) => {
+        console.log(err.message);
+      });
+    });
+
     this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
