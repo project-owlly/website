@@ -3,7 +3,7 @@
 <main class="bg-gray-50 text-black">
   <div class="container mx-auto max-w-screen-lg px-6 pt-10 prose">
     <ng-container *ngIf="useData$ | async as userData; else loadingUser">
-      <h1>Hi {{ userData?.given_name }}</h1>
+      <h1>Hallo {{ userData?.given_name }}</h1>
     </ng-container>
 
     <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
