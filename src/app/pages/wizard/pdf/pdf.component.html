@@ -10,12 +10,9 @@
       <p *ngIf="pdf.url === undefined" class="font-light text-2xl">Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔</p>
       <ng-container *ngIf="userData$ | async as userData">
         <ng-container *ngIf="pdf.url !== undefined">
-          <app-textblock
-            title="Hallo {{ userData?.given_name }}"
-            text="Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!"
-            type="owlly"
-          ></app-textblock>
-
+          <div class="font-light text-xl dark:text-white">
+            Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!
+          </div>
           <app-button (click)="navigate()" class="py-10">Weiter</app-button>
         </ng-container>
       </ng-container>
