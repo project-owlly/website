@@ -7,9 +7,6 @@ import {catchError, filter, first, map, shareReplay, switchMap} from 'rxjs/opera
 import {EidUserData} from '../../../types/eid';
 import {Pdf} from '../../../types/pdf';
 
-import {DeviceInfo, Plugins} from '@capacitor/core';
-const {Browser, Device} = Plugins;
-
 import {OidcService} from 'src/app/services/oidc.service';
 import {PdfService} from 'src/app/services/pdf.service';
 import {AuthService} from 'src/app/services/auth.service';
@@ -37,8 +34,6 @@ export class PdfComponent implements OnInit {
     shareReplay({bufferSize: 1, refCount: true})
   );
 
-  public deviceInfo: DeviceInfo | undefined;
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -53,10 +48,6 @@ export class PdfComponent implements OnInit {
     //this.openPdf();--> Display pdf in modal instead of open link?
 
     this.loadPdf();
-
-    Device.getInfo().then((deviceInfo) => {
-      this.deviceInfo = deviceInfo;
-    });
   }
 
   /*private openPdf(): void {

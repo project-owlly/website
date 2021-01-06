@@ -6,9 +6,9 @@ import {Pdf} from '../../../types/pdf';
 
 import {PdfService} from '../../../services/pdf.service';
 
-import {Capacitor, Plugins} from '@capacitor/core';
+import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
-const {Browser} = Plugins;
+const {Browser, Device} = Plugins;
 
 @Component({
   selector: 'app-sign',
@@ -16,6 +16,7 @@ const {Browser} = Plugins;
   styleUrls: ['./sign.component.scss'],
 })
 export class SignComponent {
+  public deviceInfo: DeviceInfo | undefined;
   readonly owllyId$: Observable<string | undefined> = this.route.queryParams.pipe(
     first(),
     filter((params: Params) => params.owllyId !== null),
@@ -25,7 +26,11 @@ export class SignComponent {
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
-  constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
+    Device.getInfo().then((deviceInfo) => {
+      this.deviceInfo = deviceInfo;
+    });
+  }
 
   async openEID() {
     this.pdf$
@@ -49,7 +54,7 @@ export class SignComponent {
         first()
       )
       .subscribe(async (owllyId: string | undefined) => {
-        await this.router.navigate(['/sign', owllyId]);
+        await this.router.navigate(['/finish', owllyId]);
       });
   }
 }
