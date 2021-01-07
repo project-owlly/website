@@ -15,9 +15,13 @@
           <div class="font-light text-2xl dark:text-white px-6">
             Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!
           </div>
-          <div class="px-6">
-          <app-button (click)="navigate()" class="py-10">Weiter</app-button>
-        </div>
+
+          <div class="flex flex-row">
+            <div class="text-center flex-auto">
+              <app-button (click)="navigate()" class="py-10">Weiter</app-button>
+            </div>
+          </div>
+
         </ng-container>
       </ng-container>
     </ng-container>
@@ -28,8 +32,14 @@
 
 <ng-template #loadingUser>
   <app-textblock title="Wir sind gleich soweit" type="owlly" subtitle="Deine Daten werden gerade übertragen."> </app-textblock>
+  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+    <!-- ... -->
+  </svg>
 </ng-template>
 
 <ng-template #loadingPdf>
   <app-textblock title="Einen Moment noch" type="owlly" subtitle="Wir generieren dein persönliches Dokument."> </app-textblock>
+  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+    <!-- ... -->
+  </svg>
 </ng-template>
