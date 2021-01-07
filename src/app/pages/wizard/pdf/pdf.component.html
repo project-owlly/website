@@ -1,16 +1,18 @@
-<app-header></app-header>
+<app-header [hideNav]="true"></app-header>
 
 <main class="dark:bg-black">
-  <div class="container mx-auto max-w-screen-lg pt-10">
+  <div class="container mx-auto max-w-screen-xl">
     <ng-container *ngIf="userData$ | async as userData; else loadingUser">
       <app-textblock title="Hallo {{ userData?.given_name }}" text="" type="owlly"></app-textblock>
     </ng-container>
 
     <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
-      <p *ngIf="pdf.url === undefined" class="font-light text-2xl dark:text-white">Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔</p>
-      <ng-container *ngIf="userData$ | async as userData">
+      <p *ngIf="pdf.url === undefined" class="font-light text-2xl px-6 dark:text-white">
+        Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔
+      </p>
+      <ng-container *ngIf="userData$ | async as userData" class="px-6">
         <ng-container *ngIf="pdf.url !== undefined">
-          <div class="font-light text-xl dark:text-white">
+          <div class="font-light text-2xl dark:text-white px-6">
             Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erfolgreich erstellt!
           </div>
 
