@@ -33,14 +33,16 @@ export class SignComponent {
     });
   }
 
-  async openEID() {
+  import() {
     this.pdf$
       .pipe(
         filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}); // + encodeURIComponent(pdf?.url as string)});
+        const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}).catch((err) => {
+          alert('canOpenUrl: ' + err.message);
+        });
 
         if (canOpenUrl) {
           await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url});
@@ -51,13 +53,15 @@ export class SignComponent {
             position: 'top',
           });
         }
-        //TODO Navigate to next page
-        setTimeout(() => {
-          this.navigate();
-        }, 1000);
+        this.navigate();
       });
   }
+
   navigate(): void {
+    this.route.paramMap.pipe(first()).subscribe((owllyId) => {
+      console.log(JSON.stringify(owllyId));
+    });
+
     this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
