@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {ActivatedRoute, Params, Router, ParamMap} from '@angular/router';
 import {Observable} from 'rxjs';
 
 import {Pdf} from '../../../types/pdf';
@@ -18,7 +18,7 @@ const {Browser, Device} = Plugins;
 export class SignComponent {
   public deviceInfo: DeviceInfo | undefined;
 
-  readonly owllyId$: Observable<string | undefined> = this.route.queryParams.pipe(
+  readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
     first(),
     filter((params: Params) => params.owllyId !== null),
     map((params: Params) => params.owllyId),
@@ -34,15 +34,17 @@ export class SignComponent {
   }
 
   async openEID() {
-    alert('click openEID');
-
     this.pdf$
       .pipe(
         filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)});
+        alert('click openEID ' + 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+
+        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
+          alert(err.message);
+        });
 
         //TODO Navigate to next page
         setTimeout(() => {
@@ -51,12 +53,6 @@ export class SignComponent {
       });
   }
   navigate(): void {
-    this.route.queryParams.pipe(first()).subscribe(async (owllyId) => {
-      await this.router.navigate(['/finish', owllyId]).catch((err) => {
-        console.log(err.message);
-      });
-    });
-
     this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
@@ -67,5 +63,30 @@ export class SignComponent {
           console.log(err.message);
         });
       });
+
+    /*    
+    this.route.paramMap.pipe(first()).subscribe( async (owllyId)=>{
+      await this.router.navigate(['/finish', owllyId]).catch((err) => {
+        console.log(err.message);
+      });
+    })
+
+    //old..
+    this.route.queryParams.pipe(first()).subscribe(async (owllyId) => {
+      await this.router.navigate(['/finish', owllyId]).catch((err) => {
+        console.log(err.message);
+      });
+    });
+    
+    this.owllyId$
+      .pipe(
+        filter((owllyId: string | undefined) => owllyId !== undefined),
+        first()
+      )
+      .subscribe(async (owllyId: string | undefined) => {
+        await this.router.navigate(['/finish', owllyId]).catch((err) => {
+          console.log(err.message);
+        });
+      });*/
   }
 }
