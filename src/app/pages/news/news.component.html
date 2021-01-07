@@ -11,7 +11,16 @@
   <div class="mx-auto max-w-screen-xl p-6">
     <app-newscard text="Das Neuste" date="20.04.20" imgName="News_SH 3.png" [showButton]="true" buttonText="weiterlesen"></app-newscard>
   </div>
+
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl p-6 gap-12">
+    <h2 class="text-xl dark:text-white">
+      <ul aria-label="Blog posts">
+        <li *ngFor="let blog of blogPosts$ | async">
+          <a [routerLink]="blog.route"> {{ blog.title }} by {{ blog.authorName }} </a>
+        </li>
+      </ul>
+    </h2>
+
     <app-newscard text="Das Neuste" date="20.04.20" imgName="News_SH 3.png" [showButton]="true" buttonText="weiterlesen"></app-newscard>
 
     <app-newscard text="Das Neuste" date="20.04.20" imgName="News_SH 3.png" [showButton]="true" buttonText="weiterlesen"></app-newscard>

@@ -10,7 +10,14 @@ setPluginConfig(SitemapPlugin, {
   urlPrefix: 'https://owlly.ch',
   sitemapFilename: 'sitemap.xml',
   ignoredRoutes: ['/404'],
-  routes: {},
+  routes: {
+    '/news/:title': {
+      type: 'contentFolder',
+      title: {
+        folder: './src/blog',
+      },
+    },
+  },
 });
 
 export const config: ScullyConfig = {
@@ -25,6 +32,12 @@ export const config: ScullyConfig = {
         property: 'data.slug',
       },
       postRenderers: ['fouc', getFlashPreventionPlugin()],
+    },
+    '/news/:title': {
+      type: 'contentFolder',
+      title: {
+        folder: './src/blog',
+      },
     },
   },
 };
