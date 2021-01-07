@@ -18,7 +18,7 @@ const {Browser, Device} = Plugins;
 export class SignComponent {
   public deviceInfo: DeviceInfo | undefined;
 
-  readonly owllyId$: Observable<string | undefined> = this.route.params.pipe(
+  readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
     first(),
     filter((params: Params) => params.owllyId !== null),
     map((params: Params) => params.owllyId),
@@ -65,11 +65,13 @@ export class SignComponent {
       });
 
     /*    
-    this.route.params.pipe(first()).subscribe( async (owllyId)=>{
+    this.route.paramMap.pipe(first()).subscribe( async (owllyId)=>{
       await this.router.navigate(['/finish', owllyId]).catch((err) => {
         console.log(err.message);
       });
     })
+
+    //old..
     this.route.queryParams.pipe(first()).subscribe(async (owllyId) => {
       await this.router.navigate(['/finish', owllyId]).catch((err) => {
         console.log(err.message);
