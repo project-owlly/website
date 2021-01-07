@@ -20,8 +20,8 @@ export class SignComponent {
 
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
     first(),
-    filter((params: Params) => params.owllyId !== null),
-    map((params: Params) => params.owllyId),
+    filter((params: Params) => params.get('owllyId') !== null),
+    map((params: Params) => params.get('owllyId')),
     shareReplay({bufferSize: 1, refCount: true})
   );
 
