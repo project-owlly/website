@@ -15,7 +15,7 @@
         <ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">
           <p class="dark:text-white text-xl">Du kannst das Dokument direkt in deine eID+ importieren.</p>
           <div class="text-center flex-auto">
-            <app-button (click)="openEID()" class="py-10">importieren </app-button>
+            <app-button (click)="import()" class="py-10">importieren </app-button>
           </div>
         </ng-container>
 
