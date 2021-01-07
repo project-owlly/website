@@ -7,7 +7,7 @@
       <div class="table-row-group">
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/home">Kampagne starten </a>
+            <a class="text-2xl dark:text-white text-gray-300 hover:text-gray-300 transition" href="javascript:void(0)">Kampagne starten </a>
           </div>
           <div class="table-cell items-center dark:text-white">
             <fa-icon [icon]="faPlayCircle"></fa-icon>
@@ -23,7 +23,7 @@
         </div>
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/ourmission">Über uns</a>
+            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/aboutus">Über uns</a>
           </div>
           <div class="table-cell dark:text-white">
             <fa-icon [icon]="faUsers"></fa-icon>
@@ -43,9 +43,9 @@
     </a>
     
     <div class="space-x-6 hidden md:block" *ngIf="!hideNav">
-      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/home">Kampagne starten</a>
+      <a class="text-lg hover:text-gray-300 text-gray-300 dark:text-white transition" href="javascript:void(0)">Kampagne starten</a>
       <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/solutions">Unser Angebot</a>
-      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/ourmission">Über uns</a>
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/aboutus">Über uns</a>
     </div>
     <div class="md:hidden block" *ngIf="!hideNav">
       <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="javascript:void(0)" (click)="openMobileNav()"><fa-icon [icon]="faBars"></fa-icon></a>
