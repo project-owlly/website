@@ -47,13 +47,19 @@ export class SignComponent {
         if (canOpenUrl) {
           await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url});
           //await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {});
+          await Toast.show({
+            text: 'Dokument wurde importiert.',
+            position: 'top',
+          });
         } else {
           await Toast.show({
             text: 'Dokument konnte nicht importiert werden.',
             position: 'top',
           });
         }
-        this.navigate();
+        setTimeout(() => {
+          this.navigate();
+        }, 500);
       });
   }
 
