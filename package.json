@@ -28,7 +28,7 @@
     "@angular/platform-browser-dynamic": "~11.0.1",
     "@angular/router": "~11.0.1",
     "@angular/service-worker": "~11.0.0",
-    "@capacitor/core": "^2.4.2",
+    "@capacitor/core": "^2.4.5",
     "@deckdeckgo/qrcode": "^2.0.1",
     "@fortawesome/angular-fontawesome": "^0.8.0",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
