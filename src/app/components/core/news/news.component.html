@@ -24,36 +24,12 @@
 
   <div #horizontalScroll class="flex flex-row gap-6 px-6 py-12 overflow-auto scroll">
     <app-newscard
-      imgName="News_SH 3.png"
-      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
+      *ngFor="let blog of blogPosts$ | async"
+      text="{{ blog.title }}"
+      date="{{ blog.date }}"
+      imgName="{{ blog.image }}"
       [showButton]="true"
-      buttonText="mehr"
-    ></app-newscard>
-    <app-newscard
-      imgName="News_SH 3.png"
-      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-      [showButton]="true"
-      buttonText="mehr"
-    ></app-newscard>
-    <app-newscard
-      imgName="News_SH 3.png"
-      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-      [showButton]="true"
-      buttonText="mehr"
-    ></app-newscard>
-
-    <app-newscard
-      imgName="News_SH 3.png"
-      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-      [showButton]="true"
-      buttonText="mehr"
-    ></app-newscard>
-
-    <app-newscard
-      imgName="News_SH 3.png"
-      text="“Kanton Schaffhausen als Pionier: Erster Kanton mit vollständigem E-Collecting!” Amet ullamco magna aute quis sunt eiusmod quis. In velit laboris officia aliqua ut aliquip do velit deserunt incididunt quis dolore elit. Aliquip quis aliqua velit quis ut non occaecat ipsum est elit officia ea culpa eu. Mollit proident eu amet proident quis fugiat minim officia. Nostrud est Lorem sit cupidatat ea excepteur mollit."
-      [showButton]="true"
-      buttonText="mehr"
+      buttonText="weiterlesen"
     ></app-newscard>
   </div>
 </div>

@@ -1,7 +1,17 @@
-<h3>ScullyIo content</h3>
-<hr />
+<app-header></app-header>
 
-<!-- This is where Scully will inject the static HTML -->
-<scully-content></scully-content>
-<hr />
-<h4>End of content</h4>
+<app-pagehero *ngIf="$blogPostMetadata | async as blogPost" type="campaigner" imgName="{{ blogPost.image }}" [diamonds]="true">
+  <h1 class="text-4xl md:text-6xl font-bold dark:text-white">{{ blogPost.title }}</h1>
+  <h1 class="text-4xl md:text-6xl font-light dark:text-white">{{ blogPost.description }}</h1>
+  <h2 class="text-xl dark:text-white">
+    {{ blogPost.date }}
+  </h2>
+
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 dark:text-white p-6">
+    <!-- This is where Scully will inject the static HTML -->
+
+    <scully-content></scully-content>
+  </div>
+
+  <app-footer></app-footer>
+</app-pagehero>

@@ -132,6 +132,12 @@
 
   <app-news></app-news>
 
+  <app-textblock type="owlly" title="Unsere Volksbegehren">
+    <p *ngFor="let owlly of owlly$ | async" class="text-xl font-light dark:text-white">
+      {{ owlly.route }}
+    </p>
+  </app-textblock>
+
   <div style="height: 100px"></div>
 
   <!-- <div class="slider">

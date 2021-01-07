@@ -11,10 +11,10 @@ setPluginConfig(SitemapPlugin, {
   sitemapFilename: 'sitemap.xml',
   ignoredRoutes: ['/404'],
   routes: {
-    '/news/:title': {
+    '/blog/:title': {
       type: 'contentFolder',
       title: {
-        folder: './src/blog',
+        folder: './src/news',
       },
     },
   },
@@ -25,6 +25,12 @@ export const config: ScullyConfig = {
   projectName: 'website',
   outDir: './dist/static',
   routes: {
+    '/blog/:title': {
+      type: 'contentFolder',
+      title: {
+        folder: './src/news',
+      },
+    },
     '/o/:slug': {
       type: 'json',
       slug: {
@@ -32,12 +38,6 @@ export const config: ScullyConfig = {
         property: 'data.slug',
       },
       postRenderers: ['fouc', getFlashPreventionPlugin()],
-    },
-    '/news/:title': {
-      type: 'contentFolder',
-      title: {
-        folder: './src/blog',
-      },
     },
   },
 };
