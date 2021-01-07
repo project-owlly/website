@@ -40,11 +40,7 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        alert('click openEID ' + 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
-
-        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
-          alert(err.message);
-        });
+        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {});
 
         //TODO Navigate to next page
         setTimeout(() => {
@@ -63,30 +59,5 @@ export class SignComponent {
           console.log(err.message);
         });
       });
-
-    /*    
-    this.route.paramMap.pipe(first()).subscribe( async (owllyId)=>{
-      await this.router.navigate(['/finish', owllyId]).catch((err) => {
-        console.log(err.message);
-      });
-    })
-
-    //old..
-    this.route.queryParams.pipe(first()).subscribe(async (owllyId) => {
-      await this.router.navigate(['/finish', owllyId]).catch((err) => {
-        console.log(err.message);
-      });
-    });
-    
-    this.owllyId$
-      .pipe(
-        filter((owllyId: string | undefined) => owllyId !== undefined),
-        first()
-      )
-      .subscribe(async (owllyId: string | undefined) => {
-        await this.router.navigate(['/finish', owllyId]).catch((err) => {
-          console.log(err.message);
-        });
-      });*/
   }
 }
