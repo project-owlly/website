@@ -8,7 +8,7 @@ import {PdfService} from '../../../services/pdf.service';
 
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
-const {Browser, Device} = Plugins;
+const {Browser, Device, App, Toast} = Plugins;
 
 @Component({
   selector: 'app-sign',
@@ -40,8 +40,17 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {});
+        const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}); // + encodeURIComponent(pdf?.url as string)});
 
+        if (canOpenUrl) {
+          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url});
+          //await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {});
+        } else {
+          await Toast.show({
+            text: 'Dokument konnte nicht importiert werden.',
+            position: 'top',
+          });
+        }
         //TODO Navigate to next page
         setTimeout(() => {
           this.navigate();
