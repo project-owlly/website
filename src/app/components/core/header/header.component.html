@@ -1,31 +1,31 @@
-<div class="fixed bg-white dark:bg-black top-0 left-0 transition-all" style="height: 100%; width: 100%; transform: translateX(100%)" id="mobileNav">
-  <a class="text-lg text-right block hover:text-yellow-400 p-6 transition" href="javascript:void(0)" (click)="closeMobileNav()"
+<div class="fixed bg-white dark:bg-black top-0 left-0 transition-all z-40" style="height: 100%; width: 100%; transform: translateX(100%)" id="mobileNav">
+  <a class="text-lg text-right dark:text-white block hover:text-yellow-400 p-6 transition" href="javascript:void(0)" (click)="closeMobileNav()"
     ><fa-icon [icon]="faTimesCircle"></fa-icon
   ></a>
-  <div class="relative block flex flex-col mt-20 p-12">
+  <div class="relative block flex flex-col mt-20 p-12" *ngIf="!hideNav">
     <div class="table w-full">
       <div class="table-row-group">
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl hover:text-yellow-400 transition" href="/home">Kampagne starten </a>
+            <a class="text-2xl dark:text-white text-gray-300 hover:text-gray-300 transition" href="javascript:void(0)">Kampagne starten </a>
           </div>
-          <div class="table-cell items-center">
+          <div class="table-cell items-center dark:text-white">
             <fa-icon [icon]="faPlayCircle"></fa-icon>
           </div>
         </div>
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl hover:text-yellow-400 transition" href="/solutions">Unser Angebot</a>
+            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/solutions">Unser Angebot</a>
           </div>
-          <div class="table-cell">
+          <div class="table-cell dark:text-white">
             <fa-icon [icon]="faCubes"></fa-icon>
           </div>
         </div>
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl hover:text-yellow-400 transition" href="/ourmission">Über uns</a>
+            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/aboutus">Über uns</a>
           </div>
-          <div class="table-cell">
+          <div class="table-cell dark:text-white">
             <fa-icon [icon]="faUsers"></fa-icon>
           </div>
         </div>
@@ -41,16 +41,14 @@
         <img [src]="'./assets/logo/owlly-' + theme + '.png'" loading="lazy" aria-label="hidden" width="150px" />
       </ng-container>
     </a>
-    <!--
-    <div class="space-x-6 hidden md:block">
-      <a class="text-lg hover:text-yellow-400 transition" href="/home">Kampagne starten</a>
-      <a class="text-lg hover:text-yellow-400 transition" href="/solutions">Unser Angebot</a>
-      <a class="text-lg hover:text-yellow-400 transition" href="/ourmission">Über uns</a>
-
-    <div class="md:hidden">
-        <a class="text-lg hover:text-yellow-400 transition" href="javascript:void(0)" (click)="openMobileNav()"><fa-icon [icon]="faBars"></fa-icon></a>
+    
+    <div class="space-x-6 hidden md:block" *ngIf="!hideNav">
+      <a class="text-lg hover:text-gray-300 text-gray-300 dark:text-white transition" href="javascript:void(0)">Kampagne starten</a>
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/solutions">Unser Angebot</a>
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/aboutus">Über uns</a>
     </div>
-
-    </div>-->
+    <div class="md:hidden block" *ngIf="!hideNav">
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="javascript:void(0)" (click)="openMobileNav()"><fa-icon [icon]="faBars"></fa-icon></a>
+  </div>
   </div>
 </nav>
