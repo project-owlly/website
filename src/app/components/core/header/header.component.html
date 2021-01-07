@@ -41,14 +41,16 @@
         <img [src]="'./assets/logo/owlly-' + theme + '.png'" loading="lazy" aria-label="hidden" width="150px" />
       </ng-container>
     </a>
-    
+
     <div class="space-x-6 hidden md:block" *ngIf="!hideNav">
       <a class="text-lg hover:text-gray-300 text-gray-300 dark:text-white transition" href="javascript:void(0)">Kampagne starten</a>
       <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/solutions">Unser Angebot</a>
       <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/aboutus">Über uns</a>
     </div>
     <div class="md:hidden block" *ngIf="!hideNav">
-      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="javascript:void(0)" (click)="openMobileNav()"><fa-icon [icon]="faBars"></fa-icon></a>
-  </div>
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="javascript:void(0)" (click)="openMobileNav()"
+        ><fa-icon [icon]="faBars"></fa-icon
+      ></a>
+    </div>
   </div>
 </nav>

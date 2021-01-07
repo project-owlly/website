@@ -1,7 +1,5 @@
 <ng-container *ngIf="owlly$ | async as owlly">
-  <app-header
-  [hideNav]="true"
-  ></app-header>
+  <app-header [hideNav]="true"></app-header>
 
   <app-pagehero title="{{ owlly.data.title }}" imgName="header-1920" type="owlly">
     <div class="bg-gray-100 dark:bg-black shadow-lg">
@@ -28,13 +26,9 @@
         <app-button type="button"> Jetzt unterschreiben </app-button>
       </a>
 
-      <button
-      (click)="share()"
-      type="button"
-      class="border-none outline-none rounded-full bg-yellow-400 h-14 w-14 flex items-center justify-center"
-    >
-      <img src="../../../assets/socialmedia/share.svg" alt="share" width="20px">
-    </button>
+      <button (click)="share()" type="button" class="border-none outline-none rounded-full bg-yellow-400 h-14 w-14 flex items-center justify-center">
+        <img src="../../../assets/socialmedia/share.svg" alt="share" width="20px" />
+      </button>
     </div>
 
     <app-textblock title="Zur Sache" text="{{ owlly.data.text }}" type="owlly"></app-textblock>

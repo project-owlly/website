@@ -1,6 +1,4 @@
-<app-header
-[hideNav]="true"
-></app-header>
+<app-header [hideNav]="true"></app-header>
 
 <main class="dark:bg-black">
   <div class="container mx-auto max-w-screen-xl">
@@ -9,7 +7,9 @@
     </ng-container>
 
     <ng-container *ngIf="pdf$ | async as pdf; else loadingPdf">
-      <p *ngIf="pdf.url === undefined" class="font-light text-2xl px-6">Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔</p>
+      <p *ngIf="pdf.url === undefined" class="font-light text-2xl px-6 dark:text-white">
+        Die PDF Generierung hat nicht geklappt. Versuche es nochmals von vorne 🤔
+      </p>
       <ng-container *ngIf="userData$ | async as userData" class="px-6">
         <ng-container *ngIf="pdf.url !== undefined">
           <div class="font-light text-2xl dark:text-white px-6">
@@ -21,7 +21,6 @@
               <app-button (click)="navigate()" class="py-10">Weiter</app-button>
             </div>
           </div>
-
         </ng-container>
       </ng-container>
     </ng-container>
@@ -38,7 +37,7 @@
 </ng-template>
 
 <ng-template #loadingPdf>
-  <app-textblock title="Einen Moment noch" type="owlly" subtitle="Wir generieren dein persönliches Dokument."> </app-textblock>
+  <p class="font-light text-2xl dark:text-white">Einen Moment noch - wir generieren dein persönliches Dokument.</p>
   <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
     <!-- ... -->
   </svg>
