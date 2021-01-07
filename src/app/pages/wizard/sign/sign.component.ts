@@ -20,8 +20,8 @@ export class SignComponent {
 
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
     first(),
-    filter((params: Params) => params.owllyId !== null),
-    map((params: Params) => params.owllyId),
+    filter((params: Params) => params.get('owllyId') !== null),
+    map((params: Params) => params.get('owllyId')),
     shareReplay({bufferSize: 1, refCount: true})
   );
 
@@ -58,8 +58,12 @@ export class SignComponent {
   }
 
   navigate(): void {
-    this.route.paramMap.pipe(first()).subscribe((owllyId) => {
-      console.log(JSON.stringify(owllyId));
+    this.route.paramMap.pipe(first()).subscribe(async (param) => {
+      //console.log(JSON.stringify(owllyId));
+
+      await this.router.navigate(['/finish', param.get('owllyId')]).catch((err) => {
+        console.log(err.message);
+      });
     });
 
     this.owllyId$
