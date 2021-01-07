@@ -102,6 +102,8 @@ const routes: Routes = [
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then((m) => m.NewsPageModule),
   },
+  {path: 'blog', loadChildren: () => import('./pages/blog/blog.module').then((m) => m.BlogModule)},
+
   {
     path: 'progress',
     loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
@@ -183,7 +185,6 @@ const routes: Routes = [
       },
     ],
   },
-
   //Fallback
   {
     path: '**',
