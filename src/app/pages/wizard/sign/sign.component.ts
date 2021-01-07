@@ -45,16 +45,22 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url});
+          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}).catch((err) => {
+            alert('openUrl: ' + err.message);
+          });
           //await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {});
           await Toast.show({
             text: 'Dokument wurde importiert.',
             position: 'top',
+          }).catch((err) => {
+            alert(err.message);
           });
         } else {
           await Toast.show({
             text: 'Dokument konnte nicht importiert werden.',
             position: 'top',
+          }).catch((err) => {
+            alert(err.message);
           });
         }
         setTimeout(() => {
