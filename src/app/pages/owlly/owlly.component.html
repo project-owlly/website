@@ -4,7 +4,7 @@
   <app-pagehero title="{{ owlly.data.title }}" imgName="header-1920" type="owlly">
     <div class="bg-gray-100 dark:bg-black shadow-lg">
       <div class="container mx-auto max-w-screen-xl px-6 py-2">
-        <h1 class="text-2xl font-bold dark:text-white">Ziele der Initiative</h1>
+        <h1 class="text-2xl font-bold dark:text-white" *ngIf="owlly.data.goals" >Ziele der Initiative</h1>
         <div class="table w-full">
           <div class="table-row-group">
             <div class="table-row gap-6" *ngFor="let entry of owlly.data.goals">
