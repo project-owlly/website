@@ -8,7 +8,7 @@ import {PdfService} from '../../../services/pdf.service';
 
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
-const {Browser, Device} = Plugins;
+const {Browser, Device, App, Toast} = Plugins;
 
 @Component({
   selector: 'app-sign',
@@ -40,12 +40,17 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        alert('click openEID ' + 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+        const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}); // + encodeURIComponent(pdf?.url as string)});
 
-        await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
-          alert(err.message);
-        });
-
+        if (canOpenUrl) {
+          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url});
+          //await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {});
+        } else {
+          await Toast.show({
+            text: 'Dokument konnte nicht importiert werden.',
+            position: 'top',
+          });
+        }
         //TODO Navigate to next page
         setTimeout(() => {
           this.navigate();
@@ -63,30 +68,5 @@ export class SignComponent {
           console.log(err.message);
         });
       });
-
-    /*    
-    this.route.paramMap.pipe(first()).subscribe( async (owllyId)=>{
-      await this.router.navigate(['/finish', owllyId]).catch((err) => {
-        console.log(err.message);
-      });
-    })
-
-    //old..
-    this.route.queryParams.pipe(first()).subscribe(async (owllyId) => {
-      await this.router.navigate(['/finish', owllyId]).catch((err) => {
-        console.log(err.message);
-      });
-    });
-    
-    this.owllyId$
-      .pipe(
-        filter((owllyId: string | undefined) => owllyId !== undefined),
-        first()
-      )
-      .subscribe(async (owllyId: string | undefined) => {
-        await this.router.navigate(['/finish', owllyId]).catch((err) => {
-          console.log(err.message);
-        });
-      });*/
   }
 }
