@@ -58,8 +58,12 @@ export class SignComponent {
   }
 
   navigate(): void {
-    this.route.paramMap.pipe(first()).subscribe((owllyId) => {
-      console.log(JSON.stringify(owllyId));
+    this.route.paramMap.pipe(first()).subscribe(async (param) => {
+      //console.log(JSON.stringify(owllyId));
+
+      await this.router.navigate(['/finish', param.get('owllyId')]).catch((err) => {
+        console.log(err.message);
+      });
     });
 
     this.owllyId$
