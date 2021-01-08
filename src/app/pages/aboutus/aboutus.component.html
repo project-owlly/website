@@ -6,50 +6,109 @@
   title="Über uns"
   subtitle="Wir sind ein kleines Team mit diversen beruflichen Hintergründen. Zusammen machen wir vorwärts."
 >
-  <app-textblock
-    title="Mission"
-    type="owlly"
-    [showButton]="true"
-    buttonText="Mehr"
-    link="/ourmission"
-  >
-  <h1 class="font-light dark:text-white text-xl">
-    Wir fördern das elektronische Unterschriftensammeln für politische Volksbegehren ganzheitlich um die Potentiale für Alle zu entfalten. Unsere technologischen Lösungen entwickeln wir in Kooperation mit der Bevölkerung und wir setzen uns gemeinsam mit allen Stakeholdern für günstige E-Collecting Rahmenbedingungen in der ganzen Schweiz ein.
-  </h1>
-</app-textblock>
+  <app-textblock title="Mission" type="owlly" [showButton]="true" buttonText="Mehr" link="/ourmission">
+    <h1 class="font-light dark:text-white text-xl">
+      Wir fördern das elektronische Unterschriftensammeln für politische Volksbegehren ganzheitlich um die Potentiale für Alle zu entfalten. Unsere
+      technologischen Lösungen entwickeln wir in Kooperation mit der Bevölkerung und wir setzen uns gemeinsam mit allen Stakeholdern für günstige E-Collecting
+      Rahmenbedingungen in der ganzen Schweiz ein.
+    </h1>
+  </app-textblock>
 
   <app-textblock title="Team" type="owlly">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
       <div class="text-center dark:text-white">
-        <img src="../../../assets/team/fabian.webp" alt="" width="70%" class="rounded-full mx-auto" />
+        <picture>
+          <source type="image/webp" srcset="../../../assets/team/fabian.webp" />
+          <source type="image/jpeg" srcset="../../../assets/team/fabian.jpeg" />
+          <img
+            id="img-fabian"
+            src="../../../assets/team/fabian.webp"
+            onmouseover="this.src='../../../assets/team/owlly.jpg'"
+            onmouseout="this.src='../../../assets/team/fabian.webp'"
+            alt="fabian"
+            width="70%"
+            class="rounded-full mx-auto"
+          />
+        </picture>
+
         <p class="text-3xl font-bold pt-6">Fabian Bolli</p>
         <p class="text-lg font-light pt-4">Content & Communication Manager</p>
         <a href="https://www.linkedin.com/in/fabian-bolli-91967b163/" target="__blank"><fa-icon [icon]="faLink"></fa-icon></a>
       </div>
 
       <div class="text-center dark:text-white">
-        <img src="../../../assets/team/david.webp" alt="" width="70%" class="rounded-full mx-auto" />
+        <picture>
+          <source type="image/webp" srcset="../../../assets/team/david.webp" />
+          <source type="image/jpeg" srcset="../../../assets/team/david.jpeg" />
+          <img
+            id="img-david"
+            src="../../../assets/team/david.webp"
+            onmouseover="this.src='../../../assets/team/owlly2.jpg'"
+            onmouseout="this.src='../../../assets/team/david.webp'"
+            alt="david"
+            width="70%"
+            class="rounded-full mx-auto"
+          />
+        </picture>
+
         <p class="text-3xl font-bold pt-6">David Dal Busco</p>
         <p class="text-lg font-light pt-4">Full Stack Developer</p>
         <a href="https://www.linkedin.com/in/david-dal-busco/" target="__blank"><fa-icon [icon]="faLink"></fa-icon></a>
       </div>
 
       <div class="text-center dark:text-white">
-        <img src="../../../assets/team/jonathan.webp" alt="" width="70%" class="rounded-full mx-auto" />
+        <picture>
+          <source type="image/webp" srcset="../../../assets/team/jonathan.webp" />
+          <source type="image/jpeg" srcset="../../../assets/team/jonathan.jpeg" />
+          <img
+            id="img-jonathan"
+            src="../../../assets/team/jonathan.webp"
+            onmouseover="this.src='../../../assets/team/owlly.jpg'"
+            onmouseout="this.src='../../../assets/team/jonathan.webp'"
+            alt="jonathan"
+            width="70%"
+            class="rounded-full mx-auto"
+          />
+        </picture>
         <p class="text-3xl font-bold pt-6">Jonathan Dotzler</p>
         <p class="text-lg font-light pt-4">Web Designer / Web Developer</p>
         <a href="https://www.linkedin.com/in/jonathan-dotzler/" target="__blank"><fa-icon [icon]="faLink"></fa-icon></a>
       </div>
 
       <div class="text-center dark:text-white">
-        <img src="../../../assets/team/sandro.webp" alt="" width="70%" class="rounded-full mx-auto" />
+        <img
+          id="img-sandro"
+          src="../../../assets/team/sandro.webp"
+          onmouseover="this.src='../../../assets/team/owlly.jpg'"
+          onmouseout="this.src='../../../assets/team/sandro.webp'"
+          alt="sandro"
+          width="70%"
+          class="rounded-full mx-auto"
+        />
+
+        <!--<picture>
+          <source type="image/webp" srcset="../../../assets/team/sandro.webp" />
+          <source type="image/jpeg" srcset="../../../assets/team/sandro.jpeg" />
+        </picture>-->
         <p class="text-3xl font-bold pt-6">Sandro Scalco</p>
-        <p class="text-lg font-light pt-4">Projektleiter & Full Stack Developer</p>
+        <p class="text-lg font-light pt-4">Projektleiter / Product Manager</p>
         <a href="https://www.linkedin.com/in/sandroscalco/" target="__blank"><fa-icon [icon]="faLink"></fa-icon></a>
       </div>
 
       <div class="text-center dark:text-white">
-        <img src="../../../assets/team/manu.webp" alt="" width="70%" class="rounded-full mx-auto" />
+        <picture>
+          <source type="image/webp" srcset="../../../assets/team/manu.webp" />
+          <source type="image/jpeg" srcset="../../../assets/team/manu.jpeg" />
+          <img
+            id="img-manu"
+            src="../../../assets/team/manu.webp"
+            onmouseover="this.src='../../../assets/team/owlly.jpg'"
+            onmouseout="this.src='../../../assets/team/manu.webp'"
+            alt="manu"
+            width="70%"
+            class="rounded-full mx-auto"
+          />
+        </picture>
         <p class="text-3xl font-bold pt-6">Manuel Stamm</p>
         <p class="text-lg font-light pt-4">Grafik & Design</p>
         <a href="https://www.linkedin.com/in/manuel-stamm/" target="__blank"><fa-icon [icon]="faLink"></fa-icon></a>
@@ -58,17 +117,14 @@
   </app-textblock>
 
   <!-- <app-textblock title="Mehr" type="owlly" subtitle="Unsere Data Policy" [showButton]="true" buttonText="mehr" link="/policy"></app-textblock> -->
-    <app-textblock
-    title="Kontakt"
-    type="owlly"
-    >
+  <app-textblock title="Kontakt" type="owlly">
     <p class="font-light dark:text-white text-xl">
-        liitu consulting gmbh <br />
-        Villenstrasse 4 <br />
-        8200 Schaffhausen <br />
-        Schweiz <br />
-        E-Mail: <a href="mailto:info@liitu.ch" target="__blank">info@liitu.ch</a>
-  </p>
-    </app-textblock>
+      liitu consulting gmbh <br />
+      Villenstrasse 4 <br />
+      8200 Schaffhausen <br />
+      Schweiz <br />
+      E-Mail: <a href="mailto:info@liitu.ch" target="__blank">info@liitu.ch</a>
+    </p>
+  </app-textblock>
   <app-footer></app-footer>
 </app-pagehero>
