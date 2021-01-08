@@ -109,6 +109,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
   },
   {
+    path: 'progress/bund',
+    loadChildren: () => import('./pages/progress-bund/progress-bund.module').then((m) => m.ProgressBundPageModule),
+  },
+  {
+    path: 'progress/cantons',
+    loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
+  },
+  {
     path: 'progress/cantons/:canton',
     loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
   },

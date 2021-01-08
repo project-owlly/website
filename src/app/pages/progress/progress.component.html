@@ -48,12 +48,13 @@
     subtitle="Noch kein E-Collecting bei dir? Werde selbst aktiv!"
     [showButton]="true"
     buttonText="Erfahre wie"
+    link="/support"
   >
     <div class="flex grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
-      <app-card title="Bund" text="Allgemeines Stand National" [showButton]="true" buttonText="mehr" type="owlly"></app-card>
-      <app-card title="Kanton" text="Allgemeines Kantone" [showButton]="true" buttonText="mehr" type="owlly"></app-card>
-      <app-card title="Gemeinden" text="Allgemeines Gemeinden" [showButton]="true" buttonText="mehr" type="owlly"></app-card>
-      <app-card
+      <app-card title="Bund" text="Allgemeines Stand National" [showButton]="true" buttonText="mehr" type="owlly" link="progress/bund"></app-card>
+      <app-card title="Kanton" text="Allgemeines Kantone" [showButton]="true" buttonText="mehr" type="owlly" link="progress/cantons"></app-card>
+      <!-- <app-card title="Gemeinden" text="Allgemeines Gemeinden" [showButton]="true" buttonText="mehr" type="owlly"></app-card> -->
+      <!-- <app-card
         title="Öffentlichkeit"
         text="Wie populär ist E-Collecting in der Bevölkerung?
     Wie berichten die Medien? 
@@ -61,8 +62,9 @@
         [showButton]="true"
         buttonText="mehr"
         type="owlly"
-      ></app-card>
+      ></app-card> -->
     </div>
+
     <div class="text-right items-end pt-6">
       <app-storynav></app-storynav>
     </div>
