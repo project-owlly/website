@@ -1,7 +1,7 @@
 ---
 title: 'Initiativen lancieren per Mausklick'
 description: 'Der Kanton Zürich soll laut einem SP-Politiker die Pionierrolle übernehmen beim digitalen Unterschriftensammeln. Ein Experte warnt.'
-published: false
+published: true
 date: '17.01.2019, 11:19 Uhr'
 image: capaigner-2-1920
 source: 'https://www.tagesanzeiger.ch/zuerich/region/initiativen-lancieren-per-mausklick/story/18468580'

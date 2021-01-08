@@ -1,7 +1,7 @@
 ---
 title: 'Nun muss sich das Parlament mit E-Collecting beschäftigen – Forscher warnen vor ernsthaften Folgen für das politische System'
 description: 'Volksinitiativen und Referenden sollen nach dem Willen des Bundesrats weiterhin nur von Hand unterschrieben werden können. Doch jetzt steigt der Druck, die direkte Demokratie zu digitalisieren.'
-published: false
+published: true
 date: '03.03.2018, 06.00 Uhr'
 picture: campaigner-3-1920
 soruce: 'https://www.nzz.ch/schweiz/dein-smartphone-ist-auch-ein-unterschriftenbogen-ld.1359948?reduced=true'
