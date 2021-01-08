@@ -8,19 +8,32 @@
   <h2 class="text-xl dark:text-white">
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
   </h2>
-  <div class="mx-auto max-w-screen-xl p-6">
-    <app-newscard text="Das Neuste" date="20.04.20" imgName="News_SH 3.png" [showButton]="true" buttonText="weiterlesen"></app-newscard>
-  </div>
+
+  <ng-container *ngIf="blogPosts$ | async as blogPosts">
+    <div class="mx-auto max-w-screen-xl p-6">
+      <app-newscard
+        text="{{ blogPosts[0].title }}"
+        link="{{ blogPosts[0].route }}"
+        date="{{ blogPosts[0].date }}"
+        imgName="{{ blogPosts[0].image }}"
+        [showButton]="true"
+        buttonText="weiterlesen"
+      ></app-newscard>
+    </div>
+  </ng-container>
 
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl p-6 gap-12">
-    <app-newscard
-      *ngFor="let blog of blogPosts$ | async"
-      text="{{ blog.title }}"
-      date="{{ blog.date }}"
-      imgName="{{ blog.image }}"
-      [showButton]="true"
-      buttonText="weiterlesen"
-    ></app-newscard>
+    <ng-container *ngFor="let blog of blogPosts$ | async; index as i; first as isFirst">
+      <app-newscard
+        *ngIf="!isFirst"
+        text="{{ blog.title }}"
+        date="{{ blog.date }}"
+        imgName="{{ blog.image }}"
+        link="{{ blog.route }}"
+        [showButton]="true"
+        buttonText="weiterlesen"
+      ></app-newscard>
+    </ng-container>
   </div>
 
   <div style="height: 300px" class="block md:hidden"></div>

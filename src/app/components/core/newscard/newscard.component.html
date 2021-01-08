@@ -3,14 +3,20 @@
   style="min-height: 300px; min-width: 300px"
 >
   <div class="w-full overflow-hidden">
-    <img class="rounded-t" src="../../../../assets/newsheader/{{ imgName }}" alt="" width="100%" />
+    <picture>
+      <source type="image/webp" srcset="../../../../assets/heros/{{ imgName }}.webp" />
+      <source type="image/jpeg" srcset="../../../../assets/heros/{{ imgName }}.jpg" />
+      <img *ngIf="imgName" class="rounded-t" alt="{{ text }}" width="100%" src="../../../../assets/heros/{{ imgName }}.webp" />
+    </picture>
   </div>
   <div class="p-4">
     <p class="text-md font-light dark:text-white">{{ trimString(text, 200) }}</p>
   </div>
   <div class="h-14"></div>
   <div *ngIf="showButton" class="absolute bottom-0 right-0 p-4">
-    <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+    <a href="{{ link }}"
+      ><app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+    </a>
   </div>
   <div class="absolute bottom-0 left-0 p-4 text-md font-light dark:text-white">{{ date }}</div>
 </div>
