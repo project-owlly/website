@@ -4,14 +4,19 @@
   imgName="laptop-2-1920"
   type="plain"
   title="Über uns"
-  subtitle="Do culpa culpa mollit Lorem. Nulla mollit commodo eu consectetur laboris est tempor amet. Sint in ea Lorem dolore veniam amet commodo sunt. Ullamco amet officia duis pariatur do ea nisi enim ut in est aliqua eu elit. Eiusmod duis esse commodo quis culpa id qui ex consequat magna. Adipisicing aute tempor exercitation exercitation consectetur consequat excepteur. Nostrud labore enim id dolor nostrud laboris eiusmod nulla."
+  subtitle="Wir sind ein kleines Team mit diversen beruflichen Hintergründen. Zusammen machen wir vorwärts."
 >
   <app-textblock
     title="Mission"
     type="owlly"
-    subtitle="“Enabling digital societies” - Die Einführung eines sicheren E-Collectings in
-der Schweiz zur Entfaltung aller Potentiale."
-  ></app-textblock>
+    [showButton]="true"
+    buttonText="Mehr"
+    link="/ourmission"
+  >
+  <h1 class="font-light dark:text-white text-xl">
+    Wir fördern das elektronische Unterschriftensammeln für politische Volksbegehren ganzheitlich um die Potentiale für Alle zu entfalten. Unsere technologischen Lösungen entwickeln wir in Kooperation mit der Bevölkerung und wir setzen uns gemeinsam mit allen Stakeholdern für günstige E-Collecting Rahmenbedingungen in der ganzen Schweiz ein.
+  </h1>
+</app-textblock>
 
   <app-textblock title="Team" type="owlly">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
@@ -52,7 +57,18 @@ der Schweiz zur Entfaltung aller Potentiale."
     </div>
   </app-textblock>
 
-  <app-textblock title="Mehr" type="owlly" subtitle="Unsere Data Policy" [showButton]="true" buttonText="mehr" link="/policy"></app-textblock>
-
+  <!-- <app-textblock title="Mehr" type="owlly" subtitle="Unsere Data Policy" [showButton]="true" buttonText="mehr" link="/policy"></app-textblock> -->
+    <app-textblock
+    title="Kontakt"
+    type="owlly"
+    >
+    <p class="font-light dark:text-white text-xl">
+        liitu consulting gmbh <br />
+        Villenstrasse 4 <br />
+        8200 Schaffhausen <br />
+        Schweiz <br />
+        E-Mail: <a href="mailto:info@liitu.ch" target="__blank">info@liitu.ch</a>
+  </p>
+    </app-textblock>
   <app-footer></app-footer>
 </app-pagehero>

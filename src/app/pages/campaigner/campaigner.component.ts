@@ -1,11 +1,23 @@
 import {Component, OnInit} from '@angular/core';
+import {ModalService} from '../../services/modal.service';
+import {InquiryComponent as InquiryComponentType} from '../../modals/inquiry/inquiry.component';
 
 @Component({
   selector: 'app-campaigner',
   templateUrl: './campaigner.component.html',
+  styleUrls: ['./campaigner.component.scss'],
 })
 export class CampaignerComponent implements OnInit {
-  constructor() {}
+  constructor(private modalService: ModalService<InquiryComponentType>) {}
 
   ngOnInit(): void {}
+
+  async showInquiry(): Promise<void> {
+    /*const {FeedbackComponent} = await import('../../modals/feedback/feedback.component');
+
+    await this.modalService.open(FeedbackComponent);
+    */
+    const {InquiryComponent} = await import('../../modals/inquiry/inquiry.component');
+    await this.modalService.open(InquiryComponent);
+  }
 }
