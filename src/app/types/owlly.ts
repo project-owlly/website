@@ -4,6 +4,7 @@ import {DocumentReference} from '@angular/fire/firestore';
 export interface OwllyData {
   title: string;
   text: string;
+  description: string;
   goals: string[];
 
   link: string;
