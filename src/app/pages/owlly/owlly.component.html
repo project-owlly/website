@@ -31,7 +31,9 @@
       </button>
     </div>
 
-    <app-textblock title="Zur Sache" text="{{ owlly.data.text }}" type="owlly"></app-textblock>
+    <app-textblock *ngIf="owlly.data.description.length > 0" title="Beschreibung" text="{{ owlly.data.description }}" type="owlly"></app-textblock>
+
+    <app-textblock *ngIf="owlly.data.text.length > 0" title="Zur Sache" text="{{ owlly.data.text }}" type="owlly"></app-textblock>
 
     <app-textblock
       title="Hinweis Strafbar"
