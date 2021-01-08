@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalService} from '../../services/modal.service';
-
+import {QuestionComponent as QuestionComponentType} from '../../modals/question/question.component';
 import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsletter/newsletter.component';
 @Component({
   selector: 'app-citizen',
@@ -8,7 +8,7 @@ import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsl
   styleUrls: ['./citizen.component.scss'],
 })
 export class CitizenComponent implements OnInit {
-  constructor(private modalService: ModalService<NewsletterComponentType>) {}
+  constructor(private modalService: ModalService<NewsletterComponentType | QuestionComponentType>) {}
 
   ngOnInit(): void {}
 

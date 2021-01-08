@@ -19,13 +19,14 @@
     <div>
       <div class="text-4xl md:text-6xl font-bold dark:text-white">Enabling</div>
       <div class="text-4xl md:text-6xl font-light dark:text-white">digital democracy.</div>
-      <div class="font-light text-xl dark:text-white">
-        owlly ermöglicht das sichere und einfache elektronische Unterschreiben, Validieren und Zählen von Volksbegehren für Kampagnen-Plattformen und bietet ein
-        ganzheitliches E-Collecting für die Schweiz.
+      <div class="font-light text-xl dark:text-white pt-12">
+        <div>
+         Wir ermöglichen digitale Demokratie durch ganzheitliche E-Collecting Lösungen.
+        </div>
       </div>
-      <div class="pt-8 md:pb-0 pb-4 md:relative md:bottom-0 justify-center items-center md:text-left text-center md:items-start md:justify-start md:mt-auto">
+      <!-- <div class="pt-8 md:pb-0 pb-4 md:relative md:bottom-0 justify-center items-center md:text-left text-center md:items-start md:justify-start md:mt-auto">
         <a href="/"> <app-button>Newsletter anmelden</app-button></a>
-      </div>
+      </div> -->
     </div>
     <div>
       <img src="../../../assets/headerV3.svg" alt="" width="100%" />
@@ -60,7 +61,7 @@
 
   <div class="container mx-auto max-w-screen-xl px-6 py-2 text-center grid grid-cols-1 md:grid-cols-3 gap-6">
     <app-swissmap class="col-span-1 md:col-span-2"></app-swissmap>
-    <div class="col-span-1">
+    <div class="col-span-1 relative">
       <div class="table w-full">
         <div class="table-row-group">
           <div class="table-row">
@@ -88,6 +89,13 @@
             <div class="table-cell text-left dark:text-white">Noch keine E-Collecting Bestrebungen</div>
           </div>
         </div>
+      </div>
+      <div class="absolute bottom-0 right-0">
+        <a href="/progress">
+        <app-button
+        [small]="true"
+        >erfahre mehr</app-button>
+      </a>
       </div>
     </div>
   </div>
