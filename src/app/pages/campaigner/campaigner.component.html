@@ -4,45 +4,65 @@
   <h1 class="text-4xl md:text-6xl font-light dark:text-white">E-Collecting fördern</h1>
   <h1 class="text-4xl md:text-6xl font-bold dark:text-white">Campaigner/Partei</h1>
   <h2 class="text-xl dark:text-white">
-    Die Verwaltung spielt eine Schlüsselrolle in der erfolgreichen Einführung von E-Collecting. Owlly bietet perönliche Unterstützung.
+    Vorteile und Handlungsansätze für die Campaigner & Parteien. Wir bieten Beratung und Umsetzungsunterstützung.
   </h2>
 
-  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
-    <div class="">
-      <app-textblock
-        title="Politische Legitimation"
-        type="campaigner"
-        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-      >
-      </app-textblock>
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-6">
+    <app-textblock
+      title="Vorteile"
+      type="campaigner"
+    >
+    <ul class="text-xl font-light pl-6">
+      <li class="py-2">Die Kosten für das Sammeln von Unterschriften sind bedeutend tiefer.</li>
+      <li class="py-2">Für das Sammeln stehen viele Kanäle zur Verfügung und die Reichweite ist dadurch höher.</li>
+      <li class="py-2">Das Verbreiten des Volksbegehren durch Dritte wird einfacher .</li>
+      <li class="py-2">Der Kontakt zur Bevölkerung wird nicht auf die hektischen, öffentlichen Plätze reduziert. Das Informieren wird dadurch weniger aufdringlich.</li>
+    </ul>
+    </app-textblock>
 
-      <app-textblock
-        title="Auftrag zur Einführung an Verwaltung"
-        type="campaigner"
-        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-      >
-      </app-textblock>
+    <app-card
+      title="Stelle deine Frage"
+      text="Wenn du spezifische Fragen hast in der Rolle als Campaigner oder Partei, stelle sie uns hier. "
+      class="pt-12 px-6"
+      [showButton]="true"
+      buttonText="Kontaktieren"
+      type="campaigner"
+    >
+    </app-card>
+    <app-textblock
+      title="Gesetzliche Grundlagen schaffen"
+      type="campaigner"
+      text="
+      Bisher verhindert die Gesetzeslage den Einsatz von E-Collecting. Auf Bundesebene verlangt das Bundesgesetz über die politischen Rechte (BPR, SR161.1) explizit eine handschriftliche Unterschrift für ein (Volks)Referendum (Art. 61. Abs. 1) resp. für eine Volksinitiative (Art.70). In den Kantonen gibt es in aller Regel ein sinngemässes Gesetz, welcher für Volksbegehren ebenfalls explizit eine handschriftliche Unterschrift fordert und E-Collecting damit ausschliesst. Diese politisch-rechtliche Hürde gilt es zu beheben. Konkret kann dies über einen politischen Vorstoss (z.B. in Form einer Motion) erreicht werden.
+      "
+    >
+    </app-textblock>
 
-      <app-textblock
-        title="Sensibilisierung der Öffentlichkeit"
-        type="campaigner"
-        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-      >
-      </app-textblock>
-    </div>
+    <app-textblock
+      title="Auftrag zur Einführung durch Verwaltung"
+      type="campaigner"
+      text="Im Kern von E-Collecting steht ein technisches System. Um alle Potentiale von E-Collecting tatsächlich entfalten zu können, muss eine E-Collecting Lösung optimal eingebettet werden. Die Einbettung in das E-Government Ökosystem der Verwaltung vereinfacht zudem die Einführung und die Anwendung von E-Collecting. Je besser die Integration gelingt, desto besser lassen sich die Vorteile von E-Collecting skalieren und allfällige Risiken kontrollieren. Über einen politischen Vorstoss kann ein Auftrag zur Einführung eines E-Collecting Systems durch die Verwaltung verlangt werden."
+    >
+    </app-textblock>
+    
+    <app-textblock
+      title="Öffentlichkeit sensibilisieren"
+      type="campaigner"
+      text="E-Collecting ist mehr als eine Technologie. Nur in einem ganzheitlichen Verständnis kann es effizient und nachhaltig eingeführt werden indem es auf einen starken Rückhalt in der Bevölkerung stößt. Dieser Rückhalt fehlt in der Bevölkerung noch weitgehend. Das ist größtenteils darauf zurückzuführen, dass E-Collecting kaum bekannt ist. Campaigner und Partien können mitwirken, dass E-Collecting populärer wird. Dazu braucht es öffentliche aber auch gerade halb-öffentliche Diskussionen im kleineren Rahmen (z.B. eben als Partei). Dabei ist es wichtig, dass die Vorteile verdeutlicht werden aber auch die Bedenken und Risiken wahr- und ernstgenommen werden. "
+    >
+    </app-textblock>
 
-    <div class="h-1/3 p-6">
-      <app-card
-        title="E-Collecting ausprobieren?"
-        text="Testen Sie E-Collecting auf Ihrer Campaigning Website indem Sie ganz einfach den owlly E-Collecting Button einbinden. Mehr Infos finden Sie unter https://docs.owlly.ch."
-        class="h-20 p-6"
-        [showButton]="true"
-        buttonText="mehr"
-        type="campaigner"
-      >
-      </app-card>
-    </div>
-  </div>
+    <app-card
+      title="Wie weiter? Unser Angebot"
+      text="owlly hat sich auf die ganzheitliche Betrachtung von E-Collecting spezialisiert und bietet diese Perspektive erstmalig. Wir bieten Beratung für alle Stakeholder."
+      class="pt-12 px-6"
+      [showButton]="true"
+      buttonText="mehr"
+      type="campaigner"
+      link="solutions"
+    >
+    </app-card>
+</div>
 
   <app-footer></app-footer>
 </app-pagehero>
