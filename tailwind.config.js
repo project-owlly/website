@@ -2,9 +2,9 @@ module.exports = (isProd) => ({
   prefix: '',
   purge: {
     enabled: isProd,
-    content: ['**/*.html', '**/*.ts', '**/*.scss'],
+    content: ['./src/**/*.{html,ts}'],
   },
-  darkMode: 'media', // or 'media' or 'class' or false
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       height: {
