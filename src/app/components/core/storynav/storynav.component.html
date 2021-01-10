@@ -4,7 +4,7 @@
       <div class="table-row">
         <div class="table-cell text-right opacity-100 md:opacity-0" id="explainedText"><p>E-Collecting kurz erklärt &nbsp;</p></div>
         <div class="table-cell p-2">
-          <a href="/explained" (mouseenter)="explainedEnter()" (mouseleave)="explainedLeave()">
+          <a href="/explained" (mouseenter)="explainedEnter()" (mouseleave)="explainedLeave()" name="explained">
             <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faQuestionCircle"></fa-icon></button>
           </a>
         </div>
@@ -12,7 +12,7 @@
       <div class="table-row">
         <div class="table-cell text-right opacity-100 md:opacity-0" id="missionText"><p>Unsere Mission &nbsp;</p></div>
         <div class="table-cell p-2">
-          <a href="/ourmission" (mouseenter)="missionEnter()" (mouseleave)="missionLeave()">
+          <a href="/ourmission" (mouseenter)="missionEnter()" (mouseleave)="missionLeave()" name="ourmission">
             <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faEye"></fa-icon></button>
           </a>
         </div>
@@ -20,7 +20,7 @@
       <div class="table-row">
         <div class="table-cell text-right opacity-100 md:opacity-0" id="progressText"><p>Fortschritt in der Schweiz &nbsp;</p></div>
         <div class="table-cell p-2">
-          <a href="/progress" (mouseenter)="progressEnter()" (mouseleave)="progressLeave()">
+          <a href="/progress" (mouseenter)="progressEnter()" (mouseleave)="progressLeave()" name="progress">
             <button class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faTasks"></fa-icon></button>
           </a>
         </div>
