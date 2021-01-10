@@ -9,5 +9,4 @@ slugs:
     - ___UNPUBLISHED___kjogrfqo_7MCemcEwVDQ8JfQ5fF46tJ7wYhbOh0Zx
 ---
 
-# Nun muss sich das Parlament mit E-Collecting beschäftigen – Forscher warnen vor ernsthaften Folgen für das politische System
 Die Zeit wird langsam knapp. Noch drei Monate bleiben dem Initiativkomitee, um rund 20 000 Unterschriften für das Volksbegehren «für eine Schweiz ohne synthetische Pestizide» zusammenzubekommen. Auf einem Webportal sucht die Bürgerbewegung Future 3.0 daher Freiwillige, die bei Wind und Wetter vor Einkaufszentren und in den Innenstädten stehen und fleissig Unterschriften sammeln.

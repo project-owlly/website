@@ -8,6 +8,7 @@ import {PdfService} from '../../../services/pdf.service';
 
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 const {Browser, Device, App, Toast} = Plugins;
 
 @Component({
@@ -27,7 +28,7 @@ export class SignComponent {
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
-  constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
+  constructor(private httpClient: HttpClient, private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
     Device.getInfo().then((deviceInfo) => {
       this.deviceInfo = deviceInfo;
     });
@@ -53,11 +54,16 @@ export class SignComponent {
             alert('openUrl: ' + err.message);
           });*/
 
-          await Browser.open({
-            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
-            windowName: '_self',
-          }).catch((err) => {
-            alert('openUrl: ' + err.message);
+          this.httpClient.get(pdf?.url as string, {responseType: 'blob'}).subscribe(async (response: any) => {
+            let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
+            const url = window.URL.createObjectURL(blob);
+
+            await Browser.open({
+              url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(url),
+              windowName: '_self',
+            }).catch((err) => {
+              alert('openUrl: ' + err.message);
+            });
           });
 
           await Toast.show({
