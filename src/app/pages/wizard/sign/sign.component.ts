@@ -68,10 +68,10 @@ export class SignComponent {
             async (response: any) => {
               console.log(response);
 
-              const blob = new Blob([response.body], {type: response.body.type});
+              //const blob = new Blob([], {type: response.type});
 
               //let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
-              const url = window.URL.createObjectURL(blob);
+              const url = window.URL.createObjectURL(response);
 
               await Browser.open({
                 url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(url),
