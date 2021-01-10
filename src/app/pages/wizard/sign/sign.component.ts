@@ -50,11 +50,13 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          /*await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
-            alert('openUrl: ' + err.message);
-          });*/
+          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string) + '&file=eid.pdf'}).catch(
+            (err) => {
+              alert('openUrl: ' + err.message);
+            }
+          );
 
-          this.httpClient.get(pdf?.url as string, {responseType: 'blob'}).subscribe(async (response: any) => {
+          /*this.httpClient.get(pdf?.url as string, {responseType: 'blob'}).subscribe(async (response: any) => {
             let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
             const url = window.URL.createObjectURL(blob);
 
@@ -64,7 +66,7 @@ export class SignComponent {
             }).catch((err) => {
               alert('openUrl: ' + err.message);
             });
-          });
+          });*/
 
           await Toast.show({
             text: 'Dokument wurde importiert.',
