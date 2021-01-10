@@ -56,7 +56,7 @@ export class SignComponent {
             }
           );
 
-          let headers = new HttpHeaders();
+          /*let headers = new HttpHeaders();
           headers = headers.set('Accept', 'application/pdf');
           this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(async (response: any) => {
             let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
@@ -68,7 +68,7 @@ export class SignComponent {
             }).catch((err) => {
               alert('openUrl: ' + err.message);
             });
-          });
+          });*/
 
           await Toast.show({
             text: 'Dokument wurde importiert.',
