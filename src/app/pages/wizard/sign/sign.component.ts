@@ -55,22 +55,20 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          /*await Browser.open({
+          await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
             windowName: '_self',
           }).catch((err) => {
             alert('openUrl: ' + err.message);
-          });*/
+          });
 
+          /*
           let headers = new HttpHeaders();
           headers = headers.set('Accept', 'application/pdf');
           this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(
             async (response: Blob) => {
               console.log(response);
 
-              //const blob = new Blob([], {type: response.type});
-
-              //let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
               const url = window.URL.createObjectURL(response);
 
               console.log(url);
@@ -91,7 +89,7 @@ export class SignComponent {
             (err) => {
               alert('httpClient via donwload: ' + err.message);
             }
-          );
+          );*/
 
           await Clipboard.write({
             string: 'briefkasten@owlly.ch',
