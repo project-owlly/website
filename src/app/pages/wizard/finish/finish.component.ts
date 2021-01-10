@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Params, Router, ParamMap} from '@angular/router';
 
 import {Observable} from 'rxjs';
-import {first} from 'rxjs/operators';
+import {filter, first, map, shareReplay} from 'rxjs/operators';
 
 import {Owlly} from '../../../types/owlly';
 
@@ -30,9 +30,32 @@ export class FinishComponent {
   faEnvelope = faEnvelope;
   faCopy = faCopy;
 
-  readonly owlly$: Observable<Owlly | undefined> = this.owllyRoutingService.owlly(this.activatedRoute.paramMap).pipe(first());
+  readonly owlly$: Observable<Owlly | undefined> = this.owllyRoutingService.owlly(this.route.paramMap).pipe(first());
+  readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
+    first(),
+    filter((params: Params) => params.get('owllyId') !== null),
+    map((params: Params) => params.get('owllyId')),
+    shareReplay({bufferSize: 1, refCount: true})
+  );
 
-  constructor(private activatedRoute: ActivatedRoute, private owllyRoutingService: OwllyRoutingService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private owllyRoutingService: OwllyRoutingService) {}
+
+  /*back(): void {
+      this.route.paramMap.pipe(first()).subscribe(async (param) => {
+
+      await this.router.navigate(['/sign', param.get('owllyId')]).catch((err) => {
+        console.log(err.message);
+      });
+    });
+  }*/
+
+  navigate(): void {
+    this.route.paramMap.pipe(first()).subscribe(async (param) => {
+      await this.router.navigate(['/']).catch((err) => {
+        console.log(err.message);
+      });
+    });
+  }
 
   async share() {
     const device = await Device.getInfo();

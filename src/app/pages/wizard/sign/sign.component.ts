@@ -45,10 +45,14 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
+          /*await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
+            alert('openUrl: ' + err.message);
+          });*/
+
+          await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
             alert('openUrl: ' + err.message);
           });
-          //await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {});
+
           await Toast.show({
             text: 'Dokument wurde importiert.',
             position: 'top',
@@ -65,7 +69,7 @@ export class SignComponent {
         }
         setTimeout(() => {
           this.navigate();
-        }, 500);
+        }, 1000);
       });
   }
 
@@ -78,7 +82,7 @@ export class SignComponent {
       });
     });
 
-    this.owllyId$
+    /*this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
         first()
@@ -87,6 +91,6 @@ export class SignComponent {
         await this.router.navigate(['/finish', owllyId]).catch((err) => {
           console.log(err.message);
         });
-      });
+      });*/
   }
 }
