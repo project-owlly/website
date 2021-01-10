@@ -3,7 +3,7 @@ title: 'Alles eine Kopfsache, sagt er'
 description: 'Der Informatiker Sandro Scalco will in Schaffhausen das E-Collecting einführen.'
 published: true
 date: '23. September 2019, 4:00 Uhr'
-image: campaigner-1-1920
+image: campaigner-1
 source: 'https://www.zeit.de/2019/39/e-collecting-digitalisierung-schweiz-volksinitiativen-online-schaffhausen/komplettansicht'
 slugs:
   - ___UNPUBLISHED___kjogrfqy_WyuoCwB7rSjcHyllMLczEsV5yPxlQkb9
