@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["https://owlly.ch", "https://www.owlly.ch"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
