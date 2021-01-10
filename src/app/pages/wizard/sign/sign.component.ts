@@ -8,6 +8,7 @@ import {PdfService} from '../../../services/pdf.service';
 
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 const {Browser, Device, App, Toast} = Plugins;
 
 @Component({
@@ -27,7 +28,7 @@ export class SignComponent {
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
-  constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
+  constructor(private httpClient: HttpClient, private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
     Device.getInfo().then((deviceInfo) => {
       this.deviceInfo = deviceInfo;
     });
@@ -43,6 +44,11 @@ export class SignComponent {
         console.log(pdf?.url);
         console.log('eidplus://did:eidplus:undefined/document?source=' + pdf?.url);
         console.log('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+
+        this.httpClient.get(pdf?.url as string, {responseType: 'blob'}).subscribe((response: any) => {
+          let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
+          const url = window.URL.createObjectURL(blob);
+        });
 
         const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}).catch((err) => {
           alert('canOpenUrl: ' + err.message);

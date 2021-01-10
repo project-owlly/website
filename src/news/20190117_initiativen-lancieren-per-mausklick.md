@@ -9,8 +9,6 @@ slugs:
   - ___UNPUBLISHED___kjoggsxq_Yrwt6C22QHDaE8sqQnFQEYpDnDOoRbBk
 ---
 
-# Initiativen lancieren per Mausklick
-
 Für den Zürcher Regierungsrat ist es ein digitales Schreckgespenst, das er am liebsten auf unbestimmte Zeit in einer Schublade verstaut hätte: E-Collecting, das elektronische Sammeln von Unterschriften für Volksinitiativen und Referenden. Im Zentrum der Bedenken steht der Mehraufwand, weil man befürchtet, dass diese Möglichkeit eine Flut von Initiativen zur Folge hätte.
 
 «E-Collecting ist kein Thema mehr, seit der Bundesrat im April 2017 beschlossen hatte, es nicht mehr weiterzuverfolgen», sagte Stephan Ziegler, Leiter Wahlen und Abstimmungen beim statistischen Amt des Kantons Zürich, in der «Limmattaler Zeitung» Anfang Jahr. Auch der Kantonsrat liess das Thema lange ruhen, der letzte Vorstoss dazu wurde vor zehn Jahren eingereicht.

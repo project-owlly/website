@@ -9,8 +9,6 @@ slugs:
   - ___UNPUBLISHED___kjoggsxw_3lkVIbcbTXI0eMqhQfhhmoMpSj9MoBxv
 ---
 
-# Nach dem Nein zu E-Voting in Basel. Regierung treibt jetzt die digitale Unterschriftensammlung voran
-
 Im Februar zog das Basler Parlament die Notbremse, im Juni wurde eine Denkpause erlassen: Der Basler Grosse Rat sistierte die Einführung des Basler E-Voting-Konzepts zur elektronischen Stimmabgabe. Immerhin: Die Stopp-Motion des damaligen Grünen-Grossrats Michael Wüthrich wurde nur in Form eines Anzugs überwiesen. Dies liess die Möglichkeit offen, das Projekt der elektronischen Stimmabgabe weiter zu verfolgen.
 
 Das macht der Kanton jetzt gründlich. Nicht nur soll das «Wie weiter» beim E-Voting geklärt werden, der Kanton untersucht auch eingehend die Möglichkeiten zum sogenannten E-Collecting und eine eigene Plattform für Petitionen. Dies bestätigt die Staatskanzlei gegenüber der bz. Anfang 2020 soll der Prozess starten, sagt Regierungssprecher Marco Greiner: «Wir überprüfen gegenwärtig generell die Instrumente zur politischen Mitwirkung vor dem Hintergrund der Digitalisierung.» Die eigene Petitionsplattform sei einer der ersten Schritte.
