@@ -66,7 +66,11 @@ export class SignComponent {
           headers = headers.set('Accept', 'application/pdf');
           this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(
             async (response: any) => {
-              let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
+              console.log(response);
+
+              const blob = new Blob([response.body], {type: response.body.type});
+
+              //let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
               const url = window.URL.createObjectURL(blob);
 
               await Browser.open({
