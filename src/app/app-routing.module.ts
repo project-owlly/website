@@ -195,10 +195,11 @@ const routes: Routes = [
     ],
   },
   //Fallback
+  /*
   {
     path: '**',
     loadChildren: () => import('./pages/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule),
-  },
+  },*/
 ];
 
 @NgModule({

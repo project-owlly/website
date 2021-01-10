@@ -101,7 +101,7 @@
       </div>
       <div class="h-20 md:hidden"></div>
       <div class="absolute bottom-0 right-0">
-        <a href="/progress">
+        <a href="/progress" name="progress">
           <app-button [small]="true">erfahre mehr</app-button>
         </a>
       </div>
@@ -164,12 +164,12 @@
     <div class="slide bg-blue-500" id="slide-5">5</div>
   </div> -->
   <button
-  aria-label="Kontakt"
-  type="button"
-  class="fixed bottom-0 right-0 rounded-full bg-secondary z-40 hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
-  (click)="showFeedback()"
->
-  <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>
-</button>
+    aria-label="Kontakt"
+    type="button"
+    class="fixed bottom-0 right-0 rounded-full bg-secondary z-40 hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
+    (click)="showFeedback()"
+  >
+    <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>
+  </button>
   <app-footer></app-footer>
 </div>
