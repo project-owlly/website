@@ -55,31 +55,31 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await Browser.open({
+          /*await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
             windowName: '_self',
           }).catch((err) => {
             alert('openUrl: ' + err.message);
+          });*/
 
-            let headers = new HttpHeaders();
-            headers = headers.set('Accept', 'application/pdf');
-            this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(
-              async (response: any) => {
-                let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
-                const url = window.URL.createObjectURL(blob);
+          let headers = new HttpHeaders();
+          headers = headers.set('Accept', 'application/pdf');
+          this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(
+            async (response: any) => {
+              let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
+              const url = window.URL.createObjectURL(blob);
 
-                await Browser.open({
-                  url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(url),
-                  windowName: '_self',
-                }).catch((err) => {
-                  alert('openUrl via donwload: ' + err.message);
-                });
-              },
-              (err) => {
-                alert('httpClient via donwload: ' + err.message);
-              }
-            );
-          });
+              await Browser.open({
+                url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(url),
+                windowName: '_self',
+              }).catch((err) => {
+                alert('openUrl via donwload: ' + err.message);
+              });
+            },
+            (err) => {
+              alert('httpClient via donwload: ' + err.message);
+            }
+          );
 
           await Clipboard.write({
             string: 'briefkasten@owlly.ch',
@@ -99,9 +99,9 @@ export class SignComponent {
             alert(err.message);
           });
         }
-        setTimeout(() => {
+        /*setTimeout(() => {
           this.navigate();
-        }, 1000);
+        }, 1000);*/
       });
   }
 
