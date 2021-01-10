@@ -63,14 +63,14 @@
 
 <ng-template #loadingUser>
   <app-textblock title="Wir sind gleich soweit" type="owlly" subtitle="Deine Daten werden gerade übertragen."> </app-textblock>
-  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-    <!-- ... -->
-  </svg>
+  <div class="animate-spin h-5 w-5 mr-3 ...">
+    <fa-icon [icon]="faSpinner"></fa-icon>
+  </div>
 </ng-template>
 
 <ng-template #loadingPdf>
   <p class="font-light text-2xl dark:text-white">Einen Moment noch - wir generieren dein persönliches Dokument.</p>
-  <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-    <!-- ... -->
-  </svg>
+  <div class="animate-spin h-5 w-5 mr-3 ...">
+    <fa-icon [icon]="faSpinner"></fa-icon>
+  </div>
 </ng-template>
