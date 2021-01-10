@@ -69,11 +69,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/impressum/impressum.module').then((m) => m.ImpressumPageModule),
   },
 
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
-  },
-
   //GENERAL PAGES
   {
     path: 'ourmission',
