@@ -40,6 +40,10 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
+        console.log(pdf?.url);
+        console.log('eidplus://did:eidplus:undefined/document?source=' + pdf?.url);
+        console.log('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+
         const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}).catch((err) => {
           alert('canOpenUrl: ' + err.message);
         });
@@ -49,7 +53,10 @@ export class SignComponent {
             alert('openUrl: ' + err.message);
           });*/
 
-          await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
+          await Browser.open({
+            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
+            windowName: '_self',
+          }).catch((err) => {
             alert('openUrl: ' + err.message);
           });
 
