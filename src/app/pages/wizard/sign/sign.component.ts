@@ -50,13 +50,20 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string) + '&file=eid.pdf'}).catch(
+          await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string), windowName: '_self'}).catch(
             (err) => {
-              alert('openUrl: ' + err.message);
+              alert('openUrl 1: ' + err.message);
             }
           );
 
-          let headers = new HttpHeaders();
+          await Browser.open({
+            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string) + '&file=eid.pdf',
+            windowName: '_self',
+          }).catch((err) => {
+            alert('openUrl 2: ' + err.message);
+          });
+
+          /*let headers = new HttpHeaders();
           headers = headers.set('Accept', 'application/pdf');
           this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(async (response: any) => {
             let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
@@ -68,7 +75,7 @@ export class SignComponent {
             }).catch((err) => {
               alert('openUrl: ' + err.message);
             });
-          });
+          });*/
 
           await Toast.show({
             text: 'Dokument wurde importiert.',
