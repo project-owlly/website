@@ -156,6 +156,13 @@
     <div class="slide bg-yellow-500" id="slide-4">4</div>
     <div class="slide bg-blue-500" id="slide-5">5</div>
   </div> -->
-
+  <button
+  aria-label="Kontakt"
+  type="button"
+  class="fixed bottom-0 right-0 rounded-full bg-secondary z-40 hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
+  (click)="showFeedback()"
+>
+  <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>
+</button>
   <app-footer></app-footer>
 </div>
