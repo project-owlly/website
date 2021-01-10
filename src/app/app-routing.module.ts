@@ -9,6 +9,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./pages/landing/landing.module').then((m) => m.LandingPageModule),
   },
+
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
@@ -71,11 +72,6 @@ const routes: Routes = [
   {
     path: 'impressum',
     loadChildren: () => import('./pages/impressum/impressum.module').then((m) => m.ImpressumPageModule),
-  },
-
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
 
   //GENERAL PAGES

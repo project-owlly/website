@@ -73,11 +73,19 @@ export class SignComponent {
               //let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
               const url = window.URL.createObjectURL(response);
 
+              console.log(url);
+
+              await Browser.open({
+                url: 'eidplus://did:eidplus:undefined/document?source=' + url,
+                windowName: '_self',
+              }).catch((err) => {
+                alert('openUrl1 via donwload: ' + err.message);
+              });
               await Browser.open({
                 url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(url),
                 windowName: '_self',
               }).catch((err) => {
-                alert('openUrl via donwload: ' + err.message);
+                alert('openUrl2 via donwload: ' + err.message);
               });
             },
             (err) => {
