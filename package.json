@@ -42,6 +42,7 @@
     "@scullyio/scully": "^1.0.10",
     "firebase": "^8.2.0",
     "rxjs": "~6.6.0",
+    "tailwindcss-animations": "^2.0.0",
     "tslib": "^2.0.0",
     "web-social-share": "^6.4.1",
     "zone.js": "~0.10.2"
