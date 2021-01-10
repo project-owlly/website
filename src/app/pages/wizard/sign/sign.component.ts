@@ -9,7 +9,7 @@ import {PdfService} from '../../../services/pdf.service';
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-const {Browser, Device, App, Toast} = Plugins;
+const {Browser, Device, App, Toast, Clipboard} = Plugins;
 
 @Component({
   selector: 'app-sign',
@@ -76,8 +76,12 @@ export class SignComponent {
             });
           });
 
+          await Clipboard.write({
+            string: 'briefkasten@owlly.ch',
+          });
+
           await Toast.show({
-            text: 'Dokument wurde importiert.',
+            text: 'Dokument wurde importiert und die E-Mail Adresse "briefkasten@owlly.ch" in die Zwischenablage kopiert.',
             position: 'top',
           }).catch((err) => {
             alert(err.message);
