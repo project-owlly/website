@@ -3,7 +3,7 @@ title: 'In den Niederlanden war E-Collecting zu erfolgreich'
 description: 'Niederländische Aktivisten sammelten über 450 000 Unterschriften für ein Referendum gegen das Assoziierungsabkommen zwischen der EU und der Ukraine. Letztlich nützte die aufwendige Aktion nichts.'
 published: true
 date: '03.03.2018, 06.00 Uhr'
-image: campaigner-3-1920
+image: campaigner-3
 source: 'https://www.tagesanzeiger.ch/zuerich/region/initiativen-lancieren-per-mausklick/story/18468580'
 slugs:
   - ___UNPUBLISHED___kjoggsxl_7CyDOTwqH8l9rETTLkKVNEaORNo8jv5S
