@@ -8,7 +8,7 @@ import {PdfService} from '../../../services/pdf.service';
 
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 const {Browser, Device, App, Toast} = Plugins;
 
 @Component({
@@ -56,7 +56,9 @@ export class SignComponent {
             }
           );
 
-          /*this.httpClient.get(pdf?.url as string, {responseType: 'blob'}).subscribe(async (response: any) => {
+          let headers = new HttpHeaders();
+          headers = headers.set('Accept', 'application/pdf');
+          this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(async (response: any) => {
             let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
             const url = window.URL.createObjectURL(blob);
 
@@ -66,7 +68,7 @@ export class SignComponent {
             }).catch((err) => {
               alert('openUrl: ' + err.message);
             });
-          });*/
+          });
 
           await Toast.show({
             text: 'Dokument wurde importiert.',
