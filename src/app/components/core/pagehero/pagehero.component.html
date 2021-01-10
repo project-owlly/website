@@ -1,9 +1,19 @@
 <div class="sticky top-0 z-0 heroimage overflow-hidden sm:h-96 md:96 lg:h-pagehero">
   <!--<img *ngIf="imgName" class="object-center heroimage" src="../../../../assets/heros/{{ imgName }}" alt="{{ imgName }}" width="100%" />-->
   <picture>
-    <source type="image/webp" srcset="../../../../assets/heros/{{ imgName }}.webp" />
-    <source type="image/jpeg" srcset="../../../../assets/heros/{{ imgName }}.jpg" />
-    <img *ngIf="imgName" class="object-center heroimage" src="../../../../assets/heros/{{ imgName }}.webp" alt="{{ imgName }}" width="100%" />
+    <!--
+    <source type="image/webp" srcset="../../../../assets/heros/{{ imgName }}-1920.webp" />
+    <source type="image/jpeg" srcset="../../../../assets/heros/{{ imgName }}-1920.jpg" />
+    <img *ngIf="imgName" class="object-center heroimage" src="../../../../assets/heros/{{ imgName }}-1920.webp" alt="{{ imgName }}" width="100%" />-->
+    <source type="image/webp" media="(min-width: 1024px)" srcset="../../../../assets/heros/{{ imgName }}-wide.webp" />
+    <source type="image/webp" media="(min-width: 768px)" srcset="../../../../assets/heros/{{ imgName }}-1920.webp" />
+    <source type="image/webp" media="(min-width: 640px)" srcset="../../../../assets/heros/{{ imgName }}-1920.webp" />
+
+    <source type="image/jpeg" media="(min-width: 1024px)" srcset="../../../../assets/heros/{{ imgName }}-wide.jpg" />
+    <source type="image/jpeg" media="(min-width: 768px)" srcset="../../../../assets/heros/{{ imgName }}-1920.jpg" />
+    <source type="image/jpeg" media="(min-width: 640px)" srcset="../../../../assets/heros/{{ imgName }}-1920.jpg" />
+
+    <img *ngIf="imgName" class="object-center heroimage" src="../../../../assets/heros/{{ imgName }}-1920.jpg" alt="{{ imgName }}" width="100%" />
   </picture>
 
   <div class="absolute top-2 w-full">

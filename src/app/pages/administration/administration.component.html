@@ -1,15 +1,12 @@
 <app-header></app-header>
 
-<app-pagehero type="admin" imgName="bundeshaus-1-1920" [diamonds]="true" iconName="../../../../assets/admin_icon.svg">
+<app-pagehero type="admin" imgName="bundeshaus-1" [diamonds]="true" iconName="../../../../assets/admin_icon.svg">
   <h1 class="text-4xl md:text-6xl font-light dark:text-white">E-Collecting fördern</h1>
   <h1 class="text-4xl md:text-6xl font-bold dark:text-white">Verwaltung</h1>
   <h2 class="text-xl dark:text-white">Vorteile und Handlungsansätze für die Verwaltung. Wir bieten Beratung und Umsetzungsunterstützung.</h2>
 
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-6">
-      <app-textblock
-        title="Vorteile"
-        type="admin"
-      >
+    <app-textblock title="Vorteile" type="admin">
       <ul class="text-xl font-light pl-6">
         <li class="py-2">Effizienzgewinne bei den politischen Zähl- und Auswertungsprozessen</li>
         <li class="py-2">E-Government Projekt, das zurzeit noch Pioniercharakter geniesst</li>
@@ -17,64 +14,64 @@
         <li class="py-2">Erhöhung der Standortattraktivität</li>
         <li class="py-2">Service für elektronische Identität (eID) mit kaum Mehraufwand</li>
       </ul>
-      </app-textblock>
+    </app-textblock>
 
-      <app-card
-        title="Stelle deine Frage"
-        text="Wenn du spezifische Fragen hast in der Rolle als Verwaltung, stelle sie uns hier. "
-        class="pt-12 px-6"
-        [showButton]="true"
-        buttonText="Kontaktieren"
-        type="admin"
-        (click)="showInquiry()"
-      >
-      </app-card>
-      <app-textblock
-        title="Gesetzliche Grundlagen schaffen"
-        type="admin"
-        text="
+    <app-card
+      title="Stelle deine Frage"
+      text="Wenn du spezifische Fragen hast in der Rolle als Verwaltung, stelle sie uns hier. "
+      class="pt-12 px-6"
+      [showButton]="true"
+      buttonText="Kontaktieren"
+      type="admin"
+      (click)="showInquiry()"
+    >
+    </app-card>
+    <app-textblock
+      title="Gesetzliche Grundlagen schaffen"
+      type="admin"
+      text="
         Bisher verhindert die Gesetzeslage den Einsatz von E-Collecting. Auf Bundesebene verlangt das Bundesgesetz über die politischen Rechte (BPR, SR161.1) explizit eine handschriftliche Unterschrift für ein (Volks)Referendum (Art. 61. Abs. 1) resp. für eine Volksinitiative (Art.70). In den Kantonen gibt es in aller Regel ein sinngemässes Gesetz, welcher für Volksbegehren ebenfalls explizit eine handschriftliche Unterschrift fordert und E-Collecting damit ausschliesst. Diese politisch-rechtliche Hürde gilt es zu beheben. Dabei gibt es verschiedene Wege, wie die gesetzliche Grundlage gestaltet werden kann.
         "
-      >
-      </app-textblock>
+    >
+    </app-textblock>
 
-      <app-textblock
-        title="E-Collecting System einführen"
-        type="admin"
-        text="Im Kern von E-Collecting steht ein technisches System. Um alle Potentiale von E-Collecting tatsächlich entfalten zu können, muss eine E-Collecting Lösung optimal eingebettet werden. Das heisst konkret, dass die Schnittstellen der E-Collecting Lösung zu anderen Ressourcen (zum Beispiel dem Stimmregister oder einer elektronischen Identität) elegant ausgestaltet werden müssen. Die Einbettung in das E-Government Ökosystem der Verwaltung vereinfacht zudem die Einführung und die Anwendung von E-Collecting. Je besser die Integration gelingt, desto besser lassen sich die Vorteile von E-Collecting skalieren und allfällige Risiken kontrollieren."
-      >
-      </app-textblock>
-      
-      <app-textblock
-        title="Pilotprojekt starten"
-        type="admin"
-        text="E-Collecting kann zunächst in Pilotprojekten getesteten werden um Erfahrungen zu sammeln. Für eine erfolgreiche Einführung von E-Collecting ist dies durchaus empfehlenswert.  In Art. 27q der Verordnung der über die politischen Rechte (VPR, SR161.11) sind “Versuche zur Unterzeichnung eidgenössischer Volksbegehren auf elektronischem Wege” explizit vorgesehen. Im Zusammenwirken mit einer technischen Lösung kann die Verwaltung entweder im Rahmen dieser Grundlage oder eines entsprechenden kantonalen oder kommunalen Pendants aktiv werden. Pilotprojekte versprechen Aufschluss darüber zu geben, welche Reaktionen bei der Einführung zu erwarten sind und um “best practices” zu etablieren."
-      >
-      </app-textblock>
+    <app-textblock
+      title="E-Collecting System einführen"
+      type="admin"
+      text="Im Kern von E-Collecting steht ein technisches System. Um alle Potentiale von E-Collecting tatsächlich entfalten zu können, muss eine E-Collecting Lösung optimal eingebettet werden. Das heisst konkret, dass die Schnittstellen der E-Collecting Lösung zu anderen Ressourcen (zum Beispiel dem Stimmregister oder einer elektronischen Identität) elegant ausgestaltet werden müssen. Die Einbettung in das E-Government Ökosystem der Verwaltung vereinfacht zudem die Einführung und die Anwendung von E-Collecting. Je besser die Integration gelingt, desto besser lassen sich die Vorteile von E-Collecting skalieren und allfällige Risiken kontrollieren."
+    >
+    </app-textblock>
 
-      <app-textblock
-        title="Austauschen und beraten lassen"
-        type="admin"
-        text="E-Collecting als konkretes Digitalisierungs-Projekt ist von technischen und sozio-politischen Faktoren gleichermaßen bestimmt. Nur in einem ganzheitlichen Verständnis der beiden Aspekte kann E-Collecting effizient und nachhaltig eingeführt werden indem es auf einen starken Rückhalt in der Bevölkerung stößt. Erst dadurch wird ein E-Government-Projekt insgesamt ein Erfolg und kann seine gewünschte Wirkung entfalten. Dazu ist es ratsam, sich in den Erfahrungen auszutauschen und sich in eben diesem ganzheitlichen Verständnis von Technologie und Mensch beraten zu lassen. "
-      >
-      </app-textblock>
+    <app-textblock
+      title="Pilotprojekt starten"
+      type="admin"
+      text="E-Collecting kann zunächst in Pilotprojekten getesteten werden um Erfahrungen zu sammeln. Für eine erfolgreiche Einführung von E-Collecting ist dies durchaus empfehlenswert.  In Art. 27q der Verordnung der über die politischen Rechte (VPR, SR161.11) sind “Versuche zur Unterzeichnung eidgenössischer Volksbegehren auf elektronischem Wege” explizit vorgesehen. Im Zusammenwirken mit einer technischen Lösung kann die Verwaltung entweder im Rahmen dieser Grundlage oder eines entsprechenden kantonalen oder kommunalen Pendants aktiv werden. Pilotprojekte versprechen Aufschluss darüber zu geben, welche Reaktionen bei der Einführung zu erwarten sind und um “best practices” zu etablieren."
+    >
+    </app-textblock>
 
-      <app-textblock
-        title="Keine Routineaufgabe"
-        type="admin"
-        text="Die Verwaltung spielt eine Schlüsselrolle in der erfolgreichen Einführung von E-Collecting. Insbesondere die hier erwähnten Punkte verdeutlichen die Rolle eindrücklich. Da E-Collecting in der Schweiz noch weitgehend unerprobt ist, handelt es sich bei der Einführung von E-Collecting keineswegs um eine Routineaufgabe. Es ist zu erwarten, dass sich individuelle Herausforderungen stellen, sei es in der Verwaltung selbst, den Parteien/Organisationen oder der Bevölkerung. Die Informations- und Datengrundlage für Entscheidungsträger ist relativ dünn gesät und Erfahrungswerte gibt es noch wenige. Das Know-How um das Thema ist zurzeit verstreut auf eine Hand voll Schlüsselakteure und dadurch nicht ganz einfach zugänglich."
-      >
-      </app-textblock>
-      <app-card
-        title="Wie weiter? Unser Angebot"
-        text="owlly hat sich auf die ganzheitliche Betrachtung von E-Collecting spezialisiert und bietet diese Perspektive erstmalig. Wir bieten Beratung für alle Stakeholder."
-        class="pt-12 px-6"
-        [showButton]="true"
-        buttonText="mehr"
-        type="admin"
-        link="solutions"
-      >
-      </app-card>
+    <app-textblock
+      title="Austauschen und beraten lassen"
+      type="admin"
+      text="E-Collecting als konkretes Digitalisierungs-Projekt ist von technischen und sozio-politischen Faktoren gleichermaßen bestimmt. Nur in einem ganzheitlichen Verständnis der beiden Aspekte kann E-Collecting effizient und nachhaltig eingeführt werden indem es auf einen starken Rückhalt in der Bevölkerung stößt. Erst dadurch wird ein E-Government-Projekt insgesamt ein Erfolg und kann seine gewünschte Wirkung entfalten. Dazu ist es ratsam, sich in den Erfahrungen auszutauschen und sich in eben diesem ganzheitlichen Verständnis von Technologie und Mensch beraten zu lassen. "
+    >
+    </app-textblock>
+
+    <app-textblock
+      title="Keine Routineaufgabe"
+      type="admin"
+      text="Die Verwaltung spielt eine Schlüsselrolle in der erfolgreichen Einführung von E-Collecting. Insbesondere die hier erwähnten Punkte verdeutlichen die Rolle eindrücklich. Da E-Collecting in der Schweiz noch weitgehend unerprobt ist, handelt es sich bei der Einführung von E-Collecting keineswegs um eine Routineaufgabe. Es ist zu erwarten, dass sich individuelle Herausforderungen stellen, sei es in der Verwaltung selbst, den Parteien/Organisationen oder der Bevölkerung. Die Informations- und Datengrundlage für Entscheidungsträger ist relativ dünn gesät und Erfahrungswerte gibt es noch wenige. Das Know-How um das Thema ist zurzeit verstreut auf eine Hand voll Schlüsselakteure und dadurch nicht ganz einfach zugänglich."
+    >
+    </app-textblock>
+    <app-card
+      title="Wie weiter? Unser Angebot"
+      text="owlly hat sich auf die ganzheitliche Betrachtung von E-Collecting spezialisiert und bietet diese Perspektive erstmalig. Wir bieten Beratung für alle Stakeholder."
+      class="pt-12 px-6"
+      [showButton]="true"
+      buttonText="mehr"
+      type="admin"
+      link="solutions"
+    >
+    </app-card>
   </div>
 
   <app-footer></app-footer>
