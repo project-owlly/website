@@ -50,11 +50,18 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string) + '&file=eid.pdf'}).catch(
+          await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string), windowName: '_self'}).catch(
             (err) => {
-              alert('openUrl: ' + err.message);
+              alert('openUrl 1: ' + err.message);
             }
           );
+
+          await Browser.open({
+            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string) + '&file=eid.pdf',
+            windowName: '_self',
+          }).catch((err) => {
+            alert('openUrl 2: ' + err.message);
+          });
 
           /*let headers = new HttpHeaders();
           headers = headers.set('Accept', 'application/pdf');
