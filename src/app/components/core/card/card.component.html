@@ -13,9 +13,12 @@
     <p class="text-xl font-light dark:text-white">{{ text }}</p>
   </div>
   <div class="h-14"></div>
-  <div *ngIf="showButton" class="absolute bottom-0 right-0 p-4">
+  <div *ngIf="showButton && link" class="absolute bottom-0 right-0 p-4">
     <a href="{{ link }}"
       ><app-button type="submit" [small]="true">{{ buttonText }}</app-button>
     </a>
+  </div>
+  <div *ngIf="showButton && (link == '')" class="absolute bottom-0 right-0 p-4">
+    <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
   </div>
 </div>
