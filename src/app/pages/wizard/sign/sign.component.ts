@@ -9,7 +9,7 @@ import {PdfService} from '../../../services/pdf.service';
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-const {Browser, Device, App, Toast} = Plugins;
+const {Browser, Device, App, Toast, Clipboard} = Plugins;
 
 @Component({
   selector: 'app-sign',
@@ -55,15 +55,17 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await Browser.open({
+          /*await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
             windowName: '_self',
           }).catch((err) => {
             alert('openUrl: ' + err.message);
+          });*/
 
-            let headers = new HttpHeaders();
-            headers = headers.set('Accept', 'application/pdf');
-            this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(async (response: any) => {
+          let headers = new HttpHeaders();
+          headers = headers.set('Accept', 'application/pdf');
+          this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(
+            async (response: any) => {
               let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
               const url = window.URL.createObjectURL(blob);
 
@@ -73,11 +75,18 @@ export class SignComponent {
               }).catch((err) => {
                 alert('openUrl via donwload: ' + err.message);
               });
-            });
+            },
+            (err) => {
+              alert('httpClient via donwload: ' + err.message);
+            }
+          );
+
+          await Clipboard.write({
+            string: 'briefkasten@owlly.ch',
           });
 
           await Toast.show({
-            text: 'Dokument wurde importiert.',
+            text: 'Dokument wurde importiert und die E-Mail Adresse "briefkasten@owlly.ch" in die Zwischenablage kopiert.',
             position: 'top',
           }).catch((err) => {
             alert(err.message);
@@ -90,9 +99,9 @@ export class SignComponent {
             alert(err.message);
           });
         }
-        setTimeout(() => {
+        /*setTimeout(() => {
           this.navigate();
-        }, 1000);
+        }, 1000);*/
       });
   }
 
