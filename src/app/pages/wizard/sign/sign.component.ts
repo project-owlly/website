@@ -45,11 +45,6 @@ export class SignComponent {
         console.log('eidplus://did:eidplus:undefined/document?source=' + pdf?.url);
         console.log('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
 
-        this.httpClient.get(pdf?.url as string, {responseType: 'blob'}).subscribe((response: any) => {
-          let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
-          const url = window.URL.createObjectURL(blob);
-        });
-
         const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}).catch((err) => {
           alert('canOpenUrl: ' + err.message);
         });
@@ -59,11 +54,16 @@ export class SignComponent {
             alert('openUrl: ' + err.message);
           });*/
 
-          await Browser.open({
-            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
-            windowName: '_self',
-          }).catch((err) => {
-            alert('openUrl: ' + err.message);
+          this.httpClient.get(pdf?.url as string, {responseType: 'blob'}).subscribe(async (response: any) => {
+            let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
+            const url = window.URL.createObjectURL(blob);
+
+            await Browser.open({
+              url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(url),
+              windowName: '_self',
+            }).catch((err) => {
+              alert('openUrl: ' + err.message);
+            });
           });
 
           await Toast.show({
