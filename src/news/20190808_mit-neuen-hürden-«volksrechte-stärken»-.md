@@ -1,6 +1,6 @@
 ---
-title: 'Mit neuen Hürden «Volksrechte stärken» '
-description: 'Die wirtschaftsliberale Denkfabrik Avenir Suisse tischt in einer neuen Studie zur digitalen Demokratie alte Ideen im neuen Kleid auf.'
+title: 'Mit neuen Hürden "Volksrechte stärken" '
+description: 'Die wirtschaftsliberale Denkfabrik Avenir Suisse tischt in einer neuen Studie zur digitalen Demokratie alte Ideen im neuen Kleid auf'
 published: true
 date: '08.08.2019'
 source: 'https://www.woz.ch/-9e30'
