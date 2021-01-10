@@ -8,7 +8,7 @@ module.exports = (isProd) => ({
   theme: {
     extend: {
       height: {
-        pagehero: '600px',
+        pagehero: '500px',
       },
       colors: {
         primary: 'var(--color-primary)',

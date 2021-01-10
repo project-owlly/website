@@ -8,6 +8,7 @@ import {PdfService} from '../../../services/pdf.service';
 
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 const {Browser, Device, App, Toast} = Plugins;
 
 @Component({
@@ -27,7 +28,7 @@ export class SignComponent {
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
-  constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
+  constructor(private httpClient: HttpClient, private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
     Device.getInfo().then((deviceInfo) => {
       this.deviceInfo = deviceInfo;
     });
@@ -40,18 +41,41 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
+        console.log(pdf?.url);
+        console.log('eidplus://did:eidplus:undefined/document?source=' + pdf?.url);
+        console.log('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+
         const canOpenUrl = await App.canOpenUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url}).catch((err) => {
           alert('canOpenUrl: ' + err.message);
         });
 
         if (canOpenUrl) {
-          /*await App.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
-            alert('openUrl: ' + err.message);
-          });*/
+          await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string), windowName: '_self'}).catch(
+            (err) => {
+              alert('openUrl 1: ' + err.message);
+            }
+          );
 
-          await Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch((err) => {
-            alert('openUrl: ' + err.message);
+          await Browser.open({
+            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string) + '&file=eid.pdf',
+            windowName: '_self',
+          }).catch((err) => {
+            alert('openUrl 2: ' + err.message);
           });
+
+          /*let headers = new HttpHeaders();
+          headers = headers.set('Accept', 'application/pdf');
+          this.httpClient.get(pdf?.url as string, {responseType: 'blob', headers: headers}).subscribe(async (response: any) => {
+            let blob: any = new Blob([response.blob()], {type: 'application/pdf'});
+            const url = window.URL.createObjectURL(blob);
+
+            await Browser.open({
+              url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(url),
+              windowName: '_self',
+            }).catch((err) => {
+              alert('openUrl: ' + err.message);
+            });
+          });*/
 
           await Toast.show({
             text: 'Dokument wurde importiert.',

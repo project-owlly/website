@@ -8,7 +8,7 @@
       <ng-container *ngIf="pdf.url !== undefined">
         <ng-container *ngIf="deviceInfo?.platform === 'web'">
           <p class="dark:text-white text-xl px-6 font-light">Scanne diesen QR Code mit deiner eID+ Schaffhausen, um das Dokument zu importieren.</p>
-          <div class="text-center items-center mx-auto">
+          <div class="text-center items-center mx-auto py-4">
             <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
           </div>
         </ng-container>
@@ -45,7 +45,8 @@
           </div>
         </div>
 
-        <ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">
+        <!--<ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">-->
+        <ng-container>
           <p class="dark:text-white text-xl px-6 pt-6">Du kannst das Dokument direkt in deine eID+ importieren (beta - iOS only).</p>
           <div class="text-center flex-auto">
             <app-button (click)="import()" class="py-10">importieren </app-button>

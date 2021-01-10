@@ -4,10 +4,21 @@
 
 <div class="sticky top-0 z-0 overflow-hidden sm:h-96 lg:h-pagehero">
   <picture>
-    <source type="image/webp" srcset="../../../../assets/heros/header-1920.webp" />
-    <source type="image/jpeg" srcset="../../../../assets/heros/header-1920.jpg" />
-    <img class="object-center" src="../../../../assets/heros/header-1920.webp" alt="Herobild" width="100%" />
-    <!--<img class="object-center " src="../../../../assets/heros/header-1920.webp" alt="Herobild" width="100%" />-->
+    <!--<source type="image/webp" srcset="../../../../assets/heros/header.webp" />
+    <source type="image/jpeg" srcset="../../../../assets/heros/header.jpg" />
+    <img class="object-center" src="../../../../assets/heros/header.webp" alt="Herobild" width="100%" />
+    -->
+    <!--<img class="object-center " src="../../../../assets/heros/header.webp" alt="Herobild" width="100%" />-->
+
+    <source type="image/webp" media="(min-width: 1024px)" srcset="../../../../assets/heros/header-wide.webp" />
+    <source type="image/webp" media="(min-width: 768px)" srcset="../../../../assets/heros/header-1920.webp" />
+    <source type="image/webp" media="(min-width: 640px)" srcset="../../../../assets/heros/header-1920.webp" />
+
+    <source type="image/jpeg" media="(min-width: 1024px)" srcset="../../../../assets/heros/header-wide.jpg" />
+    <source type="image/jpeg" media="(min-width: 768px)" srcset="../../../../assets/heros/header-1920.jpg" />
+    <source type="image/jpeg" media="(min-width: 640px)" srcset="../../../../assets/heros/header-1920.jpg" />
+
+    <img class="object-center" src="../../../../assets/heros/header-1920.jpg" alt="Herobild" width="100%" />
   </picture>
 
   <div class="absolute top-2 w-full">
@@ -20,9 +31,7 @@
       <div class="text-4xl md:text-6xl font-bold dark:text-white">Enabling</div>
       <div class="text-4xl md:text-6xl font-light dark:text-white">digital democracy.</div>
       <div class="font-light text-xl dark:text-white pt-12">
-        <div>
-         Wir ermöglichen digitale Demokratie durch ganzheitliche E-Collecting Lösungen.
-        </div>
+        <div>Wir ermöglichen digitale Demokratie durch ganzheitliche E-Collecting Lösungen.</div>
       </div>
       <!-- <div class="pt-8 md:pb-0 pb-4 md:relative md:bottom-0 justify-center items-center md:text-left text-center md:items-start md:justify-start md:mt-auto">
         <a href="/"> <app-button>Newsletter anmelden</app-button></a>
@@ -93,10 +102,8 @@
       <div class="h-20 md:hidden"></div>
       <div class="absolute bottom-0 right-0">
         <a href="/progress">
-        <app-button
-        [small]="true"
-        >erfahre mehr</app-button>
-      </a>
+          <app-button [small]="true">erfahre mehr</app-button>
+        </a>
       </div>
     </div>
   </div>
@@ -156,6 +163,13 @@
     <div class="slide bg-yellow-500" id="slide-4">4</div>
     <div class="slide bg-blue-500" id="slide-5">5</div>
   </div> -->
-
+  <button
+  aria-label="Kontakt"
+  type="button"
+  class="fixed bottom-0 right-0 rounded-full bg-secondary z-40 hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
+  (click)="showFeedback()"
+>
+  <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>
+</button>
   <app-footer></app-footer>
 </div>
