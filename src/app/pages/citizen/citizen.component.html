@@ -28,6 +28,7 @@
       [showButton]="true"
       buttonText="Frage stellen"
       type="citizen"
+      (click)="showInquiry()"
     >
     </app-card>
     <app-textblock
@@ -59,7 +60,7 @@
       title="Owlly-Ambassador werden"
       text="Bist du ein E-Collecting Geek, Early-Adapter oder enthusiastischer E-Collecting Verfechter? Dann könnte dir die Rolle als owlly-Ambassador zusagen."
       class="pt-12 px-6"
-      [showButton]="true"
+      [showButton]="false"
       buttonText="mehr"
       type="citizen"
     >
