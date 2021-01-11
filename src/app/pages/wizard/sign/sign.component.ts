@@ -56,10 +56,17 @@ export class SignComponent {
 
         if (canOpenUrl) {
           await Browser.open({
+            url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
+            windowName: '_self',
+          }).catch((err) => {
+            alert('openUrl1: ' + err.message);
+          });
+
+          await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
             windowName: '_self',
           }).catch((err) => {
-            alert('openUrl: ' + err.message);
+            alert('openUrl2: ' + err.message);
           });
 
           /*
