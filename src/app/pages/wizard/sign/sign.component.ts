@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Params, Router, ParamMap} from '@angular/router';
 import {Observable} from 'rxjs';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 import {Pdf} from '../../../types/pdf';
 
@@ -31,7 +32,15 @@ export class SignComponent {
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
-  constructor(private httpClient: HttpClient, private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
+  link: string = '';
+
+  constructor(
+    private sanitizer: DomSanitizer,
+    private httpClient: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router,
+    private pdfService: PdfService
+  ) {
     Device.getInfo().then((deviceInfo) => {
       this.deviceInfo = deviceInfo;
     });
@@ -57,6 +66,9 @@ export class SignComponent {
         }).catch((err) => {
           alert('canOpenUrl: ' + err.message);
         });
+        this.link = this.sanitizer.bypassSecurityTrustUrl(
+          'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)
+        ) as string;
 
         if (canOpenUrl) {
           await Browser.open({
