@@ -83,8 +83,15 @@ export class SignComponent {
           await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
             windowName: '_self',
-          }).catch((err) => {
-            alert('openUrl2: ' + err.message);
+          }).catch(async (err) => {
+            await Toast.show({
+              text: 'Der Import hat nicht funktioniert: ' + err.message,
+              position: 'top',
+            }).catch((err) => {
+              alert(err.message);
+            });
+
+            //alert('openUrl2: ' + err.message);
           });
 
           /*await Browser.open({
