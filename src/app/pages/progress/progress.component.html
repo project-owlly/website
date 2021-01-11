@@ -3,9 +3,7 @@
 <app-pagehero imgName="bundeshaus-2" type="plain" [diamonds]="true">
   <h1 class="text-4xl md:text-6xl font-bold dark:text-white">Fortschritt <span class="text-4xl md:text-6xl font-light">in der Schweiz</span></h1>
   <!-- Subtitle -->
-  <h2 class="text-xl dark:text-white">
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
-  </h2>
+  <h2 class="text-xl dark:text-white">Was ist der Stand der Dinge in Sachen E-Collecting?</h2>
 
   <div class="container mx-auto max-w-screen-xl px-6 py-2 pt-12 text-center grid grid-cols-1 md:grid-cols-3 gap-6">
     <app-swissmap class="col-span-1 md:col-span-2"></app-swissmap>
@@ -18,7 +16,7 @@
                 <rect width="20" height="20" style="fill: #99c756" />
               </svg>
             </div>
-            <div class="table-cell text-left dark:text-white">E-Collecting vollständig ermöglicht</div>
+            <div class="table-cell text-left dark:text-white">E-Collecting System im Einsatz</div>
           </div>
           <div class="table-row">
             <div class="table-cell align-middle">
@@ -26,7 +24,15 @@
                 <rect width="20" height="20" style="fill: #27a4d4" />
               </svg>
             </div>
-            <div class="table-cell text-left dark:text-white">Politische Prozesse im Gange</div>
+            <div class="table-cell text-left dark:text-white">Gesetzliche Grundlage vorhanden</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell align-middle">
+              <svg width="20" height="20">
+                <rect width="20" height="20" style="fill: #fdc600" />
+              </svg>
+            </div>
+            <div class="table-cell text-left dark:text-white">Politische Prozesse sind/waren im Gange</div>
           </div>
           <div class="table-row">
             <div class="table-cell align-middle">
@@ -44,15 +50,29 @@
   <app-textblock
     title="Der aktuelle Stand"
     type="owlly"
-    text="Velit sint aute qui aliqua pariatur mollit culpa eu. In laboris labore ad adipisicing adipisicing et ad et. Consequat qui proident adipisicing est aliqua in. Sint consequat id incididunt commodo fugiat dolor irure ut incididunt nisi elit amet."
+    text="E-Collecting ist in der Schweiz noch nirgends im Einsatz und in der Bevölkerung weitgehend unbekannt. In der Politik ist E-Collecting allerdings schon seit längerem präsent und wird es auch zukünftig vermehrt sein."
     subtitle="Noch kein E-Collecting bei dir? Werde selbst aktiv!"
     [showButton]="true"
     buttonText="Erfahre wie"
     link="/support"
   >
     <div class="flex grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
-      <app-card title="Bund" text="Allgemeines Stand National" [showButton]="true" buttonText="mehr" type="owlly" link="progress/bund"></app-card>
-      <app-card title="Kanton" text="Allgemeines Kantone" [showButton]="true" buttonText="mehr" type="owlly" link="progress/cantons"></app-card>
+      <app-card
+        title="Bund"
+        text="Auf Bundesebene gab es bereits mehrere Vorstösse mit dem Ziel E-Collecting zu ermöglichen. Der Bundesrat vertritt die Meinung, E-Collecting sei nicht zeitnah umzusetzen."
+        [showButton]="true"
+        buttonText="mehr"
+        type="owlly"
+        link="progress/bund"
+      ></app-card>
+      <app-card
+        title="Kantone"
+        text="In verschiedenen Kantonen gab es bereits E-Collecting Vorstösse. Es ist zu erwarten, dass Ihnen in der Umsetzung von E-Collecting eine Pionierrolle zukommt."
+        [showButton]="true"
+        buttonText="mehr"
+        type="owlly"
+        link="progress/cantons"
+      ></app-card>
       <!-- <app-card title="Gemeinden" text="Allgemeines Gemeinden" [showButton]="true" buttonText="mehr" type="owlly"></app-card> -->
       <!-- <app-card
         title="Öffentlichkeit"

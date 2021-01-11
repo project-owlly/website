@@ -5,11 +5,10 @@ published: true
 date: '17.01.2019, 11:19 Uhr'
 image: campaigner-2
 source: 'https://www.tagesanzeiger.ch/zuerich/region/initiativen-lancieren-per-mausklick/story/18468580'
+sourceName: Tagesanzeiger
 slugs:
   - ___UNPUBLISHED___kjoggsxq_Yrwt6C22QHDaE8sqQnFQEYpDnDOoRbBk
 ---
-
-# Initiativen lancieren per Mausklick
 
 Für den Zürcher Regierungsrat ist es ein digitales Schreckgespenst, das er am liebsten auf unbestimmte Zeit in einer Schublade verstaut hätte: E-Collecting, das elektronische Sammeln von Unterschriften für Volksinitiativen und Referenden. Im Zentrum der Bedenken steht der Mehraufwand, weil man befürchtet, dass diese Möglichkeit eine Flut von Initiativen zur Folge hätte.
 

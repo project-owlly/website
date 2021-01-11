@@ -2,7 +2,7 @@
 
 <!-- New Owlly Hero -->
 
-<div class="sticky top-0 z-0 overflow-hidden sm:h-96 lg:h-pagehero">
+<div class="sticky top-0 z-0 overflow-hidden">
   <picture>
     <!--<source type="image/webp" srcset="../../../../assets/heros/header.webp" />
     <source type="image/jpeg" srcset="../../../../assets/heros/header.jpg" />
@@ -79,7 +79,7 @@
                 <rect width="20" height="20" style="fill: #99c756" />
               </svg>
             </div>
-            <div class="table-cell text-left dark:text-white">Politische Prozesse im Gange</div>
+            <div class="table-cell text-left dark:text-white">E-Collecting System im Einsatz</div>
           </div>
           <div class="table-row">
             <div class="table-cell align-middle">
@@ -87,7 +87,15 @@
                 <rect width="20" height="20" style="fill: #27a4d4" />
               </svg>
             </div>
-            <div class="table-cell text-left dark:text-white">Gesetzliche Grundlagen vorhanden</div>
+            <div class="table-cell text-left dark:text-white">Gesetzliche Grundlage vorhanden</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell align-middle">
+              <svg width="20" height="20">
+                <rect width="20" height="20" style="fill: #fdc600" />
+              </svg>
+            </div>
+            <div class="table-cell text-left dark:text-white">Politische Prozesse sind/waren im Gange</div>
           </div>
           <div class="table-row">
             <div class="table-cell align-middle">
@@ -101,7 +109,7 @@
       </div>
       <div class="h-20 md:hidden"></div>
       <div class="absolute bottom-0 right-0">
-        <a href="/progress">
+        <a href="/progress" name="progress">
           <app-button [small]="true">erfahre mehr</app-button>
         </a>
       </div>
@@ -149,8 +157,14 @@
   <app-news></app-news>
 
   <app-textblock type="owlly" title="Unsere Volksbegehren">
-    <p *ngFor="let owlly of owlly$ | async" class="text-xl font-light dark:text-white">
-      {{ owlly.route }}
+    <p *ngFor="let owlly of owllyData" class="text-xl font-light dark:text-white">
+      <b>{{ owlly.title }}: </b>
+      {{ owlly.description }}...
+      <br />
+      <a href="{{ owlly.link }}" name="{{ owlly.title }}">
+        <app-button [small]="true">erfahre mehr</app-button>
+      </a>
+      <br /><br />
     </p>
   </app-textblock>
 
@@ -164,12 +178,12 @@
     <div class="slide bg-blue-500" id="slide-5">5</div>
   </div> -->
   <button
-  aria-label="Kontakt"
-  type="button"
-  class="fixed bottom-0 right-0 rounded-full bg-secondary z-40 hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
-  (click)="showFeedback()"
->
-  <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>
-</button>
+    aria-label="Kontakt"
+    type="button"
+    class="fixed bottom-0 right-0 rounded-full bg-secondary z-40 hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
+    (click)="showFeedback()"
+  >
+    <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>
+  </button>
   <app-footer></app-footer>
 </div>

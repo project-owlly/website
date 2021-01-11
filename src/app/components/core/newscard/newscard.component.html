@@ -4,26 +4,28 @@
 >
   <div class="w-full overflow-hidden">
     <picture>
-      <source type="image/webp" srcset="../../../../assets/heros/{{ imgName }}.webp" />
-      <source type="image/jpeg" srcset="../../../../assets/heros/{{ imgName }}.jpg" />
-      <img *ngIf="imgName" class="rounded-t" alt="{{ text }}" width="100%" src="../../../../assets/heros/{{ imgName }}.webp" />
+      <source type="image/webp" srcset="../../../../assets/heros/{{ imgName }}-1920.webp" />
+      <source type="image/jpeg" srcset="../../../../assets/heros/{{ imgName }}-1920.jpg" />
+      <img *ngIf="imgName" class="rounded-t" alt="{{ text }}" width="100%" src="../../../../assets/heros/{{ imgName }}-1920.jpg" />
     </picture>
+  </div>
+
+  <div class="p-4">
+    <p class="text-md font-light dark:text-white">
+      <a href="{{ source }}"> Quelle: {{ sourceName }} </a>
+    </p>
   </div>
   <div class="p-4">
     <p class="text-md font-light dark:text-white">{{ trimString(text, 200) }}</p>
   </div>
   <div class="h-14"></div>
   <div class="flex justify-between items-end w-full absolute bottom-0">
-
     <div class="p-4 text-md font-light dark:text-white">{{ date }}</div>
-   
+
     <div *ngIf="showButton" class="p-4">
-      <a href="{{ link }}"
-        ><app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+      <a href="{{ link }}" name="{{ buttonText }}">
+        <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
       </a>
     </div>
-  
   </div>
-  
-  
 </div>

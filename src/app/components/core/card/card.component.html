@@ -14,11 +14,11 @@
   </div>
   <div class="h-14"></div>
   <div *ngIf="showButton && link" class="absolute bottom-0 right-0 p-4">
-    <a href="{{ link }}"
+    <a href="{{ link }}" name="{{ buttonText }}"
       ><app-button type="submit" [small]="true">{{ buttonText }}</app-button>
     </a>
   </div>
-  <div *ngIf="showButton && (link == '')" class="absolute bottom-0 right-0 p-4">
+  <div *ngIf="showButton && link == ''" class="absolute bottom-0 right-0 p-4">
     <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
   </div>
 </div>
