@@ -40,19 +40,19 @@
 
         <!--<ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">-->
         <!--<ng-container class="px-6 pt-6">-->
-        <div class="flex flex-row px-6 py-6">
-          <div class="text-center flex-auto">
-            <app-button (click)="import()" class="py-10">importieren </app-button>
-          </div>
-          <p class="dark:text-white text-xl">Du kannst das Dokument direkt in deine eID+ importieren (beta).</p>
-
-          <!--<a href="{{ 'eidplus://did:eidplus:undefined/document?source=' + pdf.url }}">
-            <app-button class="py-10">importieren 1</app-button>
-          </a>
-          <a href="{{ link }}">
-            <app-button class="py-10">importieren 2</app-button>
-          </a>-->
-        </div>
+            <div class="mx-auto max-w-screen-xl px-6 text-center md:text-left py-6">
+                <div class="text-center flex-auto">
+                    <p class="dark:text-white text-xl font-light text-center">Du kannst das Dokument direkt in deine eID+ importieren (beta).</p>
+                  <app-button (click)="import()" class="py-6">importieren </app-button>
+                </div>
+        
+                <!--<a href="{{ 'eidplus://did:eidplus:undefined/document?source=' + pdf.url }}">
+                  <app-button class="py-10">importieren 1</app-button>
+                </a>
+                <a href="{{ link }}">
+                  <app-button class="py-10">importieren 2</app-button>
+                </a>-->
+              </div>
         <!--/ng-container>-->
 
         <div class="flex flex-row">
