@@ -46,12 +46,16 @@
         </div>
 
         <!--<ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">-->
-        <!--<ng-container>
+        <ng-container>
           <p class="dark:text-white text-xl px-6 pt-6">Du kannst das Dokument direkt in deine eID+ importieren (beta - iOS only).</p>
           <div class="text-center flex-auto">
             <app-button (click)="import()" class="py-10">importieren </app-button>
           </div>
-        </ng-container>-->
+
+          <a href="'eidplus://did:eidplus:undefined/document?source=' + {{ pdf.url }}">
+            <app-button class="py-10">importieren</app-button>
+          </a>
+        </ng-container>
 
         <div class="flex flex-row">
           <div class="text-center flex-auto">
