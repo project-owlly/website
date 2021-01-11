@@ -63,9 +63,9 @@
 
 <ng-template #loadingUser>
   <app-textblock title="Wir sind gleich soweit" type="owlly" subtitle="Deine Daten werden gerade übertragen."> </app-textblock>
-  <div class="animate-spin h-5 w-5 mr-3 ...">
-    <fa-icon [icon]="faSpinner"></fa-icon>
-  </div>
+  <div class="animate-spin block text-4xl md:text-6xl text-center mx-auto py-6">
+      <p><fa-icon [icon]="faSpinner"></fa-icon></p>
+    </div>
 </ng-template>
 
 <ng-template #loadingPdf>
