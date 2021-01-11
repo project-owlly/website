@@ -9,6 +9,12 @@
       <img *ngIf="imgName" class="rounded-t" alt="{{ text }}" width="100%" src="../../../../assets/heros/{{ imgName }}-1920.jpg" />
     </picture>
   </div>
+
+  <div class="p-4">
+    <p class="text-md font-light dark:text-white">
+      <a href="{{ source }}"> Quelle: {{ sourceName }} </a>
+    </p>
+  </div>
   <div class="p-4">
     <p class="text-md font-light dark:text-white">{{ trimString(text, 200) }}</p>
   </div>

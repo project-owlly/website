@@ -5,6 +5,7 @@ description: Daniel Graf, Autor des Buches "Agenda für eine digitale Demokratie
 published: true
 date: 04.05.2020, 05.00 Uhr 
 source: https://www.tagblatt.ch/schweiz/zehn-vorschlage-fur-eine-digitalere-demokratie-ld.1217385
+sourceName: St. Galler Tagblatt
 image: campaigner-3
 ---
 

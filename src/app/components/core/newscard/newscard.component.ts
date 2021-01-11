@@ -10,6 +10,8 @@ export class NewscardComponent {
   @Input() date?: string = '';
   @Input() showButton?: boolean = false;
   @Input() buttonText?: string = '';
+  @Input() sourceName?: string = '';
+  @Input() source?: string = '';
   @Input() imgName?: string = '';
   @Input() link?: string = 'javascript:void(0)';
 
