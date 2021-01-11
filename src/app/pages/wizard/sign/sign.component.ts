@@ -53,6 +53,10 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
+        this.link = this.sanitizer.bypassSecurityTrustUrl(
+          'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)
+        ) as string;
+
         console.log('debug start');
         console.log(pdf?.url);
         console.log('eidplus://did:eidplus:undefined/document?source=' + pdf?.url);
@@ -66,9 +70,6 @@ export class SignComponent {
         }).catch((err) => {
           alert('canOpenUrl: ' + err.message);
         });
-        this.link = this.sanitizer.bypassSecurityTrustUrl(
-          'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)
-        ) as string;
 
         if (canOpenUrl) {
           await Browser.open({
