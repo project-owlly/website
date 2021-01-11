@@ -69,6 +69,22 @@ export class SignComponent {
             alert('openUrl2: ' + err.message);
           });
 
+          await Browser.open({
+            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent('https://www.shaz.ch/download/Ausgabe_23.pdf'),
+            windowName: '_self',
+          }).catch((err) => {
+            alert('openUrl3: ' + err.message);
+          });
+
+          await Browser.open({
+            url: 'eidplus://did:eidplus:undefined/share?endpoint=wss%3A%2F%2Feid.sh.ch%2Fapi%2Fdevice%2Fbabb8a05-15b0-4d10-b02d-ca6ffe057d15%2F&amp',
+            windowName: '_self',
+          }).catch((err) => {
+            alert('openUrl4: ' + err.message);
+          });
+
+          //did:eidplus:undefined/share?
+
           /*
           let headers = new HttpHeaders();
           headers = headers.set('Accept', 'application/pdf');
@@ -98,7 +114,7 @@ export class SignComponent {
             }
           );*/
 
-          await Clipboard.write({
+          eidplus: await Clipboard.write({
             string: 'briefkasten@owlly.ch',
           });
 
