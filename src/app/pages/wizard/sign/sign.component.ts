@@ -10,6 +10,8 @@ import {PdfService} from '../../../services/pdf.service';
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
+
 const {Browser, Device, App, Toast, Clipboard} = Plugins;
 
 @Component({
@@ -18,6 +20,8 @@ const {Browser, Device, App, Toast, Clipboard} = Plugins;
   styleUrls: ['./sign.component.scss'],
 })
 export class SignComponent {
+
+  faCheckCircle=faCheckCircle;
   public deviceInfo: DeviceInfo | undefined;
 
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
