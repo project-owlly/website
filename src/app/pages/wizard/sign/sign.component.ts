@@ -32,7 +32,7 @@ export class SignComponent {
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
-  link: string = '';
+  //link: string = '';
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -53,18 +53,19 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        this.link = this.sanitizer.bypassSecurityTrustUrl(
+        /*this.link = this.sanitizer.bypassSecurityTrustUrl(
           'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)
-        ) as string;
+        ) as string;*/
 
-        console.log('debug start');
+        /*console.log('debug start');
         console.log(pdf?.url);
         console.log('eidplus://did:eidplus:undefined/document?source=' + pdf?.url);
         console.log('---- debug ----');
 
         console.log(encodeURIComponent(pdf?.url as string));
         console.log('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
-        console.log('debug ende');
+        console.log('debug ende');*/
+
         const canOpenUrl = await App.canOpenUrl({
           url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
         }).catch((err) => {
@@ -72,12 +73,12 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await Browser.open({
+          /*await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
             windowName: '_self',
           }).catch((err) => {
             alert('openUrl1: ' + err.message);
-          });
+          });*/
 
           await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
@@ -86,7 +87,7 @@ export class SignComponent {
             alert('openUrl2: ' + err.message);
           });
 
-          await Browser.open({
+          /*await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent('https://www.shaz.ch/download/Ausgabe_23.pdf'),
             windowName: '_self',
           }).catch((err) => {
@@ -98,7 +99,7 @@ export class SignComponent {
             windowName: '_self',
           }).catch((err) => {
             alert('openUrl4: ' + err.message);
-          });
+          });*/
 
           //did:eidplus:undefined/share?
 
@@ -131,12 +132,12 @@ export class SignComponent {
             }
           );*/
 
-          eidplus: await Clipboard.write({
+          await Clipboard.write({
             string: 'briefkasten@owlly.ch',
           });
 
           await Toast.show({
-            text: 'Dokument wurde importiert und die E-Mail Adresse "briefkasten@owlly.ch" in die Zwischenablage kopiert.',
+            text: 'E-Mail Adresse "briefkasten@owlly.ch" wurde in die Zwischenablage kopiert.',
             position: 'top',
           }).catch((err) => {
             alert(err.message);
