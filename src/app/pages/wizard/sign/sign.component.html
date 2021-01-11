@@ -46,8 +46,8 @@
         </div>
 
         <!--<ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">-->
-        <ng-container>
-          <p class="dark:text-white text-xl px-6 pt-6">Du kannst das Dokument direkt in deine eID+ importieren (beta).</p>
+        <ng-container class="px-6 pt-6">
+          <p class="dark:text-white text-xl">Du kannst das Dokument direkt in deine eID+ importieren (beta).</p>
           <div class="text-center flex-auto">
             <app-button (click)="import()" class="py-10">importieren </app-button>
           </div>

@@ -61,14 +61,14 @@
 
 <app-footer></app-footer>
 
-<ng-template #loadingUser>
+<ng-template class="py-6 px-6" #loadingUser>
   <app-textblock title="Wir sind gleich soweit" type="owlly" subtitle="Deine Daten werden gerade übertragen."> </app-textblock>
   <div class="animate-spin block text-4xl dark:text-white md:text-6xl text-center mx-auto py-6 px-6">
     <p><fa-icon [icon]="faSpinner"></fa-icon></p>
   </div>
 </ng-template>
 
-<ng-template #loadingPdf>
+<ng-template class="py-6 px-6" #loadingPdf>
   <p class="font-light text-2xl dark:text-white">Einen Moment noch - wir generieren dein persönliches Dokument.</p>
   <div class="animate-spin block text-4xl md:text-6xl dark:text-white text-center mx-auto py-6 px-6">
     <p><fa-icon [icon]="faSpinner"></fa-icon></p>
