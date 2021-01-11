@@ -7,7 +7,9 @@
       <div class="table-row-group">
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl dark:text-white text-gray-300 hover:text-gray-300 transition" href="javascript:void(0)">Kampagne starten </a>
+            <a class="text-2xl dark:text-white text-gray-300 hover:text-gray-300 transition" name="start campaign" href="javascript:void(0)"
+              >Kampagne starten
+            </a>
           </div>
           <div class="table-cell items-center dark:text-white">
             <fa-icon [icon]="faPlayCircle"></fa-icon>
@@ -15,7 +17,7 @@
         </div>
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/support">E-Collecting fördern</a>
+            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/support" name="support">E-Collecting fördern</a>
           </div>
           <div class="table-cell dark:text-white">
             <fa-icon [icon]="faCubes"></fa-icon>
@@ -23,7 +25,7 @@
         </div>
         <div class="table-row">
           <div class="table-cell py-6">
-            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/aboutus">Über uns</a>
+            <a class="text-2xl dark:text-white hover:text-yellow-400 transition" href="/aboutus" name="aboutus">Über uns</a>
           </div>
           <div class="table-cell dark:text-white">
             <fa-icon [icon]="faUsers"></fa-icon>
@@ -36,19 +38,19 @@
 
 <nav class="bg-white dark:bg-black relative">
   <div class="container flex items-center justify-between mx-auto max-w-screen-xl px-6 py-2 text-left">
-    <a href="/" aria-label="Owlly" class="no-underline">
+    <a href="/" aria-label="Owlly" class="no-underline" name="home">
       <ng-container *ngIf="theme$ | async as theme">
         <img [src]="'./assets/logo/owlly-' + theme + '.png'" loading="lazy" aria-label="hidden" width="150px" />
       </ng-container>
     </a>
 
     <div class="space-x-6 hidden md:block" *ngIf="!hideNav">
-      <a class="text-lg hover:text-gray-300 text-gray-300 dark:text-white transition" href="javascript:void(0)">Kampagne starten</a>
-      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/support">E-Collecting fördern</a>
-      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/aboutus">Über uns</a>
+      <a class="text-lg hover:text-gray-300 text-gray-300 dark:text-white transition" href="javascript:void(0)" name="start campaign">Kampagne starten</a>
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/support" name="support">E-Collecting fördern</a>
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/aboutus" name="about us">Über uns</a>
     </div>
     <div class="md:hidden block" *ngIf="!hideNav">
-      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="javascript:void(0)" (click)="openMobileNav()"
+      <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="javascript:void(0)" name="mobile" (click)="openMobileNav()"
         ><fa-icon [icon]="faBars"></fa-icon
       ></a>
     </div>

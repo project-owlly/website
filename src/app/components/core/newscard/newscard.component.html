@@ -17,8 +17,8 @@
     <div class="p-4 text-md font-light dark:text-white">{{ date }}</div>
 
     <div *ngIf="showButton" class="p-4">
-      <a href="{{ link }}"
-        ><app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+      <a href="{{ link }}" name="{{ buttonText }}">
+        <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
       </a>
     </div>
   </div>

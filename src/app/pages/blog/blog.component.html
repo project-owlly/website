@@ -3,7 +3,7 @@
 <app-pagehero *ngIf="$blogPostMetadata | async as blogPost" type="campaigner" imgName="{{ blogPost.image }}" [diamonds]="true">
   <h1 class="text-4xl md:text-6xl font-bold dark:text-white">{{ blogPost.title }}</h1>
   <h1 class="text-2xl pt-2 font-light dark:text-white">{{ blogPost.description }}</h1>
-  <h2 class="text-xl pt-2 dark:text-white">{{ blogPost.date }} / <a href="{{ blogPost.source }}">Quelle</a></h2>
+  <h2 class="text-xl pt-2 dark:text-white">{{ blogPost.date }} / <a href="{{ blogPost.source }}" name="externe quelle">Quelle</a></h2>
   <div class="flex grid grid-cols-1 mx-auto max-w-screen-xl gap-x-20 dark:text-white p-6">
     <!-- This is where Scully will inject the static HTML -->
 
