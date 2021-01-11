@@ -44,10 +44,14 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
+        console.log('debug start');
         console.log(pdf?.url);
         console.log('eidplus://did:eidplus:undefined/document?source=' + pdf?.url);
-        console.log('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+        console.log('---- debug ----');
 
+        console.log(encodeURIComponent(pdf?.url as string));
+        console.log('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+        console.log('debug ende');
         const canOpenUrl = await App.canOpenUrl({
           url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
         }).catch((err) => {
