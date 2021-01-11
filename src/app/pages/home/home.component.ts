@@ -28,6 +28,9 @@ export class HomeComponent implements OnInit {
       for (let owlly of owllys) {
         this.owllyService.owllyBySlug(String(owlly.route).split('/o/')[1]).subscribe((owllyFS) => {
           //console.log(owllyFS);
+
+          owllyFS.data.description = owllyFS.data.description.slice(0, 100);
+
           this.owllyData.push(owllyFS.data);
         });
       }
