@@ -52,8 +52,11 @@
             <app-button (click)="import()" class="py-10">importieren </app-button>
           </div>
 
-          <a href="'eidplus://did:eidplus:undefined/document?source=' + {{ pdf.url }}">
-            <app-button class="py-10">importieren</app-button>
+          <a href="{{ 'eidplus://did:eidplus:undefined/document?source=' + pdf.url }}">
+            <app-button class="py-10">importieren 1</app-button>
+          </a>
+          <a href="{{ link }}">
+            <app-button class="py-10">importieren 2</app-button>
           </a>
         </ng-container>
 
