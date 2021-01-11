@@ -7,12 +7,8 @@ import {EidGuard} from './guards/eid.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/landing/landing.module').then((m) => m.LandingPageModule),
-  },
 
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
+    loadChildren: () => import('./pages/landing/landing.module').then((m) => m.LandingPageModule),
   },
 
   //MICROPAGES
