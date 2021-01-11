@@ -149,11 +149,15 @@
   <app-news></app-news>
 
   <app-textblock type="owlly" title="Unsere Volksbegehren">
-    <a *ngFor="let owlly of owllyData" href="{{ owlly.link }}" name="{{ owlly.title }}">
-      <p class="text-xl font-light dark:text-white">
-        {{ owlly.title }}
-      </p>
-    </a>
+    <p *ngFor="let owlly of owllyData" class="text-xl font-light dark:text-white">
+      <b>{{ owlly.title }}: </b>
+      {{ owlly.description }}...
+      <br />
+      <a href="{{ owlly.link }}" name="{{ owlly.title }}">
+        <app-button [small]="true">erfahre mehr</app-button>
+      </a>
+      <br /><br />
+    </p>
   </app-textblock>
 
   <div style="height: 100px"></div>
