@@ -9,5 +9,8 @@
       "launchShowDuration": 0
     }
   },
+  "server": {
+    "allowNavigation": ["*.owlly.ch/*", "*.sh.ch/*", "*.europe-west6-project-owlly.cloudfunctions.net/*", "*.wecollect.ch/*", "eidplus:*"]
+  },
   "cordova": {}
 }
