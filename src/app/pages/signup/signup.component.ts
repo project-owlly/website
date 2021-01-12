@@ -33,12 +33,11 @@ export class SignupComponent implements OnInit {
     } else {
       this.auth.signup(authForm.value.username, authForm.value.password).then(
         async (ok) => {
+          this.router.navigateByUrl('/login');
+
           const {ToastComponent} = await import('../../components/toast/toast.component');
-
-          this.router.navigateByUrl('/admin');
-
           await this.toastService.open(ToastComponent, {
-            msg: 'ok',
+            msg: 'Profil wurde erfolgreich erstellt. Bitte E-Mail Adresse verifizieren.',
             status: 'success',
             position: 'bottom',
           });
