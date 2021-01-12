@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         position: 'bottom',
       });
     } else {
-      console.log('Username: ' + authForm.value.username);
+      //console.log('Username: ' + authForm.value.username);
 
       this.auth.login(authForm.value.username, authForm.value.password).then(
         (ok) => {
