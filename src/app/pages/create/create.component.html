@@ -92,40 +92,54 @@
       <div class="relative col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
-          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Nenne bis zu 4 Ziele deines Begehrens:</h1>
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Nenne bis zu 4 Ziele deines Begehrens (optional):</h1>
         </div>
         <div class="px-4">
-          <p class="text-xl font-light dark:text-white"></p>
+          <p class="text-xl font-light dark:text-white">Mit kurz und bündig definierten Zielen hilfst du deinem Zielpublikum, sich schneller ein Bild von deinem Begehren zu machen.</p>
         </div>
         <div class="p-4 px-4 w-full">
-          <input
+    <input *ngIf="goalAmount > 0"
       id="goals"
       type="text"
       name="goals"
+      placeholder="Ziel 1"
       formControlName="goals1"
-      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
-    <input
+    <input *ngIf="goalAmount > 1"
       id="goals"
       type="text"
       name="goals"
       formControlName="goals2"
-      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      placeholder="Ziel 2"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
-    <input
+    <input *ngIf="goalAmount > 2"
       id="goals"
       type="text"
       name="goals"
+      placeholder="Ziel 3"
       formControlName="goals3"
-      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
-    <input
+    <input *ngIf="goalAmount > 3"
       id="goals"
       type="text"
       name="goals"
+      placeholder="Ziel 4"
       formControlName="goals4"
-      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
+    <div *ngIf="goalAmount < 4" class="flex justify-center mx-auto">
+        <button
+        (click)="addGoal()"
+        type="button"
+        name="scroll-Left"
+        class="border-none outline-none z-20 text-black rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+      >
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
+    </div>
         </div>
       </div>
 

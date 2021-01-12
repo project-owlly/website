@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import {promise} from 'selenium-webdriver';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
@@ -13,6 +13,7 @@ import {createData} from './createInterface';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
+  faPlus=faPlus;
   ebene: string = '';
   begehren: string = '';
   createData: createData = {
@@ -67,6 +68,11 @@ export class CreateComponent implements OnInit {
     });
    }
    
+   //add goals
+   goalAmount = 0;
+   addGoal() {
+     ++this.goalAmount;
+   }
 
    sendInitiative() {
     this.createData.text = this.createForm.value.text;
