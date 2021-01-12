@@ -24,16 +24,15 @@ export class AuthGuard implements CanActivate {
         if (user && user.emailVerified && !user.isAnonymous) {
           resolve(true);
         } else if (user && !user.emailVerified) {
-          let promptRet = await Modals.prompt({
+          let promptRet = await Modals.confirm({
             title: 'E-Mail Adresse verifizieren',
             message: 'Bitte verifiziere zuerst deine E-Mail Adresse. Prüfe deinen Posteingang/Spam Ordner.',
             okButtonTitle: 'Okay',
             cancelButtonTitle: 'Nochmals senden',
           });
           console.log('Prompt ret', promptRet);
-
-          if (promptRet.value === 'Nochmals senden') {
-            console.log(promptRet);
+          console.log(promptRet);
+          if (promptRet.value === false) {
             user
               .sendEmailVerification({
                 url: String(window.location),
