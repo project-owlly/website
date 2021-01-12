@@ -6,6 +6,10 @@ import {Observable} from 'rxjs';
 import {AuthService} from '../services/auth.service';
 import {ToastService} from '../services/toast.service';
 
+import {Plugins} from '@capacitor/core';
+
+const {Modals} = Plugins;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -20,12 +24,37 @@ export class AuthGuard implements CanActivate {
         if (user && user.emailVerified && !user.isAnonymous) {
           resolve(true);
         } else if (user && !user.emailVerified) {
-          const {ToastComponent} = await import('../components/toast/toast.component');
+          let promptRet = await Modals.prompt({
+            title: 'E-Mail Adresse verifizieren',
+            message: 'Bitte verifiziere zuerst deine E-Mail Adresse. Prüfe deinen Posteingang/Spam Ordner.',
+            okButtonTitle: 'Okay',
+            cancelButtonTitle: 'Nochmals senden',
+          });
+          console.log('Prompt ret', promptRet);
+
+          if (promptRet.value === 'Nochmals senden') {
+            console.log(promptRet);
+            user
+              .sendEmailVerification({
+                url: String(window.location),
+              })
+              .then(
+                (ok) => {
+                  console.log('sendEmailVerification');
+                },
+                (error) => {
+                  console.log('Error sendEmailVerification');
+                }
+              );
+          } else {
+          }
+
+          /*const {ToastComponent} = await import('../components/toast/toast.component');
           await this.toastService.open(ToastComponent, {
-            msg: 'Please verify E-Mail first',
+            msg: 'Bitte verifiziere zuerst deine E-Mail Adresse. Prüfe deinen Posteingang/Spam Ordner.',
             status: 'error',
             position: 'bottom',
-          });
+          });*/
           this.authService.logout();
           this.router.navigateByUrl('/login');
           reject('error');
