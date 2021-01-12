@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {ActionmailGuard} from './guards/actionmail.guard';
 import {AuthGuard} from './guards/auth.guard';
 
 import {EidGuard} from './guards/eid.guard';
@@ -15,6 +16,14 @@ const routes: Routes = [
     path: 'o',
     loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule),
   },
+
+  //ACtion Email
+  {
+    path: 'auth/action',
+    canActivate: [ActionmailGuard],
+    children: [],
+  },
+
   {
     //TODO: delete this..
     path: 'infosite',

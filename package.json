@@ -40,6 +40,7 @@
     "@scullyio/init": "^1.0.1",
     "@scullyio/ng-lib": "^1.0.2",
     "@scullyio/scully": "^1.0.10",
+    "c": "^1.1.1",
     "firebase": "^8.2.0",
     "rxjs": "~6.6.0",
     "tailwindcss-animations": "^2.0.0",
