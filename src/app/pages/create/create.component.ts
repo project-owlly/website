@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import {promise} from 'selenium-webdriver';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
@@ -13,19 +13,9 @@ import {createData} from './createInterface';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-
-  faAngleRight=faAngleRight;
-  faAngleLeft=faAngleLeft;
-
-  @ViewChild("horizontalScroll") horizontalScroll!: ElementRef;
-
-  scrollRight() {
-    this.horizontalScroll.nativeElement.scrollLeft += document.getElementById('horizontalDiv')!.offsetWidth;
-  }
-  scrollLeft() {
-    this.horizontalScroll.nativeElement.scrollLeft -= document.getElementById('horizontalDiv')!.offsetWidth;;
-  }
-
+  faPlus=faPlus;
+  ebene: string = '';
+  begehren: string = '';
   createData: createData = {
     text: '',
     title: '',
@@ -52,8 +42,37 @@ export class CreateComponent implements OnInit {
       goals3: [''],
       goals4: [''],
     });
-   }
 
+    
+    this.createForm.controls['type'].valueChanges.subscribe(data => {
+      if(this.createForm.controls['type'].value == 'initiative'){ 
+      this.begehren='initiative';
+      this.createForm.controls['author'].setValidators(Validators.required);
+      }
+      if(this.createForm.controls['type'].value != 'initiative') {
+        this.createForm.controls['author'].clearValidators();
+      }
+      if(this.createForm.controls['type'].value == 'referendum') {
+        this.begehren='referendum';
+      }
+     });
+     this.createForm.controls["ruleValue"].valueChanges.subscribe(data => {
+      if(this.createForm.controls['ruleValue'].value == 'national'){ 
+      this.ebene = 'national';
+      }
+      if ((this.ebene == 'national' && this.begehren == 'initiative') || (this.ebene == 'national' && this.begehren == 'referendum')) {
+        this.createForm.controls['published'].setValidators(Validators.required);
+      } else {
+        this.createForm.controls['published'].clearValidators();
+      }
+    });
+   }
+   
+   //add goals
+   goalAmount = 0;
+   addGoal() {
+     ++this.goalAmount;
+   }
 
    sendInitiative() {
     this.createData.text = this.createForm.value.text;

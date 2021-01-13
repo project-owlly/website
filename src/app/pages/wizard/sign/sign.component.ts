@@ -20,10 +20,12 @@ const {Browser, Device, App, Toast, Clipboard} = Plugins;
   styleUrls: ['./sign.component.scss'],
 })
 export class SignComponent {
-
+  ngOnInit() {
+    this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
   faCheckCircle=faCheckCircle;
   public deviceInfo: DeviceInfo | undefined;
-
+  isMobile: boolean = false;
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
     first(),
     filter((params: Params) => params.get('owllyId') !== null),
