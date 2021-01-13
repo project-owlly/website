@@ -17,7 +17,7 @@
         name="canton"
         id="cantonSelect"
         [(ngModel)]="cantonSelect"
-        class="text-2xl p-2 mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
+        class=" text-2xl p-2 mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 dark:text-white bg-gray-100 dark:bg-gray-800 dark:focus:bg-gray-700 focus:shadow-inner"
       >
         <option value="bs">Basel-Stadt</option>
         <option value="sg">St. Gallen</option>
@@ -26,7 +26,7 @@
       </select>
     </div>
 
-    <div class="pt-6" style="min-height: 300px">
+    <div class="pt-6 dark:text-white text-xl font-light" style="min-height: 300px">
       <div *ngIf="cantonSelect == 'bs'">
         <p>
           Im Unterschied zu seinen Vorgängern, wurde im Kanton Basel-Stadt ein ganz anderer Weg verfolgt. Dort wurde als Grundlage das Behindertenrechtegesetz

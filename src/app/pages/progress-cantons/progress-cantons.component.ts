@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-progress-cantons',
   templateUrl: './progress-cantons.component.html',
+  styleUrls: ['./progress-cantons.component.scss'],
 })
 export class ProgressCantonsComponent implements OnInit {
   cantonSelect: string | null = '';
