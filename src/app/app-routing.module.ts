@@ -24,18 +24,6 @@ const routes: Routes = [
     children: [],
   },
 
-  {
-    //TODO: delete this..
-    path: 'infosite',
-    loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
-  },
-
-  //needs to be moved..
-  {
-    path: 'create',
-    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
-  },
-
   // WIZARD START
   {
     //TODO: delete this..
@@ -107,7 +95,10 @@ const routes: Routes = [
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then((m) => m.NewsPageModule),
   },
-  {path: 'blog', loadChildren: () => import('./pages/blog/blog.module').then((m) => m.BlogModule)},
+  {
+    path: 'blog',
+    loadChildren: () => import('./pages/blog/blog.module').then((m) => m.BlogModule),
+  },
 
   {
     path: 'progress',
@@ -195,6 +186,10 @@ const routes: Routes = [
         path: 'campaign/:id',
         loadChildren: () => import('./pages/admin/campaign-details/campaign-details.module').then((m) => m.CampaignDetailsModule),
         canActivate: [AuthGuard],
+      },
+      {
+        path: 'create',
+        loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
       },
     ],
   },
