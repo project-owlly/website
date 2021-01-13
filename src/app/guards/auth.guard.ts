@@ -21,8 +21,9 @@ export class AuthGuard implements CanActivate {
         const user = await this.authService.getUser().catch((err) => {
           console.log('Fehler: ' + err);
         });
-        if (user && user.emailVerified && !user.isAnonymous) {
+        if (user && !user.isAnonymous) {
           resolve(true);
+
         } else if (user && !user.emailVerified) {
           let promptRet = await Modals.confirm({
             title: 'E-Mail Adresse zuerst verifizieren',
@@ -45,6 +46,7 @@ export class AuthGuard implements CanActivate {
           }
 
           /*const {ToastComponent} = await import('../components/toast/toast.component');
+
           await this.toastService.open(ToastComponent, {
             msg: 'Bitte verifiziere zuerst deine E-Mail Adresse. Prüfe deinen Posteingang/Spam Ordner.',
             status: 'error',
@@ -52,7 +54,7 @@ export class AuthGuard implements CanActivate {
           });*/
           this.authService.logout();
           this.router.navigateByUrl('/login');
-          reject('error');
+          reject('error');*/
         } else {
           this.router.navigateByUrl('/login');
           reject('error');
