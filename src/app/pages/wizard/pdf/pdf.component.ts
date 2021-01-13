@@ -7,19 +7,20 @@ import {catchError, filter, first, map, shareReplay, switchMap} from 'rxjs/opera
 import {EidUserData} from '../../../types/eid';
 import {Pdf} from '../../../types/pdf';
 
-import {Plugins} from '@capacitor/core';
-const {Browser} = Plugins;
-
 import {OidcService} from 'src/app/services/oidc.service';
 import {PdfService} from 'src/app/services/pdf.service';
 import {AuthService} from 'src/app/services/auth.service';
-
+import {faSpinner, faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
 })
 export class PdfComponent implements OnInit {
-  readonly useData$: Observable<EidUserData | undefined> = this.route.queryParams.pipe(
+
+  faSpinner=faSpinner;
+  faCheckCircle=faCheckCircle;
+
+  readonly userData$: Observable<EidUserData | undefined> = this.route.queryParams.pipe(
     first(),
     filter((params: Params) => params.code !== null),
     map((params: Params) => params.code),
@@ -69,7 +70,7 @@ export class PdfComponent implements OnInit {
         filter((params: Params) => params.owllyId !== null),
         map((params: Params) => params.owllyId)
       ) as Observable<string>,
-      this.useData$.pipe(filter((userData: EidUserData | undefined) => userData !== undefined)) as Observable<EidUserData>,
+      this.userData$.pipe(filter((userData: EidUserData | undefined) => userData !== undefined)) as Observable<EidUserData>,
     ])
       .pipe(
         first(),
@@ -92,7 +93,9 @@ export class PdfComponent implements OnInit {
         first()
       )
       .subscribe(async (owllyId: string | undefined) => {
-        await this.router.navigate(['/sign', owllyId]);
+        await this.router.navigate(['/sign', owllyId]).catch((err) => {
+          console.log(err.message);
+        });
       });
   }
 

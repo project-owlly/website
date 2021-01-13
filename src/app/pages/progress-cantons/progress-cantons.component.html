@@ -1,23 +1,14 @@
 <app-header></app-header>
 
-<app-pagehero imgName="adobe/progress.jpeg" type="plain" [diamonds]="true">
+<app-pagehero imgName="zurich-2" type="plain" [diamonds]="true">
   <h1 class="text-4xl md:text-6xl font-light dark:text-white">Fortschritt in der Schweiz:<span class="text-4xl md:text-6xl font-bold"> Kantone</span></h1>
   <!-- Subtitle -->
   <h2 class="text-xl dark:text-white">
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+    In verschiedenen Kantonen gab es bereits E-Collecting Vorstösse. Es ist zu erwarten, dass Ihnen in der Umsetzung von E-Collecting eine Pionierrolle zukommt.
   </h2>
 
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl py-2">
-    <app-textblock
-      type="owlly"
-      title="Was bisher geschah"
-      text="Enim magna nisi anim incididunt veniam consectetur occaecat pariatur do officia fugiat. Quis magna culpa sunt duis est eiusmod. Ullamco ex est officia in sit ex officia pariatur nulla dolor in dolor quis. Dolor culpa sit voluptate id do consectetur duis magna anim nisi. Enim elit velit eu consequat ea incididunt laboris id in aliquip elit sit ut commodo. Laboris velit non amet minim cillum sint incididunt deserunt aute ex do amet laborum. Nisi aute tempor culpa enim nulla deserunt dolore velit dolor id sunt sunt veniam dolor."
-    ></app-textblock>
-    <app-textblock
-      type="owlly"
-      title="Ausblick"
-      text="Enim magna nisi anim incididunt veniam consectetur occaecat pariatur do officia fugiat. Quis magna culpa sunt duis est eiusmod. Ullamco ex est officia in sit ex officia pariatur nulla dolor in dolor quis. Dolor culpa sit voluptate id do consectetur duis magna anim nisi. Enim elit velit eu consequat ea incididunt laboris id in aliquip elit sit ut commodo. Laboris velit non amet minim cillum sint incididunt deserunt aute ex do amet laborum. Nisi aute tempor culpa enim nulla deserunt dolore velit dolor id sunt sunt veniam dolor."
-    ></app-textblock>
+    <app-textblock type="owlly" title="Was bisher geschah" text="Wähle in der Liste deinen Kanton aus um mehr zu erfahren."></app-textblock>
   </div>
   <div class="mx-auto max-w-screen-xl px-6 py-2">
     <h2 class="font-bold text-2xl">Ist dein Kanton bereit?</h2>
@@ -28,19 +19,56 @@
         [(ngModel)]="cantonSelect"
         class="text-2xl p-2 mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
       >
+        <option value="bs">Basel-Stadt</option>
+        <option value="sg">St. Gallen</option>
         <option value="sh">Schaffhausen</option>
         <option value="zh">Zürich</option>
       </select>
     </div>
 
     <div class="pt-6" style="min-height: 300px">
+      <div *ngIf="cantonSelect == 'bs'">
+        <p>
+          Im Unterschied zu seinen Vorgängern, wurde im Kanton Basel-Stadt ein ganz anderer Weg verfolgt. Dort wurde als Grundlage das Behindertenrechtegesetz
+          zur Einführung von E-Collecting genommen. Gemäss Artikel §5a kann der Regierungsrat Versuche zur Unterzeichnung von Initiativen und Referenden auf
+          elektronischem Wege fördern. Von diesem Artikel wurde in Basel-Stadt bis heute jedoch noch kein Gebrauch gemacht.
+        </p>
+      </div>
+      <div *ngIf="cantonSelect == 'sg'">
+        <p>
+          Ähnlich wie im Kanton Zürich, ist der Startpunkt für E-Collecting im Kanton St. Gallen eine Interpellation (51.18.22 Kanton St.Gallen als
+          E-Collecting-Pionier). Diese wurde 2018 im Kantonsrat behandelt. Kurze Zeit später folgte auf die beantwortete Interpellation eine Motion zur
+          Einführung von E-Collecting. Am 27.11.2018 nimmt die Kantonsregierung die Motion (42.18.14 Einführung von E-Collecting im Kanton St.Gallen) mit einer
+          grossen Mehrheit an. Die Motion verfolgt dabei das Ziel, dringende Fragen im Bereich der gesetzlichen Grundlagen, Beanspruchung des Politischen
+          Systems und Ausbau einer IT-Basisinfrastruktur zu beantworten.
+        </p>
+      </div>
       <div *ngIf="cantonSelect == 'sh'">
-        <p>Yo Schaffhausen hat bald E-Collecting</p>
+        <p>
+          Obwohl der Kanton Schaffhausen im Zuge von «Vote électronique» Erfahrungen mit E-Voting gesammelt und in diesem Zusammenhang das Stimmregister für
+          Auslandschweizerinnen und -Schweizer zentralisiert hat, wurde das Thema E-Collecting nicht von Politikern, sondern über eine Volksmotion (Art. 70a SHR
+          171.110) im Jahr 2020 auf die Politische Agenda gebracht. Im Gegensatz zu den anderen Kantonen hat Schaffhausen zudem im Jahr 2018 (Kanton
+          Schaffhausen, 2020) die elektronische Identität eingeführt und somit wichtige Voraussetzungen im Bereich Infrastruktur bereits geschaffen. Die
+          Volksmotion «Mehr Demokratie für Schaffhausen - einfach und sicher: Volksbegehren auch elektronisch unterschreiben (E-Collecting)» wird im Jahr 2021
+          vom Kantonsparlament behandelt.
+        </p>
       </div>
       <div *ngIf="cantonSelect == 'zh'">
-        <p>Züri hoffentlich auch bald</p>
+        <p>
+          Als E-Voting Pionierkanton, sah sich der Kanton bereits im Jahr 2009 mit einer Interpellation zum Thema E-Collecting konfrontiert. (24/2009 -
+          Interpellation (Pilotprojekt e-collecting) ). Die fehlende Harmonisierung des Stimmregisters, eine noch wenig bekannte elektronische Signatur und die
+          damalige E-Government Strategie und das Vote électronique auf Bundesebene führten dazu, dass E-Collecting nicht weiterverfolgt wurde. So dauerte 11
+          Jahre, bis im Jahr 2019 eine Motion das Thema wieder auf die Agenda brachte (5/2019 Einführung e-Collecting, elektronische Unterschriftensammlung für
+          Initiativen und Referenden im Internet oder auf mobilen Endgeräten). Auch Jahre später scheitert das Projekt am Fehlen einer elektronischen Identität
+          und am Projekt „Vote électronique“, welches E-Collecting erst in einer dritten Projektphase vorsieht. Zudem hat der Kanton Zürich aus
+          Ressourcengründen die Arbeiten an E-Collecting 2017 eingestellt. Das Nichtberücksichtigen der nachgelagerten E-Collectingprozesse, machen der Motion
+          einen weiteren Strich durch die Rechnung.
+        </p>
       </div>
     </div>
+  </div>
+  <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl py-2">
+    <app-textblock type="owlly" title="Ausblick" text="Volksmotion im Kantonsrat Schaffhausen (Ende Januar 2021)."></app-textblock>
   </div>
 
   <app-footer></app-footer>

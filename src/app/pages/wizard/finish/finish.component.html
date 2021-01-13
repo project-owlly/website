@@ -1,19 +1,71 @@
-<app-header></app-header>
+<app-header [hideNav]="true"></app-header>
 
-<main>
-  <div class="container mx-auto max-w-screen-xl pt-10">
+<main class="dark:bg-black">
+  <div class="container mx-auto max-w-screen-xl">
     <app-textblock title="Vielen Dank!" text="Du erhälst von uns eine Bestätigung per E-Mail wenn wir deinen Unterschriftenbogen erhalten haben." type="owlly">
-      <h1 class="font-light text-xl">
-        Du hast für folgendes Begehren unterschrieben:
-        <span class="font-bold text-4xl md:text-6xl text-center">
+      <h1 class="font-light text-xl dark:text-white">
+        <!--Du hast für folgendes Begehren unterschrieben:-->
+        <span class="font-bold text-4xl md:text-6xl text-center dark:text-white">
           <ng-container *ngIf="owlly$ | async as owlly">
             <h2 class="pt-6">{{ owlly.data.title }}</h2>
           </ng-container>
         </span>
       </h1>
     </app-textblock>
-    <p class="font-light text-xl px-6">Initiative jetzt teilen:</p>
-    <!-- TODO: insert real links, real icons and make icons yellow -->
+    <p class="font-light text-xl px-6">Volksbegehren jetzt teilen:</p>
+    <div class="mx-auto max-w-screen-xl container pt-6 px-6 justify-center md:justify-start flex">
+      <button (click)="share()" type="button" class="border-none outline-none rounded-full bg-yellow-400 h-14 w-14 flex items-center justify-center shadow-xl">
+        <img src="../../../assets/socialmedia/share.svg" alt="share" width="20px" />
+      </button>
+    </div>
+
+    <div class="mx-auto max-w-screen-xl px-6 pt-6 text-center md:text-left">
+      <p class="font-bold text-2xl dark:text-white">Das sind die erledigten Schritte</p>
+      <div class="table table-auto">
+        <div class="table-row-group">
+          <div class="table-row">
+            <div class="table-cell align-middle px-2">
+              <svg width="5" height="5">
+                <rect width="5" height="5" style="fill: #00813a" />
+              </svg>
+            </div>
+            <div class="table-cell text-left dark:text-white font-light text-2xl">Bogen mit der eID+ erstellen</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell align-middle px-2">
+              <svg width="5" height="5">
+                <rect width="5" height="5" style="fill: #00813a" />
+              </svg>
+            </div>
+            <div class="table-cell text-left dark:text-white font-light text-2xl">Bogen mit eID+ signieren</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell align-middle px-2">
+              <svg width="5" height="5">
+                <rect width="5" height="5" style="fill: #00813a" />
+              </svg>
+            </div>
+            <div class="table-cell text-left dark:text-white font-light text-2xl">Bogen digital an owlly übermitteln</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row">
+      <div class="text-center flex-auto">
+        <app-button (click)="navigate()" class="py-10">Fertig</app-button>
+      </div>
+    </div>
+
+    <!--
+   <div class="flex flex-row">
+     <div class="text-center flex-auto">
+       <app-button (click)="back()" class="py-10">zurück</app-button>
+      </div>
+    </div>
+  -->
+
+    <!-- TODO: insert real links, real icons and make icons yellow 
     <div class="flex mt-10 sm:mb-0 mb-10 px-6">
       <a href="https://www.instagram.com/projectowlly/" class="mr-2 w-8"><img src="./assets/socialmedia/instagram.svg" alt="instagram" /></a>
 
@@ -22,9 +74,17 @@
       <a href="https://www.facebook.com/projectowlly" class="mr-2 w-8"><img src="./assets/socialmedia/facebook.svg" alt="facebook" /></a>
 
       <a href="https://github.com/project-owlly" class="mr-2 w-8"><img src="./assets/socialmedia/github.svg" alt="github" /></a>
-    </div>
-    <p class="font-light text-lg px-6 text-center">(Du kannst dieses Fenster nun schliessen)</p>
+    </div>-->
+    <!--<p class="font-light text-lg px-6 text-center dark:text-white">(Du kannst dieses Fenster nun schliessen)</p>-->
   </div>
 </main>
 
-<!-- <app-footer></app-footer> -->
+<web-social-share [show]="showSocialShare" [share]="shareSocialShareOptions" (closed)="showSocialShare = false">
+  <fa-icon [icon]="faTwitter" slot="twitter" style="color: #00aced; display: block"></fa-icon>
+  <fa-icon [icon]="faFacebook" slot="facebook" style="color: #00aced; display: block"></fa-icon>
+  <fa-icon [icon]="faWhatsapp" slot="facebook" slot="whatsapp" style="color: #25d366; display: block"></fa-icon>
+  <fa-icon [icon]="faLinkedin" slot="linkedin" style="color: #0077b5; display: block"></fa-icon>
+  <fa-icon [icon]="faEnvelope" slot="email" ariaLabel="Email" style="color: #ff8ea3; display: block"></fa-icon>
+  <fa-icon [icon]="faCopy" slot="copy" ariaLabel="Copy" style="color: #ff8ea3; display: block"></fa-icon>
+</web-social-share>
+<app-footer></app-footer>

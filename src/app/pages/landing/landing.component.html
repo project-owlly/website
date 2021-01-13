@@ -1,24 +1,24 @@
-<app-header></app-header>
+<app-header [hideNav]="true"></app-header>
 
 <main>
   <div class="container mx-auto max-w-screen-xl px-6 pt-10 sm:pt-20">
-    <h1 class="text-4xl sm:text-8xl font-bold text-white sm:mb-2 mb-4">Enabling <br>digital democracy.</h1>
+    <h1 class="text-4xl sm:text-8xl font-bold text-white sm:mb-2 mb-4">Enabling <br />digital democracy.</h1>
     <h2 class="text-2xl mb-8 text-gray-200 max-w-lg">
       owlly ermöglicht das sichere und einfache elektronische Unterschreiben, Validieren und Zählen von Volksbegehren für Kampagnen-Plattformen und bietet ein
       ganzheitliches E-Collecting für die Schweiz.
     </h2>
-  <div class="flex justify-center items-center md:items-start md:justify-start">
-    <app-button (click)="showNewsletter()">Für Newsletter anmelden</app-button>
-  </div>
+    <div class="flex justify-center items-center md:items-start md:justify-start">
+      <app-button (click)="showNewsletter()">Für Newsletter anmelden</app-button>
+    </div>
 
     <div class="flex mt-10 sm:mb-0 mb-10">
-      <a href="https://www.instagram.com/projectowlly/" class="mr-2 w-8"><img src="./assets/socialmedia/instagram.svg" alt="instagram" /></a>
+      <a href="https://www.instagram.com/projectowlly/" name="instagram" class="mr-2 w-8"><img src="./assets/socialmedia/instagram.svg" alt="instagram" /></a>
 
-      <a href="https://twitter.com/projectowlly" class="mr-2 w-8"><img src="./assets/socialmedia/twitter.svg" alt="twitter" /></a>
+      <a href="https://twitter.com/projectowlly" name="twitter" class="mr-2 w-8"><img src="./assets/socialmedia/twitter.svg" alt="twitter" /></a>
 
-      <a href="https://www.facebook.com/projectowlly" class="mr-2 w-8"><img src="./assets/socialmedia/facebook.svg" alt="facebook" /></a>
+      <a href="https://www.facebook.com/projectowlly" name="facebook" class="mr-2 w-8"><img src="./assets/socialmedia/facebook.svg" alt="facebook" /></a>
 
-      <a href="https://github.com/project-owlly" class="mr-2 w-8"><img src="./assets/socialmedia/github.svg" alt="github" /></a>
+      <a href="https://github.com/project-owlly" name="github" class="mr-2 w-8"><img src="./assets/socialmedia/github.svg" alt="github" /></a>
     </div>
   </div>
 
@@ -30,7 +30,7 @@
 <button
   aria-label="Kontakt"
   type="button"
-  class="fixed z-10 bottom-0 right-0 rounded-full bg-secondary hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
+  class="fixed bottom-0 right-0 rounded-full bg-secondary hover:bg-secondary-dark text-white w-14 h-14 m-4 shadow-lg"
   (click)="showFeedback()"
 >
   <fa-icon [icon]="faEnvelope" size="lg"></fa-icon>

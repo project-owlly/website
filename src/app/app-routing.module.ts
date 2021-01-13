@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {ActionmailGuard} from './guards/actionmail.guard';
 import {AuthGuard} from './guards/auth.guard';
 
 import {EidGuard} from './guards/eid.guard';
@@ -7,13 +8,22 @@ import {EidGuard} from './guards/eid.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/landing/landing.module').then((m) => m.LandingPageModule),
+    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
+
   //MICROPAGES
   {
     path: 'o',
     loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule),
   },
+
+  //ACtion Email
+  {
+    path: 'auth/action',
+    canActivate: [ActionmailGuard],
+    children: [],
+  },
+
   {
     //TODO: delete this..
     path: 'infosite',
@@ -68,11 +78,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/impressum/impressum.module').then((m) => m.ImpressumPageModule),
   },
 
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
-  },
-
   //GENERAL PAGES
   {
     path: 'ourmission',
@@ -102,9 +107,19 @@ const routes: Routes = [
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then((m) => m.NewsPageModule),
   },
+  {path: 'blog', loadChildren: () => import('./pages/blog/blog.module').then((m) => m.BlogModule)},
+
   {
     path: 'progress',
     loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
+  },
+  {
+    path: 'progress/bund',
+    loadChildren: () => import('./pages/progress-bund/progress-bund.module').then((m) => m.ProgressBundPageModule),
+  },
+  {
+    path: 'progress/cantons',
+    loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
   },
   {
     path: 'progress/cantons/:canton',
@@ -183,7 +198,6 @@ const routes: Routes = [
       },
     ],
   },
-
   //Fallback
   {
     path: '**',

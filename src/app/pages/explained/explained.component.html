@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<app-pagehero type="plain" imgName="explainedhero.jpg" [diamonds]="true">
+<app-pagehero type="plain" imgName="laptop-4" [diamonds]="true">
   <h1 class="text-4xl md:text-6xl font-light dark:text-white">E-Collecting <span class="text-4xl md:text-6xl font-bold">erklärt</span></h1>
   <h2 class="text-xl dark:text-white">Eine Einführung ins Thema: Erklärungen, Vorteile, Kritik, FAQ, Community & weiterführende Informationen.</h2>
 
@@ -53,36 +53,36 @@
     </div>
   </div>
 
-  <div class="pt-12 pb-12">
-    <img src="../../../assets/heros/homehero2.jpg" alt="" />
-  </div>
+  <!-- <div class="pt-12 pb-12">
+    <img src="../../../assets/heros/campaigner-3-1920.webp" alt="" />
+  </div> -->
 
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
     <app-textblock type="owlly" title="FAQ">
-      <button class="accordion py-4 font-light text-xl">Warum gibt es noch kein E-Collecting in der Schweiz?</button>
+      <button class="accordion py-4 font-light dark:text-white text-xl">Warum gibt es noch kein E-Collecting in der Schweiz?</button>
       <div class="panel">
-        <p class="font-light text-xl">
+        <p class="font-light dark:text-white text-xl">
           Rein formell lässt sich das relativ einfach beantworten: Weil die gesetzliche Grundlage dazu fehlt. Schon mehrfach wurde das Anliegen auf Bundesebene
           aber auch teilweise in den Kantonen behandelt. In einigen Kantone sind unterdessen Bemühungen im Gange. E-Collecting ist für einen Grossteil der
           Bevölkerung zudem noch ein Fremdwort wodurch der Rückhalt in der Gesellschaft und der Politik noch nicht stark entwickelt ist.
         </p>
         <div class="py-6">
-          <a href="/progress"> <app-button [small]="true">mehr</app-button> </a>
+          <a href="/progress"> <app-button [small]="true" name="progress">mehr</app-button> </a>
         </div>
       </div>
 
-      <button class="accordion py-4 font-light text-xl">Ist E-Collecting irgendwo auf der Welt schon im Einsatz?</button>
+      <button class="accordion py-4 font-light dark:text-white text-xl">Ist E-Collecting irgendwo auf der Welt schon im Einsatz?</button>
       <div class="panel">
-        <p class="font-light text-xl">
+        <p class="font-light dark:text-white text-xl">
           Ja. In verschiedenen Ländern steht E-Collecting bereits im Einsatz. Ein prominentes Beispiel ist die Europäische Bürgerinitiative (EBI) der
           Europäischen Union welche das elektronische Unterschriftensammeln seit 2011 erlaubt. Weitere Beispiele sind die Finnland, Lettland und Estland, in
           denen E-Collecting bereits möglich ist. Seit Mai 2020 zeigen auch die US Bundesstaaten Massachusetts und Ohio E-Collecting Bestrebungen.
         </p>
       </div>
 
-      <button class="accordion py-4 font-light text-xl">Ist E-Collecting sicher?</button>
+      <button class="accordion py-4 dark:text-white font-light text-xl">Ist E-Collecting sicher?</button>
       <div class="panel">
-        <p class="font-light text-xl">
+        <p class="font-light dark:text-white text-xl">
           Grundsätzlich ja. Genauso wie beim bestehenden politischen System in Unterschriften-, Wahl- und Abstimmungssachen oder anderen digitalen Prozessen wie
           E-Banking bestehen auch bei E-Collecting Restrisiken. Grössere Sicherheitslücken sind jedoch nicht zu erwarten oder sie dürften frühzeitig erkannt
           werden. Die eindeutige Identifizierung der willensbekundenden Person wird durch eine elektronische Identität e-ID sichergestellt. Diese muss der oder
@@ -91,9 +91,9 @@
         </p>
       </div>
 
-      <button class="accordion py-4 font-light text-xl">Gibt es Kritik an E-Collecting?</button>
+      <button class="accordion py-4 dark:text-white font-light text-xl">Gibt es Kritik an E-Collecting?</button>
       <div class="panel">
-        <p class="font-light text-xl">
+        <p class="font-light dark:text-white text-xl">
           Ja. Zwei Gegenargumente tauchen wiederholt auf. Einerseits betrifft das die Sicherheit. Die Bevölkerung hat Zweifel an der Sicherheit eines
           elektronischen Prozesses. Es gibt allerdings kein inhaltliches Argument, warum E-Collecting unsicherer sein sollte als andere, längst alltäglichen
           digitale Prozesse wie E-Banking. Auch E-Collecting Systeme können sich Möglichkeiten der sicheren Authentifizierung bedienen, die heute bereits
@@ -104,6 +104,14 @@
           einer Demokratie in der das Volk möglichst gut repräsentiert ist. Falls es tatsächlich dazu kommen sollte, dass das politische System an seine Grenzen
           stösst, müssen natürlich Massnahmen getroffen werden. Dies könnte z.B. die Diskussion über die Anzahl benötigter Unterschriften umfassen. Aufgrund der
           angewachsenen Bevölkerung seit der Festlegung der Werte wäre eine solche Diskussion ohnehin naheliegend.
+        </p>
+      </div>
+
+      <button class="accordion py-4 dark:text-white font-light text-xl">Wird das Sammeln handschriftlicher Unterschriften durch E-Collecting abgelöst?</button>
+      <div class="panel">
+        <p class="font-light dark:text-white text-xl">
+          Nein. Die Einführung von E-Collecting hat keine Abschaffung des herkömmlichen, handschriftlichen Sammeln von Unterschriften zur Folge. Die beiden
+          Systeme ergänzen sich.
         </p>
       </div>
     </app-textblock>
@@ -140,23 +148,23 @@ sich gemeinsam auf verschiedensten Ebenen dafür einsetzt."
     </div>
   </div>
 
-  <div class="flex grid grid-cols-1 md:grid-cols-3 mx-auto max-w-screen-xl gap-x-20 pt-12">
+  <!-- <div class="flex grid grid-cols-1 md:grid-cols-3 mx-auto max-w-screen-xl gap-x-20 pt-12">
     <div class="text-center dark:text-white">
-      <img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto" />
+      <img src="../../../assets/team/fabian.webp" alt="" width="70%" class="rounded-full mx-auto" />
       <p class="text-3xl font-bold pt-6">Fabian Bolli</p>
       <p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
     </div>
     <div class="text-center dark:text-white">
-      <img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto" />
+      <img src="../../../assets/team/fabian.webp" alt="" width="70%" class="rounded-full mx-auto" />
       <p class="text-3xl font-bold pt-6">Fabian Bolli</p>
       <p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
     </div>
     <div class="text-center dark:text-white">
-      <img src="../../../assets/team/fabian.png" alt="" width="70%" class="rounded-full mx-auto" />
+      <img src="../../../assets/team/fabian.webp" alt="" width="70%" class="rounded-full mx-auto" />
       <p class="text-3xl font-bold pt-6">Fabian Bolli</p>
       <p class="text-lg font-light pt-4">"E-Collecting isch beschte"</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20 pt-12">
     <app-textblock

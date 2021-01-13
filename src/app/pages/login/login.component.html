@@ -35,78 +35,47 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-between">
-        <!--
-        <div class="flex items-center">
-          <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-          <label for="remember_me" class="ml-2 block text-sm text-gray-900">
-            Remember me
-          </label>
-        </div>-->
 
-        <div class="text-sm">
-          <a href="/forgot" class="font-medium text-indigo-600 hover:text-indigo-500"> Passwort vergessen? </a>
-        </div>
-      </div>
-
-      <div>
-        <app-button (click)="login(authForm)">Login</app-button>
-        <button
-          type="submit"
-          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        >
-          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-            <!-- Heroicon name: lock-closed -->
-            <svg
-              class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </span>
-          Login
-        </button>
-      </div>
-    </form>
+<main class="dark:bg-black">
+  <div>
+    <app-textblock title="Login" type="owlly">
+      <h2 class="font-light text-2xl dark:text-white">Hi! Logge dich ein, um Zugriff auf dein Dashboard zu bekommen.</h2>
+    </app-textblock>
   </div>
-</div>
+  <div class="flex grid grid-cols-1 md:grid-cols-5 mx-auto max-w-screen-xl gap-6 px-6">
+    <div class="md:col-span-2 flex items-center">
+      <form [formGroup]="authForm">
+        <input
+          id="username"
+          type="email"
+          name="username"
+          formControlName="username"
+          class="text-xl dark:font-dark font-light justify-center w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+          required
+          placeholder="E-Mail"
+        />
 
-<!--
-<div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
-  <app-textblock title="Login" type="owlly" subtitle="Login to the owlly world"></app-textblock>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          formControlName="password"
+          class="text-xl dark:font-dark font-light justify-center w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+          required
+          placeholder="Passwort"
+        />
+        <div class="py-6 flex justify-center">
+          <app-button (click)="login(authForm)">Login</app-button>
+        </div>
+        <a href="/signup" class="font-light dark:text-white hover:underline" name="signup">Account erstellen</a>
+      </form>
 
+      
+    </div>
+    <div class="md:col-span-3">
+      <img src="../../../assets/login.svg" width="90%" alt="" />
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>
 
-
-
-
-  <form [formGroup]="authForm">
-    <input
-      id="username"
-      type="email"
-      name="username"
-      formControlName="username"
-      class="text-2xl dark:font-dark font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
-      required
-      placeholder="E-Mail"
-    />
-
-    <input
-      id="password"
-      type="password"
-      name="password"
-      formControlName="password"
-      class="text-2xl dark:font-dark font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
-      required
-      placeholder="Passwort"
-    />
-
-    <app-button (click)="login(authForm)">Login</app-button>
-  </form>
-</div>-->

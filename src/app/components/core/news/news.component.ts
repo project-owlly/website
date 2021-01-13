@@ -1,18 +1,23 @@
-import {AfterViewInit, Component, Input, ViewChild, ElementRef} from '@angular/core';
-import { NewscardComponent } from "../newscard/newscard.component";
-import { timeout } from 'q';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import {Component, Input, ViewChild, ElementRef} from '@angular/core';
+
+import {faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons';
+
+import {ScullyRoutesService, ScullyRoute} from '@scullyio/ng-lib';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent {
+  blogPosts$: Observable<ScullyRoute[]> | undefined;
+  faAngleRight = faAngleRight;
+  faAngleLeft = faAngleLeft;
 
-  faAngleRight=faAngleRight;
-  faAngleLeft=faAngleLeft;
-
-  @ViewChild("horizontalScroll") horizontalScroll!: ElementRef;
+  @ViewChild('horizontalScroll') horizontalScroll!: ElementRef;
+  constructor(private scully: ScullyRoutesService) {}
 
   scrollRight() {
     this.horizontalScroll.nativeElement.scrollLeft += 400;
@@ -21,5 +26,9 @@ export class NewsComponent {
     this.horizontalScroll.nativeElement.scrollLeft -= 400;
   }
 
+  ngOnInit() {
+    this.blogPosts$ = this.scully.available$.pipe(
+      map((routes: any) => routes.filter((route: any) => route.route.startsWith('/blog/') && route.sourceFile.endsWith('.md')))
+    );
+  }
 }
-

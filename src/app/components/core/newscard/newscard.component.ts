@@ -10,7 +10,10 @@ export class NewscardComponent {
   @Input() date?: string = '';
   @Input() showButton?: boolean = false;
   @Input() buttonText?: string = '';
+  @Input() sourceName?: string = '';
+  @Input() source?: string = '';
   @Input() imgName?: string = '';
+  @Input() link?: string = 'javascript:void(0)';
 
   trimString(string: any, length: number) {
     return string.length > length ? string.substring(0, length) + '...' : string;

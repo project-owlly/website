@@ -1,16 +1,31 @@
 <div
   class="relative rounded shadow-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600 rounded h-full transition"
-  style="min-height: 300px; min-width: 400px"
+  style="min-height: 300px; min-width: 320px"
 >
   <div class="w-full overflow-hidden">
-    <img class="rounded-t" src="../../../../assets/newsheader/{{ imgName }}" alt="" width="100%" />
+    <picture>
+      <source type="image/webp" srcset="../../../../assets/heros/{{ imgName }}-1920.webp" />
+      <source type="image/jpeg" srcset="../../../../assets/heros/{{ imgName }}-1920.jpg" />
+      <img *ngIf="imgName" class="rounded-t" alt="{{ text }}" width="100%" src="../../../../assets/heros/{{ imgName }}-1920.jpg" />
+    </picture>
+  </div>
+
+  <div class="p-4">
+    <p class="text-md font-light dark:text-white">
+      <a href="{{ source }}"> Quelle: {{ sourceName }} </a>
+    </p>
   </div>
   <div class="p-4">
     <p class="text-md font-light dark:text-white">{{ trimString(text, 200) }}</p>
   </div>
   <div class="h-14"></div>
-  <div *ngIf="showButton" class="absolute bottom-0 right-0 p-4">
-    <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+  <div class="flex justify-between items-end w-full absolute bottom-0">
+    <div class="p-4 text-md font-light dark:text-white">{{ date }}</div>
+
+    <div *ngIf="showButton" class="p-4">
+      <a href="{{ link }}" name="{{ buttonText }}">
+        <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+      </a>
+    </div>
   </div>
-  <div class="absolute bottom-0 left-0 p-4 text-md font-light dark:text-white">{{ date }}</div>
 </div>

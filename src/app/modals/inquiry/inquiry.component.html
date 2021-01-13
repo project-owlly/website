@@ -1,0 +1,84 @@
+<app-modal #modalComponent>
+  <form [formGroup]="inquiryForm" (ngSubmit)="createRecord()">
+    <!-- Vorname -->
+    <label for="firstname" class="block mt-2 text-xs font-semibold text-gray-600">Vorname</label>
+    <input
+      id="firstname"
+      type="text"
+      name="firstname"
+      autocomplete="given-name"
+      formControlName="vorname"
+      class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+    />
+
+    <!-- Nachname -->
+    <label for="lastname" class="block mt-2 text-xs font-semibold text-gray-600">Nachname</label>
+    <input
+      id="lastname"
+      type="text"
+      name="lastname"
+      autocomplete="family-name"
+      formControlName="nachname"
+      class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+    />
+
+    <!-- Funktion -->
+    <label for="funktion" class="block mt-2 text-xs font-semibold text-gray-600">Deine Organisation/Funktion</label>
+    <input
+      id="funktion"
+      type="text"
+      name="funktion"
+      autocomplete="organization"
+      formControlName="funktion"
+      class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+    />
+
+    <!-- Email -->
+    <label for="email" class="block mt-2 text-xs font-semibold text-gray-600">E-Mail <span class="text-red-600">*</span></label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      autocomplete="email"
+      formControlName="email"
+      class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+      required
+    />
+
+    <!-- Inquiry -->
+    <label for="inquiry" class="block mt-2 text-xs font-semibold text-gray-600">Deine Frage <span class="text-red-600">*</span></label>
+    <textarea
+      id="inquiry"
+      name="inquiry"
+      rows="3"
+      type="text"
+      formControlName="inquiry"
+      type="text"
+      class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+    ></textarea>
+
+    <!-- publish -->
+    
+
+    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+
+    <!-- <span class="block mt-4 text-xs text-gray-600"
+        >** Wir sind interessiert an deiner Meinung! Als Testperson erhältst du Einblick in unsere aktuellen und meist noch unveröffentlichten
+        Entwicklungsschritte und prägst damit E-Collecting in der Schweiz mit.</span
+      > -->
+  </form>
+</app-modal>
+
+<ng-template #toolbar>
+  <div class="py-3 flex justify-end">
+    <button
+      (click)="close()"
+      type="button"
+      class="rounded-md shadow-lg sm:tracking-wider mx-2 border border-gray-300 px-4 py-2 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+    >
+      schliessen
+    </button>
+
+    <app-button type="submit" [small]="true" [uppercase]="false" [disable]="inquiryForm.invalid">einsenden</app-button>
+  </div>
+</ng-template>

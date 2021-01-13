@@ -1,12 +1,10 @@
 <app-header></app-header>
 
-<app-pagehero imgName="ourmissionHeader.png" type="plain" [diamonds]="false">
+<app-pagehero imgName="campaigner-5" type="plain" [diamonds]="false">
   <!-- Title -->
   <h1 class="text-4xl md:text-6xl font-light title dark:text-white">Unsere <span class="text-4xl md:text-6xl font-bold title">Mission</span></h1>
   <!-- Subtitle -->
-  <h2 class="text-xl dark:text-white">
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
-  </h2>
+  <h2 class="text-xl dark:text-white">Wir ermöglichen digitale Demokratie durch ganzheitliche E-Collecting Lösungen.</h2>
 
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
     <app-textblock
@@ -31,21 +29,20 @@ Wir fördern das rechtskräftige elektronische Unterschriftensammeln für politi
 Wir fördern E-Collecting mit einer zentralen Plattform für alles rund um E-Collecting in der Schweiz. Wir bieten Information zum Thema, laden zur Mitwirkung ein und stellen unser Know-How zur Verfügung.
 "
     ></app-textblock>
-
     <app-card
       type="owlly"
       title="Der E-Collecting Dummy"
       [showButton]="true"
       buttonText="mehr"
       text="Wie sieht E-Collecting aus? Schau dir den Ablauf an einem Dummy an!"
-      class="h-20 p-6"
+      class="px-6 pt-12"
+      link="https://www.figma.com/proto/FM2r6jd2S06V3GjEV2pTmb/Prototyp_3_final?node-id=0%3A1&scaling=scale-down"
     >
     </app-card>
   </div>
   <div class="text-right items-end pt-6">
     <app-storynav></app-storynav>
   </div>
-  <div style="height: 300px" class="block md:hidden"></div>
 
   <app-footer></app-footer>
 </app-pagehero>

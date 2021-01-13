@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   public authForm: FormGroup;
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
         position: 'bottom',
       });
     } else {
-      console.log('Username: ' + authForm.value.username);
+      //console.log('Username: ' + authForm.value.username);
 
       this.auth.login(authForm.value.username, authForm.value.password).then(
         (ok) => {
