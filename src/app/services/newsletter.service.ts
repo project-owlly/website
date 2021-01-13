@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 import {AngularFirestore} from '@angular/fire/firestore';
 
@@ -8,7 +8,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
   providedIn: 'root',
 })
 export class NewsletterService {
-  constructor(public firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore) {}
 
   createNewsletterRecord(record: any): Promise<void> {
     return this.firestore.collection('newsletter').doc(record.email).set(record);

@@ -15,6 +15,7 @@ import {DiamondComponent} from './diamond/diamond.component';
 
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {StorynavComponent} from './storynav/storynav.component';
+import {AdminHeaderComponent} from './admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {StorynavComponent} from './storynav/storynav.component';
     NewsComponent,
     DiamondComponent,
     StorynavComponent,
+    AdminHeaderComponent,
   ],
   exports: [
     HeaderComponent,
@@ -44,6 +46,7 @@ import {StorynavComponent} from './storynav/storynav.component';
     NewsComponent,
     DiamondComponent,
     StorynavComponent,
+    AdminHeaderComponent,
   ],
   imports: [FontAwesomeModule, CommonModule],
 })

@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {DashboardRoutingModule} from './dashboard-routing.module';
 import {DashboardComponent} from './dashboard.component';
 
+import {DashboardRoutingModule} from './dashboard-routing.module';
+import {ComponentsModule} from 'src/app/components/core/components.module';
+
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+
 @NgModule({
+  imports: [CommonModule, DashboardRoutingModule, FontAwesomeModule, ComponentsModule],
   declarations: [DashboardComponent],
-  imports: [CommonModule, DashboardRoutingModule],
 })
 export class DashboardModule {}

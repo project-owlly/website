@@ -1,1 +1,53 @@
-<p>profile works!</p>
+<app-header></app-header>
+<main>
+  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <!-- Replace with your content -->
+    <div class="bg-white dark:bg-black">
+      <app-textblock type="owlly" title="Profil" subtitle="Hier kannst du dein Profil verwalten"></app-textblock>
+
+      <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 pt-16 gap-6">
+        <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+          <!-- Vorname -->
+          <label for="firstname" class="block mt-2 text-xs font-semibold text-gray-600">Vorname <span class="text-red-600">*</span></label>
+          <input
+            id="firstname"
+            type="text"
+            name="firstname"
+            autocomplete="given-name"
+            formControlName="vorname"
+            class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+            required
+          />
+
+          <!-- Nachname -->
+          <label for="lastname" class="block mt-2 text-xs font-semibold text-gray-600">Nachname <span class="text-red-600">*</span></label>
+          <input
+            id="lastname"
+            type="text"
+            name="lastname"
+            autocomplete="family-name"
+            formControlName="nachname"
+            class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+            required
+          />
+
+          <!-- Email -->
+          <label for="email" class="block mt-2 text-xs font-semibold text-gray-600">E-Mail <span class="text-red-600">*</span></label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            autocomplete="email"
+            formControlName="email"
+            class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+            required
+          />
+        </form>
+        <app-button type="submit" [small]="true" [uppercase]="false" [disable]="profileForm.invalid">Absenden</app-button>
+      </div>
+    </div>
+    <!-- /End replace -->
+  </div>
+</main>
+
+<app-footer></app-footer>
