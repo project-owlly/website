@@ -28,13 +28,11 @@ export class NewsletterComponent implements OnInit {
 
   deselect() {
     for (let item of this.subscriberList) {
-      console.log(item);
       item.isChecked = false;
     }
   }
   select() {
     for (let item of this.subscriberList) {
-      console.log(item);
       item.isChecked = true;
     }
   }

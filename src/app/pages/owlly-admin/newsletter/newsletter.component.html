@@ -11,8 +11,9 @@
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-              <app-button (click)="select()">Select</app-button>
-              <app-button (click)="deselect()">Deselect</app-button>
+              <app-button (click)="select()">Alle</app-button>
+              <app-button (click)="deselect()">Keine</app-button>
+              <app-button (click)="send()">Senden</app-button>
 
               <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
@@ -47,7 +48,7 @@
                       <span *ngIf="sub.testuser" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> Ja </span>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <input value="sub.isChecked" type="checkbox" class="form-checkbox" />
+                      <input [checked]="sub.isChecked" (checked)="sub.isChecked = $event.target.value" type="checkbox" />
                     </td>
                   </tr>
 

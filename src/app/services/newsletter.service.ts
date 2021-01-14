@@ -21,7 +21,7 @@ export class NewsletterService {
     return this.firestore.collection('newsletter');
   }
 
-  sendNewsletter(recipients: any) {
+  sendNewsletter(recipients: any[]) {
     for (let mail of recipients) {
       /*  this.firestore.collection('sendEmail').add({
         to: mail.email,
