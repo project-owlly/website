@@ -23,6 +23,8 @@ export class CreateComponent implements OnInit {
     published: '',
     author: '',
     ruleValue: '',
+    amount: '',
+    link: '',
     goals: [],
   };
 
@@ -37,6 +39,8 @@ export class CreateComponent implements OnInit {
       published: [''],
       author: [''],
       ruleValue: ['', [Validators.required]],
+      amount: ['', [Validators.required]],
+      link: [''],
       goals1: [''],
       goals2: [''],
       goals3: [''],
@@ -44,9 +48,11 @@ export class CreateComponent implements OnInit {
     });
 
     
+    
     this.createForm.controls['type'].valueChanges.subscribe(data => {
       if(this.createForm.controls['type'].value == 'initiative'){ 
       this.begehren='initiative';
+      this.signatureAmount = 100000;
       this.createForm.controls['author'].setValidators(Validators.required);
       }
       if(this.createForm.controls['type'].value != 'initiative') {
@@ -54,6 +60,7 @@ export class CreateComponent implements OnInit {
       }
       if(this.createForm.controls['type'].value == 'referendum') {
         this.begehren='referendum';
+        this.signatureAmount = 50000;
       }
      });
      this.createForm.controls["ruleValue"].valueChanges.subscribe(data => {
@@ -68,6 +75,9 @@ export class CreateComponent implements OnInit {
     });
    }
    
+   //Signature Amount placeholder in form
+   signatureAmount: Number = 0;
+   
    //add goals
    goalAmount = 0;
    addGoal() {
@@ -81,6 +91,8 @@ export class CreateComponent implements OnInit {
     this.createData.published = this.createForm.value.published;
     this.createData.author = this.createForm.value.author;
     this.createData.ruleValue = this.createForm.value.ruleValue;
+    this.createData.amount = this.createForm.value.amount;
+    this.createData.link = this.createForm.value.link;
     this.createData.goals.push(this.createForm.value.goals1);
     this.createData.goals.push(this.createForm.value.goals2);
     this.createData.goals.push(this.createForm.value.goals3);
