@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireAuth, PERSISTENCE} from '@angular/fire/auth';
 import {AngularFirestore} from '@angular/fire/firestore';
 
 import {first} from 'rxjs/operators';
@@ -21,7 +21,8 @@ export class AuthService {
     return this.afAuth.signInWithCustomToken(token);
   }
 
-  login(email: string, password: string): Promise<firebase.default.auth.UserCredential> {
+  async login(email: string, password: string): Promise<firebase.default.auth.UserCredential> {
+    await this.afAuth.setPersistence('Session');
     return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
