@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   async login(email: string, password: string): Promise<firebase.default.auth.UserCredential> {
-    await this.afAuth.setPersistence('Session');
+    await this.afAuth.setPersistence('session');
     return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
