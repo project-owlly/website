@@ -50,11 +50,11 @@ export class AuthGuard implements CanActivate {
             status: 'error',
             position: 'bottom',
           });*/
-          this.authService.logout();
-          this.router.navigateByUrl('/login');
+          await this.authService.logout();
+          await this.router.navigateByUrl('/login');
           reject('error');
         } else {
-          this.router.navigateByUrl('/login');
+          await this.router.navigateByUrl('/login');
           reject('error');
         }
       } catch (error) {}

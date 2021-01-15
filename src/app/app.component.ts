@@ -6,15 +6,30 @@ import {first} from 'rxjs/operators';
 
 import {ToastService} from './services/toast.service';
 
+import {AngularFireAuth} from '@angular/fire/auth';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  constructor(private swUpdate: SwUpdate, private toastService: ToastService) {}
+  constructor(private fAuth: AngularFireAuth, private swUpdate: SwUpdate, private router: Router, private toastService: ToastService) {}
 
   async ngOnInit(): Promise<void> {
     await this.checkSwUpdate();
+
+    this.fAuth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        var uid = user.uid;
+        // ...
+      } else {
+        // User is signed out
+        this.router.navigateByUrl('/logout');
+      }
+    });
   }
 
   private async checkSwUpdate(): Promise<void> {
