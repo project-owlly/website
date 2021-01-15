@@ -3,7 +3,7 @@
 <div class="mx-auto max-w-screen-xl p-6">
   <form [formGroup]="createForm" (ngSubmit)="sendInitiative()">
     <div class="flex grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 col-span-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 col-span-2 gap-6">
       <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
@@ -46,6 +46,27 @@
         </select>
         </div>
       </div>
+
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition" style="min-height: 300px">
+          <div class="underline rounded-t"></div>      
+          <div class="px-4 pt-4">
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie viele Unterschriften benötigt dein Begehren?</h1>
+          </div>
+          <div class="px-4">
+            <p class="text-xl font-light dark:text-white"></p>
+          </div>
+          <div class="absolute bottom-4 px-4 w-full">
+              <input
+              id="amount"
+              type="number"
+              name="amount"
+              formControlName="amount"
+              class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+              required
+              placeholder="{{signatureAmount}}"
+            />
+          </div>
+        </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 col-span-2 gap-6">
@@ -211,6 +232,27 @@
     ></textarea>
         </div>
       </div>
+
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+          <div class="underline rounded-t"></div>      
+          <div class="px-4 pt-4">
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Existiert eine Webseite zu deinem Begehren?</h1>
+          </div>
+          <div class="px-4">
+            <p class="text-xl font-light dark:text-white"></p>
+          </div>
+          <div class="absolute bottom-4 px-4 w-full">
+            <input
+              id="link"
+              type="text"
+              name="link"
+              formControlName="link"
+              class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+              required
+              placeholder="https://mein-begehren.ch"
+            />
+          </div>
+        </div>
     </div>
       <app-textblock
   type="owlly"
