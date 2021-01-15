@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
         // ...
       } else {
         // User is signed out
-        this.router.navigateByUrl('/logout');
+        //this.router.navigateByUrl('/logout');
       }
     });
   }
