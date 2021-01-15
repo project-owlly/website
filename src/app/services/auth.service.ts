@@ -32,4 +32,7 @@ export class AuthService {
   logout(): Promise<void> {
     return this.afAuth.signOut();
   }
+  applyActionCode(actionCode: string) {
+    return this.afAuth.applyActionCode(actionCode);
+  }
 }

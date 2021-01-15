@@ -9,7 +9,7 @@ import {Owlly} from '../../../types/owlly';
 import {OwllyRoutingService} from '../../../services/owlly-routing.service';
 import {faTwitter, faFacebook, faWhatsapp, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
-import {faEnvelope, faCopy} from '@fortawesome/free-solid-svg-icons';
+import {faEnvelope, faCopy, faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 
 import {Plugins} from '@capacitor/core';
 const {Share, Device} = Plugins;
@@ -29,6 +29,7 @@ export class FinishComponent {
   faLinkedin = faLinkedin;
   faEnvelope = faEnvelope;
   faCopy = faCopy;
+  faCheckCircle = faCheckCircle;
 
   readonly owlly$: Observable<Owlly | undefined> = this.owllyRoutingService.owlly(this.route.paramMap).pipe(first());
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(

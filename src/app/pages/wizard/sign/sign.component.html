@@ -6,58 +6,70 @@
 
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">
-        <ng-container *ngIf="deviceInfo?.platform === 'web'">
-          <p class="dark:text-white text-xl px-6 font-light">Scanne diesen QR Code mit deiner eID+ Schaffhausen, um das Dokument zu importieren.</p>
+        <div class="mx-auto max-w-screen-xl px-6 pt-6">
+          <p class="font-bold text-2xl dark:text-white py-6">Signiere und reiche deinen Unterschriftbogen ein - so einfach geht's:</p>
+          <div class="flex grid grid-cols-6 gap-2 justify-around text-left" style="max-width: 400px">
+            <div *ngIf="isMobile">
+              <div class="col-span-1">
+                <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
+              </div>
+              <div class="col-span-5 text-left">
+                <p class="font-light text-2xl dark:text-white">"Button "importieren" drücken</p>
+              </div>
+            </div>
+            <div *ngIf="!isMobile">
+              <div class="col-span-1">
+                <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
+              </div>
+              <div class="col-span-5 text-left">
+                <p class="font-light text-2xl dark:text-white">"QR Code scannen</p>
+              </div>
+            </div>
+            <div class="col-span-1">
+              <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
+            </div>
+            <div class="col-span-5 text-left">
+              <p class="font-light text-2xl dark:text-white">"Meine Dokumente" auswählen</p>
+            </div>
+            <div class="col-span-1">
+              <img src="../../../../assets/eidIcons/sign.png" width="30px" alt="" />
+            </div>
+            <div class="col-span-5 text-left">
+              <p class="font-light text-2xl dark:text-white">Dokument signieren</p>
+            </div>
+            <div class="col-span-1 text-left">
+              <img src="../../../../assets/eidIcons/exportieren.png" width="30px" alt="" />
+            </div>
+            <div class="col-span-5 text-left">
+              <p class="font-light text-2xl dark:text-white">Dokument exportieren</p>
+            </div>
+            <div class="col-span-1 text-left">
+              <img src="../../../../assets/eidIcons/exportieren.png" width="30px" alt="" />
+            </div>
+            <div class="col-span-5 text-left">
+              <p class="font-light text-2xl dark:text-white">Dokument per E-Mail an briefkasten@owlly.ch senden</p>
+            </div>
+          </div>
+        </div>
+
+        <!--ON DESKTOP-->
+        <ng-container *ngIf="!isMobile">
           <div class="text-center items-center mx-auto py-4">
             <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
           </div>
         </ng-container>
 
-        <div class="mx-auto max-w-screen-xl px-6 pt-6">
-          <p class="font-bold text-2xl dark:text-white py-6">Signiere und reiche deinen Unterschriftbogen ein - so einfach geht's:</p>
-          <div class="flex grid grid-cols-6 gap-2 justify-around text-left" style="max-width: 400px;">
-          <div class="col-span-1">
-            <img src="../../../../assets/eidIcons/export.png" width="30px" alt="">
+        <!--ON MOBILE-->
+        <div class="mx-auto max-w-screen-xl px-6 text-center md:text-left py-6">
+          <div class="text-center flex-auto" *ngIf="isMobile">
+            <p class="dark:text-white text-xl font-light text-center">Du kannst das Dokument direkt in deine eID+ importieren (beta).</p>
+            <app-button (click)="import()" class="py-6">importieren </app-button>
           </div>
-          <div class="col-span-5 text-left">
-            <p class="font-light text-2xl dark:text-white">"Meine Dokumente" auswählen</p>
-          </div>
-          <div class="col-span-1">
-            <img src="../../../../assets/eidIcons/sign.png" width="30px" alt="">
-          </div>
-          <div class="col-span-5 text-left">
-            <p class="font-light text-2xl dark:text-white">Dokument signieren</p>
-          </div>
-          <div class="col-span-1 text-left">
-            <img src="../../../../assets/eidIcons/exportieren.png" width="30px" alt="">
-          </div>
-          <div class="col-span-5 text-left">
-            <p class="font-light text-2xl dark:text-white">Dokument exportieren</p>
-          </div>
-  
-        </div>
-      </div>
 
-        <!--<ng-container *ngIf="deviceInfo?.operatingSystem == 'ios' || deviceInfo?.operatingSystem == 'mac'">-->
-        <!--<ng-container class="px-6 pt-6">-->
-            <div class="mx-auto max-w-screen-xl px-6 text-center md:text-left py-6">
-                <div class="text-center flex-auto">
-                    <p class="dark:text-white text-xl font-light text-center">Du kannst das Dokument direkt in deine eID+ importieren (beta).</p>
-                  <app-button (click)="import()" class="py-6">importieren </app-button>
-                </div>
-        
-                <!--<a href="{{ 'eidplus://did:eidplus:undefined/document?source=' + pdf.url }}">
-                  <app-button class="py-10">importieren 1</app-button>
-                </a>
-                <a href="{{ link }}">
-                  <app-button class="py-10">importieren 2</app-button>
-                </a>-->
-              </div>
-        <!--/ng-container>-->
-
-        <div class="flex flex-row">
-          <div class="text-center flex-auto">
-            <app-button (click)="navigate()" class="py-10">Weiter</app-button>
+          <div class="flex flex-row">
+            <div class="text-center flex-auto">
+              <app-button (click)="navigate()" class="py-10">Weiter</app-button>
+            </div>
           </div>
         </div>
       </ng-container>

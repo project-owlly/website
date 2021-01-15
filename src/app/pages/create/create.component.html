@@ -1,7 +1,281 @@
 <app-header></app-header>
 
-<div class="flex absolute w-full bottom-2 md:top-1/2 md:bottom-1/2 justify-between p-4">
-  <!-- fix icons in buttons -->
+<div class="mx-auto max-w-screen-xl p-6">
+  <form [formGroup]="createForm" (ngSubmit)="sendInitiative()">
+    <div class="flex grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 col-span-2 gap-6">
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wo findet dein Vorhaben statt?</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white"></p>
+        </div>
+        <div class="absolute bottom-4 px-4 w-full">
+          <select
+          name="ebene"
+          formControlName="ruleValue"
+          id="level"
+          class="text-2xl font-bold w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100"
+        >
+          <option value="national" class="text-2xl font-light">National</option>
+          <option value="SH" class="text-2xl font-light">Schaffhausen</option>
+        </select>
+        </div>
+      </div>
+      
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Worum handelt es sich bei deinem Begehren?</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white"></p>
+        </div>
+        <div class="absolute bottom-4 px-4 w-full">
+          <select
+          name="begehren"
+          formControlName="type"
+          id="begehren"
+          class="text-2xl font-bold w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100"
+        >
+        <option value="initiative" class="text-2xl font-light">Initiative</option>
+        <option value="referendum" class="text-2xl font-light">Referendum</option>
+        <option value="volksmotion" class="text-2xl font-light">Volksmotion</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition" style="min-height: 300px">
+          <div class="underline rounded-t"></div>      
+          <div class="px-4 pt-4">
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie viele Unterschriften benötigt dein Begehren?</h1>
+          </div>
+          <div class="px-4">
+            <p class="text-xl font-light dark:text-white"></p>
+          </div>
+          <div class="absolute bottom-4 px-4 w-full">
+              <input
+              id="amount"
+              type="number"
+              name="amount"
+              formControlName="amount"
+              class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+              required
+              placeholder="{{signatureAmount}}"
+            />
+          </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 col-span-2 gap-6">
+      <div class="relative md:col-span-2 col-span-1 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie lautet der Titel des Begehrens?</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white"></p>
+        </div>
+        <div class="absolute bottom-4 px-4 w-full">
+          <input
+            id="title"
+            type="text"
+            name="title"
+            formControlName="title"
+            class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+            required
+            placeholder="Mein Begehren"
+          />
+        </div>
+      </div>
+
+      <div class="relative md:col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Schreibe hier den vollständigen Wortlaut deines Begehrens:</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white"></p>
+        </div>
+        <div class="p-4 w-full">
+          <textarea
+      class="text-lg font-light w-full  p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      name="text"
+      id="text"
+      formControlname="text"
+      cols="30"
+      formControlName="title"
+      rows="10"
+      placeholder="Mein Text..."
+    ></textarea>
+        </div>
+      </div>
+    </div>
+
+      <div class="relative col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Nenne bis zu 4 Ziele deines Begehrens (optional):</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white">Mit kurz und bündig definierten Zielen hilfst du deinem Zielpublikum, sich schneller ein Bild von deinem Begehren zu machen.</p>
+        </div>
+        <div class="p-4 px-4 w-full">
+    <input *ngIf="goalAmount > 0"
+      id="goals"
+      type="text"
+      name="goals"
+      placeholder="Ziel 1"
+      formControlName="goals1"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+    />
+    <input *ngIf="goalAmount > 1"
+      id="goals"
+      type="text"
+      name="goals"
+      formControlName="goals2"
+      placeholder="Ziel 2"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+    />
+    <input *ngIf="goalAmount > 2"
+      id="goals"
+      type="text"
+      name="goals"
+      placeholder="Ziel 3"
+      formControlName="goals3"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+    />
+    <input *ngIf="goalAmount > 3"
+      id="goals"
+      type="text"
+      name="goals"
+      placeholder="Ziel 4"
+      formControlName="goals4"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+    />
+    <div *ngIf="goalAmount < 4" class="flex justify-center mx-auto">
+        <button
+        (click)="addGoal()"
+        type="button"
+        name="scroll-Left"
+        class="border-none outline-none z-20 text-black rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+      >
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
+    </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 col-span-2 gap-6">
+      <div *ngIf="ebene == 'national' && begehren=='initiative'" class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wann wurde deine Initiative veröffentlicht?</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white"></p>
+        </div>
+        <div class="absolute bottom-4 px-4 w-full">
+          <input
+      id="date"
+      type="date"
+      name="date"
+      formControlName="published"
+      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      required
+      value="2020-02-03"
+    />
+        </div>
+      </div>
+
+      <div *ngIf="ebene == 'national' && begehren=='referendum' " class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wann ist die Schlussabstimmung in der Bundesversammlung?</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white"></p>
+        </div>
+        <div class="absolute bottom-4 px-4 w-full">
+          <input
+      id="date"
+      type="date"
+      name="date"
+      formControlName="published"
+      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      required
+      value="2020-02-03"
+    />
+        </div>
+      </div>
+
+      <div *ngIf="begehren=='initiative'" class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Zum Schluss brauchen wir noch Name und Adresse des Urhebers der Initiative (Initiativkomitee)</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white"></p>
+        </div>
+        <div class="p-4 px-4 w-full">
+          <textarea
+      class="text-xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      name="text"
+      id="text"
+      formControlname="author"
+      cols="30"
+      formControlName="title"
+      rows="10"
+      placeholder="Meine Adresse..."
+    ></textarea>
+        </div>
+      </div>
+
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+          <div class="underline rounded-t"></div>      
+          <div class="px-4 pt-4">
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Existiert eine Webseite zu deinem Begehren?</h1>
+          </div>
+          <div class="px-4">
+            <p class="text-xl font-light dark:text-white"></p>
+          </div>
+          <div class="absolute bottom-4 px-4 w-full">
+            <input
+              id="link"
+              type="text"
+              name="link"
+              formControlName="link"
+              class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+              required
+              placeholder="https://mein-begehren.ch"
+            />
+          </div>
+        </div>
+    </div>
+      <app-textblock
+  type="owlly"
+  title="Nur noch absenden..."
+  class="col-span-2"
+  >
+  <h2 class="font-light text-2xl dark:text-white">Überprüfe nochmals kurz deine Angaben und drücke anschliessend auf den unteren Button 😊</h2>
+  <div class="text-center mx-auto p-6">
+    <app-button type="submit" [disable]="createForm.invalid">Begehren senden</app-button>
+  </div>
+  </app-textblock>
+    </div>
+    
+  </form>
+
+  
+
+</div>
+
+<app-footer></app-footer>
+
+<!-- <div class="flex absolute w-full bottom-2 md:top-1/2 md:bottom-1/2 justify-between p-4">
+  
   <button (click)="scrollLeft()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"><fa-icon [icon]="faAngleLeft"></fa-icon></button>
   <button (click)="scrollRight()" class="rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center">
     <fa-icon [icon]="faAngleRight"></fa-icon>
@@ -9,7 +283,7 @@
 </div>
 
 <div #horizontalScroll id="horizontalDiv" class="horizontalDiv flex overflow-auto text-center scroll">
-  <!-- Adjust for dark mode in firefox? is it really worth it though? -->
+  
   <div class="h-full w-full flex-none p-6">
     <h1 class="text-4xl md:text-6xl font-bold">Der Start deiner digitalen Kampagne</h1>
     <h2 class="text-2xl font-light">Um dein Vorhaben digital zu erfassen brauchen wir folgende Informationen von dir:</h2>
@@ -113,7 +387,7 @@
     />
   </div>
 
-  <!-- If Bundesinitiative -->
+  
   <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
     <h1 class="text-4xl md:text-6xl font-bold pb-6">Wann wurde deine Initiative veröffentlicht?</h1>
     <input
@@ -127,7 +401,7 @@
     />
   </div>
 
-  <!-- If Bundesreferendum -->
+  
   <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
     <h1 class="text-4xl md:text-6xl font-bold pb-6">Wann ist die Schlussabstimmung in der Bundesversammlung?</h1>
     <input
@@ -163,4 +437,4 @@
       <app-button (click)="sendInitiative()">Begehren senden</app-button>
     </div>
   </div>
-</div>
+</div> -->

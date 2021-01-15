@@ -5,5 +5,7 @@ export interface createData {
       published: string;
       author: string;
       ruleValue: string;
+      amount: string;
       goals: string[];
+      link: string;
     }

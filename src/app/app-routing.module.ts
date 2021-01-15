@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {ActionmailGuard} from './guards/actionmail.guard';
 import {AuthGuard} from './guards/auth.guard';
 
 import {EidGuard} from './guards/eid.guard';
@@ -15,16 +16,12 @@ const routes: Routes = [
     path: 'o',
     loadChildren: () => import('./pages/owlly/owlly.module').then((m) => m.OwllyModule),
   },
-  {
-    //TODO: delete this..
-    path: 'infosite',
-    loadChildren: () => import('./pages/infosite/infosite.module').then((m) => m.InfositePageModule),
-  },
 
-  //needs to be moved..
+  //ACtion Email
   {
-    path: 'create',
-    loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
+    path: 'auth/action',
+    canActivate: [ActionmailGuard],
+    children: [],
   },
 
   // WIZARD START
@@ -98,7 +95,10 @@ const routes: Routes = [
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then((m) => m.NewsPageModule),
   },
-  {path: 'blog', loadChildren: () => import('./pages/blog/blog.module').then((m) => m.BlogModule)},
+  {
+    path: 'blog',
+    loadChildren: () => import('./pages/blog/blog.module').then((m) => m.BlogModule),
+  },
 
   {
     path: 'progress',
@@ -186,6 +186,10 @@ const routes: Routes = [
         path: 'campaign/:id',
         loadChildren: () => import('./pages/admin/campaign-details/campaign-details.module').then((m) => m.CampaignDetailsModule),
         canActivate: [AuthGuard],
+      },
+      {
+        path: 'create',
+        loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
       },
     ],
   },

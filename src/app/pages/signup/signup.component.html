@@ -1,44 +1,42 @@
 <app-header></app-header>
 <main class="dark:bg-black">
-
-<div>
-  <app-textblock title="Sign Up" type="owlly">
-    <h2 class="font-light text-2xl dark:text-white">Hi! Registriere dich hier um die Owlly Plattform zu nutzen.</h2>
-  </app-textblock>
+  <div>
+    <app-textblock title="Sign Up" type="owlly">
+      <h2 class="font-light text-2xl dark:text-white">Hi! Registriere dich hier um die Owlly Plattform zu nutzen.</h2>
+    </app-textblock>
   </div>
 
   <div class="flex grid grid-cols-1 md:grid-cols-5 mx-auto max-w-screen-xl gap-6 px-6">
-  
-      <div class="md:col-span-2 flex items-center">
-  <form [formGroup]="authForm">
-    <input
-      id="username"
-      type="email"
-      name="username"
-      formControlName="username"
-      class="text-xl dark:font-dark font-light justify-center w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
-      required
-      placeholder="E-Mail"
-    />
+    <div class="md:col-span-2 flex items-center">
+      <form [formGroup]="authForm">
+        <input
+          id="username"
+          type="email"
+          name="username"
+          formControlName="username"
+          class="text-xl dark:font-dark font-light justify-center w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+          required
+          placeholder="E-Mail"
+        />
 
-    <input
-      id="password"
-      type="password"
-      name="password"
-      formControlName="password"
-      class="text-xl dark:font-dark font-light justify-center w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
-      required
-      placeholder="Passwort"
-    />
-    <div class="py-6 flex justify-center">
-    <app-button (click)="signup(authForm)">Signup</app-button>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          formControlName="password"
+          class="text-xl dark:font-dark font-light justify-center w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+          required
+          placeholder="Passwort"
+        />
+        <div class="py-6 flex justify-center">
+          <app-button (click)="signup(authForm)">Signup</app-button>
+        </div>
+        <a href="/login" class="font-light dark:text-white hover:underline" name="login">Account schon vorhanden?</a>
+      </form>
+    </div>
+    <div class="md:col-span-3">
+      <img src="../../../assets/headerV3.svg" width="90%" alt="" />
+    </div>
   </div>
-  </form>
-</div>
-<div class="md:col-span-3">
-    <img src="../../../assets/headerV3.svg" width="90%" alt="">
-  </div>
-
-</div>
 </main>
 <app-footer></app-footer>

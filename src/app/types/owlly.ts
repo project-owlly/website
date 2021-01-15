@@ -1,32 +1,31 @@
 import firebase from 'firebase/app';
-import {DocumentReference} from '@angular/fire/firestore';
 
 export interface OwllyData {
   title: string;
-  text: string;
-  description: string;
-  goals: string[];
+  text: string; //offizieller abstimmungstext
+  description: string; // einen "marketing" beschreibung
+  goals: string[]; // diverse goals
 
-  link: string;
-  slug: string;
+  link: string; //external link for sharing
+  slug: string; //scully
 
-  type: 'initiative';
+  type: 'initiative' | 'referendum';
 
-  level: 'canton';
+  level: 'canton' | 'national'; //delete one of those
 
-  ruleName: 'canton';
   ruleValue: 'sh';
 
-  author: string;
-  campaignerEmail: string;
-  campaignerName: string;
+  author: string; // liste von komitee mitgliedern gemäss Volksbegehren
+  campaignerEmail: string; //
+  campaignerName: string; //
+  campaignerRef: firebase.firestore.DocumentReference; // aus benutzerprofil
 
   published: firebase.firestore.Timestamp;
 }
 
 export interface Owlly {
   id: string;
-  ref: DocumentReference;
+  ref: firebase.firestore.DocumentReference;
 
   data: OwllyData;
 }

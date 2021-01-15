@@ -13,3 +13,9 @@
     scroll-snap-type: mandatory;
     overflow: hidden;
 }
+
+.underline {
+    height: 8px;
+    width: 100%;
+    background: linear-gradient(155deg, var(--color-secondary) 0%, var(--color-primary));
+  }
