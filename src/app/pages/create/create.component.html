@@ -2,8 +2,9 @@
 
 <div class="mx-auto max-w-screen-xl p-6">
   <form [formGroup]="createForm" (ngSubmit)="sendInitiative()">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+    <div class="flex grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 col-span-2 gap-6">
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
           <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wo findet dein Vorhaben statt?</h1>
@@ -24,7 +25,7 @@
         </div>
       </div>
       
-      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+      <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
           <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Worum handelt es sich bei deinem Begehren?</h1>
@@ -45,8 +46,10 @@
         </select>
         </div>
       </div>
+    </div>
 
-      <div class="relative col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+    <div class="grid grid-cols-1 md:grid-cols-2 col-span-2 gap-6">
+      <div class="relative md:col-span-2 col-span-1 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
           <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie lautet der Titel des Begehrens?</h1>
@@ -67,7 +70,7 @@
         </div>
       </div>
 
-      <div class="relative col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+      <div class="relative md:col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
           <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Schreibe hier den vollständigen Wortlaut deines Begehrens:</h1>
@@ -88,6 +91,7 @@
     ></textarea>
         </div>
       </div>
+    </div>
 
       <div class="relative col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
@@ -143,6 +147,7 @@
         </div>
       </div>
 
+      <div class="grid grid-cols-1 md:grid-cols-2 col-span-2 gap-6">
       <div *ngIf="ebene == 'national' && begehren=='initiative'" class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
@@ -206,7 +211,7 @@
     ></textarea>
         </div>
       </div>
-
+    </div>
       <app-textblock
   type="owlly"
   title="Nur noch absenden..."
