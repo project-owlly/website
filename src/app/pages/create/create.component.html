@@ -7,7 +7,7 @@
       <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
-          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wo findet dein Vorhaben statt?</h1>
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wo findet dein Volksbegehren statt?</h1>
         </div>
         <div class="px-4">
           <p class="text-xl font-light dark:text-white"></p>
@@ -17,7 +17,7 @@
           name="ebene"
           formControlName="ruleValue"
           id="level"
-          class="text-2xl font-bold w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100"
+          class="text-2xl font-bold w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 bg-gray-100"
         >
           <option value="national" class="text-2xl font-light">National</option>
           <option value="SH" class="text-2xl font-light">Schaffhausen</option>
@@ -28,7 +28,7 @@
       <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
-          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Worum handelt es sich bei deinem Begehren?</h1>
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Worum handelt es sich bei deinem Volksbegehren?</h1>
         </div>
         <div class="px-4">
           <p class="text-xl font-light dark:text-white"></p>
@@ -38,7 +38,7 @@
           name="begehren"
           formControlName="type"
           id="begehren"
-          class="text-2xl font-bold w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 bg-gray-100"
+          class="text-2xl font-bold w-full p-3 mt-2 focus:outline-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:bg-gray-200 bg-gray-100"
         >
         <option value="initiative" class="text-2xl font-light">Initiative</option>
         <option value="referendum" class="text-2xl font-light">Referendum</option>
@@ -50,7 +50,7 @@
       <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition" style="min-height: 300px">
           <div class="underline rounded-t"></div>      
           <div class="px-4 pt-4">
-            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie viele Unterschriften benötigt dein Begehren?</h1>
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie viele Unterschriften benötigt dein Volksbegehren?</h1>
           </div>
           <div class="px-4">
             <p class="text-xl font-light dark:text-white"></p>
@@ -61,7 +61,7 @@
               type="number"
               name="amount"
               formControlName="amount"
-              class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+              class="text-2xl font-bold w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
               required
               placeholder="{{signatureAmount}}"
             />
@@ -73,7 +73,7 @@
       <div class="relative md:col-span-2 col-span-1 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
-          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie lautet der Titel des Begehrens?</h1>
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Wie lautet der Titel des Volksbegehrens?</h1>
         </div>
         <div class="px-4">
           <p class="text-xl font-light dark:text-white"></p>
@@ -84,9 +84,9 @@
             type="text"
             name="title"
             formControlName="title"
-            class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+            class="text-2xl font-bold w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
             required
-            placeholder="Mein Begehren"
+            placeholder="Mein Volksbegehren"
           />
         </div>
       </div>
@@ -94,14 +94,36 @@
       <div class="relative md:col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
-          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Schreibe hier den vollständigen Wortlaut deines Begehrens:</h1>
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Beschreibe hier kurz dein Volksbegehren:</h1>
+        </div>
+        <div class="px-4">
+          <p class="text-xl font-light dark:text-white">Erkläre kurz und in einfacher Sprache, was dein Volksbegehren erreichen will, damit sich Interessenten einen Eindruck machen können.</p>
+        </div>
+        <div class="p-4 w-full">
+          <textarea
+      class="text-lg font-light w-full  p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
+      name="description"
+      id="description"
+      formControlname="description"
+      cols="30"
+      formControlName="description"
+      rows="10"
+      placeholder="Mein Text..."
+    ></textarea>
+        </div>
+      </div>
+
+      <div class="relative md:col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
+        <div class="underline rounded-t"></div>      
+        <div class="px-4 pt-4">
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Schreibe hier den offziellen Text deines Volksbegehrens:</h1>
         </div>
         <div class="px-4">
           <p class="text-xl font-light dark:text-white"></p>
         </div>
         <div class="p-4 w-full">
           <textarea
-      class="text-lg font-light w-full  p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-lg font-light w-full  p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
       name="text"
       id="text"
       formControlname="text"
@@ -117,10 +139,10 @@
       <div class="relative col-span-2 shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
         <div class="underline rounded-t"></div>      
         <div class="px-4 pt-4">
-          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Nenne bis zu 4 Ziele deines Begehrens (optional):</h1>
+          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Nenne bis zu 4 Ziele deines Volksbegehrens (optional):</h1>
         </div>
         <div class="px-4">
-          <p class="text-xl font-light dark:text-white">Mit kurz und bündig definierten Zielen hilfst du deinem Zielpublikum, sich schneller ein Bild von deinem Begehren zu machen.</p>
+          <p class="text-xl font-light dark:text-white">Mit kurz und bündig definierten Zielen hilfst du deinem Zielpublikum, sich schneller ein Bild von deinem Volksbegehren zu machen.</p>
         </div>
         <div class="p-4 px-4 w-full">
     <input *ngIf="goalAmount > 0"
@@ -129,7 +151,7 @@
       name="goals"
       placeholder="Ziel 1"
       formControlName="goals1"
-      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
     <input *ngIf="goalAmount > 1"
       id="goals"
@@ -137,7 +159,7 @@
       name="goals"
       formControlName="goals2"
       placeholder="Ziel 2"
-      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
     <input *ngIf="goalAmount > 2"
       id="goals"
@@ -145,7 +167,7 @@
       name="goals"
       placeholder="Ziel 3"
       formControlName="goals3"
-      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
     <input *ngIf="goalAmount > 3"
       id="goals"
@@ -153,7 +175,7 @@
       name="goals"
       placeholder="Ziel 4"
       formControlName="goals4"
-      class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-light w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
     />
     <div *ngIf="goalAmount < 4" class="flex justify-center mx-auto">
         <button
@@ -183,7 +205,7 @@
       type="date"
       name="date"
       formControlName="published"
-      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-bold w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
       required
       value="2020-02-03"
     />
@@ -204,7 +226,7 @@
       type="date"
       name="date"
       formControlName="published"
-      class="text-2xl font-bold w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-2xl font-bold w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
       required
       value="2020-02-03"
     />
@@ -221,7 +243,7 @@
         </div>
         <div class="p-4 px-4 w-full">
           <textarea
-      class="text-xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+      class="text-xl font-light w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
       name="text"
       id="text"
       formControlname="author"
@@ -236,7 +258,7 @@
       <div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded h-full w-full transition" style="min-height: 300px">
           <div class="underline rounded-t"></div>      
           <div class="px-4 pt-4">
-            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Existiert eine Webseite zu deinem Begehren?</h1>
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Existiert eine Webseite zu deinem Volksbegehren?</h1>
           </div>
           <div class="px-4">
             <p class="text-xl font-light dark:text-white"></p>
@@ -247,7 +269,7 @@
               type="text"
               name="link"
               formControlName="link"
-              class="text-2xl font-light w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100"
+              class="text-2xl font-light w-full p-3 mt-2 appearance-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:outline-none focus:bg-gray-200 bg-gray-100"
               required
               placeholder="https://mein-begehren.ch"
             />
@@ -261,7 +283,7 @@
   >
   <h2 class="font-light text-2xl dark:text-white">Überprüfe nochmals kurz deine Angaben und drücke anschliessend auf den unteren Button 😊</h2>
   <div class="text-center mx-auto p-6">
-    <app-button type="submit" [disable]="createForm.invalid">Begehren senden</app-button>
+    <app-button type="submit" [disable]="createForm.invalid">Volksbegehren senden</app-button>
   </div>
   </app-textblock>
     </div>
@@ -286,14 +308,14 @@
   
   <div class="h-full w-full flex-none p-6">
     <h1 class="text-4xl md:text-6xl font-bold">Der Start deiner digitalen Kampagne</h1>
-    <h2 class="text-2xl font-light">Um dein Vorhaben digital zu erfassen brauchen wir folgende Informationen von dir:</h2>
+    <h2 class="text-2xl font-light">Um dein Volksbegehren digital zu erfassen brauchen wir folgende Informationen von dir:</h2>
     <app-textblock type="owlly"></app-textblock>
     <div class="-mt-12">
       <ul>
-        <li class="text-2xl font-light">Art des Begehrens</li>
+        <li class="text-2xl font-light">Art des Volksbegehrens</li>
         <li class="text-2xl font-light">Titel</li>
-        <li class="text-2xl font-light">Vollständiger Text des Begehrens</li>
-        <li class="text-2xl font-light">4 Ziele des Begehrens</li>
+        <li class="text-2xl font-light">Vollständiger Text des Volksbegehrens</li>
+        <li class="text-2xl font-light">4 Ziele des Volksbegehrens</li>
         <li class="text-2xl font-light">Deine Email</li>
         <li class="text-2xl font-light">Informationen über das Komitee</li>
       </ul>
@@ -302,7 +324,7 @@
   </div>
 
   <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
-    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wo findet dein Vorhaben statt?</h1>
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wo findet dein Volksbegehren statt?</h1>
     <select
       name="ebene"
       formControlName="ruleValue"
@@ -315,7 +337,7 @@
   </div>
 
   <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
-    <h1 class="text-4xl md:text-6xl font-bold pb-6">Worum handelt es sich bei deinem Begehren?</h1>
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Worum handelt es sich bei deinem Volksbegehren?</h1>
     <select
       name="begehren"
       formControlName="type"
@@ -329,7 +351,7 @@
   </div>
 
   <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
-    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wie lautet der Titel des Begehrens?</h1>
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Wie lautet der Titel des Volksbegehrens?</h1>
     <input
       id="title"
       type="text"
@@ -337,12 +359,12 @@
       formControlName="title"
       class="text-2xl font-bold justify-center md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
       required
-      placeholder="Mein Begehren"
+      placeholder="Mein Volksbegehren"
     />
   </div>
 
   <div class="h-full w-full flex-none text-center pt-40 px-6">
-    <h1 class="text-4xl md:text-6xl font-bold pb-6">Schreibe hier den vollständigen Wortlaut deines Begehrens:</h1>
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Schreibe hier den vollständigen Wortlaut deines Volksbegehrens:</h1>
     <textarea
       class="text-2xl font-light md:w-3/4 w-full p-3 mt-2 appearance-none focus:outline-none focus:bg-gray-200 bg-gray-100 focus:shadow-inner"
       name="text"
@@ -356,7 +378,7 @@
   </div>
 
   <div class="h-full w-full flex-none text-center pt-40 px-6 justify-center">
-    <h1 class="text-4xl md:text-6xl font-bold pb-6">Nenne bis zu 4 Ziele deines Begehrens:</h1>
+    <h1 class="text-4xl md:text-6xl font-bold pb-6">Nenne bis zu 4 Ziele deines Volksbegehrens:</h1>
     <input
       id="goals"
       type="text"
@@ -431,10 +453,10 @@
 
   <div class="h-full w-full flex-none p-6">
     <h1 class="text-4xl md:text-6xl font-bold">Nur noch einschicken...</h1>
-    <h2 class="text-2xl font-light">Wenn du an diesem Punkt angelangt bist, musst du nur noch den Knopf unten drücken um dein Begehren einzusenden 😊</h2>
+    <h2 class="text-2xl font-light">Wenn du an diesem Punkt angelangt bist, musst du nur noch den Knopf unten drücken um dein Volksbegehren einzusenden 😊</h2>
     <app-textblock type="owlly"></app-textblock>
     <div class="-mt-12">
-      <app-button (click)="sendInitiative()">Begehren senden</app-button>
+      <app-button (click)="sendInitiative()">Volksbegehren senden</app-button>
     </div>
   </div>
 </div> -->

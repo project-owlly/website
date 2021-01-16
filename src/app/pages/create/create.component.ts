@@ -25,6 +25,7 @@ export class CreateComponent implements OnInit {
     ruleValue: '',
     amount: '',
     link: '',
+    description: '',
     goals: [],
   };
 
@@ -41,6 +42,7 @@ export class CreateComponent implements OnInit {
       ruleValue: ['', [Validators.required]],
       amount: ['', [Validators.required]],
       link: [''],
+      description: [''],
       goals1: [''],
       goals2: [''],
       goals3: [''],
