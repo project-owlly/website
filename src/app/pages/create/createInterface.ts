@@ -8,4 +8,5 @@ export interface createData {
       amount: string;
       goals: string[];
       link: string;
+      description: string;
     }
