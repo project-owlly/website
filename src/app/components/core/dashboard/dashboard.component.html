@@ -11,16 +11,17 @@
 </div>
 
 <div class="col-span-10 p-6">
-<div class="grid grid-cols-12 gap-6">
-    <app-dashboard-card type="owlly" title="Unterschriften letzte 30 Tage" class="col-span-3">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6" style="min-height: 90vh;">
+    <app-dashboard-card type="owlly" title="Unterschriften letzte 30 Tage" class="col-span-1 md:col-span-3">
         <div class="flex items-center justify-items-center grid">
     <div>
         <p class="text-center text-8xl font-bold">420</p>
     </div>
     </div>
     </app-dashboard-card>
-    <app-dashboard-card type="owlly" class="col-span-9 row-span-2">
-        
+    <app-dashboard-card type="owlly" title="Unterschriften" class=" col-span-1 md:col-span-9 row-span-2">
+        <h2 class="font-light text-lg text-gray-400">alle Initiativen</h2>
+        <canvas id="signatures"></canvas>
     </app-dashboard-card>
     <app-dashboard-card type="owlly" title="Unterschriften heute" class="col-span-3">
         <div class="flex items-center justify-items-center grid">
