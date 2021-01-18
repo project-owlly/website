@@ -40,6 +40,7 @@
     "@scullyio/init": "^1.0.1",
     "@scullyio/ng-lib": "^1.0.2",
     "@scullyio/scully": "^1.0.10",
+    "@types/chart.js": "^2.9.29",
     "c": "^1.1.1",
     "chart.js": "^2.9.4",
     "firebase": "^8.2.0",

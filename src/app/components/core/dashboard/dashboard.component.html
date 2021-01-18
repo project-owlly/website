@@ -1,10 +1,21 @@
+<div class="fixed bg-gray-200 dark:bg-black transition-all z-40" id="mobileNav" >
+    <div class="absolute top-6 right-6">
+   <a (click)="closeMobileNav()" class="text-2xl"><fa-icon [icon]=faTimesCircle></fa-icon></a>
+    </div>
+    <div class="text-center">
+        <h2 class="font-bold text-2xl p-6"><span style="color: var(--color-primary)">Dashboard</span> Campaigner</h2>
+    </div>
+    <div class="grid justify-items-auto grid-cols-3 text-lg font-light p-6 text-center">
+            <fa-icon [icon]="faUserCircle" class=""></fa-icon>
+            <a class="col-span-2" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
+        </div>
+</div>
+
 <app-dashboard-header></app-dashboard-header>
 
-<div class="fixed bg-gray-200 dark:bg-black top-0 left-0 transition-all z-40" style="width: 100%; height: 100%; transform: translateX(100%)" id="mobileNav">
 
-    </div>
 <div class="grid lg:grid-cols-12 grid-cols-1">
-<div class="col-span-2 hidden lg:block bg-gray-200 h-full">
+<div class="col-span-2 bg-gray-200 h-full" id="sidebar">
     <h2 class="font-bold text-2xl p-6"><span style="color: var(--color-primary)">Dashboard</span> Campaigner</h2>
     <div class="grid grid-cols-6 text-lg font-light p-6">
         <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
@@ -12,7 +23,7 @@
     </div>
 </div>
 
-<div class="lg:col-span-10 p-6">
+<div class="lg:col-span-10 p-6 col-start-1 lg:col-start-3 row-start-1 transition-all">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6" style="min-height: 90vh;">
     
     <app-dashboard-card type="owlly" title="Unterschriften letzte 30 Tage" class="col-span-1 lg:col-span-3">

@@ -1,8 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 
-import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
+import {faUserCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
-import Chart from 'chart.js';
+import * as Chart from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,13 +12,16 @@ import Chart from 'chart.js';
 export class DashboardComponent implements OnInit {
 
   faUserCircle=faUserCircle;
-
+  faTimesCircle=faTimesCircle;
+  canvas: any;
+  ctx: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    var ctx = document.getElementById('signatures')!;
-    var myChart = new Chart(ctx, {
+    this.canvas = document.getElementById('signatures');
+    this.ctx = this.canvas.getContext('2d');
+    const myChart = new Chart(this.ctx, {
       type: 'line',
       data:{
         labels: [1,2,3,4,5,6],
@@ -48,6 +51,6 @@ export class DashboardComponent implements OnInit {
     document.getElementById('mobileNav')!.style.transform = 'translateX(0%)';
   }
   closeMobileNav() {
-    document.getElementById('mobileNav')!.style.transform = 'translateX(100%)';
+    document.getElementById('mobileNav')!.style.transform = 'translateX(-100%)';
   }
 }
