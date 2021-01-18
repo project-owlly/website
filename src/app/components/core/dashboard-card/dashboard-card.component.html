@@ -7,5 +7,13 @@
         <div class="p-4">
         <ng-content></ng-content>
       </div>
+      <div *ngIf="showButton && link" class="absolute bottom-0 right-0 p-4">
+          <a href="{{ link }}" name="{{ buttonText }}"
+            ><app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+          </a>
+        </div>
+        <div *ngIf="showButton && link == ''" class="absolute bottom-0 right-0 p-4">
+          <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+        </div>
       </div>
       

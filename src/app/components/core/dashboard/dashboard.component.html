@@ -13,11 +13,10 @@
 
 <app-dashboard-header></app-dashboard-header>
 
-
-<div class="grid lg:grid-cols-12 grid-cols-1">
+<div class="relative grid lg:grid-cols-12 grid-cols-1">
 <div class="col-span-2 bg-gray-200 h-full" id="sidebar">
     <h2 class="font-bold text-2xl p-6"><span style="color: var(--color-primary)">Dashboard</span> Campaigner</h2>
-    <div class="grid grid-cols-6 text-lg font-light p-6">
+    <div class="grid grid-cols-6 text-lg font-light p-6 hover:text-gray-500 transition">
         <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
         <a class="col-span-5" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
     </div>
@@ -46,9 +45,15 @@
         </app-dashboard-card>
     
  
-    <app-dashboard-card type="owlly" class="lg:col-span-3">
-            <p>irgendwas</p>
-        </app-dashboard-card>
+    <app-dashboard-card
+    type="owlly"
+    title="Neue Kampagne starten"
+    class="lg:col-span-3"
+    [showButton]="true"
+    buttonText="Starten"
+    link="/create"
+    >
+    </app-dashboard-card>
         <app-dashboard-card type="owlly" class="lg:col-span-9 row-span-2">
     
         </app-dashboard-card>
