@@ -1,20 +1,19 @@
-import { Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  faUserCircle = faUserCircle;
 
-  faUserCircle=faUserCircle;
-
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    /*
     const Chart = require('chart.js');
     var ctx = document.getElementById('signatures')!;
     var myChart = new Chart(ctx, {
@@ -40,7 +39,7 @@ export class DashboardComponent implements OnInit {
       options: {
         tooltips: {enabled: false}
       }
-  });
+  });*/
   }
 
   openMobileNav() {
