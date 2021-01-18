@@ -2,6 +2,8 @@ import { Component, OnInit,Input } from '@angular/core';
 
 import {faUserCircle} from '@fortawesome/free-solid-svg-icons';
 
+import Chart from 'chart.js';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,7 +17,6 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const Chart = require('chart.js');
     var ctx = document.getElementById('signatures')!;
     var myChart = new Chart(ctx, {
       type: 'line',
