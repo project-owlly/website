@@ -73,19 +73,19 @@ const routes: Routes = [
   },
   {
     path: 'support',
-    loadChildren: () => import('./pages/support/support.module').then((m) => m.SupportPageModule),
+    loadChildren: () => import('./pages/support/support/support.module').then((m) => m.SupportPageModule),
   },
   {
     path: 'support/administration',
-    loadChildren: () => import('./pages/administration/administration.module').then((m) => m.AdministrationPageModule),
+    loadChildren: () => import('./pages/support/administration/administration.module').then((m) => m.AdministrationPageModule),
   },
   {
     path: 'support/campaigner',
-    loadChildren: () => import('./pages/campaigner/campaigner.module').then((m) => m.CampaignerPageModule),
+    loadChildren: () => import('./pages/support/campaigner/campaigner.module').then((m) => m.CampaignerPageModule),
   },
   {
     path: 'support/citizen',
-    loadChildren: () => import('./pages/citizen/citizen.module').then((m) => m.CitizenPageModule),
+    loadChildren: () => import('./pages/support/citizen/citizen.module').then((m) => m.CitizenPageModule),
   },
   {
     path: 'explained',
@@ -102,19 +102,19 @@ const routes: Routes = [
 
   {
     path: 'progress',
-    loadChildren: () => import('./pages/progress/progress.module').then((m) => m.ProgressPageModule),
+    loadChildren: () => import('./pages/progress/progress/progress.module').then((m) => m.ProgressPageModule),
   },
   {
     path: 'progress/bund',
-    loadChildren: () => import('./pages/progress-bund/progress-bund.module').then((m) => m.ProgressBundPageModule),
+    loadChildren: () => import('./pages/progress/progress-bund/progress-bund.module').then((m) => m.ProgressBundPageModule),
   },
   {
     path: 'progress/cantons',
-    loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
+    loadChildren: () => import('./pages/progress/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
   },
   {
     path: 'progress/cantons/:canton',
-    loadChildren: () => import('./pages/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
+    loadChildren: () => import('./pages/progress/progress-cantons/progress-cantons.module').then((m) => m.ProgressCantonsPageModule),
   },
   {
     path: 'solutions',

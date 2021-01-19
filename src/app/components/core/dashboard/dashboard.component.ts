@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 import {faUserCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
@@ -7,11 +7,11 @@ import * as Chart from 'chart.js';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  faUserCircle = faUserCircle;
 
-  faUserCircle=faUserCircle;
   faTimesCircle=faTimesCircle;
   canvas: any;
   ctx: any;
