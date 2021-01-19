@@ -9,7 +9,10 @@ export class DashboardCardComponent implements OnInit {
 
   @Input() type?: 'owlly' | 'admin' | 'campaigner' | 'citizen';
   @Input() title?: string =  '';
-
+  @Input() showButton?: boolean = false;
+  @Input() buttonText?: string = '';
+  @Input() link?: string = '';
+  @Input() gradient?: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

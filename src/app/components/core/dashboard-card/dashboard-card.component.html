@@ -1,11 +1,23 @@
-<div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition h-full" aria-hidden="true" style="min-height: 100px">
+<div class="relative shadow-xl bg-gray-50 dark:bg-gray-800 rounded transition h-full"
+[class.bg-gradient-to-r]="gradient"
+[class.from-secondary]="gradient"
+[class.to-primary]="gradient"
+style="min-height: 180px">
         <div class="underline {{type}} rounded-t"></div>
         
         <div *ngIf="title" class="px-4 pt-4">
-          <h1 class="text-2xl md:text-4xl font-bold dark:text-white">{{title}}</h1>
+          <h1 class="text-2xl lg:text-4xl font-bold dark:text-white">{{title}}</h1>
         </div>
         <div class="p-4">
         <ng-content></ng-content>
       </div>
+      <div *ngIf="showButton && link" class="absolute bottom-0 right-0 p-4">
+          <a href="{{ link }}" name="{{ buttonText }}"
+            ><app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+          </a>
+        </div>
+        <div *ngIf="showButton && link == ''" class="absolute bottom-0 right-0 p-4">
+          <app-button type="submit" [small]="true">{{ buttonText }}</app-button>
+        </div>
       </div>
       
