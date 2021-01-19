@@ -12,6 +12,7 @@ export class DashboardCardComponent implements OnInit {
   @Input() showButton?: boolean = false;
   @Input() buttonText?: string = '';
   @Input() link?: string = '';
+  @Input() gradient?: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

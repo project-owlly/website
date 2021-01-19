@@ -9,3 +9,19 @@
     height: 100%;
     transform: translateX(-100%);
 }
+.customScroll::-webkit-scrollbar {
+    width: 10px;
+    transition: 1s;
+}
+.customScroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.customScroll::-webkit-scrollbar-thumb {
+    background: rgba(229, 231, 235);
+    border-radius: 5px;
+  }
+.customScroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+
+  }
