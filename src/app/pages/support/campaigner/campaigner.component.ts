@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalService} from '../../services/modal.service';
-import {InquiryComponent as InquiryComponentType} from '../../modals/inquiry/inquiry.component';
+import {ModalService} from '../../../services/modal.service';
+import {InquiryComponent as InquiryComponentType} from '../../../modals/inquiry/inquiry.component';
 
 @Component({
   selector: 'app-campaigner',
@@ -17,7 +17,7 @@ export class CampaignerComponent implements OnInit {
 
     await this.modalService.open(FeedbackComponent);
     */
-    const {InquiryComponent} = await import('../../modals/inquiry/inquiry.component');
+    const {InquiryComponent} = await import('../../../modals/inquiry/inquiry.component');
     await this.modalService.open(InquiryComponent);
   }
 }

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalService} from '../../services/modal.service';
-import {QuestionComponent as QuestionComponentType} from '../../modals/question/question.component';
-import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsletter/newsletter.component';
-import {InquiryComponent as InquiryComponentType} from '../../modals/inquiry/inquiry.component';
+import {ModalService} from '../../../services/modal.service';
+import {QuestionComponent as QuestionComponentType} from '../../../modals/question/question.component';
+import {NewsletterComponent as NewsletterComponentType} from '../../../modals/newsletter/newsletter.component';
+import {InquiryComponent as InquiryComponentType} from '../../../modals/inquiry/inquiry.component';
 @Component({
   selector: 'app-citizen',
   templateUrl: './citizen.component.html',
@@ -14,7 +14,7 @@ export class CitizenComponent implements OnInit {
   ngOnInit(): void {}
 
   async showNewsletter(): Promise<void> {
-    const {NewsletterComponent} = await import('../../modals/newsletter/newsletter.component');
+    const {NewsletterComponent} = await import('../../../modals/newsletter/newsletter.component');
 
     await this.modalService.open(NewsletterComponent);
   }
@@ -23,7 +23,7 @@ export class CitizenComponent implements OnInit {
 
     await this.modalService.open(FeedbackComponent);
     */
-    const {InquiryComponent} = await import('../../modals/inquiry/inquiry.component');
+    const {InquiryComponent} = await import('../../../modals/inquiry/inquiry.component');
     await this.modalService.open(InquiryComponent);
   }
 }

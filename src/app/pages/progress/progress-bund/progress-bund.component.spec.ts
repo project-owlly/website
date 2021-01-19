@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ProgressBundComponent } from './progress-bund.component';
+import {ProgressBundComponent} from './progress-bund.component';
 
 describe('ProgressBundComponent', () => {
   let component: ProgressBundComponent;
@@ -8,9 +8,8 @@ describe('ProgressBundComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProgressBundComponent ]
-    })
-    .compileComponents();
+      declarations: [ProgressBundComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
