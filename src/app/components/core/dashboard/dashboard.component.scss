@@ -1,4 +1,5 @@
 #sidebar {
+    min-height: calc(100vh - 95px);
     transition: 1s;
     @media (max-width: 1024px) {
         transform: translateX(-100%);
@@ -25,3 +26,7 @@
     background: var(--color-secondary);
 
   }
+
+.dashboard {
+    min-height: calc(100vh - 144px);
+}

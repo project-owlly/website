@@ -2,8 +2,11 @@
     <div class="absolute top-6 right-6">
    <a (click)="closeMobileNav()" class="text-2xl"><fa-icon [icon]=faTimesCircle></fa-icon></a>
     </div>
-    <div class="text-center">
-        <h2 class="font-bold text-2xl p-6"><span style="color: var(--color-primary)">Dashboard</span> Campaigner</h2>
+    <div class="text-center" *ngIf="type =='campaigner'">
+        <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-primary)">Campaigner</span></h2>
+    </div>
+    <div class="text-center" *ngIf="type =='administration'">
+        <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-secondary)">Verwaltung</span></h2>
     </div>
     <div class="grid justify-items-auto grid-cols-3 text-lg font-light p-6 text-center">
             <fa-icon [icon]="faUserCircle" class=""></fa-icon>
@@ -17,8 +20,9 @@
 <app-dashboard-header></app-dashboard-header>
 
 <div class="grid lg:grid-cols-12 grid-cols-1">
-<div class="sticky top-0 lg:col-span-2 hidden lg:block bg-gray-200 h-screen" id="sidebar">
-    <h2 class="font-bold text-2xl p-6"><span style="color: var(--color-primary)">Dashboard</span> Campaigner</h2>
+<div class="sticky top-0 lg:col-span-2 hidden lg:block bg-gray-200" id="sidebar">
+    <h2 *ngIf="type == 'campaigner'" class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-primary)">Campaigner</span></h2>
+    <h2 *ngIf="type == 'administration'" class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-secondary)">Verwaltung</span></h2>
     <div class="grid grid-cols-6 text-lg font-light p-6 hover:text-gray-500 transition">
         <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
         <a class="col-span-5" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
@@ -29,7 +33,9 @@
 </div>
 
 <div class="lg:col-span-10 p-6 col-start-1 lg:col-start-3 row-start-1 transition-all">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6" style="min-height: 90vh;">
+
+<!-- Dashboard Campaigner -->    
+<div *ngIf="type == 'campaigner'" class="grid grid-cols-1 lg:grid-cols-12 gap-6 dashboard">
     <select
           name="ebene"
           id="level"
@@ -140,6 +146,38 @@
     
             </app-dashboard-card>
 </div>
+
+<!-- Dashboard Verwaltung -->
+<div *ngIf="type == 'administration'" class="grid grid-cols-1 lg:grid-cols-12 gap-6 dashboard">
+        <app-dashboard-card
+        type="owlly"
+        title="Kampagnen Inbox"
+        class="lg:col-span-12"
+        
+        >
+        </app-dashboard-card>
+
+        <app-dashboard-card
+        type="owlly"
+        title="Unterschriften verifizieren"
+        class="lg:col-span-3"
+        [showButton]="true"
+        buttonText="Starten"
+        link="/create"
+        >
+        </app-dashboard-card>
+
+        <app-dashboard-card
+        type="owlly"
+        title="Offene Kampagnen"
+        class="lg:col-span-9"
+        [showButton]="true"
+        buttonText="Starten"
+        link="/create"
+        >
+        </app-dashboard-card>
+</div>
+
 </div>
 <!-- <app-footer class="lg:col-span-12 col-span-1"></app-footer> -->
 </div>

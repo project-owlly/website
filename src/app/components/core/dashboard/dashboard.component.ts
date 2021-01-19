@@ -16,6 +16,9 @@ export class DashboardComponent implements OnInit {
   canvas: any;
   ctx: any;
 
+  @Input() type?: 'campaigner' | 'administration' = 'campaigner';
+
+
   constructor() { }
 
   ngOnInit(): void {
