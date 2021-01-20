@@ -19,6 +19,7 @@ import {AdminHeaderComponent} from './admin-header/admin-header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
+import { DashboardAdminCardComponent } from './dashboard-admin-card/dashboard-admin-card.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.co
     DashboardComponent,
     DashboardCardComponent,
     DashboardHeaderComponent,
+    DashboardAdminCardComponent,
   ],
   exports: [
     HeaderComponent,
@@ -56,6 +58,7 @@ import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.co
     DashboardComponent,
     DashboardCardComponent,
     DashboardHeaderComponent,
+    DashboardAdminCardComponent,
   ],
   imports: [FontAwesomeModule, CommonModule],
 })
