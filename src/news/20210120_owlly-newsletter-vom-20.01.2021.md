@@ -17,7 +17,7 @@ Seit letztem Montag sind wir mit unserer neuen Webseite live! Wir haben im Rahme
 
 ## Prototypefund
 
-Corona und die Arbeit während den letzten Monaten am Projekt owlly hat uns fünf gefordert. Im aktuellen Newsletter vom Prototypefund erfährst du mehr über uns und unser Projekt. Zudem kannst du dich schon jetzt für den Final Demo Day anmelden! Wir freuen uns schon jetzt riesig!
+Corona und die Arbeit während den letzten Monaten am Projekt owlly hat uns fünf gefordert. Im aktuellen Newsletter vom Prototypefund erfährst du mehr über uns und unser Projekt. Zudem kannst du dich schon jetzt für den Final Demo Day anmelden! Wir freuen uns schon jetzt riesig!  
 [Zum Blogbeitrag](https://prototypefund.opendata.ch/2021/01/18/die-schweizer-demokratie-ins-21-jahrhundert-begleiten/) / [Zur Anmeldung](https://subscribe.newsletter2go.com/?n2g=phn6whjn-bnge6m07-16z)
 
 ## News
@@ -26,7 +26,7 @@ Wenn wir schon über Blogs schreiben, auf owlly.ch/news haben wir ein paar Beric
 
 ## E-Collecting bald auch im Kanton Schaffhausen möglich?
 
-Ein erstes Update für unsere Webseite und unsere E-Collecting Karte gibt es vermutlich schon bald aus dem Kanton Schaffhausen: Der Kantonsratspräsident hat am letzten Montag an der ersten Kantonsratssitzung die Volksmotion «Mehr Demokratie für Schaffhausen – einfach und sicher: Volksbegehren auch elektronisch unterschreiben (E-Collecting)» von Sandro Scalco und Claudio Kuster auf die Traktandenliste gesetzt. Für Schaffhausen wäre es definitiv ein Leuchtturmprojekt da sie im Gegensatz zu anderen Kantonen bereits eine staatliche elektronische Identität haben. Und für owlly wäre es eine tolle Sache, verwenden wir für unseren Prototypen ja genau die E-ID von Schaffhausen.
+Ein erstes Update für unsere Webseite und unsere E-Collecting Karte gibt es vermutlich schon bald aus dem Kanton Schaffhausen: Der Kantonsratspräsident hat am letzten Montag an der ersten Kantonsratssitzung die Volksmotion «Mehr Demokratie für Schaffhausen – einfach und sicher: Volksbegehren auch elektronisch unterschreiben (E-Collecting)» von Sandro Scalco und Claudio Kuster auf die Traktandenliste gesetzt. Für Schaffhausen wäre es definitiv ein Leuchtturmprojekt da sie im Gegensatz zu anderen Kantonen bereits eine staatliche elektronische Identität haben. Und für owlly wäre es eine tolle Sache, verwenden wir für unseren Prototypen ja genau die E-ID von Schaffhausen.  
 Mehr Infos auf Twitter @ecollectsh und [https://ecollect.sh](https://ecollect.sh).
 
 [Auf Youtube kannst du die Sitzung Live verfolgen](https://www.youtube.com/watch?v=UJsPVXV-XZc).
@@ -44,7 +44,7 @@ Wie so oft bei Digitalisierungsprozessen wird die Qualität erhöht und gleichze
 
 ## [Unsere Mission - https://owlly.ch/ourmission](https://owlly.ch/ourmission)
 
-Wir fördern das elektronische Unterschriftensammeln für politische Volksbegehren ganzheitlich um die Potentiale für Alle zu entfalten. Unsere technologischen Lösungen entwickeln wir in Kooperation mit der Bevölkerung und wir setzen uns gemeinsam mit allen Stakeholdern für günstige E-Collecting Rahmenbedingungen in der ganzen Schweiz ein.
+Wir fördern das elektronische Unterschriftensammeln für politische Volksbegehren ganzheitlich um die Potentiale für Alle zu entfalten. Unsere technologischen Lösungen entwickeln wir in Kooperation mit der Bevölkerung und wir setzen uns gemeinsam mit allen Stakeholdern für günstige E-Collecting Rahmenbedingungen in der ganzen Schweiz ein.  
 E-Collecting ist keine Frage der technologischen Machbarkeit - Es ist umsetzbar. Das zeigen diverse theoretische Studien aber auch Praxisbeispiele im Ausland. Limitierende Faktoren und Gründe, warum E-Collecting in der Schweiz noch nicht umgesetzt wurde, sind woanders zu suchen.
 
 ## E-Collecting Prototyp
@@ -53,7 +53,7 @@ Das Kernstück von owlly ist die Entwicklung eines voll funktionsfähigen und si
 
 ## [Fortschritt in der Schweiz - https://owlly.ch/progress](https://owlly.ch/progress)
 
-E-Collecting ist in der Schweiz noch nirgends im Einsatz und in der Bevölkerung weitgehend unbekannt. In der Politik ist E-Collecting allerdings schon seit längerem präsent und wird es auch zukünftig vermehrt sein.
+E-Collecting ist in der Schweiz noch nirgends im Einsatz und in der Bevölkerung weitgehend unbekannt. In der Politik ist E-Collecting allerdings schon seit längerem präsent und wird es auch zukünftig vermehrt sein.  
 Auf Bundesebene gab es bereits mehrere Vorstösse mit dem Ziel E-Collecting zu ermöglichen. Der Bundesrat vertritt die Meinung, E-Collecting sei nicht zeitnah umzusetzen.(erfahre mehr)
 
 In verschiedenen Kantonen gab es bereits E-Collecting Vorstösse. Es ist zu erwarten, dass Ihnen in der Umsetzung von E-Collecting eine Pionierrolle zukommt. (erfahre mehr)
