@@ -7,8 +7,6 @@ sort: 6
 date: '20.11.2019, 10:08 Uhr'
 source: 'https://www.bzbasel.ch/basel/basel-stadt/nach-dem-nein-zu-e-voting-in-basel-regierung-treibt-jetzt-die-digitale-unterschriftensammlung-voran-135995141'
 sourceName: bz – Zeitung für die Region Basel
-slugs:
-  - ___UNPUBLISHED___kjoggsxw_3lkVIbcbTXI0eMqhQfhhmoMpSj9MoBxv
 ---
 
 Dieser Beitrag wurde im Original in der [bz](https://www.bzbasel.ch/basel/basel-stadt/nach-dem-nein-zu-e-voting-in-basel-regierung-treibt-jetzt-die-digitale-unterschriftensammlung-voran-135995141) am 20.11.2019, 10:08 Uhr veröffentlicht.

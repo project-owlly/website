@@ -7,8 +7,6 @@ source: 'https://www.woz.ch/-9e30'
 sourceName: WOZ
 sort: 4
 image: campaigner-1
-slugs:
-    - ___UNPUBLISHED___kjoggsxt_gznaXFzfSwetGSSKSEqSbbpYHOuwIKjV
 ---
 
 Dieser Beitrag wurde im Original in der  [WOZ](https://www.woz.ch/-9e30) am 08.08.2019 veröffentlicht.

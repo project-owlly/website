@@ -7,8 +7,6 @@ sort: 2
 image: campaigner-2
 source: 'https://www.nzz.ch/schweiz/dein-smartphone-ist-auch-ein-unterschriftenbogen-ld.1359948?reduced=true'
 sourceName: NZZ
-slugs:
-    - ___UNPUBLISHED___kjogrfqo_7MCemcEwVDQ8JfQ5fF46tJ7wYhbOh0Zx
 ---
 
 Dieser Beitrag wurde im Original in der [NZZ](https://www.nzz.ch/schweiz/dein-smartphone-ist-auch-ein-unterschriftenbogen-ld.1359948?reduced=true) am 03.03.2018, 06.00 Uhr veröffentlicht.

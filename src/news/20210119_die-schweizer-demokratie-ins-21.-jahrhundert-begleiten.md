@@ -7,8 +7,6 @@ date: '18.01.2021, 12:00 Uhr'
 source: 'https://prototypefund.opendata.ch/2021/01/18/die-schweizer-demokratie-ins-21-jahrhundert-begleiten/'
 sourceName: 'Prototypefund / owlly.ch'
 image: campaigner-3
-slugs:
-  - ___UNPUBLISHED___kk58fnsy_YUKIl8ljkx65JWGvvN0eGBU7ARYR1sdF
 ---
 
 # Die Schweizer Demokratie ins 21. Jahrhundert begleiten

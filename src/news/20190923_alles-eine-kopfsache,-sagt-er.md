@@ -7,8 +7,6 @@ image: campaigner-2
 sort: 5
 source: 'https://www.zeit.de/2019/39/e-collecting-digitalisierung-schweiz-volksinitiativen-online-schaffhausen/komplettansicht'
 sourceName: Die Zeit
-slugs:
-  - ___UNPUBLISHED___kjogrfqy_WyuoCwB7rSjcHyllMLczEsV5yPxlQkb9
 ---
 
 Dieser Beitrag wurde im Original in der [Die Zeit](https://www.zeit.de/2019/39/e-collecting-digitalisierung-schweiz-volksinitiativen-online-schaffhausen/komplettansicht) am 23.09.2019, 4:00 Uhr veröffentlicht.

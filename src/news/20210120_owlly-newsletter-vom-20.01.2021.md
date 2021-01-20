@@ -7,8 +7,6 @@ date: '20.01.2021, 12:00 Uhr'
 source: 'https://owlly.ch/blog/'
 sourceName: owlly.ch
 image: campaigner-1
-slugs:
-  - ___UNPUBLISHED___kk58fntc_FXvJBe0EsbkD9FVsDvehlEtbJr5HvA4W
 ---
 
 # owlly Newsletter vom 20.01.2021

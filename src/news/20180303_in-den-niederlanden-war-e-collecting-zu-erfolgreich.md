@@ -7,8 +7,6 @@ sort: 1
 image: campaigner-1
 source: 'https://www.tagesanzeiger.ch/zuerich/region/initiativen-lancieren-per-mausklick/story/18468580'
 sourceName: Tagesanzeiger
-slugs:
-  - ___UNPUBLISHED___kjoggsxl_7CyDOTwqH8l9rETTLkKVNEaORNo8jv5S
 ---
 
 Dieser Beitrag wurde im Original im [Tagesanzeiger](https://www.tagesanzeiger.ch/zuerich/region/initiativen-lancieren-per-mausklick/story/18468580) am 03.03.2018, 06.00 Uhr veröffentlicht.
