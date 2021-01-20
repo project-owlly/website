@@ -1,13 +1,14 @@
 ---
-title: >-
-  Wie kann die Schweizer Demokratie digitaler werden? Zehn Vorschläge von Buch-Autor Daniel Graf
+title: Wie kann die Schweizer Demokratie digitaler werden? Zehn Vorschläge von Buch-Autor Daniel Graf
 description: Daniel Graf, Autor des Buches "Agenda für eine digitale Demokratie", zeichnet in zehn Punkten, wie ein digitales Demokratie-Modell der Zukunft aussehen könnte. Seine These. Die Digitalisierung stützt die Demokratie breiter ab. Sie stärkt die Partizipation der Bürger. 
 published: true
 date: 04.05.2020, 05.00 Uhr 
 source: https://www.tagblatt.ch/schweiz/zehn-vorschlage-fur-eine-digitalere-demokratie-ld.1217385
 sourceName: St. Galler Tagblatt
-image: campaigner-3
+image: campaigner-1
 ---
+
+Dieser Beitrag wurde im Original im [St. Galler Tagblatt](https://www.tagblatt.ch/schweiz/zehn-vorschlage-fur-eine-digitalere-demokratie-ld.1217385) am 04.05.2020, 05.00 Uhr  veröffentlicht.
 
 ## 1. E-Voting - die Probleme sind gross
 Das digitale Abstimmen gilt als Mass aller Dinge für eine digitale Demokratie. Seit 15 Jahren versucht die Bundeskanzlei mit dem Projekt «Vote électronique», die Ausübung der politischen Rechte ins digitale Zeitalter zu überführen. Dafür gab es über 300 erfolgreiche Versuche in 15 Kantonen. Der Versuchsbetrieb musste aber gestoppt werden, da das System der Post, das vollständige Verifizierbarkeit garantieren sollte, gravierende Mängel aufwies. Parallel dazu sammeln Kritiker Unterschriften für eine Volksinitiative, die ein Moratorium will. Die Bundeskanzlei konzipiert mit den Kantonen eine Neuausrichtung des Versuchsbetriebs. Daniel Graf sagt: «Das Projekt ist ein Scherbenhaufen. Aktuell gibt es keine Systeme, die den höchsten Sicherheitsanforderungen und der Nachvollziehbarkeit genügen.»

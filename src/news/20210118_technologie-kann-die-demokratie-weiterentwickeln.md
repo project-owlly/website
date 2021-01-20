@@ -5,12 +5,14 @@ published: true
 date: '18.01.2021, 19:00 Uhr'
 source: https://www.shaz.ch/download/Ausgabe_45_7._November_2019.pdf
 sourceName: Schaffhauser AZ
-image: campaigner-1
+image: campaigner-2
 ---
+
+Dieser Beitrag wurde im Original in der [Schaffhauser AZ](https://www.shaz.ch/download/Ausgabe_45_7._November_2019.pdf) am 07.11.2019 veröffentlicht.
 
 # Technologie kann die Demokratie weiterentwickeln
 
-Der ursprüngliche Bericht wurde am 7. November 2019 im Original in der Schaffhauser AZ veröffentlicht und durch die Redaktion für diesen Blog-Beitrag freigegeben. Im aktuellen Interview wurde, die während der Masterarbeit entwickelte Plattform, durch die neue E-Collecting Plattform **owlly** ersetzt.
+Der ursprüngliche Bericht wurde am 7. November 2019 im Original in der Schaffhauser AZ veröffentlicht und durch die Redaktion für diesen Blog-Beitrag freigegeben. In der aktuellen Version wurde, die während der Masterarbeit entwickelte Plattform, durch die neue E-Collecting Plattform "owlly" ersetzt.
 
 [Original](https://www.shaz.ch/download/Ausgabe_45_7._November_2019.pdf)
 
