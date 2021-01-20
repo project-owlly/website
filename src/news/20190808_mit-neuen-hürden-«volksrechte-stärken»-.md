@@ -5,10 +5,12 @@ published: true
 date: '08.08.2019'
 source: 'https://www.woz.ch/-9e30'
 sourceName: WOZ
-image: campaigner-2
+image: campaigner-1
 slugs:
     - ___UNPUBLISHED___kjoggsxt_gznaXFzfSwetGSSKSEqSbbpYHOuwIKjV
 ---
+
+Dieser Beitrag wurde im Original in der  [WOZ](https://www.woz.ch/-9e30) am 08.08.2019 veröffentlicht.
 
 Für eine Volksinitiative sollen zukünftig 300 000 Unterschriften nötig sein. Das zumindest fordert der wirtschaftsliberale Thinktank Avenir Suisse in einer letzte Woche veröffentlichten Studie zur Digitalisierung der Demokratie. Darin wird ein «Baukasten von Ideen für die Weiterentwicklung der direkten Demokratie» vorgestellt, wie Koautor Matthias Ammann der WOZ erklärt. Gleichzeitig soll die Studie eine «nüchterne Abwägung» über das Potenzial digitaler Technologien liefern – insbesondere von digitaler Unterschriftensammlung, öffentlichem Politdiskurs in der digitalen Sphäre und E-Voting.
 

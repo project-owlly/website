@@ -28,7 +28,13 @@ export class NewsComponent {
 
   ngOnInit() {
     this.blogPosts$ = this.scully.available$.pipe(
-      map((routes: any) => routes.filter((route: any) => route.route.startsWith('/blog/') && route.sourceFile.endsWith('.md')))
+      map((routes: any[]) => {
+        return routes
+          .filter((route: any) => route.route.startsWith('/blog/') && route.sourceFile.endsWith('.md'))
+          .sort((a, b) => {
+            return b.route - a.route;
+          });
+      }) //map
     );
   }
 }
