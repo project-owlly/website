@@ -2,6 +2,7 @@
 title: 'owlly Newsletter vom 20.01.2021'
 description: 'blog description'
 published: true
+sort: 10
 date: '20.01.2021, 12:00 Uhr'
 source: 'https://owlly.ch/blog/'
 sourceName: owlly.ch

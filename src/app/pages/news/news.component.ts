@@ -18,7 +18,8 @@ export class NewsComponent implements OnInit {
         return routes
           .filter((route: any) => route.route.startsWith('/blog/') && route.sourceFile.endsWith('.md'))
           .sort((a, b) => {
-            return b.route - a.route;
+            console.log(JSON.stringify(a));
+            return b.sort - a.sort;
           });
       }) //map
     );

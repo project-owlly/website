@@ -2,6 +2,7 @@
 title: Technologie kann die Demokratie weiterentwickeln
 description: DEMOKRATIE 2.0** Initiativen per Smartphone unterschreiben Sandro Scalco hat eine App entwickelt, die das möglich machen könnte.
 published: true
+sort: 8
 date: '18.01.2021, 19:00 Uhr'
 source: https://www.shaz.ch/download/Ausgabe_45_7._November_2019.pdf
 sourceName: Schaffhauser AZ

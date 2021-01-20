@@ -2,6 +2,7 @@
 title: 'Die Schweizer Demokratie ins 21. Jahrhundert begleiten'
 description: 'Wagen wir die digitale Demokratie oder verzichten wir vorerst auf eine breit abgestützte und zeitgemässe Partizipation? Mit dem Projekt “owlly” wollen wir die Schweizer Demokratie ins 21. Jahrhundert befördern! Wir verfolgen das Ziel, E-Collecting, also das Sammeln, Bescheinigen und Zählen von Unterschriften für Volksbegehren, in der Schweiz zu ermöglichen.'
 published: true
+sort: 9
 date: '18.01.2021, 12:00 Uhr'
 source: 'https://prototypefund.opendata.ch/2021/01/18/die-schweizer-demokratie-ins-21-jahrhundert-begleiten/'
 sourceName: 'Prototypefund / owlly.ch'

@@ -5,6 +5,7 @@ published: true
 date: '08.08.2019'
 source: 'https://www.woz.ch/-9e30'
 sourceName: WOZ
+sort: 4
 image: campaigner-1
 slugs:
     - ___UNPUBLISHED___kjoggsxt_gznaXFzfSwetGSSKSEqSbbpYHOuwIKjV

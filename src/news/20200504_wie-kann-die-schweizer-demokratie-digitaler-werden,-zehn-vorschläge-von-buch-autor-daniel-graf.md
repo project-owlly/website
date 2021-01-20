@@ -2,6 +2,7 @@
 title: Wie kann die Schweizer Demokratie digitaler werden? Zehn Vorschläge von Buch-Autor Daniel Graf
 description: Daniel Graf, Autor des Buches "Agenda für eine digitale Demokratie", zeichnet in zehn Punkten, wie ein digitales Demokratie-Modell der Zukunft aussehen könnte. Seine These. Die Digitalisierung stützt die Demokratie breiter ab. Sie stärkt die Partizipation der Bürger. 
 published: true
+sort: 7
 date: 04.05.2020, 05.00 Uhr 
 source: https://www.tagblatt.ch/schweiz/zehn-vorschlage-fur-eine-digitalere-demokratie-ld.1217385
 sourceName: St. Galler Tagblatt
