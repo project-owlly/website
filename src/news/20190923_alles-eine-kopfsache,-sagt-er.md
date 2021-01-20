@@ -2,13 +2,15 @@
 title: 'Alles eine Kopfsache, sagt er'
 description: 'Der Informatiker Sandro Scalco will in Schaffhausen das E-Collecting einführen.'
 published: true
-date: '23. September 2019, 4:00 Uhr'
-image: campaigner-1
+date: '23.09.2019, 4:00 Uhr'
+image: campaigner-2
 source: 'https://www.zeit.de/2019/39/e-collecting-digitalisierung-schweiz-volksinitiativen-online-schaffhausen/komplettansicht'
 sourceName: Die Zeit
 slugs:
   - ___UNPUBLISHED___kjogrfqy_WyuoCwB7rSjcHyllMLczEsV5yPxlQkb9
 ---
+
+Dieser Beitrag wurde im Original in der [Die Zeit](https://www.zeit.de/2019/39/e-collecting-digitalisierung-schweiz-volksinitiativen-online-schaffhausen/komplettansicht) am 23.09.2019, 4:00 Uhr veröffentlicht.
 
 Die Schweiz gilt als eine der besten Demokratien der Welt. Das ist keine selbstgefällige Behauptung, sondern wird durch zahlreiche Studien belegt. Aber besser geht immer. Das gilt auch für eine Demokratie. Deshalb präsentieren wir bis zu den eidgenössischen Wahlen vom 20. Oktober 10 Ideen für ein Demokratie-Update. Idee Nr. 3: Digitalisierung
 
