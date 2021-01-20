@@ -1,6 +1,6 @@
 ---
 title: 'owlly Newsletter vom 20.01.2021'
-description: 'blog description'
+description: 'Wie fördern wir E-Collecting? Unsere neue Webseite bietet einen schweizweit einzigartigen Überblick!'
 published: true
 sort: 10
 date: '20.01.2021, 12:00 Uhr'
