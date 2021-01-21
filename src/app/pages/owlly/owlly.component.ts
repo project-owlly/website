@@ -77,34 +77,34 @@ export class OwllyComponent {
         config: [
           {
             twitter: {
-              socialShareUrl: shareUrl,
+              socialShareUrl: '👉 ' + owlly.data.title + ': ' + shareUrl,
               socialSharePopupWidth: 300,
               socialSharePopupHeight: 400,
             },
           },
           {
             facebook: {
-              socialShareUrl: shareUrl,
+              socialShareUrl: '👉 ' + owlly.data.title + ': ' + shareUrl,
             },
           },
           {
             whatsapp: {
-              socialShareUrl: shareUrl,
+              socialShareUrl: '👉 ' + owlly.data.title + ': ' + shareUrl,
             },
           },
           {
             linkedin: {
-              socialShareUrl: shareUrl,
+              socialShareUrl: '👉 ' + owlly.data.title + ': ' + shareUrl,
             },
           },
           {
             email: {
-              socialShareBody: shareUrl,
+              socialShareUrl: '👉 ' + owlly.data.title + ': ' + shareUrl,
             },
           },
           {
             copy: {
-              socialShareUrl: shareUrl,
+              socialShareUrl: '👉 ' + owlly.data.title + ': ' + shareUrl,
             },
           },
         ],
