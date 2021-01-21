@@ -57,7 +57,7 @@ export class OwllyComponent {
       if (device.platform === 'web' && navigator && navigator['share']) {
         let shareRet = await Share.share({
           title: owlly.data.title,
-          text: String(owlly.data.text).substr(0, 50),
+          text: owlly.data.title + ': ' + String(owlly.data.description).substr(0, 50),
           url: 'https://owlly.ch/o/' + owlly.data.slug,
           dialogTitle: owlly.data.title,
         }).catch((onrejected) => {});
