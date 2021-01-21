@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {faEdit} from '@fortawesome/free-solid-svg-icons';
+import {faEdit, faAngleLeft} from '@fortawesome/free-solid-svg-icons';
 import {ProfileService} from 'src/app/services/profile.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Location } from '@angular/common'
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -30,8 +31,9 @@ export class ProfileComponent implements OnInit {
   userProfile: any;
 
   faEdit=faEdit;
+  faAngleLeft=faAngleLeft;
 
-  constructor(public fb: FormBuilder, private profileService: ProfileService) {
+  constructor(public fb: FormBuilder, private profileService: ProfileService, private location: Location) {
     this.profileForm = this.fb.group({
       vorname: [this.userProfile?.firstname || '', [Validators.required]],
       nachname: [this.userProfile?.lastname || '', [Validators.required]],
@@ -57,4 +59,9 @@ export class ProfileComponent implements OnInit {
   editProfile() {
     this.showEdit = !this.showEdit;
   }
+
+  back(): void {
+    this.location.back()
+  }
 }
+

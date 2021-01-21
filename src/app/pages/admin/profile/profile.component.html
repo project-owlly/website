@@ -1,5 +1,13 @@
 <app-dashboard-header></app-dashboard-header>
-<main class="mx-auto max-w-screen-xl">
+<main class="relative mx-auto max-w-screen-xl">
+    <button
+    (click)="back()"
+    type="button"
+    name="scroll-Left"
+    class="absolute top-16 -left-20 border-none outline-none z-20 text-black rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+  >
+    <fa-icon [icon]="faAngleLeft"></fa-icon>
+  </button>
   <app-textblock
   type="owlly"
   title="Profilverwaltung"
