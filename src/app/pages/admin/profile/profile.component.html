@@ -4,8 +4,8 @@
     (click)="back()"
     type="button"
     name="scroll-Left"
-    class="absolute top-16 -left-20 border-none outline-none z-20 text-black rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
-  >
+    class="absolute top-16 -left-20 border-none outline-none z-20 text-black rounded-full hover:opacity-80 transition-all round-shadow bg-yellow-400 h-12 w-12 flex items-center justify-center"
+    >
     <fa-icon [icon]="faAngleLeft"></fa-icon>
   </button>
   <app-textblock
@@ -18,7 +18,15 @@
         <div class="table-row p-4 transition-all">
           <div class="table-cell py-4 font-bold">Vorname</div>
           <div class="table-cell py-4">{{userProfile.firstname}}</div>
-          <div class="table-cell py-4 text-right pr-6 hover:opacity-80"> <a style="cursor: pointer;" (click)="editProfile()"><fa-icon [icon]="faEdit"></fa-icon></a></div>
+          <div class="table-cell py-4 text-right pr-6 transition-all hover:opacity-80">
+            <button
+            (click)="editProfile()"
+            type="button"
+            name="scroll-Left"
+            class="border-none transition-all outline-none z-20 text-black round-shadow rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+          >
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button></div>
         </div>
 
         <div class="table-row p-4 transition-all">
