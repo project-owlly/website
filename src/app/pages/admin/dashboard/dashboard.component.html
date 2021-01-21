@@ -1,9 +1,7 @@
 <!-- <app-header></app-header> -->
 <main>
-    <app-dashboard
-    type="administration"
-    ></app-dashboard>
-
+    <app-dashboard-campaigner *ngIf="type == 'campaigner'"></app-dashboard-campaigner>
+    <app-dashboard-administration *ngIf="type == 'administration'"></app-dashboard-administration>
 
 
 

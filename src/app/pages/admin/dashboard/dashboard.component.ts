@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from 'src/app/services/auth.service';
 
@@ -9,6 +9,8 @@ import {AuthService} from 'src/app/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
+
+  @Input() type?: 'administration' | 'campaigner' = 'administration';
 
   ngOnInit(): void {}
 
