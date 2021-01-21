@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {faBaby} from '@fortawesome/free-solid-svg-icons';
+import {faEdit} from '@fortawesome/free-solid-svg-icons';
 import {ProfileService} from 'src/app/services/profile.service';
 @Component({
   selector: 'app-profile',
@@ -9,6 +9,8 @@ import {ProfileService} from 'src/app/services/profile.service';
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
   userProfile: any;
+
+  faEdit=faEdit;
 
   constructor(public fb: FormBuilder, private profileService: ProfileService) {
     this.profileForm = this.fb.group({
