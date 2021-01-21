@@ -9,9 +9,9 @@ sourceName: owlly.ch
 image: campaigner-1
 ---
 
-# owlly Newsletter vom 20.01.2021
+# **owlly Newsletter vom 20.01.2021**
 
-## Wie fördern wir E-Collecting? Unsere neue Webseite bietet einen schweizweit einzigartigen Überblick!
+## **Wie fördern wir E-Collecting? Unsere neue Webseite bietet einen schweizweit einzigartigen Überblick!**
 
 Seit letztem Montag sind wir mit unserer neuen Webseite live! Wir haben im Rahmen des Prototypefund Mid-Demo Days unsere neue Webseite lanciert und sind überglücklich. Da du dich für den owlly-Newsletter eingetragen hast, möchten wir dich über die Webseite und die Neuerungen aus erster Hand ausführlich informieren. Unsere Webseite haben wir in verschiedene Blöcke aufgeteilt, welche wir dir anschliessend kurz vorstellen.
 
@@ -35,14 +35,14 @@ Doch nun zu den Elementen der Webseite und viel Spass beim Lesen!
 
 Dein owlly-Team
 
-## [Was ist E-Collecting? - https://owlly.ch/explained](https://owlly.ch/explained)
+## **[Was ist E-Collecting? - https://owlly.ch/explained](https://owlly.ch/explained)**
 
 Was heute noch Stift, Papier, Drucker, Couvert und Briefmarke benötigt könnte digital auch viel effizienter und zeitgemässer abgewickelt werden. E-Collecting unterscheidet sich zu existierenden Plattformen für Online-Petitionen in ihrer Rechtsgültigkeit und erhält dadurch echte demokratische Legitimation und einen direkten Einfluss auf die politischen Prozesse.
 Von E-Collecting profitieren alle und die Vorteile sind vielseitig. Es ermöglicht mehr politische Partizipation, vereinfacht den Zugang zur Mitwirkung und macht diverse Prozesse effizienter für alle Beteiligten. Davon profitieren die Verwaltung, die Campaigner und insbesondere auch die Bürgerinnen und Bürger gleichermassen.
 
 Wie so oft bei Digitalisierungsprozessen wird die Qualität erhöht und gleichzeitig sogar der Aufwand verringert. Dieses Potential liegt heute noch weitgehend brach.
 
-## [Unsere Mission - https://owlly.ch/ourmission](https://owlly.ch/ourmission)
+## **[Unsere Mission - https://owlly.ch/ourmission](https://owlly.ch/ourmission)**
 
 Wir fördern das elektronische Unterschriftensammeln für politische Volksbegehren ganzheitlich um die Potentiale für Alle zu entfalten. Unsere technologischen Lösungen entwickeln wir in Kooperation mit der Bevölkerung und wir setzen uns gemeinsam mit allen Stakeholdern für günstige E-Collecting Rahmenbedingungen in der ganzen Schweiz ein.  
 E-Collecting ist keine Frage der technologischen Machbarkeit - Es ist umsetzbar. Das zeigen diverse theoretische Studien aber auch Praxisbeispiele im Ausland. Limitierende Faktoren und Gründe, warum E-Collecting in der Schweiz noch nicht umgesetzt wurde, sind woanders zu suchen.
