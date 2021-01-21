@@ -10,7 +10,7 @@ import {AuthService} from 'src/app/services/auth.service';
 export class DashboardComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
-  @Input() type?: 'administration' | 'campaigner' = 'administration';
+  @Input() type?: 'administration' | 'campaigner' = 'campaigner';
 
   ngOnInit(): void {}
 
