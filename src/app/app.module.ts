@@ -16,6 +16,8 @@ import {environment} from '../environments/environment';
 
 import {ScullyLibModule} from '@scullyio/ng-lib';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,6 +33,7 @@ import {ScullyLibModule} from '@scullyio/ng-lib';
       alwaysMonitor: true,
     }),
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [{provide: REGION, useValue: 'europe-west6'}],
   bootstrap: [AppComponent],

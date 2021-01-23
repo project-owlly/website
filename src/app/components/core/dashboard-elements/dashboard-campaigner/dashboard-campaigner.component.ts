@@ -5,18 +5,16 @@ import {faUserCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import * as Chart from 'chart.js';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'app-dashboard-campaigner',
+  templateUrl: './dashboard-campaigner.component.html',
+  styleUrls: ['./dashboard-campaigner.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardCampaignerComponent implements OnInit {
   faUserCircle = faUserCircle;
 
   faTimesCircle=faTimesCircle;
   canvas: any;
   ctx: any;
-
-  @Input() type?: 'campaigner' | 'administration' = 'campaigner';
 
 
   constructor() { }

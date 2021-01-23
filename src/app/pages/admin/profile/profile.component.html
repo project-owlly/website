@@ -1,13 +1,96 @@
-<app-header></app-header>
-<main>
-  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-    <!-- Replace with your content -->
+<app-dashboard-header></app-dashboard-header>
+<main class="relative mx-auto max-w-screen-xl">
+    <button
+    (click)="back()"
+    type="button"
+    name="scroll-Left"
+    class="absolute top-16 -left-20 border-none outline-none z-20 text-black rounded-full hover:opacity-80 transition-all round-shadow bg-yellow-400 h-12 w-12 flex items-center justify-center"
+    >
+    <fa-icon [icon]="faAngleLeft"></fa-icon>
+  </button>
+  <app-textblock
+  type="owlly"
+  title="Profilverwaltung"
+  ></app-textblock>
+  <div class="px-6 flex flex-wrap gap-6">
+  <div class="table w-full md:w-1/2 h-full gap-6 font-light text-xl">
+      <div class="table-row-group px-20 ">
+        <div class="table-row p-4 transition-all">
+          <div class="table-cell py-4 font-bold">Vorname</div>
+          <div class="table-cell py-4">{{userProfile.firstname}}</div>
+          <div class="table-cell py-4 text-right pr-6 transition-all hover:opacity-80">
+            <button
+            (click)="editProfile()"
+            type="button"
+            name="scroll-Left"
+            class="border-none transition-all outline-none z-20 text-black round-shadow rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+          >
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button></div>
+        </div>
+
+        <div class="table-row p-4 transition-all">
+          <div class="table-cell py-4 font-bold">Name</div>
+          <div class="table-cell py-4">{{userProfile.lastname}}</div>
+          <div class="table-cell py-4 text-right pr-6"></div>
+        </div>
+
+        <div class="table-row p-4 transition-all">
+          <div class="table-cell py-4 font-bold">Passwort</div>
+          <div class="table-cell py-4">●●●●●●●</div>
+          <div class="table-cell py-4 text-right pr-6"></div>
+        </div>
+      </div>
+    </div>
+    <div [@fadeInRight]="showEdit ? 'shown' : 'hidden' " class="flex-auto">
+      <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+          
+        <label for="firstname" class="block mt-2 text-xs font-semibold text-gray-600">Vorname <span class="text-red-600">*</span></label>
+        <input
+          id="firstname"
+          type="text"
+          name="firstname"
+          autocomplete="given-name"
+          formControlName="vorname"
+          class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+          required
+        />
+
+       
+        <label for="lastname" class="block mt-2 text-xs font-semibold text-gray-600">Nachname <span class="text-red-600">*</span></label>
+        <input
+          id="lastname"
+          type="text"
+          name="lastname"
+          autocomplete="family-name"
+          formControlName="nachname"
+          class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+          required
+        />
+
+        
+        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600">E-Mail <span class="text-red-600">*</span></label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          autocomplete="email"
+          formControlName="email"
+          class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+          required
+        />
+      </form>
+      <app-button class="pt-6" type="submit" [small]="true" [uppercase]="false" [disable]="profileForm.invalid">Absenden</app-button>
+    </div>
+</div>
+  <!-- <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    
     <div class="bg-white dark:bg-black">
       <app-textblock type="owlly" title="Profil" subtitle="Hier kannst du dein Profil verwalten"></app-textblock>
 
       <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 pt-16 gap-6">
         <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
-          <!-- Vorname -->
+          
           <label for="firstname" class="block mt-2 text-xs font-semibold text-gray-600">Vorname <span class="text-red-600">*</span></label>
           <input
             id="firstname"
@@ -19,7 +102,7 @@
             required
           />
 
-          <!-- Nachname -->
+         
           <label for="lastname" class="block mt-2 text-xs font-semibold text-gray-600">Nachname <span class="text-red-600">*</span></label>
           <input
             id="lastname"
@@ -31,7 +114,7 @@
             required
           />
 
-          <!-- Email -->
+          
           <label for="email" class="block mt-2 text-xs font-semibold text-gray-600">E-Mail <span class="text-red-600">*</span></label>
           <input
             id="email"
@@ -46,8 +129,8 @@
         <app-button type="submit" [small]="true" [uppercase]="false" [disable]="profileForm.invalid">Absenden</app-button>
       </div>
     </div>
-    <!-- /End replace -->
-  </div>
+    
+  </div> -->
 </main>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

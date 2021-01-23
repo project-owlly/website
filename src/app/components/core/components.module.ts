@@ -16,9 +16,11 @@ import {DiamondComponent} from './diamond/diamond.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {StorynavComponent} from './storynav/storynav.component';
 import {AdminHeaderComponent} from './admin-header/admin-header.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
-import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
+import { DashboardCampaignerComponent } from './dashboard-elements/dashboard-campaigner/dashboard-campaigner.component';
+import { DashboardCardComponent } from './dashboard-elements/dashboard-card/dashboard-card.component';
+import { DashboardHeaderComponent } from './dashboard-elements/dashboard-header/dashboard-header.component';
+import { DashboardAdminCardComponent } from './dashboard-elements/dashboard-admin-card/dashboard-admin-card.component';
+import { DashboardAdministrationComponent } from './dashboard-elements/dashboard-administration/dashboard-administration.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,11 @@ import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.co
     DiamondComponent,
     StorynavComponent,
     AdminHeaderComponent,
-    DashboardComponent,
+    DashboardCampaignerComponent,
     DashboardCardComponent,
     DashboardHeaderComponent,
+    DashboardAdminCardComponent,
+    DashboardAdministrationComponent,
   ],
   exports: [
     HeaderComponent,
@@ -53,9 +57,11 @@ import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.co
     DiamondComponent,
     StorynavComponent,
     AdminHeaderComponent,
-    DashboardComponent,
+    DashboardCampaignerComponent,
     DashboardCardComponent,
     DashboardHeaderComponent,
+    DashboardAdminCardComponent,
+    DashboardAdministrationComponent,
   ],
   imports: [FontAwesomeModule, CommonModule],
 })

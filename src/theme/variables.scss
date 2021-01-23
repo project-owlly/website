@@ -8,6 +8,10 @@
     background: var(--owlly-inverse-linear-gradient);
   }
 
+  .round-shadow {
+    box-shadow:5px 5px 37px -5px rgba(0,0,0,0.20);
+  }
+
   @keyframes owlly-hover {
     0%,
     100% {
