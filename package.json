@@ -45,7 +45,7 @@
     "rxjs": "~6.6.0",
     "tailwindcss-animations": "^2.0.0",
     "tslib": "^2.0.0",
-    "web-social-share": "^6.4.1",
+    "web-social-share": "^7.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
