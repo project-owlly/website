@@ -6,10 +6,8 @@
     <div class="table w-full">
       <div class="table-row-group">
         <div class="table-row">
-          <div class="table-cell py-6">
-            <a class="text-2xl dark:text-white text-gray-300 hover:text-gray-300 transition" name="start campaign" href="javascript:void(0)"
-              >Kampagne starten
-            </a>
+          <div class="table-cell py-6" (click)="showNewsletter()">
+            <a class="text-2xl dark:text-white text-gray-300 hover:text-gray-300 transition" name="start campaign" href="javascript:void(0)"> Newsletter </a>
           </div>
           <div class="table-cell items-center dark:text-white">
             <fa-icon [icon]="faPlayCircle"></fa-icon>
@@ -45,7 +43,7 @@
     </a>
 
     <div class="space-x-6 hidden md:block" *ngIf="!hideNav">
-      <a class="text-lg hover:text-gray-300 text-gray-300 dark:text-white transition" href="javascript:void(0)" name="start campaign">Kampagne starten</a>
+      <a (click)="showNewsletter()" href="#" class="text-lg hover:text-yellow-400 dark:text-white transition" name="start campaign">Newsletter</a>
       <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/support" name="support">E-Collecting fördern</a>
       <a class="text-lg hover:text-yellow-400 dark:text-white transition" href="/aboutus" name="about us">Über uns</a>
     </div>

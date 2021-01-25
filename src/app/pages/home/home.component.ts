@@ -5,6 +5,7 @@ import {first, map} from 'rxjs/operators';
 import {faAngleRight, faAngleLeft, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {ModalService} from '../../services/modal.service';
 import {FeedbackComponent as FeedbackComponentType} from '../../modals/feedback/feedback.component';
+import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsletter/newsletter.component';
 import {OwllyService} from '../../services/owlly.service';
 
 @Component({
@@ -19,7 +20,11 @@ export class HomeComponent implements OnInit {
   owlly$: Observable<ScullyRoute[]> | undefined;
   owllyData = <any>[];
 
-  constructor(private scully: ScullyRoutesService, private modalService: ModalService<FeedbackComponentType>, private owllyService: OwllyService) {}
+  constructor(
+    private scully: ScullyRoutesService,
+    private modalService: ModalService<FeedbackComponentType | NewsletterComponentType>,
+    private owllyService: OwllyService
+  ) {}
 
   ngOnInit(): void {
     this.owlly$ = this.scully.available$.pipe(map((routes: any) => routes.filter((route: any) => route.route.startsWith('/o/'))));
@@ -37,6 +42,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  async showNewsletter(): Promise<void> {
+    const {NewsletterComponent} = await import('../../modals/newsletter/newsletter.component');
+
+    await this.modalService.open(NewsletterComponent);
+  }
   async showFeedback(): Promise<void> {
     const {FeedbackComponent} = await import('../../modals/feedback/feedback.component');
 
