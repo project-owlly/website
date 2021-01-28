@@ -20,27 +20,28 @@
         class="text-2xl p-2 mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 dark:text-white bg-gray-100 dark:bg-gray-800 dark:focus:bg-gray-700 focus:shadow-inner"
       >
         <option value="bs">Basel-Stadt</option>
-        <option value="sg">St. Gallen</option>
+        <option value="be">Bern</option>
         <option value="sh">Schaffhausen</option>
+        <option value="sg">St. Gallen</option>
         <option value="zh">Zürich</option>
       </select>
     </div>
 
     <div class="pt-6 dark:text-white text-xl font-light" style="min-height: 300px">
+      <div *ngIf="cantonSelect == 'be'">
+        <p>
+          Die Motion "Volksrechte weiter digitalisieren – auch ohne E-Voting" wurde vom Regierungsrat zwar abgelehnt, wird nun aber in der Frühlingssession 2021
+          vom Grossen Rat neu beraten. <br />
+          <a href="https://www.gr.be.ch/gr/de/index/geschaefte/geschaefte/suche/geschaeft.gid-7aecc7b41ddd48c4a3b9c1e7726ac3bd.html"
+            >Link: Ratsinfo Kanton Bern</a
+          >
+        </p>
+      </div>
       <div *ngIf="cantonSelect == 'bs'">
         <p>
           Im Unterschied zu seinen Vorgängern, wurde im Kanton Basel-Stadt ein ganz anderer Weg verfolgt. Dort wurde als Grundlage das Behindertenrechtegesetz
           zur Einführung von E-Collecting genommen. Gemäss Artikel §5a kann der Regierungsrat Versuche zur Unterzeichnung von Initiativen und Referenden auf
           elektronischem Wege fördern. Von diesem Artikel wurde in Basel-Stadt bis heute jedoch noch kein Gebrauch gemacht.
-        </p>
-      </div>
-      <div *ngIf="cantonSelect == 'sg'">
-        <p>
-          Ähnlich wie im Kanton Zürich, ist der Startpunkt für E-Collecting im Kanton St. Gallen eine Interpellation (51.18.22 Kanton St.Gallen als
-          E-Collecting-Pionier). Diese wurde 2018 im Kantonsrat behandelt. Kurze Zeit später folgte auf die beantwortete Interpellation eine Motion zur
-          Einführung von E-Collecting. Am 27.11.2018 nimmt die Kantonsregierung die Motion (42.18.14 Einführung von E-Collecting im Kanton St.Gallen) mit einer
-          grossen Mehrheit an. Die Motion verfolgt dabei das Ziel, dringende Fragen im Bereich der gesetzlichen Grundlagen, Beanspruchung des Politischen
-          Systems und Ausbau einer IT-Basisinfrastruktur zu beantworten.
         </p>
       </div>
       <div *ngIf="cantonSelect == 'sh'">
@@ -50,7 +51,21 @@
           171.110) im Jahr 2020 auf die Politische Agenda gebracht. Im Gegensatz zu den anderen Kantonen hat Schaffhausen zudem im Jahr 2018 (Kanton
           Schaffhausen, 2020) die elektronische Identität eingeführt und somit wichtige Voraussetzungen im Bereich Infrastruktur bereits geschaffen. Die
           Volksmotion «Mehr Demokratie für Schaffhausen - einfach und sicher: Volksbegehren auch elektronisch unterschreiben (E-Collecting)» wird im Jahr 2021
-          vom Kantonsparlament behandelt.
+          vom Kantonsparlament behandelt.<br />
+          Update vom 25.01.2021: Die Volksmotion wurde trotz der Empfehlung der Regierung vom Parlament mit 33:17 Stimmen als erheblich erklärt.<br />
+          <a href="https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Parlament/Der-Kantonsrat/Portal-Kantonsrat---Ratsbetrieb-5125437-DE.html"
+            >Link: Volksmotion Schaffhausen</a
+          >
+        </p>
+      </div>
+      <div *ngIf="cantonSelect == 'sg'">
+        <p>
+          Ähnlich wie im Kanton Zürich, ist der Startpunkt für E-Collecting im Kanton St. Gallen eine Interpellation (51.18.22 Kanton St.Gallen als
+          E-Collecting-Pionier). Diese wurde 2018 im Kantonsrat behandelt. Kurze Zeit später folgte auf die beantwortete Interpellation eine Motion zur
+          Einführung von E-Collecting. Am 27.11.2018 nimmt die Kantonsregierung die Motion (42.18.14 Einführung von E-Collecting im Kanton St.Gallen) mit einer
+          grossen Mehrheit an. Die Motion verfolgt dabei das Ziel, dringende Fragen im Bereich der gesetzlichen Grundlagen, Beanspruchung des Politischen
+          Systems und Ausbau einer IT-Basisinfrastruktur zu beantworten.<br />
+          <a href="https://www.ratsinfo.sg.ch/geschaefte/3606">Link: Ratsinfo Kanton St. Gallen</a>
         </p>
       </div>
       <div *ngIf="cantonSelect == 'zh'">
@@ -62,13 +77,18 @@
           Initiativen und Referenden im Internet oder auf mobilen Endgeräten). Auch Jahre später scheitert das Projekt am Fehlen einer elektronischen Identität
           und am Projekt „Vote électronique“, welches E-Collecting erst in einer dritten Projektphase vorsieht. Zudem hat der Kanton Zürich aus
           Ressourcengründen die Arbeiten an E-Collecting 2017 eingestellt. Das Nichtberücksichtigen der nachgelagerten E-Collectingprozesse, machen der Motion
-          einen weiteren Strich durch die Rechnung.
+          einen weiteren Strich durch die Rechnung.<br />
+          <a href="https://www.zh.ch/de/politik-staat/gesetze-beschluesse/beschluesse-des-regierungsrates/rrb/regierungsratsbeschluss-423-2009.html"
+            >Link: Ratsinfo Kanton Zürich</a
+          >
         </p>
       </div>
     </div>
   </div>
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl py-2">
-    <app-textblock type="owlly" title="Ausblick" text="Volksmotion im Kantonsrat Schaffhausen (Ende Januar 2021)."></app-textblock>
+    <div *ngIf="cantonSelect == 'sh'">
+      <app-textblock type="owlly" title="Ausblick" text="Der Regierungsrat behandelt nun die vom Parlament für erheblich erklärte Volksmotion."></app-textblock>
+    </div>
   </div>
 
   <app-footer></app-footer>
