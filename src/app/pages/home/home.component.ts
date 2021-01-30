@@ -29,15 +29,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.owlly$ = this.scully.available$.pipe(map((routes: any) => routes.filter((route: any) => route.route.startsWith('/o/'))));
 
-    this.owlly$.subscribe(async (owllys) => {
+    this.owlly$.pipe(first()).subscribe(async (owllys) => {
       for (let owlly of owllys) {
-        this.owllyService.owllyBySlug(String(owlly.route).split('/o/')[1]).subscribe((owllyFS) => {
-          //console.log(owllyFS);
+        this.owllyService
+          .owllyBySlug(String(owlly.route).split('/o/')[1])
+          .pipe(first())
+          .subscribe((owllyFS) => {
+            //console.log(owllyFS);
 
-          owllyFS.data.description = owllyFS.data.description.slice(0, 100);
+            owllyFS.data.description = owllyFS.data.description.slice(0, 100);
 
-          this.owllyData.push(owllyFS.data);
-        });
+            this.owllyData.push(owllyFS.data);
+          });
       }
     });
   }
