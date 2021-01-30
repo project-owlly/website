@@ -2,11 +2,11 @@
 title: 'owlly Newsletter vom 20.01.2021'
 description: 'Wie fördern wir E-Collecting? Unsere neue Webseite bietet einen schweizweit einzigartigen Überblick!'
 published: true
-sort: 10
+sort: 11
 date: '20.01.2021, 12:00 Uhr'
 source: 'https://owlly.ch/blog/'
 sourceName: owlly.ch
-image: campaigner-1
+image: campaigner-2
 ---
 
 # **owlly Newsletter vom 20.01.2021**

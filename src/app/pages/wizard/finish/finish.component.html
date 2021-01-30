@@ -2,7 +2,11 @@
 
 <main class="dark:bg-black">
   <div class="container mx-auto max-w-screen-xl">
-    <app-textblock title="Vielen Dank!" text="Du erhälst von uns eine Bestätigung per E-Mail wenn wir deinen Unterschriftenbogen erhalten haben." type="owlly">
+    <app-textblock
+      title="Vielen Dank!"
+      text="Du erhälst von uns in den nächsten 30 Minuten eine Bestätigung per E-Mail wenn wir deinen Unterschriftenbogen für folgendes Volksbegehren erhalten haben."
+      type="owlly"
+    >
       <h1 class="font-light text-xl dark:text-white">
         <!--Du hast für folgendes Begehren unterschrieben:-->
         <span class="font-bold text-4xl md:text-6xl text-center dark:text-white">
@@ -12,7 +16,9 @@
         </span>
       </h1>
     </app-textblock>
-    <p class="font-light text-xl px-6">Volksbegehren jetzt teilen:</p>
+    <ng-container *ngIf="owlly$ | async as owlly">
+      <p class="font-light text-xl px-6">Das Volksbegehren "{{ owlly.data.title }}" jetzt mit deinen Freunden teilen:</p>
+    </ng-container>
     <div class="mx-auto max-w-screen-xl container pt-6 px-6 justify-center md:justify-start flex">
       <button (click)="share()" type="button" class="border-none outline-none rounded-full bg-yellow-400 h-14 w-14 flex items-center justify-center shadow-xl">
         <img src="../../../assets/socialmedia/share.svg" alt="share" width="20px" />
@@ -56,6 +62,31 @@
         </div>
       </div>
     </div>
+
+    <!--
+    <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl px-6 py-4 pt-16 gap-6">
+      <app-card
+        class="flex-1"
+        type="owlly"
+        title="Kampagne verfolgen"
+        [showButton]="true"
+        text="Möchtest du über die Kampagne informiert bleiben? owlly gibt deine persönlichen Daten nicht an Campaigner weiter - ausser du möchtest das natürlich! Damit dir Campaigner eine E-Mail senden können, trage dich über das Formular ein."
+        buttonText="Formular"
+        link="/explained"
+      >
+      </app-card>
+      <app-card
+        class="flex-1"
+        type="owlly"
+        title="Demokratie unterstützen"
+        text="owlly ermöglicht ein ganzheitliches E-Collecting für alle beteiligten Akteuere. Damit owlly weiterhin bestehen kann, sind wir auf deine Spenden angewiesen."
+        buttonText="Ja ich möchte spenden!"
+        [showButton]="true"
+        link="/ourmission"
+      >
+      </app-card>
+    </div>
+  -->
 
     <div class="flex flex-row">
       <div class="text-center flex-auto">
