@@ -22,14 +22,16 @@
 </div>
 <div class="{{ type }} dark:bg-gray-800 bg-gray-100 relative -top-1 shadow-lg z-10">
   <div class="underline-img relative"></div>
-  <div class="flex grid grid-cols-1 md:grid-cols-7 mx-auto max-w-screen-xl px-6 py-8 text-left">
+  <div class="grid grid-cols-1 md:grid-cols-7 mx-auto max-w-screen-xl px-6 py-8 text-left">
     <div class="md:col-span-6">
-      <div>
+      <div class="pb-3.5">
         <ng-content select="h1" class="dark:text-white"></ng-content>
         <h1 class="text-4xl md:text-6xl font-bold title dark:text-white">{{ title }}</h1>
       </div>
-      <!-- <div class="underline mt-2"></div> -->
-      <div *ngIf="subtitle" class="text-xl lg:w-1/2 dark:text-white">{{ subtitle }}</div>
+      <div *ngIf="subtitle" class="font-light text-xl dark:text-white">
+        {{ subtitle }}
+      </div>
+
       <div class="lg:w-1/2">
         <ng-content select="h2" class="dark:text-white"></ng-content>
       </div>
