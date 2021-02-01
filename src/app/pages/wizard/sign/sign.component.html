@@ -2,27 +2,27 @@
 
 <main class="dark:bg-black">
   <div class="container mx-auto max-w-screen-xl">
-    <app-textblock title="Fast am Ziel!" text="Signiere und reiche deinen Unterschriftenbogen ein - So einfach geht’s:" type="owlly"> </app-textblock>
+    <app-textblock title="Fast am Ziel!" text="Nutze für die nächsten Schritte deine elektronische Identität (eID+):" type="owlly"> </app-textblock>
 
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">
         <div class="mx-auto max-w-screen-xl px-6 pt-6">
           <p class="font-bold text-2xl dark:text-white py-6">Signiere und reiche deinen Unterschriftbogen ein - so einfach geht's:</p>
           <div class="flex grid grid-cols-6 gap-2 justify-around text-left" style="max-width: 400px">
-              <div *ngIf="isMobile" class="col-span-1">
-                <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
-              </div>
-              <div *ngIf="isMobile" class="col-span-5 text-left">
-                <p class="font-light text-2xl dark:text-white">"Button "importieren" drücken</p>
-              </div>
-            
-              <div *ngIf="!isMobile" class="col-span-1">
-                <img src="../../../../assets/eidIcons/scan.png" width="30px" alt="" />
-              </div>
-              <div *ngIf="!isMobile" class="col-span-5 text-left">
-                <p class="font-light text-2xl dark:text-white">"QR Code scannen</p>
-              </div>
-            
+            <div *ngIf="isMobile" class="col-span-1">
+              <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
+            </div>
+            <div *ngIf="isMobile" class="col-span-5 text-left">
+              <p class="font-light text-2xl dark:text-white">"Button "importieren" drücken</p>
+            </div>
+
+            <div *ngIf="!isMobile" class="col-span-1">
+              <img src="../../../../assets/eidIcons/scan.png" width="30px" alt="" />
+            </div>
+            <div *ngIf="!isMobile" class="col-span-5 text-left">
+              <p class="font-light text-2xl dark:text-white">"QR Code mit deiner eID+ scannen</p>
+            </div>
+
             <div class="col-span-1">
               <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
             </div>
@@ -45,7 +45,13 @@
               <img src="../../../../assets/eidIcons/exportieren.png" width="30px" alt="" />
             </div>
             <div class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">Dokument per E-Mail an briefkasten@owlly.ch senden</p>
+              <p class="font-light text-2xl dark:text-white">Dokument per E-Mail an "briefkasten@owlly.ch" senden</p>
+            </div>
+            <div class="col-span-1 text-left">
+              <!--<img src="../../../../assets/eidIcons/exportieren.png" width="30px" alt="" />-->
+            </div>
+            <div class="col-span-5 text-left">
+              <p class="font-light text-2xl dark:text-white">(Einen Betreff oder eine Nachricht in der E-Mail braucht es nicht)</p>
             </div>
           </div>
         </div>
