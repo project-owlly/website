@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalService} from '../../services/modal.service';
 import {QuestionComponent as QuestionComponentType} from '../../modals/question/question.component';
+import {Observable, of} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-explained',
@@ -8,9 +10,10 @@ import {QuestionComponent as QuestionComponentType} from '../../modals/question/
   styleUrls: ['./explained.component.scss'],
 })
 export class ExplainedComponent {
-  constructor(private modalService: ModalService<QuestionComponentType>) {
-    
-  }
+  readonly theme$: Observable<'dark' | 'light'> = of(window.matchMedia('(prefers-color-scheme: dark)')).pipe(
+    map((media: MediaQueryList) => (media.matches ? 'dark' : 'light'))
+  );
+  constructor(private modalService: ModalService<QuestionComponentType>) {}
   ngOnInit(): void {
     var acc = document.getElementsByClassName('accordion');
     var i;

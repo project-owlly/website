@@ -59,7 +59,7 @@
 
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl gap-x-20">
     <app-textblock type="owlly" title="FAQ">
-      <button class="accordion py-4 font-light dark:text-white text-xl">Warum gibt es noch kein E-Collecting in der Schweiz?</button>
+      <button class="accordion py-4 font-bold dark:text-white text-xl">Warum gibt es noch kein E-Collecting in der Schweiz?</button>
       <div class="panel">
         <p class="font-light dark:text-white text-xl">
           Rein formell lässt sich das relativ einfach beantworten: Weil die gesetzliche Grundlage dazu fehlt. Schon mehrfach wurde das Anliegen auf Bundesebene
@@ -71,7 +71,7 @@
         </div>
       </div>
 
-      <button class="accordion py-4 font-light dark:text-white text-xl">Ist E-Collecting irgendwo auf der Welt schon im Einsatz?</button>
+      <button class="accordion py-4 font-bold dark:text-white text-xl">Ist E-Collecting irgendwo auf der Welt schon im Einsatz?</button>
       <div class="panel">
         <p class="font-light dark:text-white text-xl">
           Ja. In verschiedenen Ländern steht E-Collecting bereits im Einsatz. Ein prominentes Beispiel ist die Europäische Bürgerinitiative (EBI) der
@@ -80,7 +80,7 @@
         </p>
       </div>
 
-      <button class="accordion py-4 dark:text-white font-light text-xl">Ist E-Collecting sicher?</button>
+      <button class="accordion py-4 dark:text-white font-bold text-xl">Ist E-Collecting sicher?</button>
       <div class="panel">
         <p class="font-light dark:text-white text-xl">
           Grundsätzlich ja. Genauso wie beim bestehenden politischen System in Unterschriften-, Wahl- und Abstimmungssachen oder anderen digitalen Prozessen wie
@@ -91,7 +91,7 @@
         </p>
       </div>
 
-      <button class="accordion py-4 dark:text-white font-light text-xl">Gibt es Kritik an E-Collecting?</button>
+      <button class="accordion py-4 dark:text-white font-bold text-xl">Gibt es Kritik an E-Collecting?</button>
       <div class="panel">
         <p class="font-light dark:text-white text-xl">
           Ja. Zwei Gegenargumente tauchen wiederholt auf. Einerseits betrifft das die Sicherheit. Die Bevölkerung hat Zweifel an der Sicherheit eines
@@ -107,7 +107,7 @@
         </p>
       </div>
 
-      <button class="accordion py-4 dark:text-white font-light text-xl">Wird das Sammeln handschriftlicher Unterschriften durch E-Collecting abgelöst?</button>
+      <button class="accordion py-4 dark:text-white font-bold text-xl">Wird das Sammeln handschriftlicher Unterschriften durch E-Collecting abgelöst?</button>
       <div class="panel">
         <p class="font-light dark:text-white text-xl">
           Nein. Die Einführung von E-Collecting hat keine Abschaffung des herkömmlichen, handschriftlichen Sammeln von Unterschriften zur Folge. Die beiden
@@ -134,6 +134,25 @@
 hat sich über die Jahre eine Gemeinschaft geformt, welche
 sich gemeinsam auf verschiedensten Ebenen dafür einsetzt."
     >
+      <div class="grid md:justify-items-end justify-items-center">
+        <div class="flex text-left flex-row relative w-40 gap-2">
+          <a href="https://www.facebook.com/projectowlly" class="hover:opacity-80 transition" target="__blank">
+            <ng-container *ngIf="theme$ | async as theme">
+              <img [src]="'./assets/socialmedia/facebook-' + theme + '.svg'" loading="lazy" aria-label="hidden" width="100%" />
+            </ng-container>
+          </a>
+          <a href="https://twitter.com/projectowlly" class="hover:opacity-80 transition" target="__blank">
+            <ng-container *ngIf="theme$ | async as theme">
+              <img [src]="'./assets/socialmedia/twitter-' + theme + '.svg'" loading="lazy" aria-label="hidden" width="100%" />
+            </ng-container>
+          </a>
+          <a href="https://www.instagram.com/projectowlly/" class="hover:opacity-80 transition" target="__blank">
+            <ng-container *ngIf="theme$ | async as theme">
+              <img [src]="'./assets/socialmedia/instagram-' + theme + '.svg'" loading="lazy" aria-label="hidden" width="100%" />
+            </ng-container>
+          </a>
+        </div>
+      </div>
     </app-textblock>
 
     <div class="pt-12 p-6">
@@ -173,7 +192,9 @@ sich gemeinsam auf verschiedensten Ebenen dafür einsetzt."
       text="Rund um E-Collecting gibt es natürlich noch viel mehr wissenswertes. Finde in den anderen Rubriken auf unserer Webseite mehr Infos zu unserer Mission und den Fortschritt in der Schweiz oder tauche noch tiefer in die Materie ein.
 
 	Über unseren Newsletter bleibst du immer up-to-date bzgl. der aktuellen E-Collecting-Entwicklungen (Anmeldung hier/ganz unten auf der Webseite)."
-    ></app-textblock>
+    >
+      <app-button>Newsletter anmelden</app-button>
+    </app-textblock>
 
     <div class="pt-12 p-6">
       <app-card
