@@ -54,7 +54,7 @@
     "@angular/cli": "~11.1.4",
     "@angular/compiler-cli": "~11.1.2",
     "@capacitor/cli": "^2.1.0",
-    "@gammastream/scully-plugin-sitemap": "^1.0.5",
+    "@gammastream/scully-plugin-sitemap": "^1.0.7",
     "@ngneat/tailwind": "^6.0.3",
     "@notiz/scully-plugin-fouc": "^0.2.0",
     "@scullyio/scully-plugin-flash-prevention": "^1.0.0",
