@@ -18,13 +18,13 @@
 <app-dashboard-header></app-dashboard-header>
 
 <div class="grid lg:grid-cols-12 grid-cols-1">
-<div class="sticky top-0 lg:col-span-2 hidden lg:block bg-gray-200" id="sidebar">
+<div class="sticky top-0 lg:col-span-2 hidden lg:block bg-gray-200 dark:bg-gray-900" id="sidebar">
     <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-primary)">Campaigner</span></h2>
     <div class="grid grid-cols-6 text-lg font-light p-6 hover:text-gray-500 transition">
         <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
         <a class="col-span-5" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
     </div>
-    <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
+    <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-black text-lg">
         <a href="/logout">Abmelden</a>
     </div>
 </div>
@@ -36,7 +36,7 @@
     <select
           name="ebene"
           id="level"
-          class=" col-span-1 lg:col-span-12 text-2xl lg:text-4xl font-bold w-full p-3 mt-2 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 bg-gray-100"
+          class=" col-span-1 lg:col-span-12 text-2xl lg:text-4xl font-bold w-full p-3 mt-2 focus:outline-none dark:text-white focus:bg-gray-200 dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 bg-gray-100"
         >
           <option value="rente" class="text-2xl font-light">Renteninitiative</option>
           <option value="velo" class="text-2xl font-light">Velorouten Initiative</option>
@@ -85,43 +85,43 @@
                 <div class="table-cell">Total Unterschriften</div>
                 <div class="table-cell "></div>
               </div>
-              <div class="table-row p-4 hover:bg-gray-200 transition-all">
+              <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                 <div class="table-cell py-4">Schaffhausen</div>
                 <div class="table-cell py-4">1209</div>
                 <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
               </div>
 
-              <div class="table-row p-4 hover:bg-gray-200 transition-all">
+              <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                 <div class="table-cell py-4">Schaffhausen</div>
                 <div class="table-cell py-4">1209</div>
                 <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
               </div>
 
-              <div class="table-row p-4 hover:bg-gray-200 transition-all">
+              <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                 <div class="table-cell py-4">Schaffhausen</div>
                 <div class="table-cell py-4">1209</div>
                 <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
               </div>
 
-              <div class="table-row p-4 hover:bg-gray-200 transition-all">
+              <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                 <div class="table-cell py-4">Schaffhausen</div>
                 <div class="table-cell py-4">1209</div>
                 <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
               </div>
 
-              <div class="table-row p-4 hover:bg-gray-200 transition-all">
+              <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                 <div class="table-cell py-4">Schaffhausen</div>
                 <div class="table-cell py-4">1209</div>
                 <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
               </div>
 
-              <div class="table-row p-4 hover:bg-gray-200 transition-all">
+              <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                 <div class="table-cell py-4">Schaffhausen</div>
                 <div class="table-cell py-4">1209</div>
                 <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
               </div>
 
-              <div class="table-row p-4 hover:bg-gray-200 transition-all">
+              <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                 <div class="table-cell py-4">Schaffhausen</div>
                 <div class="table-cell py-4">1209</div>
                 <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
