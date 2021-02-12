@@ -14,6 +14,7 @@ import {faSpinner, faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
+  styleUrls: ['./pdf.component.scss'],
 })
 export class PdfComponent implements OnInit {
 
