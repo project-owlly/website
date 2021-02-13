@@ -10,10 +10,12 @@
       type="button"
       name="scroll-Left"
       class="border-none outline-none z-20 text-black rounded-full bg-yellow-400 h-12 w-12 flex items-center justify-center"
+      aria-label="scroll news left"
     >
       <fa-icon [icon]="faAngleLeft"></fa-icon>
     </button>
     <button
+      aria-label="scroll news right"
       (click)="scrollRight()"
       type="button"
       name="scroll-Right"
