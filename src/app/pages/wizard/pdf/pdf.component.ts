@@ -10,7 +10,7 @@ import {Pdf} from '../../../types/pdf';
 import {OidcService} from 'src/app/services/oidc.service';
 import {PdfService} from 'src/app/services/pdf.service';
 import {AuthService} from 'src/app/services/auth.service';
-import {faSpinner, faCheckCircle} from '@fortawesome/free-solid-svg-icons';
+import {faSpinner, faCheckCircle, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
@@ -20,6 +20,10 @@ export class PdfComponent implements OnInit {
 
   faSpinner=faSpinner;
   faCheckCircle=faCheckCircle;
+  faInfoCircle = faInfoCircle;
+  faFileSignature = faFileSignature;
+  faFileAlt = faFileAlt;
+  faFileExport = faFileExport;
 
   readonly userData$: Observable<EidUserData | undefined> = this.route.queryParams.pipe(
     first(),
