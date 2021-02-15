@@ -5,7 +5,7 @@ import {Pdf} from '../../../types/pdf';
 import {PdfService} from '../../../services/pdf.service';
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
-import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
+import {faCheckCircle, faQrcode, faFileAlt} from '@fortawesome/free-solid-svg-icons';
 
 const {Browser, Device, App, Toast, Clipboard} = Plugins;
 
@@ -18,6 +18,8 @@ export class SignComponent {
   isMobile: boolean = window?.matchMedia('(any-pointer:coarse)').matches;
   public deviceInfo: DeviceInfo | undefined;
   faCheckCircle = faCheckCircle;
+  faQrcode = faQrcode;
+  faFileAlt = faFileAlt;
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
