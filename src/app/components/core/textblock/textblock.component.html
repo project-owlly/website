@@ -8,7 +8,9 @@
   <div class="py-2">
     <h2 class="text-xl font-bold dark:text-white">{{ subtitle }}</h2>
   </div>
-  <a href="{{ link }}" name="{{ buttonText }}">
-    <app-button *ngIf="showButton" type="submit" [small]="true">{{ buttonText }}</app-button></a
-  >
+  <ng-container *ngIf="link">
+    <a href="{{ link }}" name="{{ buttonText }}">
+      <app-button *ngIf="showButton" type="submit" [small]="true">{{ buttonText }}</app-button></a
+    >
+  </ng-container>
 </div>
