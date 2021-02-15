@@ -7,6 +7,8 @@ import {OidcAuth} from '../../../types/oidc';
 
 import {OidcService} from '../../../services/oidc.service';
 
+import {faSpinner} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-signature',
   templateUrl: './signature.component.html',
@@ -16,6 +18,9 @@ export class SignatureComponent {
   @Input() owllyId: string | undefined;
 
   inProgress = false;
+  clicked = false;
+
+  faSpinner = faSpinner;
 
   constructor(private oidcService: OidcService) {}
 
@@ -23,7 +28,8 @@ export class SignatureComponent {
     if (!this.owllyId) {
       return;
     }
-
+    this.clicked = true;
+    //document.getElementsByTagName('app-button')[0].classList.add('animate-pulse');
     this.oidcService
       .getAuthUrl(this.owllyId)
       .pipe(
