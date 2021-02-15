@@ -4,8 +4,8 @@
   <div class="container mx-auto max-w-screen-xl">
     <app-textblock title="Fast am Ziel!" text="Nutze für die nächsten Schritte deine elektronische Identität (eID+):" type="owlly"> </app-textblock>
 
-    <!-- <ng-container *ngIf="pdf$ | async as pdf">
-      <ng-container *ngIf="pdf.url !== undefined"> -->
+    <ng-container *ngIf="pdf$ | async as pdf">
+      <ng-container *ngIf="pdf.url !== undefined">
         <div class="mx-auto max-w-screen-xl px-6 pt-6">
           <p class="font-bold text-2xl dark:text-white py-6">Signiere und reiche deinen Unterschriftbogen ein - so einfach geht's:</p>
          
@@ -120,8 +120,8 @@
               <app-button (click)="navigate()" class="py-10">Weiter</app-button>
           </div>
         </div>
-      <!-- </ng-container>
-    </ng-container> -->
+      </ng-container>
+    </ng-container>
   </div>
   <!--<p>platform: {{ deviceInfo?.platform }} operatingSystem: {{ deviceInfo?.operatingSystem }}</p>-->
 </main>
