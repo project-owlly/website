@@ -1,8 +1,0 @@
-ng generate @scullyio/init:post --name="20201203_Unsere-Demokratie-ist-veraltet-Es-ist-Zeit-für-eine-Revolution"
-
-
-PS C:\Users\sandro\Data\Projekte\owlly\website> ng generate @scullyio/init:post --name="20201203_Unsere-Demokratie-ist-veraltet-Es-ist-Zeit-für-eine-Revolution"
-? What's the target folder for this post? src/news
-    ✅️ Blog ./src/news/20201203-unsere-demokratie-ist-veraltet-es-ist-zeit-für-eine-revolution.md file created
-CREATE src/news/20201203-unsere-demokratie-ist-veraltet-es-ist-zeit-für-eine-revolution.md (211 bytes)        
-PS C:\Users\sandro\Data\Projekte\owlly\website> 
