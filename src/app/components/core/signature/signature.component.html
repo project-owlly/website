@@ -1,1 +1,6 @@
-<app-button [disable]="!owllyId || inProgress" (click)="sign()"> Jetzt loslegen </app-button>
+<app-button [disable]="!owllyId || inProgress" (click)="sign()"> Jetzt loslegen
+
+    <div *ngIf="clicked" class="animate-spin inline-block">
+        <p><fa-icon [icon]="faSpinner"></fa-icon></p>
+      </div>
+</app-button>

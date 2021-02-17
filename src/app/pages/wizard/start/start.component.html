@@ -7,17 +7,33 @@
         <h2 class="text-xl px-6 pb-6 dark:text-white text-center font-bold">
           Mit owlly einfach digital einen persönlichen Unterschriftenbogen erstellen und sicher einreichen.
         </h2>
+        <a target="_blank" href="https://owlly.ch/o/{{ owlly.data.slug }}" class="text-black dark:text-white hover:text-opacity-80 transition">
         <h1 class="text-4xl sm:text-6xl dark:text-white md:text-8xl font-bold text-center">{{ owlly.data.title }}</h1>
+        </a>
       </app-textblock>
-      <div class="mx-auto max-w-screen-xl px-6">
+      <!-- <div class="mx-auto max-w-screen-xl px-6">
         <a target="_blank" href="https://owlly.ch/o/{{ owlly.data.slug }}" class="flex font-light dark:text-white" name="mehr erfahren">
           <p class="underline text-center">mehr erfahren</p>
-          <!--<fa-icon [icon]="faInfoCircle"></fa-icon>-->
+          
         </a>
-      </div>
+      </div> -->
       <div class="mx-auto max-w-screen-xl px-6 pt-6 text-center md:text-left">
-        <p class="font-bold text-2xl dark:text-white">Das sind die nächsten Schritte</p>
-        <div class="table table-auto">
+        <p class="font-bold text-2xl dark:text-white pb-4">Das sind die nächsten Schritte</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2">
+          <div class="text-center shadow-xl rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
+            <fa-icon [icon]="faFileAlt" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+            <p class="dark:text-white text-lg md:pt-4 font-light">1. Bogen mit der eID+ erstellen</p>
+          </div>
+          <div class="text-center shadow-xl rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
+            <fa-icon [icon]="faFileSignature" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+            <p class="dark:text-white text-lg md:pt-4 font-light">2. Bogen mit der eID+ signieren</p>
+          </div>
+          <div class="text-center shadow-xl rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
+            <fa-icon [icon]="faFileExport" class="md:text-6xl text-2xl  text-black dark:text-white"></fa-icon>
+            <p class="dark:text-white text-lg md:pt-4 font-light">3. Bogen digital an owlly übermitteln</p>
+          </div>
+        </div>
+        <!-- <div class="table table-auto">
           <div class="table-row-group">
             <div class="table-row">
               <div class="table-cell align-middle px-2">
@@ -44,7 +60,7 @@
               <div class="table-cell text-left dark:text-white font-light text-2xl">Bogen digital an owlly übermitteln</div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <app-signature [owllyId]="owlly.id" class="py-10 text-center"></app-signature>
@@ -61,14 +77,12 @@
               Zur Identifizierung deiner Identität nutzen wir eine elektronsiche Identität, welche staatlich verifiziert und verwaltet wird. Wir verwenden deine
               Daten (Name, Vorname, Geburtsdatum, Wohnadresse) nur zur Generierung deines persönlichen Unterschriftbogens.
             </h2>
-          </app-textblock>
-
-          <div class="mx-auto max-w-screen-xl px-6">
             <a target="_blank" href="https://owlly.ch/policy" class="" name="mehr informationen">
-              <p class="dark:text-white underline">Mehr Informationen &nbsp;</p>
+              <p class="dark:text-white underline font-light text-md text-right">Mehr Informationen</p>
               <!--<fa-icon [icon]="faInfoCircle"></fa-icon>-->
             </a>
-          </div>
+          </app-textblock>
+
         </div>
       </div>
     </ng-container>
