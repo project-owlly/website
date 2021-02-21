@@ -11,27 +11,27 @@
          
           <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
 
-            <div *ngIf="isMobile" class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div *ngIf="isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
                 <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
                 <p class="dark:text-white text-lg md:pt-2 font-light">1. Button "importieren" drücken</p>
               </div>
-            <div *ngIf="!isMobile" class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div *ngIf="!isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
                 <img src="../../../../assets/eidIcons/scan.png" width="40%" alt="" />
                 <p class="dark:text-white text-lg md:pt-2 font-light">1. QR Code mit deiner eID+ scannen</p>
               </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
                 <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
                 <p class="dark:text-white text-lg md:pt-2 font-light">2. "Meine Dokumente" auswählen</p>
               </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
                 <img src="../../../../assets/eidIcons/sign.png" width="40%" alt="" />
                 <p class="dark:text-white text-lg md:pt-2 font-light">3. Dokument signieren</p>
               </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
                 <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
                 <p class="dark:text-white text-lg md:pt-2 font-light">4. Dokument exportieren</p>
               </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
                 <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
                 <p class="dark:text-white text-lg md:pt-2 font-light">5. Dokument per E-Mail an <span class="text-secondary font-bold"><a target="__blank" href="mailto:briefkasten@owlly.ch">briefkasten@owlly.ch</a></span> senden</p>
               </div>
@@ -116,7 +116,7 @@
             <app-button (click)="import()" class="py-6">Importieren </app-button>
           </div>
 
-          <div class="flex justify-end">
+          <div class="flex justify-end" *ngIf="(isMobile && importIsClicked) || !isMobile">
               <app-button (click)="navigate()" class="py-10">Weiter</app-button>
           </div>
         </div>
