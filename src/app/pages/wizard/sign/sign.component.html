@@ -46,7 +46,9 @@
               </div>
               <div class="flex flex-row">
                 <div class="text-center flex-auto">
-                  <app-button href="{{ pdf.url }}" class="py-10">Download</app-button>
+                  <a href="{{ pdf.url }}">
+                    <app-button type="submit" class="py-10">Download</app-button>
+                  </a>
                 </div>
               </div>
             </ng-container>
