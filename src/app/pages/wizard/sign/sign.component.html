@@ -10,78 +10,33 @@
           <p class="font-bold text-2xl dark:text-white py-6">Signiere und reiche deinen Unterschriftbogen ein - so einfach geht's:</p>
 
           <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
-            <div *ngIf="isMobile" class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div *ngIf="isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
               <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
               <p class="dark:text-white text-lg md:pt-2 font-light">1. Button "importieren" drücken</p>
             </div>
-            <div *ngIf="!isMobile" class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div *ngIf="!isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
               <img src="../../../../assets/eidIcons/scan.png" width="40%" alt="" />
               <p class="dark:text-white text-lg md:pt-2 font-light">1. QR Code mit deiner eID+ scannen</p>
             </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
               <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
               <p class="dark:text-white text-lg md:pt-2 font-light">2. "Meine Dokumente" auswählen</p>
             </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
               <img src="../../../../assets/eidIcons/sign.png" width="40%" alt="" />
               <p class="dark:text-white text-lg md:pt-2 font-light">3. Dokument signieren</p>
             </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
               <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
               <p class="dark:text-white text-lg md:pt-2 font-light">4. Dokument exportieren</p>
             </div>
-            <div class="text-center shadow-xl rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
               <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
               <p class="dark:text-white text-lg md:pt-2 font-light">
                 5. Dokument per E-Mail an
                 <span class="text-secondary font-bold"><a target="_blank" href="mailto:briefkasten@owlly.ch">briefkasten@owlly.ch</a></span> senden
               </p>
             </div>
-
-            <!-- <div *ngIf="isMobile" class="col-span-1">
-              <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
-            </div>
-            <div *ngIf="isMobile" class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">"Button "importieren" drücken</p>
-            </div>
-
-            <div *ngIf="!isMobile" class="col-span-1">
-              <img src="../../../../assets/eidIcons/scan.png" width="30px" alt="" />
-            </div>
-            <div *ngIf="!isMobile" class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">"QR Code mit deiner eID+ scannen</p>
-            </div>
-
-            <div class="col-span-1">
-              <img src="../../../../assets/eidIcons/export.png" width="30px" alt="" />
-            </div>
-            <div class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">"Meine Dokumente" auswählen</p>
-            </div>
-            <div class="col-span-1">
-              <img src="../../../../assets/eidIcons/sign.png" width="30px" alt="" />
-            </div>
-            <div class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">Dokument signieren</p>
-            </div>
-            <div class="col-span-1 text-left">
-              <img src="../../../../assets/eidIcons/exportieren.png" width="30px" alt="" />
-            </div>
-            <div class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">Dokument exportieren</p>
-            </div>
-            <div class="col-span-1 text-left">
-              <img src="../../../../assets/eidIcons/exportieren.png" width="30px" alt="" />
-            </div>
-            <div class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">Dokument per E-Mail an "briefkasten@owlly.ch" senden</p>
-            </div>
-            <div class="col-span-1 text-left">
-              
-            </div>
-            <div class="col-span-5 text-left">
-              <p class="font-light text-2xl dark:text-white">(Einen Betreff oder eine Nachricht in der E-Mail braucht es nicht)</p>
-            </div> -->
           </div>
 
           <div>
@@ -91,26 +46,12 @@
               </div>
               <div class="flex flex-row">
                 <div class="text-center flex-auto">
-                  <a href="{{ pdf.url }}" name="download file">
-                    <app-button type="submit" class="py-10">Download</app-button>
-                  </a>
+                  <app-button href="{{ pdf.url }}" class="py-10">Download</app-button>
                 </div>
               </div>
             </ng-container>
           </div>
         </div>
-
-        <!--ON DESKTOP-->
-        <!-- <ng-container *ngIf="!isMobile">
-          <div class="text-center items-center mx-auto py-4">
-            <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
-          </div>
-          <div class="flex flex-row">
-            <div class="text-center flex-auto">
-              <app-button href="{{ pdf.url }}" class="py-10">Download</app-button>
-            </div>
-          </div>
-        </ng-container> -->
 
         <!--ON MOBILE-->
         <div class="mx-auto max-w-screen-xl px-6 text-center md:text-left py-6">
@@ -121,14 +62,13 @@
             <app-button (click)="import()" class="py-6">Importieren </app-button>
           </div>
 
-          <div class="flex justify-end">
+          <div class="flex justify-end" *ngIf="(isMobile && importIsClicked) || !isMobile">
             <app-button (click)="navigate()" class="py-10">Weiter</app-button>
           </div>
         </div>
       </ng-container>
     </ng-container>
   </div>
-  <!--<p>platform: {{ deviceInfo?.platform }} operatingSystem: {{ deviceInfo?.operatingSystem }}</p>-->
 </main>
 
 <app-footer></app-footer>

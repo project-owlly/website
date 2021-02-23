@@ -20,6 +20,9 @@ export class SignComponent {
   faCheckCircle = faCheckCircle;
   faQrcode = faQrcode;
   faFileAlt = faFileAlt;
+
+  importIsClicked: boolean = false;
+
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
@@ -39,6 +42,8 @@ export class SignComponent {
   }
 
   import() {
+    this.importIsClicked = true;
+
     this.pdf$
       .pipe(
         filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
