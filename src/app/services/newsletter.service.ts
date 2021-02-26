@@ -17,4 +17,22 @@ export class NewsletterService {
   createFeedbackRecord(record: any): Promise<firebase.firestore.DocumentReference<any>> {
     return this.firestore.collection('feedback').add(record);
   }
+  getNewsletterSubscriptions() {
+    return this.firestore.collection('newsletter');
+  }
+
+  sendNewsletter(recipients: any[]) {
+    for (let mail of recipients) {
+      /*  this.firestore.collection('sendEmail').add({
+        to: mail.email,
+        template: {
+          data: {
+            firstName: mail.vorname,
+          },
+          name: 'newsletterWelcomeMail',
+        },
+      });*/
+      console.log(mail.email);
+    }
+  }
 }

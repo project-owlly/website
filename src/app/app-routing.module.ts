@@ -193,6 +193,18 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'owlly-admin',
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'newsletter',
+        loadChildren: () => import('./pages/owlly-admin/newsletter/newsletter.module').then((m) => m.NewsletterModule),
+        canActivate: [AuthGuard],
+      },
+    ],
+  },
+
   //Fallback
   {
     path: '**',
