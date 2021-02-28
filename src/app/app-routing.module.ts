@@ -163,6 +163,11 @@ const routes: Routes = [
         loadChildren: () => import('./pages/admin/profile/profile.module').then((m) => m.ProfileModule),
         canActivate: [AuthGuard],
       },
+      {
+        path: 'certify/:name',
+        loadChildren: () => import('./pages/admin/certify-detail/certify-detail.module').then((m) => m.CertifyDetailModule),
+        canActivate: [AuthGuard],
+      },
 
       // MUNICIPALITIES PAGES
       {
