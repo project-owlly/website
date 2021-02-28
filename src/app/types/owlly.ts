@@ -14,6 +14,7 @@ export interface OwllyData {
   level: 'canton' | 'national'; //delete one of those
 
   ruleValue: 'sh';
+  status: boolean;
 
   author: string; // liste von komitee mitgliedern gemäss Volksbegehren
   campaignerEmail: string; //

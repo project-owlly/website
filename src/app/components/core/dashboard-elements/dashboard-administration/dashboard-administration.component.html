@@ -1,51 +1,48 @@
-<div class="fixed bg-gray-200 dark:bg-black transition-all z-40" id="mobileNav" >
-    <div class="absolute top-6 right-6">
-   <a (click)="closeMobileNav()" class="text-2xl"><fa-icon [icon]=faTimesCircle></fa-icon></a>
-    </div>
+<div class="fixed bg-gray-200 dark:bg-black transition-all z-40" id="mobileNav">
+  <div class="absolute top-6 right-6">
+    <a (click)="closeMobileNav()" class="text-2xl"><fa-icon [icon]="faTimesCircle"></fa-icon></a>
+  </div>
 
-    <div class="text-center">
-        <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-secondary)">Verwaltung</span></h2>
-    </div>
-    <div class="grid justify-items-auto grid-cols-3 text-lg font-light p-6 text-center">
-            <fa-icon [icon]="faUserCircle" class=""></fa-icon>
-            <a class="col-span-2" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
-        </div>
-        <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-            <a href="/logout">Abmelden</a>
-        </div>
+  <div class="text-center">
+    <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-secondary)">Verwaltung</span></h2>
+  </div>
+  <div class="grid justify-items-auto grid-cols-3 text-lg font-light p-6 text-center">
+    <fa-icon [icon]="faUserCircle" class=""></fa-icon>
+    <a class="col-span-2" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
+  </div>
+  <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
+    <a>
+      <app-button (click)="logout()"> Abmelden </app-button>
+    </a>
+  </div>
 </div>
 
 <app-dashboard-header></app-dashboard-header>
 
 <div class="grid lg:grid-cols-12 grid-cols-1">
-<div class="sticky top-0 lg:col-span-2 hidden lg:block bg-gray-200" id="sidebar">
-  
+  <div class="sticky top-0 lg:col-span-2 hidden lg:block bg-gray-200" id="sidebar">
     <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-secondary)">Verwaltung</span></h2>
     <div class="grid grid-cols-6 text-lg font-light p-6 hover:text-gray-500 transition">
-        <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
-        <a class="col-span-5" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
+      <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
+      <a class="col-span-5" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
     </div>
     <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-        <a href="/logout">Abmelden</a>
+      <a>
+        <app-button (click)="logout()"> Abmelden </app-button>
+      </a>
     </div>
-</div>
+  </div>
 
-<div class="lg:col-span-10 p-6 col-start-1 lg:col-start-3 row-start-1 transition-all">
-
-
-<!-- Dashboard Verwaltung -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 dashboard">
-        <app-dashboard-card
-        type="owlly"
-        title="Kampagnen Inbox"
-        class="lg:col-span-12"
-        >
+  <div class="lg:col-span-10 p-6 col-start-1 lg:col-start-3 row-start-1 transition-all">
+    <!-- Dashboard Verwaltung -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 dashboard">
+      <app-dashboard-card type="owlly" title="Kampagnen Inbox" class="lg:col-span-12">
         <div class="flex flex-wrap h-full w-full gap-6">
-            <app-dashboard-admin-card
-            [new]="true"
-            name="Renteninitiative"
-            link="/"
-            ></app-dashboard-admin-card>
+          <app-dashboard-admin-card *ngFor="let owlly of owllyList" [new]="true" name="{{ owlly?.title }}" link="/o/{{ owlly?.slug }}">
+          </app-dashboard-admin-card>
+
+          <!--
+         
             <app-dashboard-admin-card
             [new]="true"
             name="eID Referendum"
@@ -71,36 +68,39 @@
             <app-dashboard-admin-card
             name="Begrenzungsinitiative"
             link="/"
-            ></app-dashboard-admin-card>
+            ></app-dashboard-admin-card>-->
         </div>
-        </app-dashboard-card>
+      </app-dashboard-card>
 
-        <app-dashboard-card
+      <app-dashboard-card
         type="owlly"
         title="Unterschriften verifizieren"
         class="lg:col-span-3"
         [showButton]="true"
         buttonText="Starten"
         link="/create"
-        [gradient]=true
-        >
-        </app-dashboard-card>
+        [gradient]="true"
+      >
+      </app-dashboard-card>
 
-        <app-dashboard-card
-        type="owlly"
-        title="Offene Kampagnen"
-        class="lg:col-span-9"
-        >
-
+      <app-dashboard-card type="owlly" title="Offene Kampagnen" class="lg:col-span-9">
         <div class="customScroll overflow-y-auto h-96">
-            <div class="table w-full h-full font-light text-xl">
-                <div class="table-row-group">
-                  <div class="table-row font-bold">
-                    <div class="table-cell">Titel</div>
-                    <div class="table-cell">Verifizierte Unterschriften</div>
-                    <div class="table-cell "></div>
-                  </div>
-    
+          <div class="table w-full h-full font-light text-xl">
+            <div class="table-row-group">
+              <div class="table-row font-bold">
+                <div class="table-cell">Titel</div>
+                <div class="table-cell">Verifizierte Unterschriften</div>
+                <div class="table-cell"></div>
+              </div>
+
+              <div *ngFor="let owlly of owllyList" class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                <div class="table-cell py-4">{{ owlly?.title }}</div>
+                <div class="table-cell py-4">{{ owlly?.owllyCertified }}</div>
+                <div class="table-cell py-4 text-right pr-6">
+                  <a href="#"><app-button [small]="true">Mehr</app-button></a>
+                </div>
+              </div>
+              <!--
                   <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
                     <div class="table-cell py-4">Pflegeinitiative</div>
                     <div class="table-cell py-4">8274</div>
@@ -136,15 +136,12 @@
                     <div class="table-cell py-4">9283</div>
                     <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
                   </div>
-    
-
-                </div>
-              </div>
+                  -->
             </div>
-
-        </app-dashboard-card>
-</div>
-
-</div>
-<!-- <app-footer class="lg:col-span-12 col-span-1"></app-footer> -->
+          </div>
+        </div>
+      </app-dashboard-card>
+    </div>
+  </div>
+  <!-- <app-footer class="lg:col-span-12 col-span-1"></app-footer> -->
 </div>

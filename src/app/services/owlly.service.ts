@@ -17,6 +17,10 @@ export class OwllyService {
     this.collection = this.firestore.collection<OwllyData>('owlly');
   }
 
+  getOwlly() {
+    return this.firestore.collection<OwllyData>('owlly');
+  }
+
   callOwlly(): Observable<void> {
     const callable = this.functions.httpsCallable('owlly');
 
@@ -24,7 +28,7 @@ export class OwllyService {
     // const obs = callable({ coolMsg: this.myInput });
     const observer = callable({});
     observer.subscribe((data) => {
-      console.log('OWLLY ' + JSON.stringify(data));
+      //console.log('OWLLY ' + JSON.stringify(data));
     });
     return observer;
 

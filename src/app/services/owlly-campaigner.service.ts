@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
+import {Owlly, OwllyData} from '../types/owlly';
 
 @Injectable({
   providedIn: 'root',
@@ -7,8 +8,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
 export class OwllyCampaignerService {
   constructor(private firestore: AngularFirestore) {}
 
-  getOwlly() {
-    //this.firestore.collectionGroup('8200').get().  ('owlly'). .ref.where("status", "==", true).get().then((querySnapshot=>{
-    //}))
+  getAllActiveOwlly() {
+    return this.firestore.collection<OwllyData>('owlly').ref.where('status', '==', 'true').get();
   }
 }

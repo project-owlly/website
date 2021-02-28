@@ -4,6 +4,10 @@ import {faUserCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
 import * as Chart from 'chart.js';
 
+import {AuthService} from 'src/app/services/auth.service';
+import {OwllyService} from 'src/app/services/owlly.service';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-dashboard-campaigner',
   templateUrl: './dashboard-campaigner.component.html',
@@ -12,40 +16,40 @@ import * as Chart from 'chart.js';
 export class DashboardCampaignerComponent implements OnInit {
   faUserCircle = faUserCircle;
 
-  faTimesCircle=faTimesCircle;
+  faTimesCircle = faTimesCircle;
   canvas: any;
   ctx: any;
 
-
-  constructor() { }
+  constructor(private owllyService: OwllyService, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.canvas = document.getElementById('signatures');
     this.ctx = this.canvas.getContext('2d');
     const myChart = new Chart(this.ctx, {
       type: 'line',
-      data:{
-        labels: [1,2,3,4,5,6],
-        datasets: [{
-          data: [10,20,14,57,76,87],
-          label: 'Renteninitiative',
-          borderColor: '#00a6d4',
-          backgroundColor: '#00a6d4',
-          fill: false,
-        },
-        {
-          data: [5,13,69,65,30,44],
-          label: 'Velo-Initiative',
-          borderColor: '#81bc4f',
-          backgroundColor: '#81bc4f',
-          fill: false,
-        },
-      ]
+      data: {
+        labels: [1, 2, 3, 4, 5, 6],
+        datasets: [
+          {
+            data: [10, 20, 14, 57, 76, 87],
+            label: 'Renteninitiative',
+            borderColor: '#00a6d4',
+            backgroundColor: '#00a6d4',
+            fill: false,
+          },
+          {
+            data: [5, 13, 69, 65, 30, 44],
+            label: 'Velo-Initiative',
+            borderColor: '#81bc4f',
+            backgroundColor: '#81bc4f',
+            fill: false,
+          },
+        ],
       },
       options: {
-        tooltips: {enabled: false}
-      }
-  });
+        tooltips: {enabled: false},
+      },
+    });
   }
 
   openMobileNav() {
@@ -53,5 +57,10 @@ export class DashboardCampaignerComponent implements OnInit {
   }
   closeMobileNav() {
     document.getElementById('mobileNav')!.style.transform = 'translateX(-100%)';
+  }
+
+  async logout() {
+    await this.authService.logout();
+    this.router.navigateByUrl('logout');
   }
 }
