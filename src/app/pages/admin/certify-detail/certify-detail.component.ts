@@ -1,15 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {faUserCircle, faTimesCircle, faCheckCircle, faEdit} from '@fortawesome/free-solid-svg-icons';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-certify-detail',
   templateUrl: './certify-detail.component.html',
   styleUrls: ['./certify-detail.component.scss'],
 })
 export class CertifyDetailComponent implements OnInit {
-  constructor() {}
+  constructor(private activatedroute: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedroute.paramMap.subscribe((params) => {
+      this.initiativeSelect = params.get('name');
+    });
+  }
+
+  initiativeSelect: String | null = '';
 
   faUserCircle = faUserCircle;
   faTimesCircle=faTimesCircle;

@@ -164,7 +164,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       {
-        path: 'certify',
+        path: 'certify/:name',
         loadChildren: () => import('./pages/admin/certify-detail/certify-detail.module').then((m) => m.CertifyDetailModule),
         canActivate: [AuthGuard],
       },

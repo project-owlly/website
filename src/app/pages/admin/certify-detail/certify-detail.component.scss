@@ -10,6 +10,10 @@
     height: 100%;
     transform: translateX(-100%);
 }
+
+.customScroll {
+    height: calc(90vh - 100px);
+}
 .customScroll::-webkit-scrollbar {
     width: 10px;
     transition: 1s;

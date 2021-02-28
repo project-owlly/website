@@ -35,8 +35,8 @@
 
 <!-- Dashboard Verwaltung -->
 <div class="container">
-    <h1 class="font-bold text-2xl">Pflegeinitiative</h1>
-
+    <h1 class="font-bold text-2xl">{{initiativeSelect}}</h1>
+    <div class="customScroll overflow-y-auto">
     <table id="myTable" class="w-full table-auto mt-12">
         <tr class="text-left">
          <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
@@ -101,7 +101,180 @@
             
          </td>
         </tr>
-       
+        <tr>
+            <td>Anne</td>
+            <td>Schuhmacher</td>
+            <td> Quellenstrasse 78
+                2572 Mörigen</td>
+            <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+          <tr>
+              <td>Leon</td>
+              <td>Weisz</td>
+              <td>Breitenstrasse 63
+                4056 Basel</td>
+              <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+          <tr>
+              <td>Ralf</td>
+              <td>Mayer</td>
+              <td>Rasenstrasse 109
+                3652 Hilterfingen</td>
+              <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+          <tr>
+            <td>Phillipp</td>
+            <td>Moeller</td>
+            <td>Via Muraccio 40
+                3111 Tägertschi</td>
+            <td class="text-right">
+                  <select
+                  name="begehren"
+                  id="begehren"
+                  class="p-2 focus:outline-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:bg-gray-200 bg-gray-100"
+                  value=""
+                  >
+                <option>Mehrfach unterschrieben</option>
+                <option >Kein Schweizer Bürgerrecht</option>
+                <option>Nicht in der Gemeinde wohnhaft / weggezogen</option>
+                <option>Unter umfassender Beistandschaft</option>
+                <option>Unterschrift fehlt</option>
+                <option selected>Bei Einreichung der Liste bei der Gemeinde gestrichen</option>
+                <option>Nicht identifizierbar</option>
+                <option>Von gleicher Hand</option>
+                <option>Nicht im Stimmregister</option>
+                <option>Minderjährig</option>
+                <option>Gestorben</option>
+                <option>Nicht stimmberechtigt</option>
+                <option>Falsches Geburtsdatum</option>
+                </select>
+              
+           </td>
+          </tr>
+          <tr>
+              <td>Daniel</td>
+              <td>Jager</td>
+              <td>Lungolago 149
+                2710 Tavannes</td>
+              <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+          <tr>
+            <td>Lukas</td>
+            <td>Pabst</td>
+            <td>Piazza Rezzonico 30
+                1443 Villars-sous-Champvent</td>
+            <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+          <tr>
+              <td>Anke </td>
+              <td>Nacht</td>
+              <td>Forrenböhlstrasse 2
+                4447 Känerkinden</td>
+              <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+          <tr>
+            <td>Anke </td>
+            <td>Eggers</td>
+            <td>Kammelenbergstrasse 32
+                6173 Flühli</td>
+            <td class="text-right">
+                  <select
+                  name="begehren"
+                  id="begehren"
+                  class="p-2 focus:outline-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:bg-gray-200 bg-gray-100"
+                  value=""
+                  >
+                <option>Mehrfach unterschrieben</option>
+                <option >Kein Schweizer Bürgerrecht</option>
+                <option>Nicht in der Gemeinde wohnhaft / weggezogen</option>
+                <option>Unter umfassender Beistandschaft</option>
+                <option>Unterschrift fehlt</option>
+                <option >Bei Einreichung der Liste bei der Gemeinde gestrichen</option>
+                <option>Nicht identifizierbar</option>
+                <option>Von gleicher Hand</option>
+                <option>Nicht im Stimmregister</option>
+                <option>Minderjährig</option>
+                <option>Gestorben</option>
+                <option selected>Nicht stimmberechtigt</option>
+                <option>Falsches Geburtsdatum</option>
+                </select>
+              
+           </td>
+          </tr>
+          <tr>
+              <td>Maria </td>
+              <td>Müller</td>
+              <td>Herrenberg 97
+                1624 Progens</td>
+              <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+          <tr>
+            <td>Philipp  </td>
+            <td>Klein</td>
+            <td>Forrenböhlstrasse 67
+                3413 Kaltacker</td>
+            <td class="text-right">
+                  <select
+                  name="begehren"
+                  id="begehren"
+                  class="p-2 focus:outline-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:bg-gray-200 bg-gray-100"
+                  value=""
+                  >
+                <option>Mehrfach unterschrieben</option>
+                <option >Kein Schweizer Bürgerrecht</option>
+                <option>Nicht in der Gemeinde wohnhaft / weggezogen</option>
+                <option>Unter umfassender Beistandschaft</option>
+                <option selected>Unterschrift fehlt</option>
+                <option >Bei Einreichung der Liste bei der Gemeinde gestrichen</option>
+                <option>Nicht identifizierbar</option>
+                <option>Von gleicher Hand</option>
+                <option>Nicht im Stimmregister</option>
+                <option>Minderjährig</option>
+                <option>Gestorben</option>
+                <option >Nicht stimmberechtigt</option>
+                <option>Falsches Geburtsdatum</option>
+                </select>
+              
+           </td>
+          </tr>
+          <tr>
+            <td>Jan   </td>
+            <td>Freytag</td>
+            <td>Erlenweg 86
+                3020 Bern</td>
+            <td class="text-right">
+                  <select
+                  name="begehren"
+                  id="begehren"
+                  class="p-2 focus:outline-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:bg-gray-200 bg-gray-100"
+                  value=""
+                  >
+                <option>Mehrfach unterschrieben</option>
+                <option >Kein Schweizer Bürgerrecht</option>
+                <option>Nicht in der Gemeinde wohnhaft / weggezogen</option>
+                <option>Unter umfassender Beistandschaft</option>
+                <option >Unterschrift fehlt</option>
+                <option >Bei Einreichung der Liste bei der Gemeinde gestrichen</option>
+                <option>Nicht identifizierbar</option>
+                <option>Von gleicher Hand</option>
+                <option>Nicht im Stimmregister</option>
+                <option selected>Minderjährig</option>
+                <option>Gestorben</option>
+                <option >Nicht stimmberechtigt</option>
+                <option>Falsches Geburtsdatum</option>
+                </select>
+              
+           </td>
+          </tr>
+          <tr>
+              <td>Dirk </td>
+              <td>Schweitzer</td>
+              <td>Pfaffacherweg 134
+                2556 Scheuren</td>
+              <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+          </tr>
+
       </table>
+    </div>
 
 </div>
