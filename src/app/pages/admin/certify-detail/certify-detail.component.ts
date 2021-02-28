@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {faUserCircle, faTimesCircle, faCheckCircle, faEdit} from '@fortawesome/free-solid-svg-icons';
+import {faUserCircle, faTimesCircle, faCheckCircle, faEdit, faAngleLeft} from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common'
 @Component({
   selector: 'app-certify-detail',
   templateUrl: './certify-detail.component.html',
   styleUrls: ['./certify-detail.component.scss'],
 })
 export class CertifyDetailComponent implements OnInit {
-  constructor(private activatedroute: ActivatedRoute) {}
+  constructor(private activatedroute: ActivatedRoute, private location: Location) {}
 
   ngOnInit(): void {
     this.activatedroute.paramMap.subscribe((params) => {
@@ -21,6 +22,11 @@ export class CertifyDetailComponent implements OnInit {
   faTimesCircle=faTimesCircle;
   faCheckCircle = faCheckCircle;
   faEdit = faEdit;
+  faAngleLeft = faAngleLeft;
+
+  back(): void {
+    this.location.back()
+  }
 
   openMobileNav() {
     document.getElementById('mobileNav')!.style.transform = 'translateX(0%)';
