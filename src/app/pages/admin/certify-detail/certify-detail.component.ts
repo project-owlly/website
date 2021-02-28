@@ -35,7 +35,7 @@ export class CertifyDetailComponent implements OnInit {
       //console.log( owlly.data);
       this.initiativeSelect = owlly.data.title;
 
-      this.owllyAdminService.getCertifyList().forEach((snapshot) => {
+      this.owllyAdminService.getCertifyList(owlly.id).forEach((snapshot) => {
         console.log(snapshot.docs);
 
         snapshot.forEach((element) => {
