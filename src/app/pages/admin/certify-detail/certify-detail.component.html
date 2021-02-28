@@ -1,1 +1,107 @@
-<p>certify-detail works!</p>
+<div class="fixed bg-gray-200 dark:bg-black transition-all z-40" id="mobileNav" >
+    <div class="absolute top-6 right-6">
+   <a (click)="closeMobileNav()" class="text-2xl"><fa-icon [icon]=faTimesCircle></fa-icon></a>
+    </div>
+
+    <div class="text-center">
+        <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-secondary)">Verwaltung</span></h2>
+    </div>
+    <div class="grid justify-items-auto grid-cols-3 text-lg font-light p-6 text-center">
+            <fa-icon [icon]="faUserCircle" class=""></fa-icon>
+            <a class="col-span-2" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
+        </div>
+        <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
+            <a href="/logout">Abmelden</a>
+        </div>
+</div>
+
+<app-dashboard-header></app-dashboard-header>
+
+<div class="grid lg:grid-cols-12 grid-cols-1">
+<div class="sticky top-0 lg:col-span-2 hidden lg:block bg-gray-200" id="sidebar">
+  
+    <h2 class="font-bold text-2xl p-6">Dashboard <span style="color: var(--color-secondary)">Verwaltung</span></h2>
+    <div class="grid grid-cols-6 text-lg font-light p-6 hover:text-gray-500 transition">
+        <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
+        <a class="col-span-5" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
+    </div>
+    <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
+        <a href="/logout">Abmelden</a>
+    </div>
+</div>
+
+<div class="lg:col-span-10 p-6 col-start-1 lg:col-start-3 row-start-1 transition-all">
+
+
+<!-- Dashboard Verwaltung -->
+<div class="container">
+    <h1 class="font-bold text-2xl">Pflegeinitiative</h1>
+
+    <table id="myTable" class="w-full table-auto mt-12">
+        <tr class="text-left">
+         <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+          <th (click)="sortTable(0)" style="cursor:pointer">Vorname</th>
+          <th (click)="sortTable(1)" style="cursor:pointer">Name</th>
+          <th (click)="sortTable(2)" style="cursor:pointer">Adresse</th>
+          <th (click)="sortTable(3)" class="text-right" style="cursor:pointer">Status</th>
+        </tr>
+        <tr>
+          <td>Jessika</td>
+          <td>Freud</td>
+          <td>Via Schliffras 77 8547 Gachnang</td>
+          <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+        </tr>
+        <tr>
+            <td>Bernd</td>
+            <td>Bader</td>
+            <td>Piazza Indipendenza 30
+                    3923 Törbel</td>
+            <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+        </tr>
+        <tr>
+            <td>Christian</td>
+            <td>Keller</td>
+            <td>Bahnhofstrasse 97
+                    5728 Gontenschwil</td>
+            <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+        </tr>
+        
+        <tr>
+            <td>Klaudia</td>
+            <td>Grunwald</td>
+            <td>Casut 30
+                    1942 Levron</td>
+            <td class="text-right"><fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon></td>
+        </tr>
+        <tr>
+          <td>Franziska</td>
+          <td>Maurer</td>
+          <td>Via Vigizzi 5 3857 Unterbach</td>
+          <td class="text-right">
+                <select
+                name="begehren"
+                id="begehren"
+                class="p-2 focus:outline-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:bg-gray-200 bg-gray-100"
+                value=""
+                >
+              <option>Mehrfach unterschrieben</option>
+              <option selected>Kein Schweizer Bürgerrecht</option>
+              <option>Nicht in der Gemeinde wohnhaft / weggezogen</option>
+              <option>Unter umfassender Beistandschaft</option>
+              <option>Unterschrift fehlt</option>
+              <option>Bei Einreichung der Liste bei der Gemeinde gestrichen</option>
+              <option>Nicht identifizierbar</option>
+              <option>Von gleicher Hand</option>
+              <option>Nicht im Stimmregister</option>
+              <option>Minderjährig</option>
+              <option>Gestorben</option>
+              <option>Nicht stimmberechtigt</option>
+              <option>Falsches Geburtsdatum</option>
+              </select>
+            
+         </td>
+        </tr>
+       
+      </table>
+
+</div>
