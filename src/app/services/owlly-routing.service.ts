@@ -35,6 +35,15 @@ export class OwllyRoutingService {
       first()
     );
   }
+  owllyBySlugName(paramMap: Observable<ParamMap>): Observable<Owlly | undefined> {
+    return paramMap.pipe(
+      first(),
+      map((snapshop: ParamMap) => snapshop.get('name')),
+      filter((slug: string | null) => slug !== null && slug !== ''),
+      switchMap((slug: string | null) => this.owllyService.owllyBySlug(slug as string)),
+      first()
+    );
+  }
 
   getOwllyBySlugForScully(paramMap: Observable<ParamMap>): Observable<Owlly | undefined> {
     return forkJoin([

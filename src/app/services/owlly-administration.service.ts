@@ -12,4 +12,8 @@ export class OwllyAdministrationService {
   getAllActiveOwlly() {
     return this.owllyService.getOwlly().ref.where('active', '==', true).get();
   }
+
+  getCertifyList() {
+    return this.firestore.collectionGroup('8200').get();
+  }
 }

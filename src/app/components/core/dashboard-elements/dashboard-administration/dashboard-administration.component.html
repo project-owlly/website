@@ -78,7 +78,7 @@
         class="lg:col-span-3"
         [showButton]="true"
         buttonText="Starten"
-        link="/create"
+        link="/admin/certify-request"
         [gradient]="true"
       >
       </app-dashboard-card>
@@ -97,7 +97,7 @@
                 <div class="table-cell py-4">{{ owlly?.title }}</div>
                 <div class="table-cell py-4">{{ owlly?.owllyCertified }}</div>
                 <div class="table-cell py-4 text-right pr-6">
-                  <a href="#"><app-button [small]="true">Mehr</app-button></a>
+                  <a href="/admin/certify/{{ owlly?.slug }}"><app-button [small]="true">Mehr</app-button></a>
                 </div>
               </div>
               <!--
