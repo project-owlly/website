@@ -48,28 +48,28 @@
             ></app-dashboard-admin-card>
             <app-dashboard-admin-card
             [new]="true"
-            name="Initiative 1"
+            name="eID Referendum"
             link="/"
             ></app-dashboard-admin-card>
             <app-dashboard-admin-card
             [new]="true"
-            name="Initiative 2323"
+            name="Mikrosteuerinitiative"
             link="/"
             ></app-dashboard-admin-card>
             <app-dashboard-admin-card
-            name="Initiative 343455433"
+            name="Gletscherinitiative"
             link="/"
             ></app-dashboard-admin-card>
             <app-dashboard-admin-card
-            name="Renteninitiative"
+            name="Zeitumstellungsinitiative"
             link="/"
             ></app-dashboard-admin-card>
             <app-dashboard-admin-card
-            name="Renteninitiative"
+            name="Kostenbremse-Initiative"
             link="/"
             ></app-dashboard-admin-card>
             <app-dashboard-admin-card
-            name="Renteninitiative"
+            name="Begrenzungsinitiative"
             link="/"
             ></app-dashboard-admin-card>
         </div>
@@ -82,6 +82,7 @@
         [showButton]="true"
         buttonText="Starten"
         link="/create"
+        [gradient]=true
         >
         </app-dashboard-card>
 
@@ -89,10 +90,58 @@
         type="owlly"
         title="Offene Kampagnen"
         class="lg:col-span-9"
-        [showButton]="true"
-        buttonText="Starten"
-        link="/create"
         >
+
+        <div class="customScroll overflow-y-auto h-96">
+            <div class="table w-full h-full font-light text-xl">
+                <div class="table-row-group">
+                  <div class="table-row font-bold">
+                    <div class="table-cell">Titel</div>
+                    <div class="table-cell">Verifizierte Unterschriften</div>
+                    <div class="table-cell "></div>
+                  </div>
+    
+                  <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                    <div class="table-cell py-4">Pflegeinitiative</div>
+                    <div class="table-cell py-4">8274</div>
+                    <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
+                  </div>
+
+                  <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                    <div class="table-cell py-4">Fair-Preis-Initiative</div>
+                    <div class="table-cell py-4">1939</div>
+                    <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
+                  </div>
+
+                  <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                    <div class="table-cell py-4">Transparenz-Initiative</div>
+                    <div class="table-cell py-4">34274</div>
+                    <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
+                  </div>
+
+                  <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                    <div class="table-cell py-4">Zersiedelungs-Initiative</div>
+                    <div class="table-cell py-4">59874</div>
+                    <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
+                  </div>
+
+                  <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                    <div class="table-cell py-4">Velo-Initiative</div>
+                    <div class="table-cell py-4">8373</div>
+                    <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
+                  </div>
+    
+                  <div class="table-row p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                    <div class="table-cell py-4">Selbstbestimmungsinitiative</div>
+                    <div class="table-cell py-4">9283</div>
+                    <div class="table-cell py-4 text-right pr-6"> <a href="#"><app-button [small]="true">Mehr</app-button></a></div>
+                  </div>
+    
+
+                </div>
+              </div>
+            </div>
+
         </app-dashboard-card>
 </div>
 
