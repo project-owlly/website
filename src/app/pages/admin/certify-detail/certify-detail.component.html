@@ -14,12 +14,17 @@
       <p>Benutzerprofil bearbeiten</p>
     </a>
   </div>
-  <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-    <!--<a href="/logout">Abmelden</a>-->
-    <a>
-      <app-button (click)="logout()"> Abmelden </app-button>
-    </a>
-  </div>
+  <a (click)="logout()" href="/logout">
+    <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-bold text-lg">
+      Abmelden
+      <!--<a href="/logout">Abmelden</a>-->
+      <!--
+
+      <a>
+        <app-button (click)="logout()"> Abmelden </app-button>
+      </a>
+    --></div>
+  </a>
 </div>
 
 <app-dashboard-header></app-dashboard-header>
@@ -33,13 +38,9 @@
         <p>Benutzerprofil bearbeiten</p>
       </a>
     </div>
-    <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-      <!-- <a href="/logout">Abmelden</a>-->
-
-      <a>
-        <app-button (click)="logout()"> Abmelden </app-button>
-      </a>
-    </div>
+    <a (click)="logout()" href="/logout">
+      <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-bold text-lg">Abmelden</div>
+    </a>
   </div>
 
   <div class="lg:col-span-10 p-6 col-start-1 lg:col-start-3 row-start-1 transition-all">
@@ -66,7 +67,7 @@
             <th>Geburtsdatum</th>
             <th>Erstellt</th>
             <th>Importiert</th>
-            <th (click)="sortTable(3)" class="text-right" style="cursor: pointer">Status</th>
+            <th (click)="sortTable(3)" style="cursor: pointer">Status</th>
             <th>OTS</th>
             <th>PDF</th>
           </tr>
@@ -78,11 +79,11 @@
             <td>{{ item.data.birth_date }}</td>
             <td>{{ item.generated.seconds * 1000 | date: 'dd.MM.yyyy HH:mm' }}</td>
             <td>{{ item.imported.seconds * 1000 | date: 'dd.MM.yyyy HH:mm' }}</td>
-            <td *ngIf="item.certified" class="text-right">
+            <td *ngIf="item.certified">
               <fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon>
             </td>
 
-            <td *ngIf="!item.certified" class="text-right">
+            <td *ngIf="!item.certified">
               <select
                 name="begehren"
                 id="begehren"

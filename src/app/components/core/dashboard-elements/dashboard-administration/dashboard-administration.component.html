@@ -10,11 +10,14 @@
     <fa-icon [icon]="faUserCircle" class=""></fa-icon>
     <a class="col-span-2" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
   </div>
-  <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-    <a>
-      <app-button (click)="logout()"> Abmelden </app-button>
-    </a>
-  </div>
+  <a (click)="logout()" href="/logout">
+    <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-bold text-lg">
+      Abmelden
+      <!-- <a>
+        <app-button (click)="logout()"> Abmelden </app-button>
+      </a>-->
+    </div>
+  </a>
 </div>
 
 <app-dashboard-header></app-dashboard-header>
@@ -26,11 +29,16 @@
       <fa-icon [icon]="faUserCircle" class="col-span-1"></fa-icon>
       <a class="col-span-5" href="/admin/profile"><p>Benutzerprofil bearbeiten</p></a>
     </div>
-    <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-      <a>
-        <app-button (click)="logout()"> Abmelden </app-button>
-      </a>
-    </div>
+    <a href="/logout" (click)="logout()" href="">
+      <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-bold text-lg">
+        Abmelden
+        <!--
+         <a>
+           <app-button (click)="logout()"> Abmelden </app-button>
+          </a>
+        -->
+      </div>
+    </a>
   </div>
 
   <div class="lg:col-span-10 p-6 col-start-1 lg:col-start-3 row-start-1 transition-all">
