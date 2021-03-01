@@ -15,7 +15,10 @@
     </a>
   </div>
   <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-    <a href="/logout">Abmelden</a>
+    <!--<a href="/logout">Abmelden</a>-->
+    <a>
+      <app-button (click)="logout()"> Abmelden </app-button>
+    </a>
   </div>
 </div>
 
@@ -31,7 +34,11 @@
       </a>
     </div>
     <div class="absolute w-full py-2 bottom-0 bg-yellow-400 text-center font-light text-lg">
-      <a href="/logout">Abmelden</a>
+      <!-- <a href="/logout">Abmelden</a>-->
+
+      <a>
+        <app-button (click)="logout()"> Abmelden </app-button>
+      </a>
     </div>
   </div>
 
@@ -57,7 +64,11 @@
             <th (click)="sortTable(1)" style="cursor: pointer">Name</th>
             <th (click)="sortTable(2)" style="cursor: pointer">Adresse</th>
             <th>Geburtsdatum</th>
+            <th>Erstellt</th>
+            <th>Importiert</th>
             <th (click)="sortTable(3)" class="text-right" style="cursor: pointer">Status</th>
+            <th>OTS</th>
+            <th>PDF</th>
           </tr>
 
           <tr *ngFor="let item of certifyList">
@@ -65,6 +76,8 @@
             <td>{{ item.data.family_name }}</td>
             <td>{{ item.data.street_address }}, {{ item.data.postal_code }} {{ item.data.locality }}</td>
             <td>{{ item.data.birth_date }}</td>
+            <td>{{ item.generated.seconds * 1000 | date: 'dd.MM.yyyy HH:mm' }}</td>
+            <td>{{ item.imported.seconds * 1000 | date: 'dd.MM.yyyy HH:mm' }}</td>
             <td *ngIf="item.certified" class="text-right">
               <fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon>
             </td>
@@ -76,14 +89,15 @@
                 class="p-2 focus:outline-none dark:focus:bg-gray-600 dark:text-black dark:bg-gray-700 focus:bg-gray-200 bg-gray-100"
                 value=""
               >
+                <option class="text-green-500">Bescheinigen</option>
                 <option>Mehrfach unterschrieben</option>
                 <option selected>Kein Schweizer Bürgerrecht</option>
                 <option>Nicht in der Gemeinde wohnhaft / weggezogen</option>
                 <option>Unter umfassender Beistandschaft</option>
-                <option>Unterschrift fehlt</option>
+                <!--<option>Unterschrift fehlt</option>-->
                 <option>Bei Einreichung der Liste bei der Gemeinde gestrichen</option>
                 <option>Nicht identifizierbar</option>
-                <option>Von gleicher Hand</option>
+                <!--<option>Von gleicher Hand</option>-->
                 <option>Nicht im Stimmregister</option>
                 <option>Minderjährig</option>
                 <option>Gestorben</option>
@@ -91,24 +105,34 @@
                 <option>Falsches Geburtsdatum</option>
               </select>
             </td>
-          </tr>
-          <!--
-          <tr>
-            <td>Jessika</td>
-            <td>Freud</td>
-            <td>Via Schliffras 77, 8547 Gachnang</td>
-            <td>02.11.1990</td>
-            <td class="text-right">
-              <fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon>
+            <td>
+              <a href="{{ item.opentimestamps }}">
+                <fa-icon [icon]="faLink" class="text-2xl text-green-500"></fa-icon>
+              </a>
+            </td>
+            <td>
+              <a href="{{ item.firebasestorage }}">
+                <fa-icon [icon]="faFilePdf" class="text-2xl text-black-500"></fa-icon>
+              </a>
             </td>
           </tr>
-          <tr>
-            <td>Bernd</td>
-            <td>Bader</td>
-            <td>Piazza Indipendenza 30,
-              3923 Törbel</td>
-            <td>02.11.1990</td>
-            <td class="text-right">
+          <!--
+            <tr>
+              <td>Jessika</td>
+              <td>Freud</td>
+              <td>Via Schliffras 77, 8547 Gachnang</td>
+              <td>02.11.1990</td>
+              <td class="text-right">
+                <fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon>
+              </td>
+            </tr>
+            <tr>
+              <td>Bernd</td>
+              <td>Bader</td>
+              <td>Piazza Indipendenza 30,
+                3923 Törbel</td>
+                <td>02.11.1990</td>
+                <td class="text-right">
               <fa-icon [icon]="faCheckCircle" class="text-2xl text-green-500"></fa-icon>
             </td>
           </tr>

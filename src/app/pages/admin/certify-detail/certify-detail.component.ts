@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {faUserCircle, faTimesCircle, faCheckCircle, faEdit, faAngleLeft} from '@fortawesome/free-solid-svg-icons';
-import {ActivatedRoute} from '@angular/router';
+import {faUserCircle, faTimesCircle, faCheckCircle, faEdit, faAngleLeft, faLink, faFilePdf} from '@fortawesome/free-solid-svg-icons';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {first} from 'rxjs/operators';
 import {OwllyRoutingService} from 'src/app/services/owlly-routing.service';
 import {OwllyAdministrationService} from 'src/app/services/owlly-administration.service';
+import {AuthService} from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-certify-detail',
@@ -20,13 +21,17 @@ export class CertifyDetailComponent implements OnInit {
   faUserCircle = faUserCircle;
   faTimesCircle = faTimesCircle;
   faCheckCircle = faCheckCircle;
+  faLink = faLink;
   faEdit = faEdit;
+  faFilePdf = faFilePdf;
   faAngleLeft = faAngleLeft;
 
   constructor(
     private owllyAdminService: OwllyAdministrationService,
     private activatedRoute: ActivatedRoute,
     private location: Location,
+    private authService: AuthService,
+    private router: Router,
     private owllyRoutingService: OwllyRoutingService
   ) {}
 
@@ -46,7 +51,10 @@ export class CertifyDetailComponent implements OnInit {
       });
     });
   }
-
+  logout() {
+    this.authService.logout();
+    this.router.navigateByUrl('logout');
+  }
   initOwlly() {
     return this.owllyRoutingService.owllyBySlugName(this.activatedRoute.paramMap);
   }

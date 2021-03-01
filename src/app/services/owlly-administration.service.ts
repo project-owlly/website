@@ -14,6 +14,6 @@ export class OwllyAdministrationService {
   }
 
   getCertifyList(owllyId: string) {
-    return this.firestore.collection('owlly').doc(owllyId).collection('8200').get();
+    return this.firestore.collection('owlly').doc(owllyId).collection('postalcode').doc('8200').collection('files').get();
   }
 }
