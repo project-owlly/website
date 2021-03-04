@@ -24,30 +24,29 @@
         </p>
       </div>
       <div class="w-full md:w-1/3 md:flex md:flex-col text-center md:text-right md:justify-between py-2 mt-8 md:mt-0">
-        <div class="grid md:justify-items-end justify-items-center">
-          <div class="flex text-right flex-row relative w-40 gap-2">
-            <a href="https://github.com/project-owlly" class="hover:opacity-80 transition" target="__blank">
-              <ng-container *ngIf="theme$ | async as theme">
-                <img [src]="'./assets/socialmedia/github-' + theme + '.svg'" loading="lazy" aria-label="hidden" width="100%" />
-              </ng-container>
-            </a>
-            <a href="https://www.facebook.com/projectowlly" class="hover:opacity-80 transition" target="__blank">
-              <ng-container *ngIf="theme$ | async as theme">
-                <img [src]="'./assets/socialmedia/facebook-' + theme + '.svg'" loading="lazy" aria-label="hidden" width="100%" />
-              </ng-container>
-            </a>
-            <a href="https://twitter.com/projectowlly" class="hover:opacity-80 transition" target="__blank">
-              <ng-container *ngIf="theme$ | async as theme">
-                <img [src]="'./assets/socialmedia/twitter-' + theme + '.svg'" loading="lazy" aria-label="hidden" width="100%" />
-              </ng-container>
-            </a>
-            <a href="https://www.instagram.com/projectowlly/" class="hover:opacity-80 transition" target="__blank">
-              <ng-container *ngIf="theme$ | async as theme">
-                <img [src]="'./assets/socialmedia/instagram-' + theme + '.svg'" loading="lazy" aria-label="hidden" width="100%" />
-              </ng-container>
-            </a>
-          </div>
+        <div class="flex gap-2 md:justify-end justify-center">
+          <a href="https://github.com/project-owlly" class="text-center hover:opacity-80 transition" target="_blank">
+            <ng-container *ngIf="theme$ | async as theme">
+              <img [src]="'./assets/socialmedia/github-' + theme + '.svg'" loading="lazy" aria-label="hidden" class="w-8" />
+            </ng-container>
+          </a>
+          <a href="https://www.facebook.com/projectowlly" class="hover:opacity-80 transition" target="_blank">
+            <ng-container *ngIf="theme$ | async as theme">
+              <img [src]="'./assets/socialmedia/facebook-' + theme + '.svg'" loading="lazy" aria-label="hidden" class="w-8" />
+            </ng-container>
+          </a>
+          <a href="https://twitter.com/projectowlly" class="hover:opacity-80 transition" target="_blank">
+            <ng-container *ngIf="theme$ | async as theme">
+              <img [src]="'./assets/socialmedia/twitter-' + theme + '.svg'" loading="lazy" aria-label="hidden" class="w-8" />
+            </ng-container>
+          </a>
+          <a href="https://www.instagram.com/projectowlly/" class="hover:opacity-80 transition" target="_blank">
+            <ng-container *ngIf="theme$ | async as theme">
+              <img [src]="'./assets/socialmedia/instagram-' + theme + '.svg'" loading="lazy" aria-label="hidden" class="w-8" />
+            </ng-container>
+          </a>
         </div>
+
         <a href="/impressum" name="impressum" class="text-tertiary no-underline hover:underline">Impressum</a>
         <p>© 2021 project owlly</p>
       </div>
