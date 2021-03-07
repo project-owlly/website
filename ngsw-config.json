@@ -12,7 +12,7 @@
     {
       "name": "assets",
       "installMode": "lazy",
-      "updateMode": "lazy",
+      "updateMode": "prefetch",
       "resources": {
         "files": ["/assets/**", "/*.(eot|svg|cur|jpeg|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"]
       }
