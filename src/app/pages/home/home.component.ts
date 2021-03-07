@@ -7,6 +7,7 @@ import {ModalService} from '../../services/modal.service';
 import {FeedbackComponent as FeedbackComponentType} from '../../modals/feedback/feedback.component';
 import {NewsletterComponent as NewsletterComponentType} from '../../modals/newsletter/newsletter.component';
 import {OwllyService} from '../../services/owlly.service';
+import {LayoutModule, BreakpointObserver} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -21,10 +22,16 @@ export class HomeComponent implements OnInit {
   owllyData = <any>[];
 
   constructor(
+    private breakpointObserver: BreakpointObserver,
+    //private layoutModule: LayoutModule,
     private scully: ScullyRoutesService,
     private modalService: ModalService<FeedbackComponentType | NewsletterComponentType>,
     private owllyService: OwllyService
-  ) {}
+  ) {
+    console.log('(min-width: 640px): ' + this.breakpointObserver.isMatched('(min-width: 640px)'));
+    console.log('(min-width: 768px): ' + this.breakpointObserver.isMatched('(min-width: 768px)'));
+    console.log('(min-width: 1024px): ' + this.breakpointObserver.isMatched('(min-width: 1024px)'));
+  }
 
   ngOnInit(): void {
     this.owlly$ = this.scully.available$.pipe(map((routes: any) => routes.filter((route: any) => route.route.startsWith('/o/'))));
