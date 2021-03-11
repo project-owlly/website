@@ -12,11 +12,11 @@ import {EidDataRequest, EidUserData} from '../types/eid';
 export class OidcService {
   constructor(private functions: AngularFireFunctions) {}
 
-  getAuthUrl(owllyId: string): Observable<OidcAuth | undefined> {
+  getAuthUrl(owllyId: string, configuration: string): Observable<OidcAuth | undefined> {
     const callable: (data: OidcAuthDataRequest) => Observable<OidcAuth | undefined> = this.functions.httpsCallable<OidcAuthDataRequest, OidcAuth | undefined>(
       'OIDAuthUrl'
     );
-    return callable({owllyId} as OidcAuthDataRequest);
+    return callable({owllyId, configuration} as OidcAuthDataRequest);
   }
 
   getAuthUrlLogin(): Observable<OidcAuth | undefined> {
@@ -32,10 +32,10 @@ export class OidcService {
     return callable({authorization_code: token} as EidDataRequest);
   }
 
-  getEidUserData(token: string): Observable<EidUserData | undefined> {
+  getEidUserData(token: string, configuration: string): Observable<EidUserData | undefined> {
     const callable: (data: EidDataRequest) => Observable<EidUserData | undefined> = this.functions.httpsCallable<EidDataRequest, EidUserData | undefined>(
       'eidData'
     );
-    return callable({authorization_code: token} as EidDataRequest);
+    return callable({authorization_code: token, configuration: configuration} as EidDataRequest);
   }
 }

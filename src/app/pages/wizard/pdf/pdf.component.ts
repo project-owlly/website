@@ -17,9 +17,8 @@ import {faSpinner, faCheckCircle, faInfoCircle, faFileSignature, faFileAlt, faFi
   styleUrls: ['./pdf.component.scss'],
 })
 export class PdfComponent implements OnInit {
-
-  faSpinner=faSpinner;
-  faCheckCircle=faCheckCircle;
+  faSpinner = faSpinner;
+  faCheckCircle = faCheckCircle;
   faInfoCircle = faInfoCircle;
   faFileSignature = faFileSignature;
   faFileAlt = faFileAlt;
@@ -29,7 +28,7 @@ export class PdfComponent implements OnInit {
     first(),
     filter((params: Params) => params.code !== null),
     map((params: Params) => params.code),
-    switchMap((code: string) => this.oidcService.getEidUserData(code)),
+    switchMap((code: string) => this.oidcService.getEidUserData(code, 'sh')),
     first(),
     shareReplay({bufferSize: 1, refCount: true})
   );

@@ -1,5 +1,6 @@
 export interface OidcAuthDataRequest {
   owllyId: string;
+  configuration: string;
 }
 
 // tslint:disable-next-line:no-empty-interface
