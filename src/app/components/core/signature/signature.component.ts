@@ -16,6 +16,7 @@ import {faSpinner} from '@fortawesome/free-solid-svg-icons';
 })
 export class SignatureComponent {
   @Input() owllyId: string | undefined;
+  @Input() configuration: string | undefined;
 
   inProgress = false;
   clicked = false;
@@ -28,10 +29,13 @@ export class SignatureComponent {
     if (!this.owllyId) {
       return;
     }
+    if (!this.configuration) {
+      return;
+    }
     this.clicked = true;
     //document.getElementsByTagName('app-button')[0].classList.add('animate-pulse');
     this.oidcService
-      .getAuthUrl(this.owllyId)
+      .getAuthUrl(this.owllyId, this.configuration)
       .pipe(
         tap(() => (this.inProgress = true)),
         filter((auth: OidcAuth | undefined) => auth !== undefined),

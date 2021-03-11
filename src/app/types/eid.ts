@@ -1,5 +1,6 @@
 export interface EidDataRequest {
   authorization_code: string;
+  configuration: string;
 }
 
 // TODO: Sandro add type definition details
