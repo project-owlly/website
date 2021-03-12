@@ -26,6 +26,7 @@ export class EidGuard implements CanActivate {
         queryParams: {
           code,
           ...(oidcState.owllyId && {owllyId: oidcState.owllyId}),
+          ...(oidcState.configuration && {configuration: oidcState.configuration}),
         },
       });
     } catch (err) {

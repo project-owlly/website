@@ -15,4 +15,5 @@ export interface OidcAuth {
 export interface OidcState {
   type: 'login' | 'wizard';
   owllyId?: string;
+  configuration: 'sh' | 'zg';
 }
