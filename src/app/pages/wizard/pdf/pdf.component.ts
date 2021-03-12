@@ -33,6 +33,7 @@ export class PdfComponent implements OnInit {
 
     map((params: Params) => params),
     switchMap((params: Params) => this.oidcService.getEidUserData(params.code, params.configuration)),
+
     first(),
     shareReplay({bufferSize: 1, refCount: true})
   );
