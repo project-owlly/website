@@ -2,7 +2,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 
 import {combineLatest, Observable, of} from 'rxjs';
-import {catchError, filter, first, map, shareReplay, switchMap} from 'rxjs/operators';
+import {catchError, filter, first, map, mergeMap, shareReplay, switchMap} from 'rxjs/operators';
 
 import {EidUserData} from '../../../types/eid';
 import {Pdf} from '../../../types/pdf';
@@ -27,8 +27,13 @@ export class PdfComponent implements OnInit {
   readonly userData$: Observable<EidUserData | undefined> = this.route.queryParams.pipe(
     first(),
     filter((params: Params) => params.code !== null),
-    map((params: Params) => params.code),
-    switchMap((code: string) => this.oidcService.getEidUserData(code, 'sh')),
+    //map((params: Params) => params.code),
+    //map((params: Params) => params.configuration),
+    //switchMap((code: string) => this.oidcService.getEidUserData(code, 'zg')),
+
+    map((params: Params) => params),
+    switchMap((params: Params) => this.oidcService.getEidUserData(params.code, params.configuration)),
+
     first(),
     shareReplay({bufferSize: 1, refCount: true})
   );
