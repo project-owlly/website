@@ -112,31 +112,21 @@ export class PdfComponent implements OnInit {
         filter((configuration: string | undefined) => configuration !== undefined),
         first()
       ),
-    }).subscribe(async (values: any) => {
+    }).subscribe((values: any) => {
       //console.log(JSON.stringify(values));
       //todo pass configuration
 
-      await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
+      /*await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
         console.log(err.message);
+      });*/
+
+      this.router.createUrlTree(['/sign'], {
+        relativeTo: this.route,
+        queryParams: {
+          owllyId: values.owllyId,
+          configuration: values.configuration,
+        },
       });
-
-      /*await this.router
-        .navigate(['/sign'], {
-          queryParams: {
-            owllyId: values.owllyId,
-            configuration: values.configuration,
-          },
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
-        */
-
-      /*
-          await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
-            console.log(err.message);
-          });
-        */
     });
 
     /*   
