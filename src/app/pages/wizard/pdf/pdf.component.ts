@@ -116,7 +116,7 @@ export class PdfComponent implements OnInit {
       //console.log(JSON.stringify(values));
       //todo pass configuration
 
-      return this.router.createUrlTree(['/sign'], {
+      await this.router.createUrlTree(['/sign'], {
         queryParams: {
           owllyId: values.owllyId,
           configuration: values.configuration,
