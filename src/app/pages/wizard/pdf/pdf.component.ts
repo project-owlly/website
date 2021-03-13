@@ -113,12 +113,14 @@ export class PdfComponent implements OnInit {
         first()
       ),
     }).subscribe(async (values: any) => {
-      await this.router.navigate(['/sign', [values.owllyId, values.configuration]]).catch((err) => {
+      console.log(JSON.stringify(values));
+      await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
         console.log(err.message);
       });
     });
 
-    /*    this.owllyId$
+    /*   
+    this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
         first()
