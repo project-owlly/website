@@ -125,7 +125,7 @@ export class PdfComponent implements OnInit {
           owllyId: values.owllyId,
           configuration: values.configuration,
         },
-        relativeTo: this.route,
+        //relativeTo: this.route,
       });
       console.log('navigation done.');
     });
