@@ -128,10 +128,10 @@ export class PdfComponent implements OnInit {
         });
 
       /*
-      await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
-        console.log(err.message);
-      });
-      */
+          await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
+            console.log(err.message);
+          });
+        */
     });
 
     /*   
