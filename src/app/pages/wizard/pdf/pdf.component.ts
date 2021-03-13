@@ -35,7 +35,10 @@ export class PdfComponent implements OnInit {
     switchMap((params: Params) => this.oidcService.getEidUserData(params.code, params.configuration)),
 
     first(),
-    shareReplay({bufferSize: 1, refCount: true})
+    shareReplay({
+      bufferSize: 1,
+      refCount: true,
+    })
   );
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
@@ -44,14 +47,20 @@ export class PdfComponent implements OnInit {
     first(),
     filter((params: Params) => params.owllyId !== null),
     map((params: Params) => params.owllyId),
-    shareReplay({bufferSize: 1, refCount: true})
+    shareReplay({
+      bufferSize: 1,
+      refCount: true,
+    })
   );
 
   readonly configuration$: Observable<string | undefined> = this.route.queryParams.pipe(
     first(),
     filter((params: Params) => params.configuration !== null),
     map((params: Params) => params.configuration),
-    shareReplay({bufferSize: 1, refCount: true})
+    shareReplay({
+      bufferSize: 1,
+      refCount: true,
+    })
   );
 
   constructor(
@@ -90,10 +99,17 @@ export class PdfComponent implements OnInit {
     ])
       .pipe(
         first(),
-        switchMap(([owllyId, userData]: [string, EidUserData]) => this.pdfService.generatePDF({userData, owllyId})),
+        switchMap(([owllyId, userData]: [string, EidUserData]) =>
+          this.pdfService.generatePDF({
+            userData,
+            owllyId,
+          })
+        ),
         catchError((err) => {
           console.error(err);
-          return of({url: undefined} as Pdf);
+          return of({
+            url: undefined,
+          } as Pdf);
         }),
         first()
       )
@@ -113,19 +129,20 @@ export class PdfComponent implements OnInit {
         first()
       ),
     }).subscribe(async (values: any) => {
-      //console.log(JSON.stringify(values));
-      //todo pass configuration
-
-      /*await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
+      await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
         console.log(err.message);
-      });*/
-
-      await this.router.navigate(['/sign'], {
-        queryParams: {
-          owllyId: values.owllyId,
-          configuration: values.configuration,
-        },
       });
+
+      try {
+        await this.router.navigate(['/sign'], {
+          queryParams: {
+            owllyId: values.owllyId,
+            configuration: values.configuration,
+          },
+        });
+      } catch (e) {
+        console.log(e);
+      }
       console.log('navigation done.');
     });
 
