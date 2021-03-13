@@ -112,7 +112,7 @@ export class PdfComponent implements OnInit {
         filter((configuration: string | undefined) => configuration !== undefined),
         first()
       ),
-    }).subscribe((values: any) => {
+    }).subscribe(async (values: any) => {
       //console.log(JSON.stringify(values));
       //todo pass configuration
 
@@ -120,23 +120,14 @@ export class PdfComponent implements OnInit {
         console.log(err.message);
       });*/
 
-      this.router.navigateByUrl(
-        this.router.createUrlTree(['/sign'], {
-          relativeTo: this.route,
-          queryParams: {
-            owllyId: values.owllyId,
-            configuration: values.configuration,
-          },
-        })
-      );
-
-      /* this.router.createUrlTree(['/sign'], {
-        relativeTo: this.route,
+      await this.router.navigate(['/sign'], {
         queryParams: {
           owllyId: values.owllyId,
           configuration: values.configuration,
         },
-      });*/
+        relativeTo: this.route,
+      });
+      console.log('navigation done.');
     });
 
     /*   
