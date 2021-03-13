@@ -33,9 +33,6 @@ export class OidcService {
   }
 
   getEidUserData(token: string, configuration: 'sh' | 'zg'): Observable<EidUserData | undefined> {
-    console.log('configuration: ' + configuration);
-    console.log('token: ' + token);
-
     const callable: (data: EidDataRequest) => Observable<EidUserData | undefined> = this.functions.httpsCallable<EidDataRequest, EidUserData | undefined>(
       'eidData'
     );

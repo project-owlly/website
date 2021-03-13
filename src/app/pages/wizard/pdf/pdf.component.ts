@@ -120,13 +120,23 @@ export class PdfComponent implements OnInit {
         console.log(err.message);
       });*/
 
-      this.router.createUrlTree(['/sign'], {
+      this.router.navigateByUrl(
+        this.router.createUrlTree(['/sign'], {
+          relativeTo: this.route,
+          queryParams: {
+            owllyId: values.owllyId,
+            configuration: values.configuration,
+          },
+        })
+      );
+
+      /* this.router.createUrlTree(['/sign'], {
         relativeTo: this.route,
         queryParams: {
           owllyId: values.owllyId,
           configuration: values.configuration,
         },
-      });
+      });*/
     });
 
     /*   
