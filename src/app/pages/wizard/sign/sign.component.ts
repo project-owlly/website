@@ -35,6 +35,16 @@ export class SignComponent {
     })
   );
 
+  readonly configuration$: Observable<string | undefined> = this.route.paramMap.pipe(
+    first(),
+    filter((params: Params) => params.get('configuration') !== null),
+    map((params: Params) => params.get('configuration')),
+    shareReplay({
+      bufferSize: 1,
+      refCount: true,
+    })
+  );
+
   constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
     Device.getInfo().then((deviceInfo) => {
       this.deviceInfo = deviceInfo;

@@ -1,7 +1,7 @@
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 
-import {combineLatest, Observable, of} from 'rxjs';
+import {combineLatest, forkJoin, Observable, of} from 'rxjs';
 import {catchError, filter, first, map, mergeMap, shareReplay, switchMap} from 'rxjs/operators';
 
 import {EidUserData} from '../../../types/eid';
@@ -44,6 +44,13 @@ export class PdfComponent implements OnInit {
     first(),
     filter((params: Params) => params.owllyId !== null),
     map((params: Params) => params.owllyId),
+    shareReplay({bufferSize: 1, refCount: true})
+  );
+
+  readonly configuration$: Observable<string | undefined> = this.route.queryParams.pipe(
+    first(),
+    filter((params: Params) => params.configuration !== null),
+    map((params: Params) => params.configuration),
     shareReplay({bufferSize: 1, refCount: true})
   );
 
@@ -96,7 +103,22 @@ export class PdfComponent implements OnInit {
   }
 
   navigate(): void {
-    this.owllyId$
+    forkJoin({
+      owllyId: this.owllyId$.pipe(
+        filter((owllyId: string | undefined) => owllyId !== undefined),
+        first()
+      ),
+      configuration: this.configuration$.pipe(
+        filter((configuration: string | undefined) => configuration !== undefined),
+        first()
+      ),
+    }).subscribe(async (values: any) => {
+      await this.router.navigate(['/sign', [values.owllyId, values.configuration]]).catch((err) => {
+        console.log(err.message);
+      });
+    });
+
+    /*    this.owllyId$
       .pipe(
         filter((owllyId: string | undefined) => owllyId !== undefined),
         first()
@@ -106,6 +128,7 @@ export class PdfComponent implements OnInit {
           console.log(err.message);
         });
       });
+      */
   }
 
   // async fileWrite(data, filename) {
