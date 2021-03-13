@@ -120,13 +120,7 @@ export class PdfComponent implements OnInit {
         console.log(err.message);
       });*/
 
-      await this.router.navigate(['/sign'], {
-        queryParams: {
-          owllyId: values.owllyId,
-          configuration: values.configuration,
-        },
-        //relativeTo: this.route,
-      });
+      await this.router.navigate(['/sign?owllyId=' + values.owllyId + '&configuration=' + values.configuration]);
       console.log('navigation done.');
     });
 
