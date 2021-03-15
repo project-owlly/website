@@ -67,10 +67,10 @@
 
           <!-- SKRIBBLE-->
           <div class="text-center flex-auto" *ngIf="{{pdf.status.skribble}}">
-            <p class="dark:text-white text-xl font-light text-center">Dokument mit Skribble signieren:</p>
+            <p class="dark:text-white text-xl font-light text-center">Dokument mit Skribble nach ZertES (QES) signieren:</p>
 
-            <a href="{{ pdf.skribble.skribbleSigningUr }}" target="_blank">
-              <app-button type="submit" class="py-10">Skribble</app-button>
+            <a href="{{ pdf.skribble.skribbleSigningUrl }}" target="_blank">
+              <app-button type="submit" class="py-10">Weiter mit Skribble</app-button>
             </a>
           </div>
 

@@ -129,11 +129,13 @@ export class PdfComponent implements OnInit {
         first()
       ),
     }).subscribe(async (values: any) => {
+      console.log('owllyId: ' + values.owllyId);
+      console.log('config: ' + values.configuration);
       await this.router.navigate(['/sign', values.owllyId]).catch((err) => {
         console.log(err.message);
       });
 
-      try {
+      /*  try {
         console.log('owllyId: ' + values.owllyId);
         console.log('config: ' + values.configuration);
 
@@ -145,7 +147,7 @@ export class PdfComponent implements OnInit {
         });
       } catch (e) {
         console.log(e);
-      }
+      }*/
       console.log('navigation done.');
     });
 

@@ -7,8 +7,8 @@ export interface Pdf {
     skribble: boolean;
   };
   skribble: {
-    signatureRequest: string;
-    documentId: string;
+    //signatureRequest: string;
+    //documentId: string;
     skribbleSigningUrl: string;
   };
 }
