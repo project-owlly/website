@@ -134,6 +134,9 @@ export class PdfComponent implements OnInit {
       });
 
       try {
+        console.log('owllyId: ' + values.owllyId);
+        console.log('config: ' + values.configuration);
+
         await this.router.navigate(['/sign'], {
           queryParams: {
             owllyId: values.owllyId,
