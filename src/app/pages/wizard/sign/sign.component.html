@@ -9,75 +9,93 @@
         <div class="mx-auto max-w-screen-xl px-6 pt-6">
           <p class="font-bold text-2xl dark:text-white py-6">Signiere und reiche deinen Unterschriftbogen ein - so einfach geht's:</p>
 
-          <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
-            <div *ngIf="isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-              <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
-              <p class="dark:text-white text-lg md:pt-2 font-light">1. Button "importieren" drücken</p>
-            </div>
-            <div *ngIf="!isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-              <img src="../../../../assets/eidIcons/scan.png" width="40%" alt="" />
-              <p class="dark:text-white text-lg md:pt-2 font-light">1. QR Code mit deiner eID+ scannen</p>
-            </div>
-            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-              <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
-              <p class="dark:text-white text-lg md:pt-2 font-light">2. "Meine Dokumente" auswählen</p>
-            </div>
-            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-              <img src="../../../../assets/eidIcons/sign.png" width="40%" alt="" />
-              <p class="dark:text-white text-lg md:pt-2 font-light">3. Dokument signieren</p>
-            </div>
-            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-              <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
-              <p class="dark:text-white text-lg md:pt-2 font-light">4. Dokument exportieren</p>
-            </div>
-            <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-              <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
-              <p class="dark:text-white text-lg md:pt-2 font-light">
-                5. Dokument per E-Mail an
-                <span class="text-secondary font-bold"><a target="_blank" href="mailto:briefkasten@owlly.ch">briefkasten@owlly.ch</a></span> senden
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <!--DESKTOP-->
-            <ng-container *ngIf="!isMobile">
-              <div class="text-center items-center mx-auto py-4">
-                <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
-              </div>
-              <div class="flex flex-row">
-                <div class="text-center flex-auto">
-                  <a href="{{ pdf.url }}" target="_blank">
-                    <app-button type="submit" class="py-10">Download</app-button>
-                  </a>
-                </div>
-              </div>
-            </ng-container>
-          </div>
-        </div>
-
-        <div class="mx-auto max-w-screen-xl px-6 text-center md:text-left py-6">
-          <!--ON MOBILE-->
-          <div class="text-center flex-auto" *ngIf="isMobile">
-            <p class="dark:text-white text-xl font-light text-center">
-              Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die E-Mail Adresse wird beim Importieren in deine Zwischenablage kopiert.
-            </p>
-            <app-button (click)="import()" class="py-6">Importieren </app-button>
-          </div>
-
-          <!-- SKRIBBLE-->
+          <!-- SKRIBBLE Momentan nur für ZG Aktiv, wird via Backend gesteuert-->
           <div class="text-center flex-auto" *ngIf="pdf.status.skribble">
-            <p class="dark:text-white text-xl font-light text-center">Dokument mit Skribble nach ZertES (QES) signieren:</p>
-
-            <a href="{{ pdf.skribble.skribbleSigningUrl }}" target="_blank">
+            <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
+              <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
+                <p class="dark:text-white text-lg md:pt-2 font-light">1. Dokument mit Skribble öffnen</p>
+              </div>
+              <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
+                <p class="dark:text-white text-lg md:pt-2 font-light">2. Dokument mit Skribble unterschreiben</p>
+              </div>
+              <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
+                <p class="dark:text-white text-lg md:pt-2 font-light">3. Dokument wird automatisch von Skribble an owlly übermittelt.</p>
+              </div>
+            </div>
+            <a href="{{ pdf.skribble.skribbleSigningUrl }}" target="_self">
               <app-button type="submit" class="py-10">Weiter mit Skribble</app-button>
             </a>
           </div>
 
-          <!-- WEITER -->
-          <div class="flex justify-end" *ngIf="(isMobile && importIsClicked) || !isMobile">
-            <app-button (click)="navigate()" class="py-10">Weiter</app-button>
-          </div>
+          <!-- SIGNIEREN MIT eID+ -->
+          <ng-container *ngIf="configuration$ | async as configuration">
+            <ng-container *ngIf="configuration === 'sh'">
+              <!-- Anleitung eID+ Schaffhausen -->
+              <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
+                <div *ngIf="isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                  <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
+                  <p class="dark:text-white text-lg md:pt-2 font-light">1. Button "importieren" drücken</p>
+                </div>
+                <div *ngIf="!isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                  <img src="../../../../assets/eidIcons/scan.png" width="40%" alt="" />
+                  <p class="dark:text-white text-lg md:pt-2 font-light">1. QR Code mit deiner eID+ scannen</p>
+                </div>
+                <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                  <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
+                  <p class="dark:text-white text-lg md:pt-2 font-light">2. "Meine Dokumente" auswählen</p>
+                </div>
+                <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                  <img src="../../../../assets/eidIcons/sign.png" width="40%" alt="" />
+                  <p class="dark:text-white text-lg md:pt-2 font-light">3. Dokument signieren</p>
+                </div>
+                <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                  <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
+                  <p class="dark:text-white text-lg md:pt-2 font-light">4. Dokument exportieren</p>
+                </div>
+                <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
+                  <img src="../../../../assets/eidIcons/exportieren.png" width="40%" alt="" />
+                  <p class="dark:text-white text-lg md:pt-2 font-light">
+                    5. Dokument per E-Mail an
+                    <span class="text-secondary font-bold"><a target="_blank" href="mailto:briefkasten@owlly.ch">briefkasten@owlly.ch</a></span> senden
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <!--DESKTOP-->
+                <ng-container *ngIf="!isMobile">
+                  <div class="text-center items-center mx-auto py-4">
+                    <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
+                  </div>
+                  <div class="flex flex-row">
+                    <div class="text-center flex-auto">
+                      <a href="{{ pdf.url }}" target="_blank">
+                        <app-button type="submit" class="py-10">Download</app-button>
+                      </a>
+                    </div>
+                  </div>
+                </ng-container>
+
+                <!--ON MOBILE-->
+                <div class="text-center flex-auto" *ngIf="isMobile">
+                  <p class="dark:text-white text-xl font-light text-center">
+                    Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die E-Mail Adresse wird beim Importieren in deine Zwischenablage kopiert.
+                  </p>
+                  <app-button (click)="import()" class="py-6">Importieren </app-button>
+                </div>
+
+                <!-- WEITER -->
+                <div class="flex justify-end" *ngIf="(isMobile && importIsClicked) || !isMobile">
+                  <app-button (click)="navigate()" class="py-10">Weiter</app-button>
+                </div>
+              </div>
+            </ng-container>
+            <!-- CONFIG == SH-->
+          </ng-container>
+          <!-- CONFIG lesen-->
         </div>
       </ng-container>
     </ng-container>
