@@ -2,7 +2,12 @@
 
 <main class="dark:bg-black">
   <div class="container mx-auto max-w-screen-xl">
-    <app-textblock title="Fast am Ziel!" text="Nutze für die nächsten Schritte deine elektronische Identität (eID+):" type="owlly"> </app-textblock>
+    <app-textblock
+      title="Fast am Ziel!"
+      text="Signiere anschliessend rechtsgültig dein persönliches PDF mit Skribble oder der eID+ von Schaffhausen"
+      type="owlly"
+    >
+    </app-textblock>
 
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">
