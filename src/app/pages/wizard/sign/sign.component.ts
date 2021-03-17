@@ -5,7 +5,7 @@ import {Pdf} from '../../../types/pdf';
 import {PdfService} from '../../../services/pdf.service';
 import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
 import {filter, first, map, shareReplay} from 'rxjs/operators';
-import {faCheckCircle, faQrcode, faFileAlt} from '@fortawesome/free-solid-svg-icons';
+import {faCheckCircle, faQrcode, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
 
 const {Browser, Device, App, Toast, Clipboard} = Plugins;
 
@@ -20,6 +20,9 @@ export class SignComponent {
   faCheckCircle = faCheckCircle;
   faQrcode = faQrcode;
   faFileAlt = faFileAlt;
+  faFileSignature = faFileSignature;
+  faInfoCircle = faInfoCircle;
+  faFileExport = faFileExport;
 
   importIsClicked: boolean = false;
 
