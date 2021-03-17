@@ -6,32 +6,39 @@
 
     <ng-container *ngIf="pdf$ | async as pdf">
       <ng-container *ngIf="pdf.url !== undefined">
-        <div class="mx-auto max-w-screen-xl px-6 pt-6">
-          <p class="font-bold text-2xl dark:text-white py-6">Signiere und reiche deinen Unterschriftbogen ein - so einfach geht's:</p>
-
-          <!-- SKRIBBLE Momentan nur für ZG Aktiv, wird via Backend gesteuert-->
-          <div class="text-center flex-auto" *ngIf="pdf.status.skribble">
-            <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
-              <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-                <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
-                <p class="dark:text-white text-lg md:pt-2 font-light">1. Dokument mit Skribble öffnen</p>
+        <div *ngIf="pdf.status.skribble">
+          <!-- DAS HIER SOLLTE EIN EIGENE COMP WERDEN-->
+          <div class="font-light text-2xl dark:text-white px-6">Signiere ganz einfach mit Skribble rechtsgültig dein Volksbegehren</div>
+          <div class="mx-auto max-w-screen-xl px-6 pt-6 text-center md:text-left">
+            <p class="font-bold text-2xl dark:text-white pb-4">Das sind die nächsten Schritte</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2">
+              <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
+                <fa-icon [icon]="faFileAlt" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+                <p class="dark:text-white text-lg md:pt-4 font-light">1. Dokument auf Skribble öffnen (Klick auf "Weiter mit Skribble")</p>
               </div>
-              <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-                <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
-                <p class="dark:text-white text-lg md:pt-2 font-light">2. Dokument mit Skribble unterschreiben</p>
+              <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
+                <fa-icon [icon]="faFileSignature" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+                <p class="dark:text-white text-lg md:pt-4 font-light">2. Dokument mit Skribble unterschreiben</p>
               </div>
-              <div class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
-                <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
-                <p class="dark:text-white text-lg md:pt-2 font-light">3. Dokument wird automatisch von Skribble an owlly übermittelt.</p>
+              <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
+                <fa-icon [icon]="faFileExport" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+                <p class="dark:text-white text-lg md:pt-4 font-light">3. Dokument wird automatisch von Skribble an owlly übermittelt</p>
               </div>
             </div>
-            <a href="{{ pdf.skribble.skribbleSigningUrl }}" target="_self">
-              <app-button type="submit" class="py-10">Weiter mit Skribble</app-button>
-            </a>
           </div>
 
-          <!-- SIGNIEREN MIT eID+ -->
-          <div class="text-center flex-auto" *ngIf="!pdf.status.skribble">
+          <div class="flex flex-row">
+            <div class="text-center flex-auto">
+              <a href="{{ pdf.skribble.skribbleSigningUrl }}" target="_self">
+                <app-button type="submit" class="py-10">Weiter mit Skribble</app-button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGNIEREN MIT eID+ als Alternative? -->
+        <div *ngIf="pdf.configuration === 'sh'">
+          <div class="text-center flex-auto">
             <!-- Anleitung eID+ Schaffhausen -->
             <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
               <div *ngIf="isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
@@ -78,13 +85,13 @@
                 </div>
               </ng-container>
 
-              <!--ON MOBILE-->
-              <div class="text-center flex-auto" *ngIf="isMobile">
-                <p class="dark:text-white text-xl font-light text-center">
-                  Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die E-Mail Adresse wird beim Importieren in deine Zwischenablage kopiert.
-                </p>
-                <app-button (click)="import()" class="py-6">Importieren </app-button>
-              </div>
+              <!--ON MOBILE
+    <div class="text-center flex-auto" *ngIf="isMobile">
+      <p class="dark:text-white text-xl font-light text-center">
+        Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die E-Mail Adresse wird beim Importieren in deine Zwischenablage kopiert.
+      </p>
+      <app-button (click)="import()" class="py-6">Importieren </app-button>
+    </div>-->
 
               <!-- WEITER -->
               <div class="flex justify-end" *ngIf="(isMobile && importIsClicked) || !isMobile">

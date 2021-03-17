@@ -12,10 +12,10 @@
       </p>
       <ng-container *ngIf="userData$ | async as userData" class="px-6">
         <ng-container *ngIf="pdf.url !== undefined">
+          <!-- DAS HIER SOLLTE EIN EIGENE COMP WERDEN-->
           <div class="font-light text-2xl dark:text-white px-6">
             Wir haben von Dir alle erforderlichen Informationen erhalten und deinen persönlichen Unterschriftenbogen erstellt!
           </div>
-
           <div class="mx-auto max-w-screen-xl px-6 pt-6 text-center md:text-left">
             <p class="font-bold text-2xl dark:text-white pb-4">Das sind die nächsten Schritte</p>
             <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2">
@@ -34,36 +34,6 @@
                 <p class="dark:text-white text-lg md:pt-4 font-light">3. Bogen digital an owlly übermitteln</p>
               </div>
             </div>
-
-            <!-- <p class="font-bold text-2xl dark:text-white">Das sind die nächsten Schritte</p>
-            <div class="table table-auto">
-              <div class="table-row-group">
-                <div class="table-row">
-                  <div class="table-cell align-middle px-2">
-                    <svg width="5" height="5">
-                      <rect width="5" height="5" style="fill: var(--color-tertiary)" />
-                    </svg>
-                  </div>
-                  <div class="table-cell text-left dark:text-white font-light text-2xl">Bogen mit der eID+ erstellen &nbsp; <fa-icon [icon]="faCheckCircle"></fa-icon></div>
-                </div>
-                <div class="table-row">
-                  <div class="table-cell align-middle px-2">
-                    <svg width="5" height="5">
-                      <rect width="5" height="5" style="fill: var(--color-tertiary)" />
-                    </svg>
-                  </div>
-                  <div class="table-cell text-left dark:text-white font-light text-2xl">Bogen mit eID+ signieren</div>
-                </div>
-                <div class="table-row">
-                  <div class="table-cell align-middle px-2">
-                    <svg width="5" height="5">
-                      <rect width="5" height="5" style="fill: var(--color-tertiary)" />
-                    </svg>
-                  </div>
-                  <div class="table-cell text-left dark:text-white font-light text-2xl">Bogen digital an owlly übermitteln</div>
-                </div>
-              </div>
-            </div> -->
           </div>
 
           <div class="flex flex-row">
