@@ -13,7 +13,7 @@ export class OwllyAdministrationService {
     return this.owllyService.getOwlly().ref.where('active', '==', true).get();
   }
 
-  getCertifyList(owllyId: string) {
-    return this.firestore.collection('owlly').doc(owllyId).collection('postalcode').doc('8200').collection('files').get();
+  getCertifyList(owllyId: string, postalcode: string) {
+    return this.firestore.collection('owlly').doc(owllyId).collection('postalcode').doc(postalcode).collection('files').get();
   }
 }

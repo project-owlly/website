@@ -40,7 +40,25 @@ export class CertifyDetailComponent implements OnInit {
       //console.log( owlly.data);
       this.initiativeSelect = owlly.data.title;
 
-      this.owllyAdminService.getCertifyList(owlly.id).forEach((snapshot) => {
+      this.owllyAdminService.getCertifyList(owlly.id, '8200').forEach((snapshot) => {
+        console.log(snapshot.docs);
+
+        snapshot.forEach((element) => {
+          console.log(element.data());
+
+          this.certifyList.push(element.data());
+        });
+      });
+      this.owllyAdminService.getCertifyList(owlly.id, '0000').forEach((snapshot) => {
+        console.log(snapshot.docs);
+
+        snapshot.forEach((element) => {
+          console.log(element.data());
+
+          this.certifyList.push(element.data());
+        });
+      });
+      this.owllyAdminService.getCertifyList(owlly.id, '6300').forEach((snapshot) => {
         console.log(snapshot.docs);
 
         snapshot.forEach((element) => {
