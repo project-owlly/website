@@ -15,7 +15,7 @@
           <!-- DAS HIER SOLLTE EIN EIGENE COMP WERDEN-->
           <div class="font-light text-2xl dark:text-white px-6">Signiere ganz einfach mit Skribble rechtsgültig dein Volksbegehren</div>
           <div class="mx-auto max-w-screen-xl px-6 pt-6 text-center md:text-left">
-            <p class="font-bold text-2xl dark:text-white pb-4">Das sind die nächsten Schritte</p>
+            <p class="font-bold text-2xl dark:text-white pb-4">Das sind die nächsten Schritte mit Skribble</p>
             <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2">
               <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
                 <fa-icon [icon]="faFileAlt" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
@@ -45,6 +45,7 @@
         <div *ngIf="pdf.configuration === 'sh'">
           <div class="text-center flex-auto">
             <!-- Anleitung eID+ Schaffhausen -->
+            <p class="font-bold text-2xl dark:text-white pb-4">Oder mit der eID+ Schaffhausen signieren</p>
             <div class="grid md:grid-cols-5 grid-cols-2 gap-2">
               <div *ngIf="isMobile" class="text-center rounded p-2 dark:bg-gray-900 flex flex-col items-center">
                 <img src="../../../../assets/eidIcons/export.png" width="40%" alt="" />
@@ -77,18 +78,11 @@
 
             <div>
               <!--DESKTOP-->
-              <ng-container *ngIf="!isMobile">
+              <div>
                 <div class="text-center items-center mx-auto py-4">
                   <deckgo-qrcode content="{{ pdf.url }}"></deckgo-qrcode>
                 </div>
-                <div class="flex flex-row">
-                  <div class="text-center flex-auto">
-                    <a href="{{ pdf.url }}" target="_blank">
-                      <app-button type="submit" class="py-10">Download</app-button>
-                    </a>
-                  </div>
-                </div>
-              </ng-container>
+              </div>
 
               <!--ON MOBILE -->
               <div class="text-center flex-auto" *ngIf="isMobile">
@@ -96,6 +90,14 @@
                   Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die E-Mail Adresse wird beim Importieren in deine Zwischenablage kopiert.
                 </p>
                 <app-button (click)="import()" class="py-6">Importieren </app-button>
+              </div>
+
+              <div class="flex flex-row">
+                <div class="text-center flex-auto">
+                  <a href="{{ pdf.url }}" target="_blank">
+                    <app-button type="submit" class="py-10">Download</app-button>
+                  </a>
+                </div>
               </div>
 
               <!-- WEITER -->
