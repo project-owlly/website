@@ -90,13 +90,13 @@
                 </div>
               </ng-container>
 
-              <!--ON MOBILE
-    <div class="text-center flex-auto" *ngIf="isMobile">
-      <p class="dark:text-white text-xl font-light text-center">
-        Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die E-Mail Adresse wird beim Importieren in deine Zwischenablage kopiert.
-      </p>
-      <app-button (click)="import()" class="py-6">Importieren </app-button>
-    </div>-->
+              <!--ON MOBILE -->
+              <div class="text-center flex-auto" *ngIf="isMobile">
+                <p class="dark:text-white text-xl font-light text-center">
+                  Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die E-Mail Adresse wird beim Importieren in deine Zwischenablage kopiert.
+                </p>
+                <app-button (click)="import()" class="py-6">Importieren </app-button>
+              </div>
 
               <!-- WEITER -->
               <div class="flex justify-end" *ngIf="(isMobile && importIsClicked) || !isMobile">
