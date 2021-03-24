@@ -3,9 +3,9 @@ export interface Pdf {
   message: string;
   configuration: string;
   status: {
-    owlly: boolean;
-    ots: boolean;
-    skribble: boolean;
+    owlly: true | false;
+    ots: true | false;
+    skribble: true | false;
   };
   skribbleSigningUrl: string;
 }
