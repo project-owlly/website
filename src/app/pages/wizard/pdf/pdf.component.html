@@ -14,18 +14,18 @@
           <!--<p class="font-bold text-2xl dark:text-white pb-4">Das sind die nächsten Schritte mit Skribble</p>-->
           <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2">
             <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
-              <fa-icon *ngIf="pdf.status.owlly == true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
-              <fa-icon *ngIf="pdf.status.owlly == false" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+              <fa-icon *ngIf="pdf.status.owlly === true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
+              <fa-icon *ngIf="!pdf.status.owlly === true" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
               <p class="dark:text-white text-lg md:pt-4 font-light">Status owlly</p>
             </div>
             <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
-              <fa-icon *ngIf="pdf.status.ots == true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
-              <fa-icon *ngIf="pdf.status.ots == false" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+              <fa-icon *ngIf="pdf.status.ots === true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
+              <fa-icon *ngIf="!pdf.status.ots == true" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
               <p class="dark:text-white text-lg md:pt-4 font-light">Status Blockchain</p>
             </div>
             <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
-              <fa-icon *ngIf="pdf.status.skribble == true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
-              <fa-icon *ngIf="pdf.status.skribble == false" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+              <fa-icon *ngIf="pdf.status.skribble === true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
+              <fa-icon *ngIf="!pdf.status.skribble === true" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
               <p class="dark:text-white text-lg md:pt-4 font-light">Status Skribble</p>
             </div>
           </div>
@@ -48,18 +48,18 @@
               <!--<p class="font-bold text-2xl dark:text-white pb-4">Das sind die nächsten Schritte mit Skribble</p>-->
               <div class="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2">
                 <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
-                  <fa-icon *ngIf="pdf.status.owlly == true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
-                  <fa-icon *ngIf="pdf.status.owlly == false" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+                  <fa-icon *ngIf="pdf.status.owlly === true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary"></fa-icon>
+                  <fa-icon *ngIf="!pdf.status.owlly === true" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
                   <p class="dark:text-white text-lg md:pt-4 font-light">Status owlly</p>
                 </div>
                 <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
-                  <fa-icon *ngIf="pdf.status.ots == true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
-                  <fa-icon *ngIf="pdf.status.ots == false" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+                  <fa-icon *ngIf="pdf.status.ots === true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary"></fa-icon>
+                  <fa-icon *ngIf="!pdf.status.ots === true" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
                   <p class="dark:text-white text-lg md:pt-4 font-light">Status Blockchain</p>
                 </div>
                 <div class="text-center rounded md:pt-20 md:pb-16 pt-4 pb-2 dark:bg-gray-900">
-                  <fa-icon *ngIf="pdf.status.skribble == true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary dark:text-white"></fa-icon>
-                  <fa-icon *ngIf="pdf.status.skribble == false" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
+                  <fa-icon *ngIf="pdf.status.skribble === true" [icon]="faCheckCircle" class="md:text-6xl text-2xl text-primary"></fa-icon>
+                  <fa-icon *ngIf="!pdf.status.skribble === true" [icon]="faTimesCircle" class="md:text-6xl text-2xl text-black dark:text-white"></fa-icon>
                   <p class="dark:text-white text-lg md:pt-4 font-light">Status Skribble</p>
                 </div>
               </div>
