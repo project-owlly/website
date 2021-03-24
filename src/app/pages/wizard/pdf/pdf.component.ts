@@ -10,7 +10,7 @@ import {Pdf} from '../../../types/pdf';
 import {OidcService} from 'src/app/services/oidc.service';
 import {PdfService} from 'src/app/services/pdf.service';
 import {AuthService} from 'src/app/services/auth.service';
-import {faSpinner, faCheckCircle, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
+import {faSpinner, faCheckCircle, faTimesCircle, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
@@ -18,6 +18,7 @@ import {faSpinner, faCheckCircle, faInfoCircle, faFileSignature, faFileAlt, faFi
 })
 export class PdfComponent implements OnInit {
   faSpinner = faSpinner;
+  faTimesCircle = faTimesCircle;
   faCheckCircle = faCheckCircle;
   faInfoCircle = faInfoCircle;
   faFileSignature = faFileSignature;
