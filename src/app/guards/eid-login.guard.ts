@@ -29,7 +29,9 @@ export class EidLoginGuard implements CanActivate {
         console.log(data);
 
         this.auth.loginWithToken(data.token).then(
-          (ok) => {
+          (userCredential) => {
+            var user = userCredential.user;
+            console.log(user);
             this.router.navigateByUrl('/admin');
           },
           async (err) => {
