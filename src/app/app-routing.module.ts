@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {ActionmailGuard} from './guards/actionmail.guard';
 import {AuthGuard} from './guards/auth.guard';
+import {EidLoginGuard} from './guards/eid-login.guard';
 
 import {EidGuard} from './guards/eid.guard';
 
@@ -130,9 +131,11 @@ const routes: Routes = [
   },
 
   // AUTH PAGES
+
   {
     path: 'success',
-    loadChildren: () => import('./pages/success/success.module').then((m) => m.SuccessModule),
+    canActivate: [EidLoginGuard],
+    children: [],
   },
 
   {

@@ -27,9 +27,9 @@ export class OidcService {
     return callable({configuration} as OidcAuthLoginDataRequest);
   }
 
-  getEidLogin(token: string): Observable<string | undefined> {
+  getEidLogin(token: string, configuration: 'sh' | 'zg'): Observable<string | undefined> {
     const callable: (data: EidDataRequest) => Observable<string | undefined> = this.functions.httpsCallable<EidDataRequest, string | undefined>('eidLogin');
-    return callable({authorization_code: token} as EidDataRequest);
+    return callable({authorization_code: token, configuration: configuration} as EidDataRequest);
   }
 
   getEidUserData(token: string, configuration: 'sh' | 'zg'): Observable<EidUserData | undefined> {
