@@ -25,10 +25,10 @@ export class EidLoginGuard implements CanActivate {
     this.oidcService
       .getEidLogin(code, configuration)
       .pipe(first())
-      .subscribe((data: any) => {
-        console.log(data);
+      .subscribe((customToken: any) => {
+        //console.log(data);
 
-        this.auth.loginWithToken(data).then(
+        this.auth.loginWithToken(customToken).then(
           (userCredential) => {
             //var user = userCredential.user;
             return this.router.createUrlTree(['/admin']);
