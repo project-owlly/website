@@ -28,7 +28,7 @@ export class EidLoginGuard implements CanActivate {
       .subscribe((data: any) => {
         //console.log(data);
 
-        this.auth.loginWithToken(data.token).then(
+        this.auth.loginWithToken(data).then(
           (userCredential) => {
             var user = userCredential.user;
             console.log(user);
