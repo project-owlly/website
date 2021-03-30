@@ -36,6 +36,7 @@ export class EidLoginGuard implements CanActivate {
           },
           async (err) => {
             console.log('error: ' + JSON.stringify(err));
+            return this.router.createUrlTree(['/']);
           }
         );
       });
