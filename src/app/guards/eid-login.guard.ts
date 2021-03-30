@@ -26,7 +26,7 @@ export class EidLoginGuard implements CanActivate {
       .getEidLogin(code, configuration)
       .pipe(first())
       .subscribe((data: any) => {
-        console.log(data);
+        //console.log(data);
 
         this.auth.loginWithToken(data.token).then(
           (userCredential) => {
@@ -35,7 +35,7 @@ export class EidLoginGuard implements CanActivate {
             this.router.navigateByUrl('/admin');
           },
           async (err) => {
-            console.log('error');
+            console.log('error: ' + JSON.stringify(err));
           }
         );
       });
