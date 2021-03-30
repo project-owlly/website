@@ -19,12 +19,12 @@ export class OidcService {
     return callable({owllyId, configuration} as OidcAuthDataRequest);
   }
 
-  getAuthUrlLogin(): Observable<OidcAuth | undefined> {
+  getAuthUrlLogin(configuration: string): Observable<OidcAuth | undefined> {
     const callable: (data: OidcAuthLoginDataRequest) => Observable<OidcAuth | undefined> = this.functions.httpsCallable<
       OidcAuthLoginDataRequest,
       OidcAuth | undefined
     >('OIDAuthUrlLogin');
-    return callable({} as OidcAuthLoginDataRequest);
+    return callable({configuration} as OidcAuthLoginDataRequest);
   }
 
   getEidLogin(token: string): Observable<string | undefined> {

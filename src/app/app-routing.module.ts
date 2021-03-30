@@ -131,6 +131,11 @@ const routes: Routes = [
 
   // AUTH PAGES
   {
+    path: 'success',
+    loadChildren: () => import('./pages/success/success.module').then((m) => m.SuccessModule),
+  },
+
+  {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginModule),
   },

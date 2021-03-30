@@ -5,6 +5,10 @@ import {ToastService} from 'src/app/services/toast.service';
 
 import {FormGroup, Validators, FormBuilder} from '@angular/forms';
 import {Router} from '@angular/router';
+import {OidcService} from 'src/app/services/oidc.service';
+import {catchError, filter, first, tap} from 'rxjs/operators';
+import {OidcAuth} from 'src/app/types/oidc';
+import {EMPTY} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +17,13 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   public authForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router, private toastService: ToastService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private auth: AuthService,
+    private oidcService: OidcService,
+    private router: Router,
+    private toastService: ToastService
+  ) {
     this.authForm = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.minLength(6)],
@@ -21,6 +31,23 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  async loginEID(config: string) {
+    this.oidcService
+      .getAuthUrlLogin(config)
+      .pipe(
+        filter((auth: OidcAuth | undefined) => auth !== undefined),
+        first(),
+        catchError((err) => {
+          // TODO display an error to user?
+          console.error(err);
+          return EMPTY;
+        })
+      )
+      .subscribe((auth: OidcAuth | undefined) => {
+        window.location.href = (auth as OidcAuth).url;
+      });
+  }
 
   async login(authForm: FormGroup) {
     if (!authForm.valid) {
