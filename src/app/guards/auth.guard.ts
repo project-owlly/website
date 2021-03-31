@@ -18,10 +18,11 @@ export class AuthGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return new Promise(async (resolve, reject) => {
       try {
-        const user = await this.authService.getUser().catch((err) => {
-          console.log('Fehler: ' + err);
-        });
-        if (user && user.emailVerified && !user.isAnonymous) {
+        const user: firebase.default.User | null = await this.authService.getUser();
+        console.log(JSON.stringify(user));
+        console.log(JSON.stringify(user?.providerId));
+        console.log(JSON.stringify(user?.providerData));
+        if ((user && user.emailVerified && !user.isAnonymous) || user?.providerId !== 'firebase') {
           resolve(true);
         } else if (user && !user.emailVerified) {
           let promptRet = await Modals.confirm({
