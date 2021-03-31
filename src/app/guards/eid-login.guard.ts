@@ -13,34 +13,29 @@ export class EidLoginGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const code: string | null = route.queryParamMap.get('code');
     const configuration: 'sh' | 'zg' = route.queryParamMap.get('configuration') as 'sh' | 'zg';
-
-    console.log('code: ' + code + ' config: ' + configuration);
-
     if (!code) {
+      console.log('no code');
       return this.router.createUrlTree(['/']);
     }
 
     if (!configuration) {
+      console.log('no configuration');
       return this.router.createUrlTree(['/']);
     }
 
     this.oidcService
       .getEidLogin(code, configuration)
       .pipe(first())
-      .subscribe((customToken: any) => {
+      .subscribe(async (customToken: any) => {
         //console.log(data);
 
-        this.auth.loginWithToken(customToken).then(
-          (userCredential) => {
-            //var user = userCredential.user;
-            console.log('user credentials ' + JSON.stringify(userCredential));
-            return this.router.createUrlTree(['/admin']);
-          },
-          async (err) => {
-            console.log('error: ' + JSON.stringify(err));
-            return this.router.createUrlTree(['/']);
-          }
-        );
+        const userCredential = await this.auth.loginWithToken(customToken);
+        console.log('user credentials ' + JSON.stringify(userCredential));
+        if (userCredential.user) {
+          return this.router.createUrlTree(['/admin']);
+        } else {
+          return this.router.createUrlTree(['/']);
+        }
       });
 
     return false;
