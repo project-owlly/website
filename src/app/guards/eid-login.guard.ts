@@ -14,6 +14,8 @@ export class EidLoginGuard implements CanActivate {
     const code: string | null = route.queryParamMap.get('code');
     const configuration: 'sh' | 'zg' = route.queryParamMap.get('configuration') as 'sh' | 'zg';
 
+    console.log('code: ' + code + ' config: ' + configuration);
+
     if (!code) {
       return this.router.createUrlTree(['/']);
     }
@@ -31,6 +33,7 @@ export class EidLoginGuard implements CanActivate {
         this.auth.loginWithToken(customToken).then(
           (userCredential) => {
             //var user = userCredential.user;
+            console.log('user credentials ' + JSON.stringify(userCredential));
             return this.router.createUrlTree(['/admin']);
           },
           async (err) => {
