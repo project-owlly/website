@@ -22,7 +22,11 @@ export class AuthGuard implements CanActivate {
         console.log(JSON.stringify(user));
         console.log(JSON.stringify(user?.providerId));
         console.log(JSON.stringify(user?.providerData));
-        if ((user && user.emailVerified && !user.isAnonymous) || (user?.providerData.length == 0 && user.email == '')) {
+        if (user && user.emailVerified && !user.isAnonymous) {
+          //( || (user?.providerData.length == 0 && user.email == '')) {
+          resolve(true);
+        } else if (user && user?.providerData.length == 0 && user.email == '' && !user.isAnonymous) {
+          //login with eid
           resolve(true);
         } else if (user && !user.emailVerified) {
           let promptRet = await Modals.confirm({

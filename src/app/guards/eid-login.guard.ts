@@ -11,24 +11,29 @@ import {OidcService} from '../services/oidc.service';
 export class EidLoginGuard implements CanActivate {
   constructor(private router: Router, private auth: AuthService, private oidcService: OidcService) {}
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const code: string | null = route.queryParamMap.get('code');
-    const configuration: 'sh' | 'zg' = route.queryParamMap.get('configuration') as 'sh' | 'zg';
-    if (!code) {
-      console.log('no code');
-      return this.router.createUrlTree(['/']);
-    }
+    return new Promise(async (resolve, reject) => {
+      const code: string | null = route.queryParamMap.get('code') as string;
+      const configuration: 'sh' | 'zg' = route.queryParamMap.get('configuration') as 'sh' | 'zg';
+      if (!code) {
+        console.log('no code');
+        resolve(this.router.createUrlTree(['/']));
+      }
 
-    if (!configuration) {
-      console.log('no configuration');
-      return this.router.createUrlTree(['/']);
-    }
+      if (!configuration) {
+        console.log('no configuration');
+        resolve(this.router.createUrlTree(['/']));
+      }
 
-    this.oidcService
-      .getEidLogin(code, configuration)
-      .pipe(first())
+      const customToken: any = await this.oidcService.getEidLogin(code, configuration).pipe(first()).toPromise();
+      const userCredential = await this.auth.loginWithToken(customToken);
+      console.log('user credentials ' + JSON.stringify(userCredential));
+      if (userCredential.user) {
+        resolve(this.router.createUrlTree(['/admin']));
+      } else {
+        resolve(this.router.createUrlTree(['/']));
+      }
+      /*
       .subscribe(async (customToken: any) => {
-        //console.log(data);
-
         const userCredential = await this.auth.loginWithToken(customToken);
         console.log('user credentials ' + JSON.stringify(userCredential));
         if (userCredential.user) {
@@ -39,5 +44,9 @@ export class EidLoginGuard implements CanActivate {
       });
 
     return false;
+      }
+
+    */
+    }); //promise
   }
 }
