@@ -20,18 +20,19 @@ export class AuthGuard implements CanActivate {
       try {
         const user: firebase.default.User | null = await this.authService.getUser();
         console.log(JSON.stringify(user));
-        console.log(JSON.stringify(user?.providerId));
-        console.log(JSON.stringify(user?.providerData));
+        console.log(JSON.stringify(user?.providerId)); // = "firebase"
+        console.log(JSON.stringify(user?.providerData)); // = []
         if (user && user.emailVerified && !user.isAnonymous) {
           //( || (user?.providerData.length == 0 && user.email == '')) {
           resolve(true);
-        } else if (user && user?.providerData == [] && user.email == null && !user.isAnonymous) {
+        } else if (user && user.email == null && !user.isAnonymous) {
+          //TODO Identiy EID Login -> check claums
           //login with eid
           resolve(true);
         } else if (user && !user.emailVerified) {
           let promptRet = await Modals.confirm({
-            title: 'E-Mail Adresse zuerst verifizieren',
-            message: 'Sollen wir dir eine neue Verifikation senden?',
+            title: 'owlly: E-Mail Adresse nicht verifiziert',
+            message: 'Nochmals eine Verifikations E-Mail senden?',
           });
           if (promptRet.value === true) {
             user

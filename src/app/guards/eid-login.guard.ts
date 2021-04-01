@@ -26,7 +26,7 @@ export class EidLoginGuard implements CanActivate {
 
       const customToken: any = await this.oidcService.getEidLogin(code, configuration).pipe(first()).toPromise();
       const userCredential = await this.auth.loginWithToken(customToken);
-      console.log('user credentials ' + JSON.stringify(userCredential));
+      //console.log('user credentials ' + JSON.stringify(userCredential));
       if (userCredential.user) {
         resolve(this.router.createUrlTree(['/admin']));
       } else {
