@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
         if (user && user.emailVerified && !user.isAnonymous) {
           //( || (user?.providerData.length == 0 && user.email == '')) {
           resolve(true);
-        } else if (user && user?.providerData.length == 0 && user.email == '' && !user.isAnonymous) {
+        } else if (user && user?.providerData == [] && user.email == null && !user.isAnonymous) {
           //login with eid
           resolve(true);
         } else if (user && !user.emailVerified) {
