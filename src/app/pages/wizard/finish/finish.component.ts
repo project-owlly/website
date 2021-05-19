@@ -11,8 +11,10 @@ import {faTwitter, faFacebook, faWhatsapp, faLinkedin} from '@fortawesome/free-b
 
 import {faEnvelope, faCopy, faCheckCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
 
-import {Plugins} from '@capacitor/core';
-const {Share, Device} = Plugins;
+/*import {Plugins} from '@capacitor/core';
+const {Share, Device} = Plugins;*/
+import {Share} from '@capacitor/share';
+import {Device} from '@capacitor/device';
 
 @Component({
   selector: 'app-finish',

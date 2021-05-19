@@ -3,7 +3,9 @@ import {Component, OnInit} from '@angular/core';
 import {OidcService} from 'src/app/services/oidc.service';
 import {PdfService} from 'src/app/services/pdf.service';
 import {OwllyService} from 'src/app/services/owlly.service';
-import {Plugins} from '@capacitor/core';
+//import { Browser } from '@capacitor/browser';
+/*import {Plugins} from '@capacitor/core';
+const {Browser} = Plugins;*/
 
 interface Owlly {
   id: string;
@@ -21,7 +23,6 @@ interface Owlly {
   ruleValue: string;
   campaignerName: string;
 }
-const {Browser} = Plugins;
 
 @Component({
   selector: 'app-infosite',

@@ -3,11 +3,14 @@ import {ActivatedRoute, Params, Router, ParamMap} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Pdf} from '../../../types/pdf';
 import {PdfService} from '../../../services/pdf.service';
-import {Capacitor, DeviceInfo, Plugins} from '@capacitor/core';
+
+import {AppLauncher} from '@capacitor/app-launcher';
+import {Device} from '@capacitor/device';
+import {Clipboard} from '@capacitor/clipboard';
+//import { Browser } from '@capacitor/browser';
+
 import {filter, first, map, shareReplay} from 'rxjs/operators';
 import {faCheckCircle, faQrcode, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
-
-const {Browser, Device, App, Toast, Clipboard} = Plugins;
 
 @Component({
   selector: 'app-sign',
@@ -16,7 +19,7 @@ const {Browser, Device, App, Toast, Clipboard} = Plugins;
 })
 export class SignComponent {
   isMobile: boolean = window?.matchMedia('(any-pointer:coarse)').matches;
-  public deviceInfo: DeviceInfo | undefined;
+
   faCheckCircle = faCheckCircle;
   faQrcode = faQrcode;
   faFileAlt = faFileAlt;
@@ -49,10 +52,14 @@ export class SignComponent {
   );
 
   constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
-    Device.getInfo().then((deviceInfo) => {
-      this.deviceInfo = deviceInfo;
-    });
+    this.logDeviceInfo();
   }
+
+  logDeviceInfo = async () => {
+    const info = await Device.getInfo();
+
+    console.log(info);
+  };
 
   import() {
     this.importIsClicked = true;
@@ -63,14 +70,16 @@ export class SignComponent {
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        const canOpenUrl = await App.canOpenUrl({
-          url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
-        }).catch((err) => {
+        const canOpenUrl = await AppLauncher.canOpenUrl({
+          url: 'eidplus',
+        }).catch((err: any) => {
           alert('canOpenUrl: ' + err.message);
         });
 
         if (canOpenUrl) {
-          await Browser.open({
+          await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url});
+
+          /*await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
             windowName: '_self',
           }).catch(async (err) => {
@@ -80,7 +89,7 @@ export class SignComponent {
             }).catch((err) => {
               alert(err.message);
             });
-          });
+          });*/
 
           await Clipboard.write({
             string: 'briefkasten@owlly.ch',

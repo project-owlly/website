@@ -6,9 +6,9 @@ import {Observable} from 'rxjs';
 import {AuthService} from '../services/auth.service';
 import {ToastService} from '../services/toast.service';
 
+/*
 import {Plugins} from '@capacitor/core';
-
-const {Modals} = Plugins;
+const {Modals} = Plugins;*/
 
 @Injectable({
   providedIn: 'root',
@@ -32,7 +32,7 @@ export class AuthGuard implements CanActivate {
 
           resolve(true);
         } else if (user && !user.emailVerified) {
-          let promptRet = await Modals.confirm({
+          /*let promptRet = await Modals.confirm({
             title: 'owlly: E-Mail Adresse nicht verifiziert',
             message: 'Nochmals eine Verifikations E-Mail senden?',
           });
@@ -50,7 +50,7 @@ export class AuthGuard implements CanActivate {
                 }
               );
           } else {
-          }
+          }*/
 
           /*const {ToastComponent} = await import('../components/toast/toast.component');
           await this.toastService.open(ToastComponent, {
