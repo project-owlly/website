@@ -71,7 +71,7 @@ export class SignComponent {
 
         if (canOpenUrl) {
           await Browser.open({
-            url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
+            url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
             windowName: '_self',
           }).catch(async (err) => {
             await Toast.show({
@@ -86,12 +86,12 @@ export class SignComponent {
             string: 'briefkasten@owlly.ch',
           });
 
-          await Toast.show({
+          /*await Toast.show({
             text: 'E-Mail Adresse "briefkasten@owlly.ch" wurde in die Zwischenablage kopiert.',
             position: 'top',
           }).catch((err) => {
             alert(err.message);
-          });
+          });*/
         } else {
           await Toast.show({
             text: 'Dokument konnte nicht importiert werden.',

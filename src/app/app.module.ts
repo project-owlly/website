@@ -16,10 +16,11 @@ import {environment} from '../environments/environment';
 
 import {ScullyLibModule} from '@scullyio/ng-lib';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {VerfiyComponent} from './pages/verfiy/verfiy.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, VerfiyComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
