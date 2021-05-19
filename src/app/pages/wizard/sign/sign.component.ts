@@ -7,6 +7,8 @@ import {PdfService} from '../../../services/pdf.service';
 import {AppLauncher} from '@capacitor/app-launcher';
 import {Device} from '@capacitor/device';
 import {Clipboard} from '@capacitor/clipboard';
+import {Toast} from '@capacitor/toast';
+
 //import { Browser } from '@capacitor/browser';
 
 import {filter, first, map, shareReplay} from 'rxjs/operators';
@@ -113,8 +115,8 @@ export class SignComponent {
   }
 
   navigate(): void {
-    this.route.paramMap.pipe(first()).subscribe(async (param) => {
-      await this.router.navigate(['/finish', param.get('owllyId')]).catch((err) => {
+    this.route.paramMap.pipe(first()).subscribe(async (param: any) => {
+      await this.router.navigate(['/finish', param.get('owllyId')]).catch((err: any) => {
         console.log(err.message);
       });
     });
