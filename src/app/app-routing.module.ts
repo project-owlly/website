@@ -38,6 +38,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/create/create.module').then((m) => m.CreatePageModule),
   },
 
+  // VERIFY PAGE
+  {
+    path: 'verify/:id',
+    loadChildren: () => import('./pages/verify/verify.module').then((m) => m.VerifyModule),
+  },
+
   // WIZARD START
   {
     path: 'return',
