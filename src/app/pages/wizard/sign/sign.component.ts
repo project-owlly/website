@@ -87,11 +87,22 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
+          await AppLauncher.openUrl({url: ('eidplus://did:eidplus:undefined/document?source=' + pdf?.url) as string}).catch(async (err: any) => {
+            await Toast.show({
+              text: 'Error 0: ' + err.message,
+              position: 'bottom',
+              duration: 'long',
+            }).catch((err) => {
+              alert(err.message);
+            });
+          });
+
           await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(
             async (err: any) => {
               await Toast.show({
-                text: 'Der Import hat nicht funktioniert 1: ' + err.message,
-                position: 'top',
+                text: 'Error 1: ' + err.message,
+                position: 'center',
+                duration: 'long',
               }).catch((err) => {
                 alert(err.message);
               });
@@ -100,8 +111,9 @@ export class SignComponent {
 
           await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURI(pdf?.url as string)}).catch(async (err: any) => {
             await Toast.show({
-              text: 'Der Import hat nicht funktioniert 2: ' + err.message,
+              text: 'Error 2: ' + err.message,
               position: 'top',
+              duration: 'long',
             }).catch((err) => {
               alert(err.message);
             });
