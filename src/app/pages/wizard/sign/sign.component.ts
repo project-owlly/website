@@ -81,21 +81,25 @@ export class SignComponent {
       )
       .subscribe(async (pdf: Pdf | undefined) => {
         const canOpenUrl = await AppLauncher.canOpenUrl({
-          url: 'eidplus',
+          url: 'eidplus://did:eidplus:undefined/',
         }).catch((err: any) => {
           alert('canOpenUrl: ' + err.message);
         });
 
-        if (canOpenUrl) {
-          await AppLauncher.openUrl({url: ('eidplus://did:eidplus:undefined/document?source=' + pdf?.url) as string}).catch(async (err: any) => {
-            await Toast.show({
-              text: 'Error: ' + err.message,
-              position: 'bottom',
-              duration: 'short',
-            }).catch((err) => {
-              alert(err.message);
-            });
-          });
+        //did:eidplus:undefined/share?endpoint=wss%3A%2F%2Feid.sh.ch%2Fapi%2Fdevice%2Fe230fb94-22b7-4443-a5a7-8a5673d3a04a%2F&nonce=36a5dfaf-5cc1-4ec9-814f-e4d22db07629
+
+        eidplus: if (canOpenUrl) {
+          await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(
+            async (err: any) => {
+              await Toast.show({
+                text: 'Error: ' + err.message,
+                position: 'bottom',
+                duration: 'short',
+              }).catch((err) => {
+                alert(err.message);
+              });
+            }
+          );
 
           /*await new Promise((resolve) => setTimeout(resolve, 4000));
 

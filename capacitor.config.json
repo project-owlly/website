@@ -15,7 +15,7 @@
       "https://owlly.ch/*",
       "https://gateway.ezug.ch/*",
       "https://eid.sh.ch/*",
-      "*.europe-west6-project-owlly.cloudfunctions.net/*",
+      "https://europe-west6-project-owlly.cloudfunctions.net/*",
       "https://*.wecollect.ch/*",
       "eidplus://did:eidplus:undefined/*"
     ]
