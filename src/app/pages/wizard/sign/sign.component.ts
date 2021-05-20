@@ -58,17 +58,16 @@ export class SignComponent {
   }
 
   logDeviceInfo = async () => {
-    const info = await Device.getInfo();
-    console.log(info);
     this.deviceInfo = (await Device.getInfo()) as DeviceInfo;
+    console.log(this.deviceInfo);
 
-    console.log('mobile from matchMedia:' + this.isMobile);
+    /*console.log('mobile from matchMedia:' + this.isMobile);
     if (this.deviceInfo.platform === 'web') {
       this.isMobile = false;
     } else {
       this.isMobile = true;
     }
-    console.log('mobile from deviceInfo:' + this.isMobile);
+    console.log('mobile from deviceInfo:' + this.isMobile);*/
   };
 
   import() {
