@@ -8,7 +8,8 @@ import {AppLauncher} from '@capacitor/app-launcher';
 import {Device, DeviceInfo} from '@capacitor/device';
 import {Clipboard} from '@capacitor/clipboard';
 import {Toast} from '@capacitor/toast';
-import {Browser} from '@capacitor/browser';
+
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 import {filter, first, map, shareReplay, windowToggle} from 'rxjs/operators';
 import {faCheckCircle, faQrcode, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
@@ -31,8 +32,7 @@ export class SignComponent {
 
   deviceInfo: any;
 
-  urlstring: string =
-    'eidplus://did:eidplus:undefined/document?source=https%3A%2F%2Fstorage.googleapis.com%2Fproject-owlly.appspot.com%2Ftempfiles%2FNY2do4TT98yZHGi0CTUe%2Fvelorouten-initiative.pdf%3FGoogleAccessId%3Dproject-owlly%2540appspot.gserviceaccount.com%26Expires%3D1621572046%26Signature%3DB6CpFe7FQXIRhYUqsECetVh1kDLOtVB05SgK3kceazM3pyortllGMgKkcu4nPcUcz9jqqGMkNzifOyIZJFXoQT6JQWrjq67cA7ngc2%252F8rrT6DXSdJfSZk5aDNOQLM3p%252BLTakKjMSrGyfEZg5fvVAm5op5Lfo%252BhMKQBM90uiIHUWFylYRe7WogzuT0IESmMzux7MXjfz969PklG54DmdCPOLdV4p8cN5i%252F%252BQiSdLD1FRREmyvTwlZw6CXY7gT%252BH3X708JX0k8bpGn%252BlfhRkT4Y37l5qlbybM7qxGMHBRDpnpAYd192wPW6DahcqWX5RqTpc44yPOVtTElDKa79C1cUQ%253D%253D';
+  urlstring: SafeUrl = '';
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
@@ -56,33 +56,30 @@ export class SignComponent {
     })
   );
 
-  constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
-    this.logDeviceInfo();
+  constructor(private sanitizer: DomSanitizer, private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
+    //this.logDeviceInfo();
 
-    /*this.pdf$
+    this.pdf$
       .pipe(
         filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
         first()
       )
       .subscribe(async (pdf: Pdf | undefined) => {
-        this.urlstring = this.urlstring + encodeURIComponent(pdf?.url as string);
+        this.urlstring = this.sanitizeImageUrl('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
         alert(this.urlstring);
-      });*/
+      });
   }
 
-  logDeviceInfo = async () => {
+  sanitizeImageUrl(url: string): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+
+  /*logDeviceInfo = async () => {
     this.deviceInfo = (await Device.getInfo()) as DeviceInfo;
     //console.log(this.deviceInfo);
     //alert(JSON.stringify(this.deviceInfo));
 
-    /*console.log('mobile from matchMedia:' + this.isMobile);
-    if (this.deviceInfo.platform === 'web') {
-      this.isMobile = false;
-    } else {
-      this.isMobile = true;
-    }
-    console.log('mobile from deviceInfo:' + this.isMobile);*/
-  };
+  };*/
 
   import() {
     this.importIsClicked = true;
