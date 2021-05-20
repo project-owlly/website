@@ -10,7 +10,7 @@ import {Clipboard} from '@capacitor/clipboard';
 import {Toast} from '@capacitor/toast';
 import {Browser} from '@capacitor/browser';
 
-import {filter, first, map, shareReplay} from 'rxjs/operators';
+import {filter, first, map, shareReplay, windowToggle} from 'rxjs/operators';
 import {faCheckCircle, faQrcode, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -86,9 +86,7 @@ export class SignComponent {
           alert('canOpenUrl: ' + err.message);
         });
 
-        //did:eidplus:undefined/share?endpoint=wss%3A%2F%2Feid.sh.ch%2Fapi%2Fdevice%2Fe230fb94-22b7-4443-a5a7-8a5673d3a04a%2F&nonce=36a5dfaf-5cc1-4ec9-814f-e4d22db07629
-
-        eidplus: if (canOpenUrl) {
+        if (canOpenUrl) {
           await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(
             async (err: any) => {
               await Toast.show({
@@ -98,6 +96,10 @@ export class SignComponent {
               }).catch((err) => {
                 alert(err.message);
               });
+
+              window.open('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+
+              /*
               alert('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
 
               await Clipboard.write({
@@ -112,7 +114,7 @@ export class SignComponent {
                 }).catch((err) => {
                   alert(err.message);
                 });
-              });
+              });*/
             }
           );
 
@@ -170,7 +172,7 @@ export class SignComponent {
           */
         } else {
           await Toast.show({
-            text: 'Das Dokument konnte nicht in deine eID+ importiert werden.',
+            text: 'Das Dokument konnte nicht in deine eID+ importiert werden. Bitte Dokument herunterladen und manuell mit der eID+ App teilen um das Dokument zu importieren.',
             position: 'top',
             duration: 'long',
           }).catch((err) => {
