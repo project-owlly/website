@@ -97,6 +97,8 @@ export class SignComponent {
             });
           });
 
+          await new Promise((resolve) => setTimeout(resolve, 4000));
+
           await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(
             async (err: any) => {
               await Toast.show({
@@ -108,6 +110,8 @@ export class SignComponent {
               });
             }
           );
+
+          await new Promise((resolve) => setTimeout(resolve, 4000));
 
           await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURI(pdf?.url as string)}).catch(async (err: any) => {
             await Toast.show({
