@@ -8,7 +8,7 @@ import {AppLauncher} from '@capacitor/app-launcher';
 import {Device, DeviceInfo} from '@capacitor/device';
 import {Clipboard} from '@capacitor/clipboard';
 import {Toast} from '@capacitor/toast';
-import {Browser} from '@capacitor/browser';
+//import {Browser} from '@capacitor/browser';
 
 import {filter, first, map, shareReplay} from 'rxjs/operators';
 import {faCheckCircle, faQrcode, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
