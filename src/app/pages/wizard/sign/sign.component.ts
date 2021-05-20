@@ -97,7 +97,7 @@ export class SignComponent {
             });
           });
 
-          await new Promise((resolve) => setTimeout(resolve, 4000));
+          /*await new Promise((resolve) => setTimeout(resolve, 4000));
 
           await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(
             async (err: any) => {
@@ -121,7 +121,7 @@ export class SignComponent {
             }).catch((err) => {
               alert(err.message);
             });
-          });
+          });*/
 
           /*await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
