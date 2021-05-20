@@ -65,6 +65,7 @@ export class SignComponent {
       )
       .subscribe(async (pdf: Pdf | undefined) => {
         this.urlstring = this.urlstring + encodeURIComponent(pdf?.url as string);
+        alert(this.urlstring);
       });
   }
 
