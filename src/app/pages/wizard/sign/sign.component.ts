@@ -66,7 +66,7 @@ export class SignComponent {
       )
       .subscribe(async (pdf: Pdf | undefined) => {
         this.urlstring = this.sanitizeImageUrl('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
-        alert(this.urlstring);
+        //alert(this.urlstring);
       });
   }
 

@@ -87,12 +87,14 @@
               <!--ON MOBILE -->
               <div class="text-center flex-auto" *ngIf="isMobile">
                 <p class="dark:text-white text-xl font-light text-center">
-                  Du kannst das Dokument direkt in deine eID+ importieren (Beta). Die owlly E-Mail-Adresse wird beim Importieren automatisch in deine
-                  Zwischenablage kopiert.
+                  Du kannst das Dokument direkt in deine eID+ importieren, von dort signieren und per E-Mail an owlly senden. Die owlly E-Mail-Adresse wird beim
+                  Importieren automatisch in deine Zwischenablage kopiert.
                 </p>
-                <app-button (click)="import()" class="py-6">Importieren </app-button>
+                <!--<app-button (click)="import()" class="py-6">Importieren </app-button>-->
 
-                <a [href]="urlstring"> Mit eID+ öffnen </a>
+                <a [href]="urlstring">
+                  <app-button type="submit" class="py-6">Importieren </app-button>
+                </a>
               </div>
 
               <!-- Download Doc -->
