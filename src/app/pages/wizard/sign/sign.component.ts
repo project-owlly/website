@@ -8,8 +8,7 @@ import {AppLauncher} from '@capacitor/app-launcher';
 import {Device} from '@capacitor/device';
 import {Clipboard} from '@capacitor/clipboard';
 import {Toast} from '@capacitor/toast';
-
-//import { Browser } from '@capacitor/browser';
+import {Browser} from '@capacitor/browser';
 
 import {filter, first, map, shareReplay} from 'rxjs/operators';
 import {faCheckCircle, faQrcode, faInfoCircle, faFileSignature, faFileAlt, faFileExport} from '@fortawesome/free-solid-svg-icons';
@@ -79,7 +78,25 @@ export class SignComponent {
         });
 
         if (canOpenUrl) {
-          await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url});
+          await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(
+            async (err: any) => {
+              await Toast.show({
+                text: 'Der Import hat nicht funktioniert 1: ' + err.message,
+                position: 'top',
+              }).catch((err) => {
+                alert(err.message);
+              });
+            }
+          );
+
+          await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURI(pdf?.url as string)}).catch(async (err: any) => {
+            await Toast.show({
+              text: 'Der Import hat nicht funktioniert 2: ' + err.message,
+              position: 'top',
+            }).catch((err) => {
+              alert(err.message);
+            });
+          });
 
           /*await Browser.open({
             url: 'eidplus://did:eidplus:undefined/document?source=' + pdf?.url,
