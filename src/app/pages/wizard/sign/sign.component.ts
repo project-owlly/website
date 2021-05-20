@@ -5,7 +5,7 @@ import {Pdf} from '../../../types/pdf';
 import {PdfService} from '../../../services/pdf.service';
 
 import {AppLauncher} from '@capacitor/app-launcher';
-import {Device} from '@capacitor/device';
+import {Device, DeviceInfo} from '@capacitor/device';
 import {Clipboard} from '@capacitor/clipboard';
 import {Toast} from '@capacitor/toast';
 import {Browser} from '@capacitor/browser';
@@ -27,8 +27,9 @@ export class SignComponent {
   faFileSignature = faFileSignature;
   faInfoCircle = faInfoCircle;
   faFileExport = faFileExport;
-
   importIsClicked: boolean = false;
+
+  deviceInfo: any;
 
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
@@ -58,8 +59,16 @@ export class SignComponent {
 
   logDeviceInfo = async () => {
     const info = await Device.getInfo();
-
     console.log(info);
+    this.deviceInfo = (await Device.getInfo()) as DeviceInfo;
+
+    console.log('mobile from matchMedia:' + this.isMobile);
+    if (this.deviceInfo.platform === 'web') {
+      this.isMobile = false;
+    } else {
+      this.isMobile = true;
+    }
+    console.log('mobile from deviceInfo:' + this.isMobile);
   };
 
   import() {
