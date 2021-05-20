@@ -98,20 +98,18 @@ export class SignComponent {
               }).catch((err) => {
                 alert(err.message);
               });
+
+              Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(async (err: any) => {
+                await Toast.show({
+                  text: 'Error Browser: ' + err.message,
+                  position: 'bottom',
+                  duration: 'short',
+                }).catch((err) => {
+                  alert(err.message);
+                });
+              });
             }
           );
-
-          await new Promise((resolve) => setTimeout(resolve, 4000));
-
-          Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(async (err: any) => {
-            await Toast.show({
-              text: 'Error Browser: ' + err.message,
-              position: 'bottom',
-              duration: 'short',
-            }).catch((err) => {
-              alert(err.message);
-            });
-          });
 
           /*await new Promise((resolve) => setTimeout(resolve, 4000));
 
