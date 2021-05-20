@@ -139,16 +139,18 @@ export class SignComponent {
             string: 'briefkasten@owlly.ch',
           });
 
-          /*await Toast.show({
-            text: 'E-Mail Adresse "briefkasten@owlly.ch" wurde in die Zwischenablage kopiert.',
+          await Toast.show({
+            text: 'Die E-Mail Adresse "briefkasten@owlly.ch" wurde in die Zwischenablage kopiert.',
             position: 'top',
+            duration: 'long',
           }).catch((err) => {
             alert(err.message);
-          });*/
+          });
         } else {
           await Toast.show({
-            text: 'Dokument konnte nicht importiert werden.',
+            text: 'Das Dokument konnte nicht in deine eID+ importiert werden.',
             position: 'top',
+            duration: 'long',
           }).catch((err) => {
             alert(err.message);
           });

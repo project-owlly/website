@@ -3,14 +3,22 @@
   "appName": "Owlly",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www",
+  "webDir": "dist/website",
+  "loggingBehavior": "none",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
     }
   },
   "server": {
-    "allowNavigation": ["*.owlly.ch/*", "*.sh.ch/*", "*.europe-west6-project-owlly.cloudfunctions.net/*", "*.wecollect.ch/*", "eidplus://*"]
+    "allowNavigation": [
+      "https://owlly.ch/*",
+      "https://gateway.ezug.ch/*",
+      "https://eid.sh.ch/*",
+      "*.europe-west6-project-owlly.cloudfunctions.net/*",
+      "https://*.wecollect.ch/*",
+      "eidplus://did:eidplus:undefined/*"
+    ]
   },
   "cordova": {}
 }
