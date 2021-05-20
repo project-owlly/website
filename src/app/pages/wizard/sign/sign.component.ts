@@ -98,6 +98,11 @@ export class SignComponent {
               }).catch((err) => {
                 alert(err.message);
               });
+              alert('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
+
+              await Clipboard.write({
+                string: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string),
+              });
 
               Browser.open({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(async (err: any) => {
                 await Toast.show({
@@ -149,6 +154,7 @@ export class SignComponent {
             });
           });*/
 
+          /*
           await Clipboard.write({
             string: 'briefkasten@owlly.ch',
           });
@@ -160,6 +166,8 @@ export class SignComponent {
           }).catch((err) => {
             alert(err.message);
           });
+
+          */
         } else {
           await Toast.show({
             text: 'Das Dokument konnte nicht in deine eID+ importiert werden.',
