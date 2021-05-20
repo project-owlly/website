@@ -31,6 +31,8 @@ export class SignComponent {
 
   deviceInfo: any;
 
+  urlstring: string = 'eidplus://did:eidplus:undefined/document?source=';
+
   readonly pdf$: Observable<Pdf | undefined> = this.pdfService.pdf$;
 
   readonly owllyId$: Observable<string | undefined> = this.route.paramMap.pipe(
@@ -55,6 +57,15 @@ export class SignComponent {
 
   constructor(private route: ActivatedRoute, private router: Router, private pdfService: PdfService) {
     this.logDeviceInfo();
+
+    this.pdf$
+      .pipe(
+        filter((pdf: Pdf | undefined) => pdf !== undefined && pdf.url !== undefined),
+        first()
+      )
+      .subscribe(async (pdf: Pdf | undefined) => {
+        this.urlstring = this.urlstring + encodeURIComponent(pdf?.url as string);
+      });
   }
 
   logDeviceInfo = async () => {
