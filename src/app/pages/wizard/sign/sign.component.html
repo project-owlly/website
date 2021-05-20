@@ -99,6 +99,8 @@
                   <a href="{{ pdf.url }}" target="_blank">
                     <app-button type="submit" class="py-10">Download</app-button>
                   </a>
+
+                  <a href="{{ 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string) }}"> Import experimental </a>
                 </div>
               </div>
 

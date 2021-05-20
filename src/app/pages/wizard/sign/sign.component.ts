@@ -98,8 +98,9 @@ export class SignComponent {
               });
 
               window.open('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
-
-              /*
+            }
+          );
+          /*
               alert('eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string));
 
               await Clipboard.write({
@@ -115,10 +116,10 @@ export class SignComponent {
                   alert(err.message);
                 });
               });*/
-            }
-          );
-
-          /*await new Promise((resolve) => setTimeout(resolve, 4000));
+          /*
+          
+        
+          await new Promise((resolve) => setTimeout(resolve, 4000));
 
           await AppLauncher.openUrl({url: 'eidplus://did:eidplus:undefined/document?source=' + encodeURIComponent(pdf?.url as string)}).catch(
             async (err: any) => {
