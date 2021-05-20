@@ -118,6 +118,11 @@ export class PdfComponent implements OnInit {
         this.pdfService.next(pdf);
       });
   }
+  async navigateBack() {
+    await this.router.navigate(['/']).catch((err) => {
+      console.log(err.message);
+    });
+  }
 
   navigate(): void {
     forkJoin({
