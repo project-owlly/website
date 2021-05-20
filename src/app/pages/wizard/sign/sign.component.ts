@@ -59,8 +59,8 @@ export class SignComponent {
 
   logDeviceInfo = async () => {
     this.deviceInfo = (await Device.getInfo()) as DeviceInfo;
-    console.log(this.deviceInfo);
-    alert(JSON.stringify(this.deviceInfo));
+    //console.log(this.deviceInfo);
+    //alert(JSON.stringify(this.deviceInfo));
 
     /*console.log('mobile from matchMedia:' + this.isMobile);
     if (this.deviceInfo.platform === 'web') {
@@ -89,9 +89,9 @@ export class SignComponent {
         if (canOpenUrl) {
           await AppLauncher.openUrl({url: ('eidplus://did:eidplus:undefined/document?source=' + pdf?.url) as string}).catch(async (err: any) => {
             await Toast.show({
-              text: 'Error 0: ' + err.message,
+              text: 'Error: ' + err.message,
               position: 'bottom',
-              duration: 'long',
+              duration: 'short',
             }).catch((err) => {
               alert(err.message);
             });
