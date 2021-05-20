@@ -60,6 +60,7 @@ export class SignComponent {
   logDeviceInfo = async () => {
     this.deviceInfo = (await Device.getInfo()) as DeviceInfo;
     console.log(this.deviceInfo);
+    alert(JSON.stringify(this.deviceInfo));
 
     /*console.log('mobile from matchMedia:' + this.isMobile);
     if (this.deviceInfo.platform === 'web') {
