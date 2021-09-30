@@ -17,12 +17,26 @@
         name="canton"
         id="cantonSelect"
         [(ngModel)]="cantonSelect"
-        class="text-2xl p-2 mt-4 w-full font-bold focus:outline-none focus:bg-gray-200 dark:text-white bg-gray-100 dark:bg-gray-800 dark:focus:bg-gray-700 focus:shadow-inner"
+        class="
+          text-2xl
+          p-2
+          mt-4
+          w-full
+          font-bold
+          focus:outline-none
+          focus:bg-gray-200
+          dark:text-white
+          bg-gray-100
+          dark:bg-gray-800
+          dark:focus:bg-gray-700
+          focus:shadow-inner
+        "
       >
         <option value="bs">Basel-Stadt</option>
         <option value="be">Bern</option>
         <option value="sh">Schaffhausen</option>
         <option value="sg">St. Gallen</option>
+        <option value="zg">Zug</option>
         <option value="zh">Zürich</option>
       </select>
     </div>
@@ -73,6 +87,16 @@
           grossen Mehrheit an. Die Motion verfolgt dabei das Ziel, dringende Fragen im Bereich der gesetzlichen Grundlagen, Beanspruchung des Politischen
           Systems und Ausbau einer IT-Basisinfrastruktur zu beantworten.<br />
           <a href="https://www.ratsinfo.sg.ch/geschaefte/3606">Link: Ratsinfo Kanton St. Gallen</a>
+        </p>
+      </div>
+      <div *ngIf="cantonSelect == 'zg'">
+        <p>
+          Im Kanton Zug wurde die Mitoon #3284 von Tabea Zimmermann Gibson, Luzian Franzini und Anastas Odermatt betreffend "mehr Demokratie: Ermöglichung von
+          elektronischen Unterschriftensammlungen (E-Collecting) für Volksbegehren auf kantonaler und kommunaler Ebene" am 30.09.2021 vom Kantonsrat an den
+          Regierungsrat überwiesen. Neben dem Kanton Schaffhausen ein sehr änliches Vorhaben mit optimalen Rahmenbedingungen (beides Pioniere mit der
+          elektronischen Identität).
+          <br />
+          <a href="https://kr-geschaefte.zug.ch/gast/geschaefte/2278">Link: Geschäftsverzeichnis - Kanton Zug</a>
         </p>
       </div>
       <div *ngIf="cantonSelect == 'zh'">
