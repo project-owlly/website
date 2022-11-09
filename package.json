@@ -15,7 +15,8 @@
     "scully:serve": "scully serve",
     "scully:scan": "npm run scully -- --scanRoutes",
     "build:ci": "npm run build && npm run scully",
-    "build:prod": "cross-env NODE_ENV=production ng build --configuration production"
+    "build:prod": "cross-env NODE_ENV=production ng build --configuration production",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -73,7 +74,7 @@
     "codelyzer": "^6.0.0",
     "cross-env": "^7.0.3",
     "fast-xml-parser": "^3.17.5",
-    "husky": "^4.3.0",
+    "husky": "^8.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "^6.3.2",
@@ -88,7 +89,7 @@
     "postcss-loader": "^4.3.0",
     "postcss-scss": "^3.0.5",
     "prettier": "^2.1.2",
-    "pretty-quick": "^3.0.2",
+    "pretty-quick": "^3.1.3",
     "protractor": "~7.0.0",
     "tailwindcss": "^2.1.2",
     "ts-node": "~8.3.0",
