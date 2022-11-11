@@ -1,5 +1,5 @@
 import {Component, NgModule, ViewChild} from '@angular/core';
-import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {UntypedFormGroup, UntypedFormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 import {ModalModule} from '../../components/modal/modal.module';
@@ -20,9 +20,9 @@ import {ToastService} from '../../services/toast.service';
 export class NewsletterComponent {
   @ViewChild('modalComponent') modal: ModalComponent<NewsletterComponent> | undefined;
 
-  newsletterForm: FormGroup;
+  newsletterForm: UntypedFormGroup;
 
-  constructor(public fb: FormBuilder, private newsletterService: NewsletterService, private toastService: ToastService) {
+  constructor(public fb: UntypedFormBuilder, private newsletterService: NewsletterService, private toastService: ToastService) {
     this.newsletterForm = this.fb.group({
       vorname: ['', [Validators.required]],
       nachname: ['', [Validators.required]],
