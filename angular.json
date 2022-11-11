@@ -111,7 +111,6 @@
       }
     }
   },
-  "defaultProject": "website",
   "cli": {
     "analytics": false
   }

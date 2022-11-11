@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from 'src/app/services/auth.service';
 import {ToastService} from 'src/app/services/toast.service';
 
-import {FormGroup, Validators, FormBuilder} from '@angular/forms';
+import {UntypedFormGroup, Validators, UntypedFormBuilder} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
@@ -11,8 +11,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  public authForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router, private toastService: ToastService) {
+  public authForm: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder, private auth: AuthService, private router: Router, private toastService: ToastService) {
     this.authForm = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.minLength(6)],
@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  async signup(authForm: FormGroup) {
+  async signup(authForm: UntypedFormGroup) {
     if (!authForm.valid) {
       const {ToastComponent} = await import('../../components/toast/toast.component');
       await this.toastService.open(ToastComponent, {

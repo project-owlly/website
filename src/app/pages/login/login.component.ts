@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from 'src/app/services/auth.service';
 import {ToastService} from 'src/app/services/toast.service';
 
-import {FormGroup, Validators, FormBuilder} from '@angular/forms';
+import {UntypedFormGroup, Validators, UntypedFormBuilder} from '@angular/forms';
 import {Router} from '@angular/router';
 import {OidcService} from 'src/app/services/oidc.service';
 import {catchError, filter, first, tap} from 'rxjs/operators';
@@ -16,9 +16,9 @@ import {EMPTY} from 'rxjs';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public authForm: FormGroup;
+  public authForm: UntypedFormGroup;
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private auth: AuthService,
     private oidcService: OidcService,
     private router: Router,
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  async login(authForm: FormGroup) {
+  async login(authForm: UntypedFormGroup) {
     if (!authForm.valid) {
       const {ToastComponent} = await import('../../components/toast/toast.component');
       await this.toastService.open(ToastComponent, {

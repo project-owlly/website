@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 
 import {promise} from 'selenium-webdriver';
-import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
+import {UntypedFormGroup, UntypedFormBuilder, Validators, FormControl} from '@angular/forms';
 import {createData} from './createInterface';
 
 //import {ToastService} from '../../services/toast.service';
@@ -10,10 +10,10 @@ import {createData} from './createInterface';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  styleUrls: ['./create.component.scss'],
 })
 export class CreateComponent implements OnInit {
-  faPlus=faPlus;
+  faPlus = faPlus;
   ebene: string = '';
   begehren: string = '';
   createData: createData = {
@@ -29,9 +29,9 @@ export class CreateComponent implements OnInit {
     goals: [],
   };
 
-  createForm: FormGroup;
+  createForm: UntypedFormGroup;
 
-  constructor(public fb: FormBuilder, /*private toastService: ToastService*/) {
+  constructor(public fb: UntypedFormBuilder /*private toastService: ToastService*/) {
     //TODO: send every goal, not only last one
     this.createForm = this.fb.group({
       text: ['', [Validators.required]],
@@ -49,25 +49,23 @@ export class CreateComponent implements OnInit {
       goals4: [''],
     });
 
-    
-    
-    this.createForm.controls['type'].valueChanges.subscribe(data => {
-      if(this.createForm.controls['type'].value == 'initiative'){ 
-      this.begehren='initiative';
-      this.signatureAmount = 100000;
-      this.createForm.controls['author'].setValidators(Validators.required);
+    this.createForm.controls['type'].valueChanges.subscribe((data) => {
+      if (this.createForm.controls['type'].value == 'initiative') {
+        this.begehren = 'initiative';
+        this.signatureAmount = 100000;
+        this.createForm.controls['author'].setValidators(Validators.required);
       }
-      if(this.createForm.controls['type'].value != 'initiative') {
+      if (this.createForm.controls['type'].value != 'initiative') {
         this.createForm.controls['author'].clearValidators();
       }
-      if(this.createForm.controls['type'].value == 'referendum') {
-        this.begehren='referendum';
+      if (this.createForm.controls['type'].value == 'referendum') {
+        this.begehren = 'referendum';
         this.signatureAmount = 50000;
       }
-     });
-     this.createForm.controls["ruleValue"].valueChanges.subscribe(data => {
-      if(this.createForm.controls['ruleValue'].value == 'national'){ 
-      this.ebene = 'national';
+    });
+    this.createForm.controls['ruleValue'].valueChanges.subscribe((data) => {
+      if (this.createForm.controls['ruleValue'].value == 'national') {
+        this.ebene = 'national';
       }
       if ((this.ebene == 'national' && this.begehren == 'initiative') || (this.ebene == 'national' && this.begehren == 'referendum')) {
         this.createForm.controls['published'].setValidators(Validators.required);
@@ -75,18 +73,18 @@ export class CreateComponent implements OnInit {
         this.createForm.controls['published'].clearValidators();
       }
     });
-   }
-   
-   //Signature Amount placeholder in form
-   signatureAmount: Number = 0;
-   
-   //add goals
-   goalAmount = 0;
-   addGoal() {
-     ++this.goalAmount;
-   }
+  }
 
-   sendInitiative() {
+  //Signature Amount placeholder in form
+  signatureAmount: Number = 0;
+
+  //add goals
+  goalAmount = 0;
+  addGoal() {
+    ++this.goalAmount;
+  }
+
+  sendInitiative() {
     this.createData.text = this.createForm.value.text;
     this.createData.title = this.createForm.value.title;
     this.createData.type = this.createForm.value.type;
@@ -102,9 +100,5 @@ export class CreateComponent implements OnInit {
     console.log(this.createData);
   }
 
-
-  ngOnInit(): void {
-    
-  }
-
+  ngOnInit(): void {}
 }

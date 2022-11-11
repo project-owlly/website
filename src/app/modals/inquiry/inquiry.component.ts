@@ -1,5 +1,5 @@
 import {Component, NgModule, ViewChild, Input} from '@angular/core';
-import {FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {UntypedFormGroup, UntypedFormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 import {ModalModule} from '../../components/modal/modal.module';
@@ -12,7 +12,7 @@ import {ModalComponent} from '../../components/modal/modal.component';
 
 import {ToastService} from '../../services/toast.service';
 
-import { Router } from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-inquiry',
@@ -22,10 +22,9 @@ import { Router } from "@angular/router";
 export class InquiryComponent {
   @ViewChild('modalComponent') modal: ModalComponent<InquiryComponent> | undefined;
 
+  inquiryForm: UntypedFormGroup;
 
-  inquiryForm: FormGroup;
-
-  constructor(public fb: FormBuilder, private inquiryService: InquiryService, private toastService: ToastService, private router: Router) {
+  constructor(public fb: UntypedFormBuilder, private inquiryService: InquiryService, private toastService: ToastService, private router: Router) {
     this.inquiryForm = this.fb.group({
       vorname: [''],
       nachname: [''],
