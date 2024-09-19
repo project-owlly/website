@@ -6,7 +6,7 @@ import {first} from 'rxjs/operators';
 
 import {ToastService} from './services/toast.service';
 
-import {AngularFireAuth} from '@angular/fire/auth';
+import {Auth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  constructor(private fAuth: AngularFireAuth, private swUpdate: SwUpdate, private router: Router, private toastService: ToastService) {}
+  constructor(private fAuth: Auth, private swUpdate: SwUpdate, private router: Router, private toastService: ToastService) {}
 
   async ngOnInit(): Promise<void> {
     await this.checkSwUpdate();

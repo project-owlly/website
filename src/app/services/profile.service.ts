@@ -1,8 +1,11 @@
 import {Injectable} from '@angular/core';
 import {AuthService} from './auth.service';
-import firebase from 'firebase';
 
-import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
+import {DocumentData, DocumentSnapshot} from 'firebase/firestore';
+import * as firebase from 'firebase/compat';
+
+// Removed firebase imports as they are not needed
 @Injectable({
   providedIn: 'root',
 })
@@ -15,9 +18,9 @@ export class ProfileService {
     });
   }
 
-  async get(): Promise<firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData> | undefined> {
-    const user: firebase.User | null = await this.authService.getUser();
-    const userRef = firebase.firestore().doc(`userProfile/${user?.uid}`);
-    return userRef.get();
+  async get(): Promise<DocumentSnapshot<DocumentData> | undefined> {
+    const user = await this.authService.getUser();
+    const userRef = this.firestore.collection('userProfile').doc(user?.uid).ref;
+    return userRef.get() as unknown as Promise<DocumentSnapshot<DocumentData>>;
   }
 }

@@ -22,13 +22,15 @@ export class DashboardAdministrationComponent implements OnInit {
   constructor(private owllyService: OwllyAdministrationService, private authService: AuthService, private router: Router) {}
 
   async ngOnInit() {
-    let owllyListRef = await this.owllyService.getAllActiveOwlly();
-    //owllyListRef.docChanges().map(first(),)
-
-    owllyListRef.docChanges().forEach((data) => {
-      //console.log(data.doc.data());
-      this.owllyList.push(data.doc.data());
-    });
+    this.owllyService
+      .getAllActiveOwlly()
+      .pipe(first())
+      .subscribe((owllyListRef) => {
+        owllyListRef.docChanges().forEach((data: {doc: {data: () => any}}) => {
+          //console.log(data.doc.data());
+          this.owllyList.push(data.doc.data());
+        });
+      });
   }
 
   openMobileNav() {

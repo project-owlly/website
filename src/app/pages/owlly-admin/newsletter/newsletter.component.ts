@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsletterService} from 'src/app/services/newsletter.service';
+import {getDocs} from 'firebase/firestore';
 
 @Component({
   selector: 'app-newsletter',
@@ -10,11 +11,10 @@ export class NewsletterComponent implements OnInit {
   constructor(private newsletter: NewsletterService) {}
 
   async ngOnInit() {
-    let newsletter = await this.newsletter.getNewsletterSubscriptions().get();
-    newsletter.subscribe((data) => {
-      data.forEach((element) => {
-        this.subscriberList.push(element.data());
-      });
+    let newsletterSnapshot = await this.newsletter.getNewsletterSubscriptions();
+    let docs = await getDocs(newsletterSnapshot);
+    docs.forEach((doc: any) => {
+      this.subscriberList.push(doc.data());
     });
   }
 

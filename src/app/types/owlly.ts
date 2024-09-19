@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import {DocumentReference, Timestamp} from 'firebase/firestore';
 
 export interface OwllyData {
   title: string;
@@ -19,14 +19,14 @@ export interface OwllyData {
   author: string; // liste von komitee mitgliedern gemäss Volksbegehren
   campaignerEmail: string; //
   campaignerName: string; //
-  campaignerRef: firebase.firestore.DocumentReference; // aus benutzerprofil
+  campaignerRef: DocumentReference; // aus benutzerprofil
 
-  published: firebase.firestore.Timestamp;
+  published: Timestamp;
 }
 
 export interface Owlly {
   id: string;
-  ref: firebase.firestore.DocumentReference;
+  ref: DocumentReference;
 
   data: OwllyData;
 }

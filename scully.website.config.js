@@ -1,15 +1,14 @@
-import {ScullyConfig, setPluginConfig} from '@scullyio/scully';
-
-import {getSitemapPlugin} from '@gammastream/scully-plugin-sitemap';
-
+'use strict';
+Object.defineProperty(exports, '__esModule', {value: true});
+exports.config = void 0;
+const scully_1 = require('@scullyio/scully');
+const scully_plugin_sitemap_1 = require('@gammastream/scully-plugin-sitemap');
 const {getFlashPreventionPlugin} = require('@scullyio/scully-plugin-flash-prevention');
 require('@notiz/scully-plugin-fouc');
-
-const SitemapPlugin = getSitemapPlugin();
-setPluginConfig(SitemapPlugin, {
+const SitemapPlugin = (0, scully_plugin_sitemap_1.getSitemapPlugin)();
+(0, scully_1.setPluginConfig)(SitemapPlugin, {
   urlPrefix: 'https://owlly.ch',
   sitemapFilename: 'sitemap.xml',
-
   ignoredRoutes: ['/404'],
   routes: {
     '/blog/:slug': {
@@ -20,8 +19,7 @@ setPluginConfig(SitemapPlugin, {
     },
   },
 });
-
-export const config: ScullyConfig = {
+exports.config = {
   puppeteerLaunchOptions: {
     executablePath: '/opt/homebrew/bin/chromium',
   },

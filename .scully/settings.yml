@@ -1,2 +1,11 @@
 identifier: k0h7yfo96415476c
 allowErrorCollect: false
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: website
+homeFolder: /Users/sandro/Projects/owlly/website
+distFolder: dist/website
+outDir: /Users/sandro/Projects/owlly/website/dist/static
+handle404: ''

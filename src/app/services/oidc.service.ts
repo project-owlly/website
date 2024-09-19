@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
-import {AngularFireFunctions} from '@angular/fire/functions';
-
 import {Observable} from 'rxjs';
 
 import {OidcAuth, OidcAuthDataRequest, OidcAuthLoginDataRequest} from '../types/oidc';
 import {EidDataRequest, EidUserData} from '../types/eid';
+import {AngularFireFunctions} from '@angular/fire/compat/functions';
 
 @Injectable({
   providedIn: 'root',
@@ -13,17 +12,14 @@ export class OidcService {
   constructor(private functions: AngularFireFunctions) {}
 
   getAuthUrl(owllyId: string, configuration: string): Observable<OidcAuth | undefined> {
-    const callable: (data: OidcAuthDataRequest) => Observable<OidcAuth | undefined> = this.functions.httpsCallable<OidcAuthDataRequest, OidcAuth | undefined>(
-      'OIDAuthUrl'
-    );
+    const callable: (data: OidcAuthDataRequest) => Observable<OidcAuth | undefined> =
+      this.functions.httpsCallable<OidcAuthDataRequest, OidcAuth | undefined>('OIDAuthUrl');
     return callable({owllyId, configuration} as OidcAuthDataRequest);
   }
 
   getAuthUrlLogin(configuration: string): Observable<OidcAuth | undefined> {
-    const callable: (data: OidcAuthLoginDataRequest) => Observable<OidcAuth | undefined> = this.functions.httpsCallable<
-      OidcAuthLoginDataRequest,
-      OidcAuth | undefined
-    >('OIDAuthUrlLogin');
+    const callable: (data: OidcAuthLoginDataRequest) => Observable<OidcAuth | undefined> =
+      this.functions.httpsCallable<OidcAuthLoginDataRequest, OidcAuth | undefined>('OIDAuthUrlLogin');
     return callable({configuration} as OidcAuthLoginDataRequest);
   }
 
@@ -33,9 +29,8 @@ export class OidcService {
   }
 
   getEidUserData(token: string, configuration: 'sh' | 'zg'): Observable<EidUserData | undefined> {
-    const callable: (data: EidDataRequest) => Observable<EidUserData | undefined> = this.functions.httpsCallable<EidDataRequest, EidUserData | undefined>(
-      'eidData'
-    );
+    const callable: (data: EidDataRequest) => Observable<EidUserData | undefined> =
+      this.functions.httpsCallable<EidDataRequest, EidUserData | undefined>('eidData');
     return callable({authorization_code: token, configuration: configuration} as EidDataRequest);
   }
 }

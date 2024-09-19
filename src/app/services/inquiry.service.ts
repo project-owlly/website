@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 
-import firebase from 'firebase';
-
-import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
+import {DocumentReference} from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +9,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
 export class InquiryService {
   constructor(public firestore: AngularFirestore) {}
 
-  createQuestionRecord(record: any): Promise<firebase.firestore.DocumentReference<any>> {
-    return this.firestore.collection('inquiry').add(record);
+  createQuestionRecord(record: any): Promise<DocumentReference<any>> {
+    return this.firestore.collection('inquiry').add(record) as unknown as Promise<DocumentReference<any>>;
   }
 }

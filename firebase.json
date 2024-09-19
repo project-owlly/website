@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/static",
+    "public": "dist/website",
     "site": "project-owlly",
     "rewrites": [
       {

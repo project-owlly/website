@@ -24,10 +24,10 @@ export class ActionmailGuard implements CanActivate {
       case 'verifyEmail':
         // Display email verification handler and UI.
         this.authService.applyActionCode(actionCode as string).then(
-          (ok) => {
+          (ok: any) => {
             return this.router.createUrlTree(['login']);
           },
-          (err) => {}
+          (err: any) => {}
         );
         break;
       default:

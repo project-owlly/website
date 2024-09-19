@@ -1,16 +1,15 @@
 import {Injectable} from '@angular/core';
 
-import firebase from 'firebase';
-
-import {AngularFirestore} from '@angular/fire/firestore';
+import {DocumentReference, Firestore, CollectionReference, addDoc, collection} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuestionService {
-  constructor(public firestore: AngularFirestore) {}
+  constructor(public firestore: Firestore) {}
 
-  createQuestionRecord(record: any): Promise<firebase.firestore.DocumentReference<any>> {
-    return this.firestore.collection('question').add(record);
+  createQuestionRecord(record: any): Promise<DocumentReference<any>> {
+    const questionCollection: CollectionReference = collection(this.firestore, 'question');
+    return addDoc(questionCollection, record);
   }
 }

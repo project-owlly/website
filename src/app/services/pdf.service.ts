@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-import {AngularFireFunctions} from '@angular/fire/functions';
+import {AngularFireFunctions} from '@angular/fire/compat/functions';
 
 import {BehaviorSubject, Observable} from 'rxjs';
 

@@ -48,7 +48,7 @@ export class InquiryComponent {
       });
 
       await this.close();
-    } catch (err) {
+    } catch (err: any) {
       await this.toastService.open(ToastComponent, {
         msg: 'Fehler: ' + err.text,
         status: 'error',

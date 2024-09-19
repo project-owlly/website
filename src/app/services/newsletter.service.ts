@@ -1,24 +1,26 @@
 import {Injectable} from '@angular/core';
 
-import firebase from 'firebase/app';
-
-import {AngularFirestore} from '@angular/fire/firestore';
+import {Firestore, DocumentReference, collection, doc, setDoc, addDoc} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NewsletterService {
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: Firestore) {}
 
   createNewsletterRecord(record: any): Promise<void> {
-    return this.firestore.collection('newsletter').doc(record.email).set(record);
+    const newsletterCollection = collection(this.firestore, 'newsletter');
+    const newsletterDoc = doc(newsletterCollection, record.email);
+    return setDoc(newsletterDoc, record);
   }
 
-  createFeedbackRecord(record: any): Promise<firebase.firestore.DocumentReference<any>> {
-    return this.firestore.collection('feedback').add(record);
+  createFeedbackRecord(record: any): Promise<DocumentReference<any>> {
+    const feedbackCollection = collection(this.firestore, 'feedback');
+    return addDoc(feedbackCollection, record);
   }
   getNewsletterSubscriptions() {
-    return this.firestore.collection('newsletter');
+    const newsletterCollection = collection(this.firestore, 'newsletter');
+    return newsletterCollection;
   }
 
   sendNewsletter(recipients: any[]) {
