@@ -1,10 +1,6 @@
-path:hover {
-  opacity: 0.6;
-}
 path {
   transition: 0.1s;
 }
-#sh:hover {
+a:hover path {
   opacity: 0.6;
-  // fill: var(--color-tertiary);
 }

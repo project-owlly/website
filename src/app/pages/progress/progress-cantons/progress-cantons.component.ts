@@ -8,6 +8,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProgressCantonsComponent implements OnInit {
   cantonSelect: string | null = '';
+  cantonsWithContent = ['bl', 'bs', 'be', 'ge', 'lu', 'ow', 'sh', 'sg', 'so', 'sz', 'zg', 'zh'];
 
   constructor(private activatedroute: ActivatedRoute) {}
 
@@ -16,6 +17,4 @@ export class ProgressCantonsComponent implements OnInit {
       this.cantonSelect = params.get('canton');
     });
   }
-
-  data = {sh: {text: 'hallo', title: 'gugus'}, zh: {text: 'hallo', title: 'gugus'}};
 }

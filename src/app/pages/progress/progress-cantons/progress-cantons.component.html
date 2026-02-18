@@ -32,20 +32,39 @@
           focus:shadow-inner
         "
       >
+        <option value="ag">Aargau</option>
+        <option value="ai">Appenzell Innerrhoden</option>
+        <option value="ar">Appenzell Ausserrhoden</option>
+        <option value="be">Bern</option>
         <option value="bl">Basel-Landschaft</option>
         <option value="bs">Basel-Stadt</option>
-        <option value="be">Bern</option>
+        <option value="fr">Freiburg</option>
         <option value="ge">Genf</option>
+        <option value="gl">Glarus</option>
+        <option value="gr">Graubünden</option>
+        <option value="ju">Jura</option>
+        <option value="lu">Luzern</option>
+        <option value="ne">Neuenburg</option>
+        <option value="nw">Nidwalden</option>
         <option value="ow">Obwalden</option>
-        <option value="sh">Schaffhausen</option>
         <option value="sg">St. Gallen</option>
+        <option value="sh">Schaffhausen</option>
+        <option value="so">Solothurn</option>
+        <option value="sz">Schwyz</option>
+        <option value="tg">Thurgau</option>
+        <option value="ti">Tessin</option>
+        <option value="ur">Uri</option>
+        <option value="vd">Waadt</option>
+        <option value="vs">Wallis</option>
         <option value="zg">Zug</option>
         <option value="zh">Zürich</option>
       </select>
     </div>
 
     <div class="pt-6 dark:text-white text-xl font-light" style="min-height: 300px">
+      <!-- BASEL-LANDSCHAFT -->
       <div *ngIf="cantonSelect == 'bl'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Postulat | In Bearbeitung</p>
         <p>
           Motion Tania Cucè: Im Kanton Basel-Landschaft wird der Regierungsrat beauftragt, die nötigen gesetzlichen Grundlagen zu schaffen, die es ermöglichen,
           Unterschriften für Volksinitiativen und fakultative Referenden elektronisch zu sammeln.
@@ -54,8 +73,9 @@
           <b
             >Parlamentarischer Vorstoss (Motion Tania Cucè) 2021/264 (<a
               href="https://baselland.talus.ch/de/politik/cdws/geschaeft.php?gid=5afe4509bc854ea6b270f681d6630056"
-              >link</a
-            >)</b
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/132217">OpenParlData</a>)</b
           >
         </p>
         <br />
@@ -76,7 +96,9 @@
           </li>
         </ul>
 
-        <br />
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Postulat | In Bearbeitung</p>
         <p>
           Postulat Saskia Schenker: Die FDP-Fraktion bittet den Regierungsrat auf Initiative der Jungfreisinnigen Baselland zu prüfen und zu berichten, ob und
           wie ein elektronisches Sammeln von Unterschriften für Volksbegehren auf kantonaler Ebene während einer Pilotphase von fünf Jahren eingeführt werden
@@ -87,8 +109,9 @@
           <b
             >Postulat 2021/334: Einführung eines E-Collecting-Systems auf kantonaler Ebene (<a
               href="https://baselland.talus.ch/de/politik/cdws/geschaeft.php?gid=4627c652de2b4d6eacbab31383980e98"
-              >link</a
-            >)</b
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/248875">OpenParlData</a>)</b
           >
         </p>
         <br />
@@ -103,8 +126,24 @@
           </li>
         </ul>
 
-        <br />
-        <br />
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Vorlage | In Bearbeitung | Seit 03.12.2024</p>
+        <p>
+          Die Sammelvorlage fasst die beiden Postulate 2021/264 («E-Collecting») und 2021/334 («Einführung eines E-Collecting-Systems auf kantonaler Ebene»)
+          zusammen.
+        </p>
+        <p>
+          <b
+            >Sammelvorlage 2024/731: E-Collecting (<a href="https://baselland.talus.ch/de/politik/cdws/geschaeft.php?gid=7777db5ff47a48509fd7afbb069b788a"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/42118">OpenParlData</a>)</b
+          >
+        </p>
+
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
         <p>
           Mit dem Projekt «E-Collecting für kantonale Unterschriftensammlungen» wurde im Rahmen einer Studie geprüft, welche Voraussetzungen geschaffen werden
           müssen, um E-Collecting im Kanton zu ermöglichen. Hierbei stand die elektronische Identifizierung im Fokus, für die der Einsatz der SwissID zu prüfen
@@ -130,13 +169,14 @@
 
       <!-- Basel Stadt-->
       <div *ngIf="cantonSelect == 'bs'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Gesetz | In Kraft</p>
         <p>
-          Im Unterschied zu seinen Vorgängern, wurde im Kanton Basel-Stadt ein ganz anderer Weg verfolgt. Dort wurde im Rahmen des Behindertenrechtegesetz (BRG)
-          das Gesetz betreffend Initiative und Referendum (IRG) mit einem entsprechenden Artikel angepasst. Von diesem Artikel wurde in Basel-Stadt bis heute
-          jedoch noch kein Gebrauch gemacht.
+          Im Unterschied zu seinen Vorgängern, wurde im Kanton Basel-Stadt ein ganz anderer Weg verfolgt. Auf Grundlage der Motion Georg Mattmüller und
+          Konsorten betreffend kantonales Behindertengleichstellungsrecht wurde im Rahmen des Behindertenrechtegesetz (BRG) das Gesetz betreffend Initiative und
+          Referendum (IRG) mit §5a angepasst. Von diesem Artikel wurde in Basel-Stadt bis heute jedoch noch kein Gebrauch gemacht.
         </p>
         <br />
-        <p><b>Gesetztesartikel aus 131.100 §5a Elektronische Unterzeichnung von Initiativen und Referenden</b></p>
+        <p><b>Gesetzesartikel aus 131.100 §5a Elektronische Unterzeichnung von Initiativen und Referenden</b></p>
         <p>
           Der Regierungsrat kann Versuche zur Unterzeichnung von Initiativen und Referenden auf elektronischem Wege fördern. Er genehmigt diese unter der
           Voraussetzung, dass alle wirksamen und angemessenen Massnahmen ergriffen werden, um die Kontrolle der Stimmberechtigung, das Stimmgeheimnis und die
@@ -152,35 +192,77 @@
           <li>
             - SG 131.100 - Gesetz betreffend Initiative und Referendum (IRG) <a href="https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/131.100">link</a>
           </li>
+          <li>
+            - Ratschlag Behindertenrechtegesetz (BRG)
+            <a href="https://www.regierungsrat.bs.ch/dam/jcr:a6ff30f9-8b8a-4bba-9242-20fc4e325993/behindertenrechtegesetz-ratschlag.pdf">(PDF)</a>
+          </li>
         </ul>
+
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Motion | Abgeschlossen | 20.05.2021 – 24.09.2021</p>
+        <p>
+          <b
+            >Motion 21.5426: Einführung eines e-Collecting (elektronische Unterschriftensammlung) für Initiativen und Referenden (<a
+              href="https://grosserrat.bs.ch/?gnr=21.5426"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/136831">OpenParlData</a>)</b
+          >
+        </p>
       </div>
 
       <!-- BERN -->
       <div *ngIf="cantonSelect == 'be'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Motion | Punktweise angenommen | 2020</p>
         <p>
-          Die Motion "Volksrechte weiter digitalisieren – auch ohne E-Voting" wurde vom Regierungsrat zwar abgelehnt, wird nun aber in der Frühlingssession 2021
-          vom Grossen Rat neu beraten. <br />
-          <a href="https://www.gr.be.ch/gr/de/index/geschaefte/geschaefte/suche/geschaeft.gid-7aecc7b41ddd48c4a3b9c1e7726ac3bd.html"
-            >Link: Ratsinfo Kanton Bern</a
-          >
-        </p>
-        <br />
-        <p>
-          Update: 11.03.2021: Der Grosse Rat hat die Motion "173-2020 von Arx (Schliern b. Köniz, glp) Volksrechte weiter digitalisieren – auch ohne E-Voting"
+          Die Motion "Volksrechte weiter digitalisieren – auch ohne E-Voting" wurde vom Regierungsrat zwar abgelehnt, aber am 11.03.2021 vom Grossen Rat
           punktweise angenommen.
-          <a
-            href="https://www.gr.be.ch/etc/designs/gr/media.cdwsbinary.DOKUMENTE.acq/073d4f39751a45628d28b0cfdefd5258-332/4/PDF/2020.RRGR.227-GR-Beschlussdokument-DF-222334.pdf"
-            >Link GR-Beschlussdokument</a
+        </p>
+        <p>
+          <b
+            >Motion 173-2020 (2020.RRGR.227): Volksrechte weiter digitalisieren – auch ohne E-Voting (<a
+              href="https://www.gr.be.ch/de/start/geschaefte/geschaeftssuche/geschaeftsdetail.html?guid=7aecc7b41ddd48c4a3b9c1e7726ac3bd"
+              >Parlament</a
+            >)</b
           >
         </p>
         <br />
+        <p><b>Dokumente</b></p>
+        <ul>
+          <li>
+            - GR-Beschlussdokument vom 11.03.2021
+            <a
+              href="https://www.gr.be.ch/etc/designs/gr/media.cdwsbinary.DOKUMENTE.acq/073d4f39751a45628d28b0cfdefd5258-332/4/PDF/2020.RRGR.227-GR-Beschlussdokument-DF-222334.pdf"
+              >(download)</a
+            >
+          </li>
+        </ul>
+
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Motion (als Postulat angenommen) | 09.06.2021</p>
+        <p>
+          <b
+            >Motion 2021.RRGR.200 (131-2021): Pilotversuche zwecks Einführung von E-Collecting im Kanton Bern (<a
+              href="https://www.gr.be.ch/de/start/geschaefte/geschaeftssuche/geschaeftsdetail.html?guid=247a2e7819f746bcad2f09c449b4a3ab"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/39248">OpenParlData</a>)</b
+          >
+        </p>
+
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Bericht RR | Kenntnisnahme mit Planungserklärung | 03.09.2024</p>
         <p>
           <b
             >Einführung von E-Collecting. Bericht in Erfüllung von Ziffer 2 und 3 des Postulats 173-2020 von Arx (Spiegel b. Bern, glp) sowie des Postulats
             131-2021 Zimmerli (Bern, FDP) (<a
               href="https://www.gr.be.ch/de/start/geschaefte/geschaeftssuche/geschaeftsdetail.html?guid=4a3f0486369e40f691f5ceefdb838de9"
-              >link</a
-            >)</b
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/130843">OpenParlData</a>)</b
           >
         </p>
         <br />
@@ -239,25 +321,42 @@
           faciliter l'exercice des droits politiques et limiter les effets d'une future situation extraordinaire qui restreindraient la récolte des signatures.
         </p>
         <br />
-        >
         <p><b>Dokumente</b></p>
         <ul>
-          <li>- Rapport du Conseil d’Etat de 29 septembre 2021 <a href="https://ge.ch/grandconseil/data/texte/M02696B.pdf">(download)</a></li>
+          <li>- Rapport du Conseil d'Etat de 29 septembre 2021 <a href="https://ge.ch/grandconseil/data/texte/M02696B.pdf">(download)</a></li>
         </ul>
+      </div>
+
+      <!-- LUZERN -->
+      <div *ngIf="cantonSelect == 'lu'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Anfrage | Beantwortet | Seit 28.10.2024</p>
+        <p>Die Anfrage von Rahel Estermann und Mitunterzeichnenden thematisiert E-Collecting im Kanton Luzern. Sie wurde vom Regierungsrat beantwortet.</p>
+        <p>
+          <b
+            >Anfrage 2024A 297: E-Collecting im Kanton Luzern (<a href="https://www.lu.ch/kr/parlamentsgeschaefte/detail?ges=2d80787f46cb4ddb8e14a8eace1a6461"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/240734">OpenParlData</a>)</b
+          >
+        </p>
       </div>
 
       <!-- OBWALDEN -->
       <div *ngIf="cantonSelect == 'ow'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Postulat | Abgelehnt</p>
         <p>
           Am 2. Dezember 2022 wurde von Kantonsrat Josef Allenbach und weiteren Mitunterzeichnenden ein Postulat eingereicht, das sich mit der Förderung
-          digitaler Partizipationsmöglichkeiten, insbesondere im Bereich des „e-Collecting“, im Kanton Obwalden auseinandersetzt. Das Postulat zielt darauf ab,
+          digitaler Partizipationsmöglichkeiten, insbesondere im Bereich des „e-Collecting", im Kanton Obwalden auseinandersetzt. Das Postulat zielt darauf ab,
           das Potenzial der Digitalisierung zur Vereinfachung administrativer Prozesse und zur Stärkung der Bürgerbeteiligung zu nutzen. Trotz des grossen
           Potenzials der Digitalisierung, das in verschiedenen Bereichen erkannt wird, hat das Parlament entschieden, das Postulat mit 40 zu 6 Stimmen
           abzulehnen, da bereits auf Bundesebene zu diesem Thema gearbeitet wird.
         </p>
         <br />
         <p>
-          <b>Geschäft im Kantonsrat: 53.21.02 (<a href="https://www.ow.ch/politbusiness/87371">link</a>)</b>
+          <b
+            >Geschäft im Kantonsrat: 53.21.02 (<a href="https://www.ow.ch/politbusiness/87371">Parlament</a> ·
+            <a href="https://api.openparldata.ch/v1/affairs/167704">OpenParlData</a>)</b
+          >
         </p>
         <br />
         <p><b>Dokumente</b></p>
@@ -279,6 +378,7 @@
 
       <!-- ST. GALLEN -->
       <div *ngIf="cantonSelect == 'sg'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Motion | Angenommen | Seit 12.06.2018</p>
         <p>
           Ähnlich wie im Kanton Zürich, ist der Startpunkt für E-Collecting im Kanton St. Gallen eine Interpellation (51.18.22 Kanton St.Gallen als
           E-Collecting-Pionier). Diese wurde 2018 im Kantonsrat behandelt. Kurze Zeit später folgte auf die beantwortete Interpellation eine Motion zur
@@ -300,7 +400,10 @@
 
         <p>
           <b
-            >Geschäft im Kantonsrat: 42.18.14 Einführung von E-Collecting im Kanton St.Gallen (<a href="https://www.ratsinfo.sg.ch/geschaefte/3606">link</a>)</b
+            >Geschäft im Kantonsrat: 42.18.14 Einführung von E-Collecting im Kanton St.Gallen (<a href="https://www.ratsinfo.sg.ch/geschaefte/3606"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/1825">OpenParlData</a>)</b
           >
         </p>
         <br />
@@ -331,12 +434,26 @@
           <li>Abstimmung <a href="https://www.ratsinfo.sg.ch/gremium/468/abstimmungen/5661">(Resultat)</a></li>
         </ul>
 
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Interpellation | 2018</p>
+        <p>
+          <b
+            >Geschäft im Kantonsrat: 51.18.22 Kanton St.Gallen als E-Collecting-Pionier (<a href="https://www.ratsinfo.sg.ch/geschaefte/3588">Parlament</a> ·
+            <a href="https://api.openparldata.ch/v1/affairs/144496">OpenParlData</a>)</b
+          >
+        </p>
+
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Interpellation | 2021</p>
         <p>
           <b
             >Geschäft im Kantonsrat: 51.21.44 E-Collecting: Hat die Regierung die Konsequenzen im Griff? (<a
               href="https://www.ratsinfo.sg.ch/gremium/468/geschaefte/5119#overview"
-              >link</a
-            >)</b
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/78744">OpenParlData</a>)</b
           >
         </p>
         <br />
@@ -358,8 +475,10 @@
           </li>
         </ul>
       </div>
+
       <!-- SCHAFFHAUSEN -->
       <div *ngIf="cantonSelect == 'sh'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Volksmotion | In Bearbeitung</p>
         <p>
           Obwohl der Kanton Schaffhausen im Zuge von «Vote électronique» Erfahrungen mit E-Voting gesammelt und in diesem Zusammenhang das Stimmregister für
           Auslandschweizerinnen und -Schweizer zentralisiert hat, wurde das Thema E-Collecting nicht von Politikern, sondern über eine Volksmotion (Art. 70a SHR
@@ -388,7 +507,7 @@
           <b
             >Geschäft im Kantonsrat: 2020/1 (<a
               href="https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Parlament/Der-Kantonsrat/Portal-Kantonsrat---Ratsbetrieb-5125437-DE.html"
-              >link</a
+              >Parlament</a
             >)</b
           >
         </p>
@@ -398,18 +517,53 @@
           <li>- 01.07.2020 Volksmotion<a href="https://sh.ch/CMS/get/file/ef552bd0-025a-40bb-8095-9b984f1af0cb">(download)</a></li>
           <li>
             - 19.12.2023 ADS 23-159 Orientierungsvorlage zur Volksmotion 2020/1 betreffend «Mehr Demokratie in Schaffhausen - einfach und sicher: Volksbegehren
-            auch elektronisch unterschreiben (E-Collecting). <a href="https://sh.ch/CMS/get/file/660d538e-01a5-42e5-a0c2-37674079ab67">(download)</a>
+            auch elektronisch unterschreiben (E-Collecting). (<a href="https://sh.ch/CMS/get/file/660d538e-01a5-42e5-a0c2-37674079ab67">download</a> ·
+            <a href="https://api.openparldata.ch/v1/affairs/258851">OpenParlData</a>)
           </li>
           <li>
-            - 29.05.2024 Seite | 1 Bericht und Antrag der Spezialkommission 2024/1 24-115 zur Volksmotion 2020/1 betreffend «Mehr Demokratie in Schaffhausen −
-            Einfach und sicher: Volksbegehren auch elektronisch unterschreiben (E-Collecting)» (Orientierungsvorlage) vom 29. Mai 2024
-            <a href="https://sh.ch/CMS/get/file/655c1ae1-30dc-4f79-b40c-184acbb62fc0">(download)</a>
+            - 29.05.2024 Bericht und Antrag der Spezialkommission 2024/1 (ADS 24-115) zur Volksmotion 2020/1 betreffend «Mehr Demokratie in Schaffhausen −
+            Einfach und sicher: Volksbegehren auch elektronisch unterschreiben (E-Collecting)» (Orientierungsvorlage) vom 29. Mai 2024 (<a
+              href="https://sh.ch/CMS/get/file/655c1ae1-30dc-4f79-b40c-184acbb62fc0"
+              >download</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/258649">OpenParlData</a>)
           </li>
         </ul>
       </div>
 
+      <!-- SOLOTHURN -->
+      <div *ngIf="cantonSelect == 'so'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Kleine Anfrage | Abgeschlossen | 18.12.2024 – 28.01.2025</p>
+        <p>
+          Die Kleine Anfrage von Laura Gantenbein (Grüne, Solothurn) thematisiert E-Collecting im Kanton Solothurn. Die Anfrage wurde beantwortet und ist
+          abgeschlossen.
+        </p>
+        <p>
+          <b
+            >Kleine Anfrage K 0246/2024: Zu E-Collecting im Kanton Solothurn (<a href="https://ratsinfo.so.ch/geschaefte/382">Parlament</a> ·
+            <a href="https://api.openparldata.ch/v1/affairs/273195">OpenParlData</a>)</b
+          >
+        </p>
+      </div>
+
+      <!-- SCHWYZ -->
+      <div *ngIf="cantonSelect == 'sz'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Interpellation | Erledigt / Abgeschrieben | 08.04.2025</p>
+        <p>Die Interpellation I 27/24 thematisiert E-Collecting im Kanton Schwyz. Der Vorstoss wurde erledigt bzw. abgeschrieben.</p>
+        <p>
+          <b
+            >Interpellation 2024.0193: E-Collecting im Kanton Schwyz (<a
+              href="https://www.sz.ch/behoerden/kantonsrat/geschaefte/geschaeft-detailseite.html/8756-8758-8799-9210-9211/geschaeft_guid/6b6c5bfebad241f995860b2651fffdf3"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/247351">OpenParlData</a>)</b
+          >
+        </p>
+      </div>
+
       <!-- ZUG -->
       <div *ngIf="cantonSelect == 'zg'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Motion | Nicht-Erheblicherklärung | 10.11.2022</p>
         <p>
           Im Kanton Zug wurde die Motion #3284 von Tabea Zimmermann Gibson, Luzian Franzini und Anastas Odermatt betreffend "mehr Demokratie: Ermöglichung von
           elektronischen Unterschriftensammlungen (E-Collecting) für Volksbegehren auf kantonaler und kommunaler Ebene" am 30.09.2021 vom Kantonsrat an den
@@ -429,7 +583,10 @@
         </p>
 
         <p>
-          <b>Geschäft im Kantonsrat: 3284 (<a href="https://kr-geschaefte.zug.ch/gast/geschaefte/2278">link</a>)</b>
+          <b
+            >Geschäft im Kantonsrat: 3284 (<a href="https://kr-geschaefte.zug.ch/gast/geschaefte/2278">Parlament</a> ·
+            <a href="https://api.openparldata.ch/v1/affairs/220573">OpenParlData</a>)</b
+          >
         </p>
         <br />
         <p><b>Dokumente</b></p>
@@ -438,15 +595,35 @@
           <li>- Einreichung Motion am 23.08.2021 <a href="https://kr-geschaefte.zug.ch/dokumente/9826/3284-1-16686_e-Collecting.pdf">(download)</a></li>
         </ul>
       </div>
+
       <!-- ZÜRICH -->
       <div *ngIf="cantonSelect == 'zh'">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Postulat | Beim Regierungsrat | Seit 19.05.2025</p>
+        <p>
+          Im Jahr 2025 wurde ein neues Postulat eingereicht, das ein Pilotprojekt zur Einführung von E-Collecting im Kanton Zürich fordert. Das Postulat
+          verlangt die elektronische Unterschriftensammlung für Initiativen und Referenden im Internet oder auf mobilen Endgeräten. Das Geschäft ist aktuell
+          beim Regierungsrat.
+        </p>
+        <p>
+          <b
+            >Postulat 160/2025: Pilotprojekt zur Einführung von e-Collecting (<a
+              href="https://www.kantonsrat.zh.ch/geschaefte/geschaeft/?id=1cba18d3ab104184b2520d660c941b3b"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/218712">OpenParlData</a>)</b
+          >
+        </p>
+
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Interpellation | 2009</p>
         <p>
           Als E-Voting Pionierkanton, sah sich der Kanton bereits im Jahr 2009 mit einer Interpellation zum Thema E-Collecting konfrontiert. (24/2009 -
           Interpellation (Pilotprojekt e-collecting) ). Die fehlende Harmonisierung des Stimmregisters, eine noch wenig bekannte elektronische Signatur und die
           damalige E-Government Strategie und das Vote électronique auf Bundesebene führten dazu, dass E-Collecting nicht weiterverfolgt wurde. So dauerte 11
           Jahre, bis im Jahr 2019 eine Motion das Thema wieder auf die Agenda brachte (5/2019 Einführung e-Collecting, elektronische Unterschriftensammlung für
           Initiativen und Referenden im Internet oder auf mobilen Endgeräten). Auch Jahre später scheitert das Projekt am Fehlen einer elektronischen Identität
-          und am Projekt „Vote électronique“, welches E-Collecting erst in einer dritten Projektphase vorsieht. Zudem hat der Kanton Zürich aus
+          und am Projekt „Vote électronique", welches E-Collecting erst in einer dritten Projektphase vorsieht. Zudem hat der Kanton Zürich aus
           Ressourcengründen die Arbeiten an E-Collecting 2017 eingestellt. Das Nichtberücksichtigen der nachgelagerten E-Collectingprozesse, machen der Motion
           einen weiteren Strich durch die Rechnung. Hoffnung macht aber der Antrag an den RR vom 22.11.2023. Aktuell ist das Geschäft in der Kommission hänging.
         </p>
@@ -470,11 +647,15 @@
           </li>
         </ul>
 
-        <br />
+        <hr class="my-6 border-gray-300 dark:border-gray-600" />
+
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Motion | Erledigt</p>
         <p>
           <b
-            >Geschäft im Kantonsrat: KR-Nr. 5a/2019 (<a href="https://www.kantonsrat.zh.ch/geschaefte/geschaeft/?id=7ea3ad7713194104a4428b8a7cf85264">link</a
-            >)</b
+            >Geschäft im Kantonsrat: KR-Nr. 5a/2019 (<a href="https://www.kantonsrat.zh.ch/geschaefte/geschaeft/?id=7ea3ad7713194104a4428b8a7cf85264"
+              >Parlament</a
+            >
+            · <a href="https://api.openparldata.ch/v1/affairs/219312">OpenParlData</a>)</b
           >
         </p>
         <br />
@@ -512,12 +693,34 @@
           </li>
         </ul>
       </div>
+
+      <!-- PLATZHALTER für Kantone ohne E-Collecting Vorstösse -->
+      <div *ngIf="cantonSelect && !cantonsWithContent.includes(cantonSelect)">
+        <p>
+          Leider hat dein Kanton noch keine E-Collecting Vorstösse. Bist du der erste? Nimm Kontakt mit einer Politikerin/Politiker auf oder lanciere eine
+          Volksmotion/Volksinitiative.
+        </p>
+        <div class="pt-6">
+          <h2 class="text-xl font-bold dark:text-white">Noch kein E-Collecting bei dir? Werde selbst aktiv!</h2>
+          <div class="py-2">
+            <a href="/support" name="Erfahre mehr">
+              <app-button type="submit" [small]="true">Erfahre mehr</app-button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="flex grid grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-xl py-2">
     <div *ngIf="cantonSelect == 'sh'">
       <app-textblock type="owlly" title="Ausblick" text="Der Regierungsrat behandelt nun die vom Parlament für erheblich erklärte Volksmotion."></app-textblock>
     </div>
+  </div>
+
+  <div class="mx-auto max-w-screen-xl px-6 py-4">
+    <p class="text-sm text-gray-400 dark:text-gray-500">
+      Datenquelle: <a href="https://openparldata.ch" class="underline">OpenParlData.ch</a> · Kantonale Parlamentsdienste
+    </p>
   </div>
 
   <app-footer></app-footer>
